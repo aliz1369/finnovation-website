@@ -1,50 +1,113 @@
-# React + TypeScript + Vite
+# Finnovation New Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for the Finnovation New Website, a React-based project built with Vite. This README provides details on how to set up and run the project locally.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Project Locally](#running-the-project-locally)
+- [Scripts](#scripts)
+- [Folder Structure](#folder-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Before you begin, ensure you have the following installed on your machine:
+- **Node.js** (version 16 or higher)
+- **npm** (comes with Node.js) or **yarn**
+- A modern web browser
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/aliz1369/finnovation-website.git
+   cd finnovation-website
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+2. Install dependencies:
+   ```bash
+   npm install
+   # Or, if you use yarn
+   yarn install
+   ```
+
+## Running the Project Locally
+
+1. Start the development server:
+   ```bash
+   npm run dev
+   # Or, if you use yarn
+   yarn dev
+   ```
+
+2. Open your web browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+   The development server will automatically reload the app when you make changes to the code.
+
+## Scripts
+
+The following scripts are available in the project:
+
+- **`npm run dev`**: Starts the development server.
+- **`npm run build`**: Builds the project for production.
+- **`npm run preview`**: Serves the production build locally.
+- **`npm run lint`**: Runs linting to check for code style and errors.
+
+## Folder Structure
+
+```plaintext
+finnovation-website/
+├── public/          # Static assets
+├── src/             # Source code
+│   ├── api/         # Communicate with server
+│   ├── app/         # Redux
+│   ├── components/  # Reusable components
+│   ├── layouts/     # Layouts
+│   ├── routes/      # Routes components
+│   ├── pages/       # Page components
+│   ├── styles/      # Global and modular styles
+│   ├── App.tsx      # Root component
+│   ├── main.tsx     # Application entry point
+├── .eslintrc.cjs    # ESLint configuration
+├── vite.config.ts   # Vite configuration
+├── package.json     # Project metadata and dependencies
+├── README.md        # Project documentation
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies Used
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **React**: Library for building user interfaces
+- **Vite**: Fast development build tool
+- **TypeScript**: For type safety
+- **Tailwind CSS**: Utility-first CSS framework
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contributing
+
+We welcome contributions to improve this project! If you have suggestions or bug reports, please open an issue or submit a pull request.
+
+### Steps to Contribute:
+1. Fork the repository.
+2. Create a new branch for your feature/bugfix:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request on GitHub.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
