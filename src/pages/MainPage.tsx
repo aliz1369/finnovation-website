@@ -1,12 +1,19 @@
 import React from "react";
+import HeroSection from "../components/HeroSection";
+import Footer from "../components/Footer/Footer";
+import HeaderMenu from "../components/HeaderMenu";
+import ChatButton from "../components/ChatButton";
 
 const MainPage: React.FC = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold text-black">
-        Welcome to the Homepage!
-      </h2>
-      <p className="text-black">This is the home page content.</p>
+    <div className="flex flex-col min-h-screen">
+      <HeaderMenu />
+      <HeroSection />
+      <div className="flex-grow flex items-center justify-center">
+        <p className="text-gray-500">Buraya içerik eklenebilir.</p>
+      </div>
+      <ChatButton />
+      <Footer />
     </div>
   );
 };
