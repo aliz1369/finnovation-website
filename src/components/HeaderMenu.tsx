@@ -14,52 +14,142 @@ const HeaderMenu: React.FC = () => {
   return (
     <header className="bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4">
       <nav className="flex justify-between items-center">
-        {}
+        {/* Logo Bölümü */}
         <div className="flex items-center space-x-2">
           <img src="/img.png" alt="Finnovation Logo" className="h-8" />
         </div>
 
-        {}
+        {/* Navigasyon Bağlantıları */}
         <ul className="flex space-x-6 text-sm font-medium">
-          <li>
-            <Link to="/" className="hover:underline">
+          {/* Biz Kimiz Dropdown */}
+          <li className="relative group">
+            <button className="hover:underline focus:outline-none">
               {t.bizKimiz}
-            </Link>
+            </button>
+            <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 rounded-md w-48 z-50">
+              <li>
+                <Link
+                  to="/about"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.hakkimizda}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/values"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.degerlerimiz}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sustainability"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.surdurulebilirlik}
+                </Link>
+              </li>
+            </ul>
           </li>
-          <li>
-            <span className="text-gray-300">|</span>
-          </li>
-          <li>
-            <Link to="/uzmanlik-alanlarimiz" className="hover:underline">
+
+          {/* Uzmanlık Alanlarımız Dropdown */}
+          <li className="relative group">
+            <button className="hover:underline focus:outline-none">
               {t.uzmanlikAlanlarimiz}
-            </Link>
+            </button>
+            <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 rounded-md w-56 z-50">
+              <li className="relative group">
+                {/* Danışmanlık, artık tıklanabilir */}
+                <Link
+                  to="/consulting"
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.danismanlik}
+                </Link>
+                {/* Yana Açılan Alt Menü */}
+                <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-0 left-full top-0 rounded-md w-56 z-50">
+                  <li>
+                    <Link
+                      to="/consulting/banking"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      {t.temelBankacilik}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/consulting/data-management"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      {t.veriYonetimi}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/consulting/digital-transformation"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      {t.dijitalDonusum}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/consulting/training"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      {t.egitimDanismanligi}
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link
+                  to="/process-monitoring"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.surecIzleme}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/project-integration"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.projeEntegrasyonu}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sustainability"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  {t.surdurulebilirlik}
+                </Link>
+              </li>
+            </ul>
           </li>
-          <li>
-            <span className="text-gray-300">|</span>
-          </li>
+
+          {/* FinAcademy */}
           <li>
             <Link to="/finacademy" className="hover:underline">
               {t.finAcademy}
             </Link>
           </li>
-          <li>
-            <span className="text-gray-300">|</span>
-          </li>
+
+          {/* Projeler */}
           <li>
             <Link to="/projeler" className="hover:underline">
               {t.projeler}
             </Link>
           </li>
-          <li>
-            <span className="text-gray-300">|</span>
-          </li>
+
+          {/* Diğer Bağlantılar */}
           <li>
             <Link to="/kariyer" className="hover:underline">
               {t.kariyer}
             </Link>
-          </li>
-          <li>
-            <span className="text-gray-300">|</span>
           </li>
           <li>
             <Link to="/bize-ulasin" className="hover:underline">
@@ -68,7 +158,7 @@ const HeaderMenu: React.FC = () => {
           </li>
         </ul>
 
-        {}
+        {/* Dil Değiştirme */}
         <div
           className="flex items-center bg-white px-3 py-1 rounded-full shadow space-x-3 cursor-pointer"
           onClick={toggleLanguage}
