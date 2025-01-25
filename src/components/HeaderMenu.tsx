@@ -14,14 +14,14 @@ const HeaderMenu: React.FC = () => {
   return (
     <header className="bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4">
       <nav className="flex justify-between items-center">
-        {/* Logo Bölümü */}
+        {}
         <div className="flex items-center space-x-2">
           <img src="/img.png" alt="Finnovation Logo" className="h-8" />
         </div>
 
-        {/* Navigasyon Bağlantıları */}
+        {}
         <ul className="flex space-x-6 text-sm font-medium">
-          {/* Biz Kimiz Dropdown */}
+          {}
           <li className="relative group">
             <button className="hover:underline focus:outline-none">
               {t.bizKimiz}
@@ -54,21 +54,21 @@ const HeaderMenu: React.FC = () => {
             </ul>
           </li>
 
-          {/* Uzmanlık Alanlarımız Dropdown */}
+          {}
           <li className="relative group">
             <button className="hover:underline focus:outline-none">
               {t.uzmanlikAlanlarimiz}
             </button>
             <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 rounded-md w-56 z-50">
               <li className="relative group">
-                {/* Danışmanlık, artık tıklanabilir */}
+                {}
                 <Link
                   to="/consulting"
                   className="block w-full text-left px-4 py-2 hover:bg-gray-100"
                 >
                   {t.danismanlik}
                 </Link>
-                {/* Yana Açılan Alt Menü */}
+                {}
                 <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-0 left-full top-0 rounded-md w-56 z-50">
                   <li>
                     <Link
@@ -131,21 +131,21 @@ const HeaderMenu: React.FC = () => {
             </ul>
           </li>
 
-          {/* FinAcademy */}
+          {}
           <li>
             <Link to="/finacademy" className="hover:underline">
               {t.finAcademy}
             </Link>
           </li>
 
-          {/* Projeler */}
+          {}
           <li>
             <Link to="/projeler" className="hover:underline">
               {t.projeler}
             </Link>
           </li>
 
-          {/* Diğer Bağlantılar */}
+          {}
           <li>
             <Link to="/kariyer" className="hover:underline">
               {t.kariyer}
@@ -158,7 +158,7 @@ const HeaderMenu: React.FC = () => {
           </li>
         </ul>
 
-        {/* Dil Değiştirme */}
+        {}
         <div
           className="flex items-center bg-white px-3 py-1 rounded-full shadow space-x-3 cursor-pointer"
           onClick={toggleLanguage}
@@ -178,6 +178,6 @@ const HeaderMenu: React.FC = () => {
       </nav>
     </header>
   );
-};
+}; 
 
 export default HeaderMenu;
