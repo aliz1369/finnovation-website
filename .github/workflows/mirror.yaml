@@ -12,9 +12,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Mirror to another repository
+      - name: Push to Mirror Repository
         run: |
-          git remote add mirror https://github.com/aliz1369/finnovation-website.git
+          git remote add mirror https://aliz1369:${{ secrets.GIT_CREDENTIALS }}@github.com/aliz1369/finnovation-website.git
           git push --mirror mirror
-        env:
-          GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
