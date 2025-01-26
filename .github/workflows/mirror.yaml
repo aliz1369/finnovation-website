@@ -1,0 +1,20 @@
+name: Mirror Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Mirror to another repository
+        run: |
+          git remote add mirror https://github.com/aliz1369/finnovation-website.git
+          git push --mirror mirror
+        env:
+          GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
