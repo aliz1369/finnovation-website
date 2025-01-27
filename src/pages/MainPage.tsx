@@ -9,18 +9,17 @@ import Footer from "../components/Footer/Footer";
 import ChatBubble from "../components/ChatBubble";
 
 const MainPage: React.FC = () => {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <HeaderMenu />
-            <HeroSection />
-            <PartnersReferences />
+  return (
+    <div className="flex flex-col min-h-screen">
+      <HeaderMenu />
+      <HeroSection />
+      <PartnersReferences />
+      <p>test</p>
+      <ChatBubble />
 
-            {}
-            <ChatBubble />
-
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default MainPage;
