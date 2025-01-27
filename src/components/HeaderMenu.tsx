@@ -1,3 +1,4 @@
+// src/components/HeaderMenu.tsx
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../contexts/LanguageContext";
@@ -12,172 +13,253 @@ const HeaderMenu: React.FC = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4">
-      <nav className="flex justify-between items-center">
-        {}
-        <div className="flex items-center space-x-2">
-          <img src="/img.png" alt="Finnovation Logo" className="h-8" />
-        </div>
+      <header className="relative w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4">
+        <nav className="max-w-7xl mx-auto flex justify-between items-center">
+          {/* Sol Taraf: Logo */}
+          <div className="flex items-center space-x-2">
+            <img
+                src="/finnovation-logo.png"
+                alt="Finnovation Logo"
+                className="h-11 w-auto"
+            />
+          </div>
 
-        {}
-        <ul className="flex space-x-6 text-sm font-medium">
-          {}
-          <li className="relative group">
-            <button className="hover:underline focus:outline-none">
+          {/* Orta: Menü */}
+          <ul className="flex space-x-10 text-sm font-medium">
+            {/* 1) Biz Kimiz */}
+            <li className="relative group">
+            <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.bizKimiz}
-            </button>
-            <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 rounded-md w-48 z-50">
-              <li>
+              <span className="ml-1 text-xs">▼</span>
+            </span>
+              {/* Alt Menü: tek sütun */}
+              <div
+                  className="
+                absolute left-0 top-full
+                hidden group-hover:block
+                bg-white text-black
+                z-50
+                pt-2
+                shadow-md
+                min-w-[180px]
+              "
+              >
                 <Link
-                  to="/about"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                    to="/hakkimizda"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {t.hakkimizda}
                 </Link>
-              </li>
-              <li>
                 <Link
-                  to="/values"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                    to="/degerlerimiz"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {t.degerlerimiz}
                 </Link>
-              </li>
-              <li>
                 <Link
-                  to="/sustainability"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                    to="/surdurulebilirlik"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {t.surdurulebilirlik}
                 </Link>
-              </li>
-            </ul>
-          </li>
+              </div>
+            </li>
 
-          {}
-          <li className="relative group">
-            <button className="hover:underline focus:outline-none">
+            {/* Ayrıcı */}
+            <li>
+              <span className="text-gray-300">|</span>
+            </li>
+
+            {/* 2) Uzmanlık Alanlarımız (tek sütun) */}
+            <li className="relative group">
+            <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.uzmanlikAlanlarimiz}
-            </button>
-            <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 rounded-md w-56 z-50">
-              <li className="relative group">
-                {}
-                <Link
-                  to="/consulting"
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                >
-                  {t.danismanlik}
-                </Link>
-                {}
-                <ul className="absolute hidden group-hover:block bg-white text-black shadow-lg mt-0 left-full top-0 rounded-md w-56 z-50">
-                  <li>
-                    <Link
-                      to="/consulting/banking"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      {t.temelBankacilik}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/consulting/data-management"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      {t.veriYonetimi}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/consulting/digital-transformation"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      {t.dijitalDonusum}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/consulting/training"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                    >
-                      {t.egitimDanismanligi}
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link
-                  to="/process-monitoring"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  {t.surecIzleme}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/project-integration"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  {t.projeEntegrasyonu}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/sustainability"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  {t.surdurulebilirlik}
-                </Link>
-              </li>
-            </ul>
-          </li>
+              <span className="ml-1 text-xs">▼</span>
+            </span>
+              <div
+                  className="
+                absolute left-0 top-full
+                hidden group-hover:block
+                bg-white text-black
+                z-50
+                pt-2
+                shadow-md
+              "
+              >
+                <div className="flex flex-col space-y-1 px-4 pb-3">
+                  <Link
+                      to="/danismanlik"
+                      className="py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                  >
+                    {t.danismanlik}
+                  </Link>
+                  <Link
+                      to="/surec-izleme"
+                      className="py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                  >
+                    {t.surecIzleme}
+                  </Link>
+                  <Link
+                      to="/proje-bazli-entegrasyon"
+                      className="py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                  >
+                    {t.projeBazliTeknoloji}
+                  </Link>
+                  <Link
+                      to="/surdurulebilirlik2"
+                      className="py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                  >
+                    {t.surdurulebilirlik}
+                  </Link>
+                </div>
+              </div>
+            </li>
 
-          {}
-          <li>
-            <Link to="/finacademy" className="hover:underline">
+            {/* Ayrıcı */}
+            <li>
+              <span className="text-gray-300">|</span>
+            </li>
+
+            {/* 3) FinAcademy (alt menü yok) */}
+            <li>
+            <span className="hover:underline cursor-pointer">
               {t.finAcademy}
-            </Link>
-          </li>
+            </span>
+            </li>
 
-          {}
-          <li>
-            <Link to="/projeler" className="hover:underline">
+            {/* Ayrıcı */}
+            <li>
+              <span className="text-gray-300">|</span>
+            </li>
+
+            {/* 4) Projeler (tek sütun) */}
+            <li className="relative group">
+            <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.projeler}
-            </Link>
-          </li>
+              <span className="ml-1 text-xs">▼</span>
+            </span>
+              {/* Alt Menü: tek sütun, 4 öğe */}
+              <div
+                  className="
+                absolute left-0 top-full
+                hidden group-hover:block
+                bg-white text-black
+                z-50
+                pt-2
+                shadow-md
+                min-w-[180px]
+              "
+              >
+                <Link
+                    to="/projeler/temel-bankacilik"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.temelBankacilik}
+                </Link>
+                <Link
+                    to="/projeler/veri-yonetimi"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.veriYonetimi}
+                </Link>
+                <Link
+                    to="/projeler/dijital-donusum"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.dijitalDonusum}
+                </Link>
+                <Link
+                    to="/projeler/egitim-danismanligi"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.egitimDanismanligi}
+                </Link>
+              </div>
+            </li>
 
-          {}
-          <li>
-            <Link to="/kariyer" className="hover:underline">
+            {/* Ayrıcı */}
+            <li>
+              <span className="text-gray-300">|</span>
+            </li>
+
+            {/* 5) Kariyer (tek sütun) */}
+            <li className="relative group">
+            <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.kariyer}
-            </Link>
-          </li>
-          <li>
-            <Link to="/bize-ulasin" className="hover:underline">
-              {t.bizeUlasin}
-            </Link>
-          </li>
-        </ul>
+              <span className="ml-1 text-xs">▼</span>
+            </span>
+              {/* Alt Menü: tek sütun, 4 öğe */}
+              <div
+                  className="
+                absolute left-0 top-full
+                hidden group-hover:block
+                bg-white text-black
+                z-50
+                pt-2
+                shadow-md
+                min-w-[180px]
+              "
+              >
+                <Link
+                    to="/kariyer/hazine"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.hazine}
+                </Link>
+                <Link
+                    to="/kariyer/nakit-yonetimi"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.nakitYonetimi}
+                </Link>
+                <Link
+                    to="/kariyer/krediler"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.krediler}
+                </Link>
+                <Link
+                    to="/kariyer/risk-yonetimi"
+                    className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.riskYonetimi}
+                </Link>
+              </div>
+            </li>
 
-        {}
-        <div
-          className="flex items-center bg-white px-3 py-1 rounded-full shadow space-x-3 cursor-pointer"
-          onClick={toggleLanguage}
-        >
+            {/* Ayrıcı */}
+            <li>
+              <span className="text-gray-300">|</span>
+            </li>
+
+            {/* 6) Bize Ulaşın */}
+            <li>
+            <span className="hover:underline cursor-pointer">
+              {t.bizeUlasin}
+            </span>
+            </li>
+          </ul>
+
+          {/* Sağ Taraf: Dil Seçimi */}
+          <div
+              className="flex items-center bg-white px-3 py-1 rounded-full shadow space-x-3 cursor-pointer"
+              onClick={toggleLanguage}
+          >
           <span role="img" aria-label="Globe" className="text-blue-600">
             🌐
           </span>
-          <span className="text-gray-300">|</span>
-          <span
-            role="img"
-            aria-label={language === "tr" ? "Türkçe" : "İngilizce"}
-            className="text-red-600"
-          >
+            <span className="text-gray-300">|</span>
+            <span
+                role="img"
+                aria-label={language === "tr" ? "Türkçe" : "İngilizce"}
+                className="text-red-600"
+            >
             {language === "tr" ? "🇹🇷" : "🇺🇸"}
           </span>
-        </div>
-      </nav>
-    </header>
+          </div>
+        </nav>
+      </header>
   );
-}; 
+};
 
 export default HeaderMenu;
