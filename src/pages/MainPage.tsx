@@ -14,7 +14,6 @@ const MainPage: React.FC = () => {
       <HeaderMenu />
       <HeroSection />
       <PartnersReferences />
-      <p>test</p>
       <ChatBubble />
 
       <Footer />
