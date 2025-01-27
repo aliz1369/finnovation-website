@@ -1,10 +1,8 @@
 # Finnovation New Website
 
 This repository contains the source code for the Finnovation New Website, a React-based project built with Vite. This README provides details on how to set up and run the project locally.
-ss
 
 ## Table of Contents
-
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the Project Locally](#running-the-project-locally)
@@ -17,7 +15,6 @@ ss
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your machine:
-
 - **Node.js** (version 16 or higher)
 - **npm** (comes with Node.js) or **yarn**
 - A modern web browser
@@ -25,7 +22,6 @@ Before you begin, ensure you have the following installed on your machine:
 ## Installation
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/aliz1369/finnovation-website.git
    cd finnovation-website
@@ -41,7 +37,6 @@ Before you begin, ensure you have the following installed on your machine:
 ## Running the Project Locally
 
 1. Start the development server:
-
    ```bash
    npm run dev
    # Or, if you use yarn
@@ -49,7 +44,6 @@ Before you begin, ensure you have the following installed on your machine:
    ```
 
 2. Open your web browser and navigate to:
-
    ```
    http://localhost:5173
    ```
@@ -98,7 +92,6 @@ finnovation-website/
 We welcome contributions to improve this project! If you have suggestions or bug reports, please open an issue or submit a pull request.
 
 ### Steps to Contribute:
-
 1. Fork the repository.
 2. Create a new branch for your feature/bugfix:
    ```bash
@@ -117,3 +110,4 @@ We welcome contributions to improve this project! If you have suggestions or bug
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
