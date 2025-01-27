@@ -1,7 +1,7 @@
 # Finnovation New Website
 
 This repository contains the source code for the Finnovation New Website, a React-based project built with Vite. This README provides details on how to set up and run the project locally.
-Test
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)

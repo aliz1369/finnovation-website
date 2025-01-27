@@ -11,11 +11,13 @@ const HeaderMenu: React.FC = () => {
   const toggleLanguage = () => {
     setLanguage(language === "tr" ? "en" : "tr");
   };
-
+  /*okay ı change it
+  wıwııwııwekwkewkjkjkj
+   */
   return (
       <header className="relative w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4">
         <nav className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Sol Taraf: Logo */}
+          {}
           <div className="flex items-center space-x-2">
             <img
                 src="/finnovation-logo.png"
@@ -24,15 +26,15 @@ const HeaderMenu: React.FC = () => {
             />
           </div>
 
-          {/* Orta: Menü */}
+          {}
           <ul className="flex space-x-10 text-sm font-medium">
-            {/* 1) Biz Kimiz */}
+            {}
             <li className="relative group">
             <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.bizKimiz}
               <span className="ml-1 text-xs">▼</span>
             </span>
-              {/* Alt Menü: tek sütun */}
+              {}
               <div
                   className="
                 absolute left-0 top-full
@@ -65,12 +67,12 @@ const HeaderMenu: React.FC = () => {
               </div>
             </li>
 
-            {/* Ayrıcı */}
+            {}
             <li>
               <span className="text-gray-300">|</span>
             </li>
 
-            {/* 2) Uzmanlık Alanlarımız (tek sütun) */}
+            {}
             <li className="relative group">
             <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.uzmanlikAlanlarimiz}
@@ -115,30 +117,30 @@ const HeaderMenu: React.FC = () => {
               </div>
             </li>
 
-            {/* Ayrıcı */}
+            {}
             <li>
               <span className="text-gray-300">|</span>
             </li>
 
-            {/* 3) FinAcademy (alt menü yok) */}
+            {}
             <li>
             <span className="hover:underline cursor-pointer">
               {t.finAcademy}
             </span>
             </li>
 
-            {/* Ayrıcı */}
+            {}
             <li>
               <span className="text-gray-300">|</span>
             </li>
 
-            {/* 4) Projeler (tek sütun) */}
+            {}
             <li className="relative group">
             <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.projeler}
               <span className="ml-1 text-xs">▼</span>
             </span>
-              {/* Alt Menü: tek sütun, 4 öğe */}
+              {}
               <div
                   className="
                 absolute left-0 top-full
@@ -177,18 +179,18 @@ const HeaderMenu: React.FC = () => {
               </div>
             </li>
 
-            {/* Ayrıcı */}
+            {}
             <li>
               <span className="text-gray-300">|</span>
             </li>
 
-            {/* 5) Kariyer (tek sütun) */}
+            {}
             <li className="relative group">
             <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.kariyer}
               <span className="ml-1 text-xs">▼</span>
             </span>
-              {/* Alt Menü: tek sütun, 4 öğe */}
+              {}
               <div
                   className="
                 absolute left-0 top-full
@@ -227,12 +229,12 @@ const HeaderMenu: React.FC = () => {
               </div>
             </li>
 
-            {/* Ayrıcı */}
+            {}
             <li>
               <span className="text-gray-300">|</span>
             </li>
 
-            {/* 6) Bize Ulaşın */}
+            {}
             <li>
             <span className="hover:underline cursor-pointer">
               {t.bizeUlasin}
@@ -240,7 +242,7 @@ const HeaderMenu: React.FC = () => {
             </li>
           </ul>
 
-          {/* Sağ Taraf: Dil Seçimi */}
+          {}
           <div
               className="flex items-center bg-white px-3 py-1 rounded-full shadow space-x-3 cursor-pointer"
               onClick={toggleLanguage}
