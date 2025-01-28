@@ -9,10 +9,6 @@ const HakkimizdaPage: React.FC = () => {
     <div className="flex flex-col min-h-screen">
       <HeaderMenu />
       
-
-
-
-
       <Footer />
     </div>
   );

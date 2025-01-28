@@ -8,7 +8,7 @@ const AppRoutes: React.FC = () => {
   return (
     <Router>
       <Routes>
-        {/* Main page */}
+        {/* Main page  */}
         <Route path="/" element={<MainPage />} />
 
         {/* Hakkımızda page */}

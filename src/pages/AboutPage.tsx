@@ -5,7 +5,7 @@ const AboutPage: React.FC = () => {
   return (
     <div style={{ margin: "2rem" }}>
       <h1>About Page</h1>
-      <p>add anything here</p>
+      <p>add anything here.</p>
     </div>
   );
 };
