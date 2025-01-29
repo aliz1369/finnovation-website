@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "../pages/MainPage";
 import HakkimizdaPage from "../pages/HakkimizdaPage";
 import MainLayout from "../layouts/MainLayout";
+import UzmanlikAlanlarimizPage from "../pages/UzmanlikAlanlarimizPage";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,6 +15,8 @@ const AppRoutes: React.FC = () => {
 
           {/* Hakkımızda page */}
           <Route path="/hakkimizda" element={<HakkimizdaPage />} />
+
+          <Route path="/uzmanlik-alanlarimiz" element={<UzmanlikAlanlarimizPage />} />
         </Route>
       </Routes>
     </Router>
