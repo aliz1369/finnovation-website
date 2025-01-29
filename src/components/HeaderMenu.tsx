@@ -92,6 +92,12 @@ const HeaderMenu: React.FC = () => {
                 shadow-md
               "
             >
+              <Link
+                 to="/uzmanlik-alanlarimiz"
+                 className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+              >
+                 {t.uzmanlikAlanlarimiz}
+              </Link>
               <div className="flex flex-col space-y-1 px-4 pb-3">
                 <Link
                   to="/danismanlik"
