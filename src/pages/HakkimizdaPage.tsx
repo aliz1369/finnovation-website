@@ -13,16 +13,16 @@ const HakkimizdaPage: React.FC = () => {
         }}
       ></div>
 
-      {/* 3) İçerik katmanı (z-10 ile üstte) */}
+      {}
       <div className="relative z-10">
-        {/* 1. SATIR: Metin solda, görsel sağda */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-center">
-          {/* Metin Kısmı */}
+          {}
           <div>
-            <h1 className="text-2xl font-bold mb-4 text-black border-b border-black pb-2">
+            <h1 className="text-2xl font-bold mb-4 text-gray-800 border-b border-black pb-2">
               Hakkımızda
             </h1>
-            <p className="text-black mb-2">
+            <p className="text-gray-800 mb-2">
               2019 yılında kurulan firmamız, yüksek kalitede, sürdürülebilir ve kurumlara
               özel nitelikli hizmetler sunma misyonuyla yola çıktı. Amacımız, yalnızca
               bir hizmet sağlayıcı değil, müşterilerimizin yanında bir yol arkadaşı
@@ -46,7 +46,7 @@ const HakkimizdaPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Görsel Kısmı */}
+          {}
           <div>
             <img
               src="/lamp.png"
@@ -56,9 +56,9 @@ const HakkimizdaPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 2. SATIR: Görsel solda, metin sağda */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-center">
-          {/* Görsel Kısmı */}
+          {}
           <div>
             <img
               src="/raised_hands.png"
@@ -67,15 +67,15 @@ const HakkimizdaPage: React.FC = () => {
             />
           </div>
 
-          {/* Metin Kısmı */}
+          {}
           <div>
-            <h2 className="text-xl font-semibold mb-4 text-black border-b border-black pb-2">
+            <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b border-black pb-2">
               Farkımız
             </h2>
-            <p className="text-black mb-4">
+            <p className="text-gray-800 mb-4">
               Bizi ayıran özelliklerimiz, müşterilerimize sunduğumuz hizmetlerde kalite ve güvenin teminatıdır.
             </p>
-            <ul className="list-disc pl-6 text-black space-y-2">
+            <ul className="list-disc pl-6 text-gray-800 space-y-2">
               <li>
                 <strong>20+ Yıllık Deneyim:</strong> Sektördeki uzun yıllara dayanan
                 tecrübemizle müşterilerimize güçlü bir bilgi birikimi ve profesyonel
@@ -103,19 +103,19 @@ const HakkimizdaPage: React.FC = () => {
                 planda tutarak, en iyiyi sunma misyonuyla hareket ediyoruz.
               </li>
             </ul>
-            <p className="text-black mt-4">
+            <p className="text-gray-800 mt-4">
               Müşterilerimiz için sadece bir çözüm ortağı değil, aynı zamanda güvenilir bir
               yol arkadaşıyız.
             </p>
           </div>
         </div>
 
-        {/* 3. SATIR: Tam genişlikte metin */}
+        {}
         <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4 text-black border-b border-black pb-2">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800 border-b border-black pb-2">
             Vizyonumuz ve Misyonumuz
           </h2>
-          <p className="text-black mb-2">
+          <p className="text-gray-800 mb-2">
             2030 yılında, teknoloji geliştirme, danışmanlık ve eğitim alanlarında inovasyon
             lideri olarak, Türkiye’den dünyaya yayılan sürdürülebilir ve etkili çözümler
             sunarak sektörde tanınan bir lider olmak ve yoldaşımız olan iş ortaklarımıza

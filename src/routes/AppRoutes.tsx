@@ -7,6 +7,12 @@ import UzmanlikAlanlarimizPage from "../pages/UzmanlikAlanlarimizPage";
 import ValuesPage from "../pages/ValuesPage";
 import SustainabilityPage from "../pages/SustainabilityPage";
 import FinAcademyPage from "../pages/FinAcademyPage";
+import Surecizleme from "../pages/Surecizleme";
+import ProjeYonetimi from "../pages/ProjeYonetimi";
+import ProjeEntegrasyon from "../pages/ProjeEntegrasyon";
+
+
+
 
 const AppRoutes: React.FC = () => {
   return (
@@ -22,6 +28,10 @@ const AppRoutes: React.FC = () => {
           <Route path="/degerlerimiz" element={<ValuesPage />} />
           <Route path="/surdurulebilirlik" element={<SustainabilityPage />} />
           <Route path="/finacademy" element={<FinAcademyPage />} />
+          <Route path="/surec-izleme" element={<Surecizleme />} />
+          <Route path="/proje-yonetimi" element={<ProjeYonetimi />} />
+          <Route path="/proje-bazli-entegrasyon" element={<ProjeEntegrasyon />} />
+
         </Route>
       </Routes>
     </Router>
