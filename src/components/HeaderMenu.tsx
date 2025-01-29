@@ -93,10 +93,10 @@ const HeaderMenu: React.FC = () => {
               "
             >
               <Link
-                 to="/uzmanlik-alanlarimiz"
-                 className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                to="/uzmanlik-alanlarimiz"
+                className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
               >
-                 {t.uzmanlikAlanlarimiz}
+                {t.uzmanlikAlanlarimiz}
               </Link>
               <div className="flex flex-col space-y-1 px-4 pb-3">
                 <Link
@@ -135,7 +135,9 @@ const HeaderMenu: React.FC = () => {
           {}
           <li>
             <span className="hover:underline cursor-pointer">
-              {t.finAcademy}
+              <Link to="/finacademy" className="py-2rounded whitespace-nowrap">
+                {t.finAcademy}
+              </Link>
             </span>
           </li>
 
