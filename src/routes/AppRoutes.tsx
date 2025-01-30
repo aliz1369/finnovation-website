@@ -10,6 +10,8 @@ import FinAcademyPage from "../pages/FinAcademyPage";
 import Surecizleme from "../pages/Surecizleme";
 import ProjeYonetimi from "../pages/ProjeYonetimi";
 import ProjeEntegrasyon from "../pages/ProjeEntegrasyon";
+import DigitalDonusum from "../pages/DigitalDonusum";
+import VeriMimarisi from "../pages/VeriMimarisi";
 
 
 
@@ -31,6 +33,8 @@ const AppRoutes: React.FC = () => {
           <Route path="/surec-izleme" element={<Surecizleme />} />
           <Route path="/proje-yonetimi" element={<ProjeYonetimi />} />
           <Route path="/proje-bazli-entegrasyon" element={<ProjeEntegrasyon />} />
+          <Route path="/projeler/dijital-donusum" element={<DigitalDonusum />} />
+          <Route path="/veri-mimarisi" element={<VeriMimarisi />} />
 
         </Route>
       </Routes>
