@@ -103,6 +103,29 @@ const translations = {
     adresBilgisi:
       "Bağcı Mahallesi, Koşuyolu Caddesi Kuğuçka Merkezi No:30 Gebze / Kocaeli",
     footerMessage: "All rights reserved.",
+    bizeUlasinForm: {
+      title: "Ücretsiz Danışmanlık Randevusu Alın",
+      labelAd: "Ad",
+      labelSoyad: "Soyad",
+      labelSirket: "Şirket / Kuruluş",
+      labelEmail: "Şirket e-mail",
+      labelYardim: "Size nasıl yardımcı olabiliriz ?",
+      labelMesaj: "Mesaj",
+      labelKvkk:
+        "KVKK kapsamında kişisel bilgilerimin işlenmesine onay veriyorum.",
+      placeholderAd: "Adınız",
+      placeholderSoyad: "Soyadınız",
+      placeholderSirket: "Şirket veya Kurum Adı",
+      placeholderEmail: "ornek@firma.com",
+      placeholderMesaj: "Size nasıl yardımcı olabileceğimizi açıklayın...",
+      selectDefault: "Seçiniz...",
+      optionDanismanlik: "Danışmanlık",
+      optionTeknik: "Teknik Destek",
+      optionProje: "Proje Teklifi",
+      optionDiger: "Diğer",
+      submitText: "Gönder",
+      alertMsg: "Formunuz gönderildi. Teşekkürler!",
+    },
   },
 };
 
