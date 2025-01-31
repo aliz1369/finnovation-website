@@ -85,11 +85,11 @@ const EgitimDanismanligiPage: React.FC = () => {
                 </div>
 
                 {/* Ara başlık */}
-                <div className="bg-gray-200 mt-12 p-6 rounded-lg shadow">
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">
+                <div className="bg-[#1c6071] mt-12 p-6 rounded-lg shadow">
+                    <h2 className="text-2xl font-bold mb-4 white">
                         Yazılım Geliştirme Eğitimleri
                     </h2>
-                    <p className="text-gray-800">
+                    <p className="text-white">
                         Modern yazılım geliştirme süreçleri ve teknolojilerinde eğitimler sunarak, ekiplerinizin yazılım projelerine katma değer katmasını hedefliyoruz. Programlarımız arasında öne çıkan konular: Frontend ve Backend Geliştirme, API Entegrasyon, Mobil Uygulama Geliştirme, Yapay Zeka ve Makine Öğrenimi, Blockchain Teknolojileri.
                     </p>
                 </div>
@@ -143,7 +143,7 @@ const EgitimDanismanligiPage: React.FC = () => {
                 </div>
 
                 {/* Başvuru Yapın */}
-                <div className="bg-gray-900 text-white text-center p-6 mt-12 rounded-lg">
+                <div className="bg-[#1c6071] text-white text-center p-6 mt-12 rounded-lg">
                     <h2 className="text-2xl font-bold mb-4">BAŞVURU YAPIN</h2>
                     <p className="mb-4">
                         Eğitim Danışmanlığına Başvurun. Eğitim danışmanlığı hizmetlerimiz hakkında daha fazla bilgi almak veya programımıza başvurmak için bizimle iletişime geçin.
@@ -158,4 +158,4 @@ const EgitimDanismanligiPage: React.FC = () => {
 };
 
 export default EgitimDanismanligiPage;
-x
+
