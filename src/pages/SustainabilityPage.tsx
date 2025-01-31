@@ -6,7 +6,7 @@ import React from "react";
 
 const SustainabilityPage: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col ">
       {/* <HeaderMenu /> */}
       <main className="flex-grow relative text-gray-800 py-16 px-8">
         {/* Background */}

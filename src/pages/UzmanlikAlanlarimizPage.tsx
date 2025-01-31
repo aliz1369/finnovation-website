@@ -2,7 +2,7 @@ import React from "react";
 
 const UzmanlikAlanlarimizPage: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-white p-8">
+    <div className="relative bg-white p-8">
       {}
       <div
         className="absolute top-0 left-0 w-full h-[500px]"

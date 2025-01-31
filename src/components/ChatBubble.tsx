@@ -20,7 +20,7 @@ const ChatBubble: React.FC = () => {
         >
             {}
             <h2 className="text-blue-600 text-base font-semibold mb-2">
-                Merhaba, size nasıl yardımcı olabilirim?
+                Merhaba, size nasıl yardımcı olabilirimm?
             </h2>
 
             {}
