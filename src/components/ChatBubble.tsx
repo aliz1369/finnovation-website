@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 
 const ChatBubble: React.FC = () => {
-    const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
-    return (
-        <div
-            className="
+  return (
+    <div
+      className="
         fixed
         top-1/2
         right-16
@@ -17,15 +17,15 @@ const ChatBubble: React.FC = () => {
         flex-col
         items-center
       "
-        >
-            {}
-            <h2 className="text-blue-600 text-base font-semibold mb-2">
-                Merhaba, size nasıl yardımcı olabilirim?
-            </h2>
+    >
+      {}
+      <h2 className="text-blue-600 text-base font-semibold mb-2">
+        Merhaba, size nasıl yardımcı olabilirimm?
+      </h2>
 
-            {}
-            <div
-                className="
+      {}
+      <div
+        className="
           relative
           w-[300px]
           bg-white
@@ -34,10 +34,10 @@ const ChatBubble: React.FC = () => {
           px-9
           py-1
         "
-            >
-                {}
-                <textarea
-                    className="
+      >
+        {}
+        <textarea
+          className="
             w-full
             bg-gray-100
             rounded-md
@@ -49,17 +49,17 @@ const ChatBubble: React.FC = () => {
             resize-none
             text-sm
           "
-                    rows={1}
-                    placeholder="..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                />
+          rows={1}
+          placeholder="..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
 
-                {}
-                <img
-                    src="/chatbot-icon.png"
-                    alt="Chatbot Icon"
-                    className="
+        {}
+        <img
+          src="/chatbot-icon.png"
+          alt="Chatbot Icon"
+          className="
             absolute
             w-16
             h-16
@@ -68,10 +68,10 @@ const ChatBubble: React.FC = () => {
             transform
             -translate-y-1/2
           "
-                />
-            </div>
-        </div>
-    );
+        />
+      </div>
+    </div>
+  );
 };
 
 export default ChatBubble;

@@ -12,9 +12,7 @@ const HeaderMenu: React.FC = () => {
   const toggleLanguage = () => {
     setLanguage(language === "tr" ? "en" : "tr");
   };
-  /*okay ı change it
-  wıwııwııwekwkewkjkjkj
-   */
+
   return (
     <header className="relative w-full bg-gradient-to-r from-blue-500 to-teal-500 text-white p-4">
       <nav className="max-w-7xl mx-auto flex justify-between items-center">
@@ -23,10 +21,8 @@ const HeaderMenu: React.FC = () => {
           <img
             src="/finnovation-logo.png"
             alt="Finnovation Logo"
-            className="h-11 w-auto"
-            onClick={() => {
-              navigate("/");
-            }}
+            className="h-11 w-auto cursor-pointer"
+            onClick={() => navigate("/")}
           />
         </div>
 
@@ -38,7 +34,6 @@ const HeaderMenu: React.FC = () => {
               {t.bizKimiz}
               <span className="ml-1 text-xs">▼</span>
             </span>
-            {}
             <div
               className="
                 absolute left-0 top-full
@@ -120,6 +115,22 @@ const HeaderMenu: React.FC = () => {
                 <Link
                   to="/surdurulebilirlik2"
                   className="py-2 hover:bg-gray-100 rounded whitespace-nowrap"
+                />
+                <Link
+                  to="/hakkimizda"
+                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.hakkimizda}
+                </Link>
+                <Link
+                  to="/degerlerimiz"
+                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                >
+                  {t.degerlerimiz}
+                </Link>
+                <Link
+                  to="/surdurulebilirlik"
+                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {t.surdurulebilirlik}
                 </Link>
@@ -147,12 +158,81 @@ const HeaderMenu: React.FC = () => {
           </li>
 
           {}
+          <li className="relative group"></li>
+
+          {}
+          <li>
+            <span className="text-gray-300">|</span>
+          </li>
+
+          {}
+          <li className="relative group">
+            <span className="hover:underline cursor-pointer inline-flex items-center">
+              {t.uzmanlikAlanlarimiz}
+              <span className="ml-1 text-xs">▼</span>
+            </span>
+            <div
+              className="
+                absolute left-0 top-full
+                hidden group-hover:block
+                bg-white text-black
+                z-50
+                pt-2
+                shadow-md
+              "
+            >
+              <Link
+                to="/uzmanlik-alanlarimiz"
+                className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+              >
+                {t.uzmanlikAlanlarimiz}
+              </Link>
+
+              {}
+              <Link
+                to="/danismanlik"
+                className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+              >
+                {t.danismanlik}
+              </Link>
+              <Link
+                to="/surec-izleme"
+                className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+              >
+                {t.surecIzleme}
+              </Link>
+              <Link
+                to="/proje-bazli-entegrasyon"
+                className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+              >
+                {t.projeBazliTeknoloji}
+              </Link>
+            </div>
+          </li>
+
+          {}
+          <li>
+            <span className="text-gray-300">|</span>
+          </li>
+
+          {}
+          <li>
+            <Link to="/finacademy" className="hover:underline">
+              {t.finAcademy}
+            </Link>
+          </li>
+
+          {}
+          <li>
+            <span className="text-gray-300">|</span>
+          </li>
+
+          {}
           <li className="relative group">
             <span className="hover:underline cursor-pointer inline-flex items-center">
               {t.projeler}
               <span className="ml-1 text-xs">▼</span>
             </span>
-            {}
             <div
               className="
                 absolute left-0 top-full
@@ -202,7 +282,6 @@ const HeaderMenu: React.FC = () => {
               {t.kariyer}
               <span className="ml-1 text-xs">▼</span>
             </span>
-            {}
             <div
               className="
                 absolute left-0 top-full
@@ -248,9 +327,9 @@ const HeaderMenu: React.FC = () => {
 
           {}
           <li>
-            <span className="hover:underline cursor-pointer">
+            <Link to="/bize-ulasin" className="hover:underline">
               {t.bizeUlasin}
-            </span>
+            </Link>
           </li>
         </ul>
 
@@ -265,7 +344,7 @@ const HeaderMenu: React.FC = () => {
           <span className="text-gray-300">|</span>
           <span
             role="img"
-            aria-label={language === "tr" ? "Türkçe" : "İngilizce"}
+            aria-label={language === "tr" ? "Türkçe" : "English"}
             className="text-red-600"
           >
             {language === "tr" ? "🇹🇷" : "🇺🇸"}
