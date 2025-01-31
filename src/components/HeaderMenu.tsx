@@ -115,22 +115,22 @@ const HeaderMenu: React.FC = () => {
                 <Link
                   to="/surdurulebilirlik2"
                   className="py-2 hover:bg-gray-100 rounded whitespace-nowrap"
-                />
-                <Link
-                  to="/hakkimizda"
-                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
-                >
-                  {t.hakkimizda}
-                </Link>
-                <Link
-                  to="/degerlerimiz"
-                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
-                >
-                  {t.degerlerimiz}
-                </Link>
-                <Link
-                  to="/surdurulebilirlik"
-                  className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                // />
+                // <Link
+                //   to="/hakkimizda"
+                //   className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                // >
+                //   {t.hakkimizda}
+                // </Link>
+                // <Link
+                //   to="/degerlerimiz"
+                //   className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
+                // >
+                //   {t.degerlerimiz}
+                // </Link>
+                // <Link
+                //   to="/surdurulebilirlik"
+                //   className="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap"
                 >
                   {t.surdurulebilirlik}
                 </Link>
@@ -151,7 +151,7 @@ const HeaderMenu: React.FC = () => {
               </Link>
             </span>
           </li>
-
+{/* 
           {}
           <li>
             <span className="text-gray-300">|</span>
@@ -220,7 +220,7 @@ const HeaderMenu: React.FC = () => {
             <Link to="/finacademy" className="hover:underline">
               {t.finAcademy}
             </Link>
-          </li>
+          </li> */}
 
           {}
           <li>
