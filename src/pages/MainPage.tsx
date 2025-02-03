@@ -2,7 +2,7 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import PartnersReferences from "../components/PartnersReferences";
-import ChatBubble from "../components/ChatBubble";
+// import ChatBubble from "../components/ChatBubble";
 
 const MainPage: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const MainPage: React.FC = () => {
             {/* Hero */}
             <HeroSection />
             <PartnersReferences />
-            <ChatBubble />
+            {/* <ChatBubble /> */}
         </div>
     );
 };
