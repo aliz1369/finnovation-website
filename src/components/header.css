@@ -1,0 +1,29 @@
+/* src/components/header.css */
+
+header {
+    background: linear-gradient(to right, #4299e1, #38b2ac);
+    color: white;
+}
+
+header img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: #cbd5e0;
+}

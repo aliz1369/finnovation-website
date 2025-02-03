@@ -1,5 +1,4 @@
 // src/pages/EgitimDanismanligiPage.tsx
-
 import React from "react";
 
 const EgitimDanismanligiPage: React.FC = () => {
@@ -12,15 +11,17 @@ const EgitimDanismanligiPage: React.FC = () => {
                     background: "linear-gradient(to right, #3b82f6, #14b8a6)",
                     clipPath: "polygon(0 0, 100% 0, 100% 40%, 0 100%)",
                 }}
-            ></div>
+            />
 
             <div className="relative z-10 max-w-6xl mx-auto pt-8 pb-16 px-4 md:px-6">
                 {/* Başlık */}
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mt-8 mb-2">
+                <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mt-8 mb-2">
                     Eğitim Danışmanlığı Hizmetlerimiz
                 </h1>
-                <p className="text-xl text-gray-700 mb-6">
-                    İleri Düzey Teknoloji Eğitimlerinden Stratejik İş Süreçleri Geliştirmeye Kadar, Ekiplerinizi Güçlendirecek Eğitim Programlarıyla Kurumsal Başarıyı Bir Adım Öteye Taşıyın
+                <p className="text-lg md:text-xl text-gray-700 mb-6">
+                    İleri Düzey Teknoloji Eğitimlerinden Stratejik İş Süreçleri Geliştirmeye Kadar,
+                    Ekiplerinizi Güçlendirecek Eğitim Programlarıyla Kurumsal Başarıyı Bir Adım
+                    Öteye Taşıyın
                 </p>
 
                 {/* İlk görsel + metin */}
@@ -37,7 +38,11 @@ const EgitimDanismanligiPage: React.FC = () => {
                     {/* Sağ Metin */}
                     <div className="flex flex-col justify-center">
                         <p className="text-gray-800">
-                            Finnovation Yazılım Çözümleri olarak, sektördeki en güncel teknolojileri ve en etkili eğitim metodolojilerini kullanarak, kurumlara ve bireylere özel eğitim danışmanlığı hizmetleri sunuyoruz. Eğitim programı, teknolojik becerilerinizi geliştirmek ve iş süreçlerinizin verimliliğini artırmak amacıyla tasarlanmıştır.
+                            Finnovation Yazılım Çözümleri olarak, sektördeki en güncel teknolojileri ve
+                            en etkili eğitim metodolojilerini kullanarak, kurumlara ve bireylere özel
+                            eğitim danışmanlığı hizmetleri sunuyoruz. Eğitim programı, teknolojik
+                            becerilerinizi geliştirmek ve iş süreçlerinizin verimliliğini artırmak
+                            amacıyla tasarlanmıştır.
                         </p>
                         <ul className="list-disc pl-5 mt-4 text-gray-800 space-y-2">
                             <li>İleri düzey yazılım geliştirme teknikleri</li>
@@ -54,23 +59,30 @@ const EgitimDanismanligiPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
                     <div className="order-2 md:order-1 flex flex-col justify-center">
                         <p className="text-gray-800">
-                            Finnovation, eğitim süreçlerini yalnızca teorik bilgilerle sınırlı tutmaz, aynı zamanda pratiğe dayalı, gerçek iş dünyası senaryolarıyla zenginleştirir. Eğitim metodolojimiz aşağıdaki adımlarla ilerler:
+                            Finnovation, eğitim süreçlerini yalnızca teorik bilgilerle sınırlı tutmaz,
+                            aynı zamanda pratiğe dayalı, gerçek iş dünyası senaryolarıyla
+                            zenginleştirir. Eğitim metodolojimiz aşağıdaki adımlarla ilerler:
                         </p>
                         <ul className="list-disc pl-5 mt-4 text-gray-800 space-y-2">
                             <li>
-                                <strong>İhtiyaç Analizi:</strong> Eğitim ihtiyaçlarınızı anlamak için danışmanlarımız kapsamlı bir ön görüşme yapar.
+                                <strong>İhtiyaç Analizi:</strong> Eğitim ihtiyaçlarınızı anlamak için
+                                danışmanlarımız kapsamlı bir ön görüşme yapar.
                             </li>
                             <li>
-                                <strong>Özel Eğitim Programı Hazırlama:</strong> Kurumunuza özel, sektöre uygun eğitim programlarını hazırlarız.
+                                <strong>Özel Eğitim Programı Hazırlama:</strong> Kurumunuza özel, sektöre
+                                uygun eğitim programlarını hazırlarız.
                             </li>
                             <li>
-                                <strong>Eğitim Süreci:</strong> Eğitim sürecinde, katılımcılar hem online hem de sınıf içi uygulamalı teknikler öğrenir.
+                                <strong>Eğitim Süreci:</strong> Eğitim sürecinde, katılımcılar hem online
+                                hem de sınıf içi uygulamalı teknikler öğrenir.
                             </li>
                             <li>
-                                <strong>Değerlendirme ve Geri Bildirim:</strong> Eğitim sonunda katılımcılara değerlendirmeler yapılır, gelişim alanları tespit edilir.
+                                <strong>Değerlendirme ve Geri Bildirim:</strong> Eğitim sonunda
+                                katılımcılara değerlendirmeler yapılır, gelişim alanları tespit edilir.
                             </li>
                             <li>
-                                <strong>Sürekli Destek:</strong> Eğitim sonrası destek ve kaynaklar sunarak, öğrenilenleri iş süreçlerine entegre etmenize yardımcı oluyoruz.
+                                <strong>Sürekli Destek:</strong> Eğitim sonrası destek ve kaynaklar
+                                sunarak, öğrenilenleri iş süreçlerine entegre etmenize yardımcı oluyoruz.
                             </li>
                         </ul>
                     </div>
@@ -86,11 +98,15 @@ const EgitimDanismanligiPage: React.FC = () => {
 
                 {/* Ara başlık */}
                 <div className="bg-[#1c6071] mt-12 p-6 rounded-lg shadow">
-                    <h2 className="text-2xl font-bold mb-4 white">
+                    <h2 className="text-2xl font-bold mb-4 text-white">
                         Yazılım Geliştirme Eğitimleri
                     </h2>
                     <p className="text-white">
-                        Modern yazılım geliştirme süreçleri ve teknolojilerinde eğitimler sunarak, ekiplerinizin yazılım projelerine katma değer katmasını hedefliyoruz. Programlarımız arasında öne çıkan konular: Frontend ve Backend Geliştirme, API Entegrasyon, Mobil Uygulama Geliştirme, Yapay Zeka ve Makine Öğrenimi, Blockchain Teknolojileri.
+                        Modern yazılım geliştirme süreçleri ve teknolojilerinde eğitimler sunarak,
+                        ekiplerinizin yazılım projelerine katma değer katmasını hedefliyoruz.
+                        Programlarımız arasında öne çıkan konular: Frontend ve Backend Geliştirme, API
+                        Entegrasyon, Mobil Uygulama Geliştirme, Yapay Zeka ve Makine Öğrenimi,
+                        Blockchain Teknolojileri.
                     </p>
                 </div>
 
@@ -103,16 +119,20 @@ const EgitimDanismanligiPage: React.FC = () => {
                         </h3>
                         <ul className="list-disc pl-5 text-gray-800 space-y-2">
                             <li>
-                                <strong>Tecrübeli Eğitimci Kadrosu:</strong> Alanında uzman, tecrübeli eğitmenlerle çalışıyoruz.
+                                <strong>Tecrübeli Eğitimci Kadrosu:</strong> Alanında uzman, tecrübeli
+                                eğitmenlerle çalışıyoruz.
                             </li>
                             <li>
-                                <strong>Özelleştirilmiş Eğitim Programları:</strong> Sizin ihtiyaçlarınıza göre özelleştirilmiş eğitim çözümleri sunuyoruz.
+                                <strong>Özelleştirilmiş Eğitim Programları:</strong> Sizin ihtiyaçlarınıza
+                                göre özelleştirilmiş eğitim çözümleri sunuyoruz.
                             </li>
                             <li>
-                                <strong>Esnek Eğitim Seçenekleri:</strong> Online, yüz yüze ve hibrit eğitim seçenekleriyle geniş bir esneklik sağlıyoruz.
+                                <strong>Esnek Eğitim Seçenekleri:</strong> Online, yüz yüze ve hibrit
+                                eğitim seçenekleriyle geniş bir esneklik sağlıyoruz.
                             </li>
                             <li>
-                                <strong>İleri Düzey Teknoloji Kullanımı:</strong> Eğitimlerde en güncel yazılım ve araçları kullanarak pratik deneyim kazandırıyoruz.
+                                <strong>İleri Düzey Teknoloji Kullanımı:</strong> Eğitimlerde en güncel
+                                yazılım ve araçları kullanarak pratik deneyim kazandırıyoruz.
                             </li>
                         </ul>
                     </div>
@@ -127,16 +147,20 @@ const EgitimDanismanligiPage: React.FC = () => {
                         </p>
                         <ul className="list-disc pl-5 text-gray-800 space-y-2">
                             <li>
-                                <strong>İhtiyaç Analizi:</strong> Eğitim ihtiyaçlarınızı belirlemek için danışmanlarımızla görüşme yapıyoruz.
+                                <strong>İhtiyaç Analizi:</strong> Eğitim ihtiyaçlarınızı belirlemek için
+                                danışmanlarımızla görüşme yapıyoruz.
                             </li>
                             <li>
-                                <strong>Özel Eğitim Programı:</strong> İhtiyaçlarınıza göre kişiselleştirilmiş eğitim programınızı sunuyoruz.
+                                <strong>Özel Eğitim Programı:</strong> İhtiyaçlarınıza göre
+                                kişiselleştirilmiş eğitim programınızı sunuyoruz.
                             </li>
                             <li>
-                                <strong>Eğitim Uygulaması:</strong> Eğitim sürecine başlıyor, katılımcılarınıza en verimli içerikleri ve teknikleri sağlıyoruz.
+                                <strong>Eğitim Uygulaması:</strong> Eğitim sürecine başlıyor,
+                                katılımcılarınıza en verimli içerikleri ve teknikleri sağlıyoruz.
                             </li>
                             <li>
-                                <strong>Değerlendirme ve Geri Bildirim:</strong> Eğitim sonrasında geri bildirim alıyor ve gelişim için yönlendirme sağlıyoruz.
+                                <strong>Değerlendirme ve Geri Bildirim:</strong> Eğitim sonrasında geri
+                                bildirim alıyor ve gelişim için yönlendirme sağlıyoruz.
                             </li>
                         </ul>
                     </div>
@@ -146,7 +170,8 @@ const EgitimDanismanligiPage: React.FC = () => {
                 <div className="bg-[#1c6071] text-white text-center p-6 mt-12 rounded-lg">
                     <h2 className="text-2xl font-bold mb-4">BAŞVURU YAPIN</h2>
                     <p className="mb-4">
-                        Eğitim Danışmanlığına Başvurun. Eğitim danışmanlığı hizmetlerimiz hakkında daha fazla bilgi almak veya programımıza başvurmak için bizimle iletişime geçin.
+                        Eğitim danışmanlığı hizmetlerimiz hakkında daha fazla bilgi almak veya
+                        programımıza başvurmak için bizimle iletişime geçin.
                     </p>
                     <button className="bg-white text-gray-900 px-6 py-2 rounded hover:bg-gray-200 transition">
                         İletişim Formu
@@ -158,4 +183,3 @@ const EgitimDanismanligiPage: React.FC = () => {
 };
 
 export default EgitimDanismanligiPage;
-

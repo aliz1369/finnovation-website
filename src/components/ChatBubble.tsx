@@ -1,43 +1,46 @@
 // src/components/ChatBubble.tsx
-import React, { useState } from "react";
+//import React, { useState } from "react";
 
-const ChatBubble: React.FC = () => {
-  const [message, setMessage] = useState("");
+//const ChatBubble: React.FC = () => {
+// const [message, setMessage] = useState("");
 
-  return (
-    <div
-      className="
-        fixed
-        top-1/2
-        right-16
-        transform
-        -translate-y-1/2
+// return (
+// <div
+//  className="
+// fixed
+//bottom-4         /* Mobilde alttan 1rem yukarıda */
+// right-4          /* Mobilde sağdan 1rem içeride */
+//md:bottom-8      /* Orta ve büyük ekranlarda biraz daha yukarı */
+// md:right-8
+/*
         z-50
         flex
         flex-col
         items-center
+        w-64             /* Mobilde maksimum 16rem genişlik */
+/*
+        md:w-80          /* Orta/büyük ekranlarda 20rem genişlik */
+/*
       "
-    >
-      {}
-      <h2 className="text-blue-600 text-base font-semibold mb-2">
-        Merhaba, size nasıl yardımcı olabilirimm?
-      </h2>
-
-      {}
-      <div
-        className="
+      >
+        <div
+            className="
           relative
-          w-[300px]
           bg-white
           shadow-lg
-          rounded-[6rem]
-          px-9
-          py-1
+          rounded-3xl
+          p-3
+          w-full
         "
-      >
-        {}
-        <textarea
-          className="
+        >
+          {/* Başlık (mobilde biraz küçük, md sonrası normal) *//*}
+/*
+          <h2 className="text-blue-600 text-sm md:text-base font-semibold mb-2 text-center">
+            Merhaba, size nasıl yardımcı olabilirim?
+          </h2>
+
+          <textarea
+              className="
             w-full
             bg-gray-100
             rounded-md
@@ -47,31 +50,32 @@ const ChatBubble: React.FC = () => {
             text-gray-700
             focus:outline-none
             resize-none
-            text-sm
+            text-xs
+            md:text-sm
           "
-          rows={1}
-          placeholder="..."
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+              rows={1}
+              placeholder="..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+          />
 
-        {}
-        <img
-          src="/chatbot-icon.png"
-          alt="Chatbot Icon"
-          className="
+          {/* Chatbot Icon *//*}
+          <img
+              src="/chatbot-icon.png"
+              alt="Chatbot Icon"
+              className="
             absolute
-            w-16
-            h-16
-            top-1/2
-            right-[-64px]
-            transform
-            -translate-y-1/2
+            w-10
+            h-10
+            md:w-12
+            md:h-12
+            top-6
+            right-0.5
           "
-        />
-      </div>
-    </div>
-  );
-};
+          />
+//      </div>
+//    </div>
+// );
+//};
 
-export default ChatBubble;
+//export default ChatBubble;

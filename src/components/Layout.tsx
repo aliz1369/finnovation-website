@@ -1,18 +1,19 @@
+// src/components/Layout.tsx
 import React from "react";
-import Header from "./HeaderMenu"; // Header bileşeninin yolunu kontrol edin
-import Footer from "./Footer/Footer.tsx"; // Footer bileşenini ekliyoruz
+import Header from "./HeaderMenu";
+import Footer from "./Footer/Footer.tsx";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div>
-      <Header />
-      <main style={{ paddingBottom: "60px" }}>
-        {/* Dinamik içerik buraya gelir */}
-        {children}
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="flex flex-col min-h-screen">
+            <Header />
+            {/* Ana içerik */}
+            <main className="flex-grow" style={{ paddingBottom: "60px" }}>
+                {children}
+            </main>
+            <Footer />
+        </div>
+    );
 };
 
 export default Layout;
