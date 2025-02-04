@@ -2,29 +2,30 @@
 import React from "react";
 
 const HazinePage: React.FC = () => {
-      return (
-        <div className="relative bg-white p-8">
-            {}
+    return (
+        <div className="relative bg-white p-4 md:p-8">
+            {/* Üst Degrade Arkaplan */}
             <div
-                className="absolute top-0 left-0 w-full h-[700px]"
+                className="absolute top-0 left-0 w-full h-[300px] md:h-[700px]"
                 style={{
                     background: "linear-gradient(to right, #3b82f6, #14b8a6)",
                     clipPath: "polygon(0 0, 100% 0, 100% 30%, 0 100%)",
                 }}
-            ></div>
+            />
 
-            {}
-            <div className="relative z-10 max-w-8xl mx-auto pt-[50px]">
-                <h1 className="text-4xl font-bold text-gray-800 mb-6">Hazine Yönetimi</h1>
+            <div className="relative z-10 max-w-6xl lg:max-w-7xl mx-auto pt-12 md:pt-[50px]">
+                <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+                    Hazine Yönetimi
+                </h1>
 
-                <p className="text-1xl text-gray-800 mb-6">
+                <p className="text-base md:text-lg text-gray-800 mb-4 md:mb-6">
                     Hazine yönetimi, dinamik finansal piyasalarda kurumların finansal sağlığını ve
                     sürdürülebilirliğini sağlamada kritik bir rol oynamaktadır. Hazine yönetimi
                     çözümlerimiz, likidite yönetiminden risk kontrolüne kadar geniş bir hizmet
                     yelpazesi sunarak finansal operasyonlarınızı optimize etmenize yardımcı olur.
                 </p>
 
-                <p className="text-gray-800 mb-6">
+                <p className="text-base md:text-lg text-gray-800 mb-4 md:mb-6">
                     Çözümlerimiz, geleneksel ve yapılandırılmış hazine ürünleri için fiyatlandırma,
                     işlem kaydı ve işlem yaşam döngüsü yönetimi gibi hizmetleri kapsarken,
                     kurumunuzun özel finansal ihtiyaçlarına uyum sağlayacak şekilde tasarlanmıştır.
@@ -32,10 +33,10 @@ const HazinePage: React.FC = () => {
                     verimli ve etkili hale getirmenizi destekleriz.
                 </p>
 
-                <p className="text-2xl text-gray-800 font-semibold mb-6">
+                <p className="text-lg md:text-xl text-gray-800 font-semibold mb-4 md:mb-6">
                     Bu kapsamda sunduğumuz hizmetler:
                 </p>
-                <ul className="list-disc pl-6 text-gray-800 mb-6 space-y-2">
+                <ul className="list-disc pl-4 md:pl-6 text-sm md:text-base text-gray-800 mb-4 md:mb-6 space-y-2">
                     <li>
                         <strong>Hazine yönetim stratejisinin oluşturulması:</strong> Kurumunuzun
                         hedefleri doğrultusunda uzun vadeli stratejilerin tasarlanması.
@@ -61,7 +62,7 @@ const HazinePage: React.FC = () => {
                     </li>
                 </ul>
 
-                <p className="text-gray-800">
+                <p className="text-base md:text-lg text-gray-800">
                     Hedefimiz, hem finansal performansınızı artırmak hem de riskleri daha iyi
                     yöneterek sürdürülebilir büyümeyi sağlamaktır. Hazine yönetimi çözümlerimiz,
                     kurumunuzun rekabet gücünü artırırken, finansal süreçlerde şeffaflık ve
