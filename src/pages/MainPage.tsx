@@ -55,7 +55,7 @@ const MainPage: React.FC = () => {
                 </div>
               ))}
             </div>
-            <HeroSection />
+            {/* <HeroSection /> */}
           </div>
         ))}
         <PartnersReferences />
