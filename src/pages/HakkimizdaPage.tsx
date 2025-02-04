@@ -12,7 +12,7 @@ const HakkimizdaPage: React.FC = () => {
           clipPath: "polygon(0 0, 100% 0, 100% 60%, 0 100%)",
         }}
       ></div>
-
+//hshhs
       {}
       <div className="relative z-10">
         {}
