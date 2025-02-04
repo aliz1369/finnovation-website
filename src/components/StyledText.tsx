@@ -8,7 +8,7 @@ interface StyledTextProps {
 const StyledText: React.FC<StyledTextProps> = ({ content, className = "" }) => {
   return (
     <div
-      className={`${className}`}
+      className={`prose max-w-full ${className}`}
       dangerouslySetInnerHTML={{ __html: content ?? "" }}
     />
   );

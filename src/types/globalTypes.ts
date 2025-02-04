@@ -1,6 +1,6 @@
 export interface Component {
   id: number;
-  component_type: "title" | "text" | "image"; // Add other possible component types if needed
+  component_type: "title" | "text" | "image"; 
   content_value: string | null;
   image_large: string | null;
   image_medium: string | null;
@@ -18,7 +18,7 @@ export interface Page {
   id: number;
   title: string;
   slug: string;
-  status: "draft" | "published"; // Ensuring valid status values
+  status: "draft" | "published"; 
   sections: Section[];
   meta_title: string | null;
   meta_description: string | null;
