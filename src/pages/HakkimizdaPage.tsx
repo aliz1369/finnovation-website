@@ -12,9 +12,9 @@ const HakkimizdaPage: React.FC = () => {
           background: "linear-gradient(to right, #3b82f6, #14b8a6)",
           clipPath: "polygon(0 0, 100% 0, 100% 60%, 0 100%)",
         }}
-      />
-
-      {/* İçerik */}
+      ></div>
+//hshhs
+      {}
       <div className="relative z-10">
         {/* İlk Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-center">
