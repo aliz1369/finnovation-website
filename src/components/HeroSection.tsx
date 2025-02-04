@@ -2,15 +2,10 @@
 import React from "react";
 import { Component } from "../types/globalTypes";
 import StyledText from "./StyledText";
-// import { LanguageContext } from "../contexts/LanguageContext";
-// import translations from "../translations";
 interface HeroProps {
   content: Component[] | null;
 }
 const HeroSection: React.FC<HeroProps> = ({ content }) => {
-  // const { language } = useContext(LanguageContext);
-  // const t = translations[language];
-
   return (
     <section className="relative w-full h-auto md:h-[57vh] overflow-hidden">
       {/* Degrade Arkaplan */}
