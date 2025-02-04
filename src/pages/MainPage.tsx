@@ -1,6 +1,6 @@
 // src/pages/MainPage.tsx
 import React, { useEffect, useState } from "react";
-import HeroSection from "../components/HeroSection";
+// import HeroSection from "../components/HeroSection";
 import PartnersReferences from "../components/PartnersReferences";
 import { fetchHomePage } from "../api/pageApi";
 import { Page } from "../types/globalTypes";
