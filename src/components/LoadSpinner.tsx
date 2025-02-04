@@ -1,5 +1,3 @@
-import React from "react";
-
 const LoadingSpinner = ({ visible }: { visible: boolean }) => {
   if (!visible) return null;
 
