@@ -25,7 +25,7 @@ const FinAcademyPage: React.FC = () => {
     };
     data();
   }, []);
-  
+
   return (
     <>
       <LoadingSpinner visible={loading} />
