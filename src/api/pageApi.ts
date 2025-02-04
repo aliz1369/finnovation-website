@@ -34,3 +34,8 @@ export const fetchProjeBazliPage = async () => {
   const response = await apiClient.get("/pages/proje-bazli-entegrasyon/");
   return response.data;
 };
+
+export const fetchFinAcademyPage = async () => {
+  const response = await apiClient.get("/pages/finacademy/");
+  return response.data;
+};
