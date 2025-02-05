@@ -31,7 +31,7 @@ const MainPage: React.FC = () => {
   return (
     <>
       <LoadingSpinner visible={loading} />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col">
         {data?.sections.map((section) => (
           <div key={section.id}>
             {section.position === 1 ? (
