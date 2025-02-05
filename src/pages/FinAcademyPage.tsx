@@ -49,8 +49,8 @@ const FinAcademyPage: React.FC = () => {
                         content={component.content_value}
                         className={`${
                           component.component_type === "title"
-                            ? "text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8"
-                            : "text-base md:text-lg text-center mb-8 md:mb-12"
+                            ? "text-2xl md:text-4xl font-bold mb-6 md:mb-8"
+                            : "text-base md:text-lg mb-8 md:mb-12"
                         }`}
                       />
                     ))
@@ -60,23 +60,60 @@ const FinAcademyPage: React.FC = () => {
                         content={component.content_value}
                         className={`${
                           component.component_type === "title"
-                            ? "text-xl md:text-3xl font-semibold text-center mb-4"
-                            : "list-disc list-inside text-center mb-8 md:mb-12 space-y-1"
+                            ? "text-xl md:text-3xl font-semibold mb-4"
+                            : "list-disc list-inside mb-8 md:mb-12 space-y-1"
                         }`}
                       />
+                    ))
+                  : section.position === 3
+                  ? section.components.map((component) => (
+                      <>
+                        <StyledText
+                          content={component.content_value}
+                          className={`${
+                            component.component_type === "title"
+                              ? "text-xl md:text-3xl font-semibold text-center mb-4"
+                              : "list-disc list-inside text-center mb-8 md:mb-12 space-y-1"
+                          }`}
+                        />
+
+                        <hr className="border-t-2 border-gray-700 w-4/5 mx-auto mb-8 md:mb-12" />
+                      </>
                     ))
                   : ""}
               </>
             ))}
 
-            <h2 className="text-xl md:text-3xl font-semibold text-center mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+              {data?.sections.some((section) => section.position > 3) && (
+                <>
+                  {data.sections
+                    .filter((section) => section.position > 3)
+                    .map((section) => (
+                      <div>
+                        {section.components.map((component) => (
+                          <StyledText
+                            content={component.content_value}
+                            className={`${
+                              component.component_type === "title"
+                                ? "text-lg md:text-2xl font-bold mb-2 md:mb-3"
+                                : "list-disc list-inside mb-6 md:mb-10 space-y-1"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    ))}
+                </>
+              )}
+            </div>
+            {/* <h2 className="text-xl md:text-3xl font-semibold text-center mb-2">
               Eğitim Programlarımız
             </h2>
-            <hr className="border-t-2 border-gray-700 w-4/5 mx-auto mb-8 md:mb-12" />
+            <hr className="border-t-2 border-gray-700 w-4/5 mx-auto mb-8 md:mb-12" /> */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-              {/* Sol Sütun */}
-              <div>
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12"> */}
+            {/* Sol Sütun */}
+            {/* <div>
                 <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3">
                   Fintech Giriş Seviyesi
                 </h3>
@@ -103,10 +140,10 @@ const FinAcademyPage: React.FC = () => {
                   <li>Yüz Yüze Seminerler: Canlı etkileşim fırsatı.</li>
                   <li>Atölye Çalışmaları: Pratik deneyim kazanma odaklı.</li>
                 </ul>
-              </div>
+              </div> */}
 
-              {/* Sağ Sütun */}
-              <div>
+            {/* Sağ Sütun */}
+            {/* <div>
                 <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3">
                   Dijital Ödemeler
                 </h3>
@@ -133,10 +170,10 @@ const FinAcademyPage: React.FC = () => {
                   <li>Yatırımcılarla etkili iletişim.</li>
                 </ul>
               </div>
-            </div>
+            </div> */}
 
             {/* İletişim */}
-            <div className="text-center mt-8 md:mt-12">
+            {/* <div className="text-center mt-8 md:mt-12">
               <h3 className="text-lg md:text-xl font-semibold mb-4">
                 Bize Ulaşın
               </h3>
@@ -146,7 +183,7 @@ const FinAcademyPage: React.FC = () => {
               >
                 edu@finnovation.com.tr
               </a>
-            </div>
+            </div> */}
           </div>
         </main>
       </div>
