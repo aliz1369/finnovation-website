@@ -102,11 +102,13 @@ const ValuesPage: React.FC = () => {
                       {imageComponents.length > 0 && (
                         <div>
                           {imageComponents.map((component) => (
-                            <div key={component.id}>
+                            <div
+                              key={component.id}
+                              className="w-10 h-20 md:w-12 md:h-12"
+                            >
                               <img
                                 src={component.image_large ?? undefined}
                                 alt="Component Image"
-                                className="w-full h-auto rounded shadow"
                               />
                             </div>
                           ))}

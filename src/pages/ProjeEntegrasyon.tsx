@@ -114,12 +114,13 @@ const ProjeEntegrasyon: React.FC = () => {
                 </div>
               ) : (
                 <div className="w-full md:w-1/3 flex justify-center items-center">
-                  //Todo Add img
-                  <img
-                    src="/entegrasyon.png"
-                    alt="Sistem Entegrasyonu"
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
+                  {section.components.map((component) => (
+                    <img
+                      src={component.image_large ?? undefined}
+                      alt="Sistem Entegrasyonu"
+                      className="w-full h-auto rounded-lg shadow-lg"
+                    />
+                  ))}
                 </div>
               )}
             </>
