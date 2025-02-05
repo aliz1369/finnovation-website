@@ -1,5 +1,5 @@
 // src/pages/MainPage.tsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HeroSection from "../components/HeroSection";
 import { fetchHomePage } from "../api/pageApi";
 import { Page } from "../types/globalTypes";
@@ -8,8 +8,8 @@ import ImageSlider from "../components/ImageSlider";
 // import ChatBubble from "../components/ChatBubble";
 
 const MainPage: React.FC = () => {
-  const [data, setData] = useState<Page | null>(null);
-  const [loading, setLoading] = useState(false);
+  // const [data, setData] = useState<Page | null>(null);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const data = async () => {
@@ -30,7 +30,7 @@ const MainPage: React.FC = () => {
 
   return (
     <>
-      <LoadingSpinner visible={loading} />
+      {/* <LoadingSpinner visible={loading} /> */}
       <div className="flex flex-col min-h-screen">
         {data?.sections.map((section) => (
           <div key={section.id}>
