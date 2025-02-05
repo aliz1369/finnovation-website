@@ -23,11 +23,13 @@ const HeroSection: React.FC<HeroProps> = ({ content }) => {
           content.map((data) =>
             data.component_type === "title" ? (
               <StyledText
+                key={data.id}
                 content={data.content_value}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight"
               />
             ) : (
               <StyledText
+                key={data.id}
                 content={data.content_value}
                 className="text-lg sm:text-xl md:text-2xl mb-4"
               />
