@@ -3,29 +3,28 @@ import React from "react";
 
 const RiskYonetimiPage: React.FC = () => {
     return (
-        <div className="relative bg-white p-4 md:p-8">
-            {/* Üst Degrade */}
+        <div className="relative bg-white p-8">
+            {}
             <div
-                className="absolute top-0 left-0 w-full h-[300px] md:h-[700px]"
+                className="absolute top-0 left-0 w-full h-[700px]"
                 style={{
                     background: "linear-gradient(to right, #3b82f6, #14b8a6)",
                     clipPath: "polygon(0 0, 100% 0, 100% 30%, 0 100%)",
                 }}
-            />
+            ></div>
 
-            <div className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto pt-12 md:pt-[50px]">
-                <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
-                    Risk Yönetimi
-                </h1>
+            {}
+            <div className="relative z-10 max-w-8xl mx-auto pt-[50px]">
+                <h1 className="text-4xl font-bold text-gray-800 mb-6">Risk Yönetimi</h1>
 
-                <p className="text-base md:text-lg text-gray-800 mb-4 md:mb-6">
+                <p className="text-1xl text-gray-800 mb-6">
                     Kurumsal hayatta risk yönetimi, belirsizliklerin ve potansiyel tehditlerin etkin
                     bir şekilde ele alınmasını sağlayarak, kurumların sürdürülebilirliğini ve
                     başarısını güvence altına alır. Etkin bir risk yönetimi için aşağıdaki unsurlar
                     kritik öneme sahiptir:
                 </p>
 
-                <ul className="list-disc pl-4 md:pl-6 text-gray-800 text-sm md:text-base mb-4 md:mb-6 space-y-2">
+                <ul className="list-disc pl-6 text-gray-800 mb-6 space-y-2">
                     <li>
                         <strong>Uygun seviyede risk kararları alabilmek:</strong> Kurumlar, aldıkları
                         kararların potansiyel başarı ve başarısızlıklarını, maliyet ve getirilerini,
@@ -47,9 +46,7 @@ const RiskYonetimiPage: React.FC = () => {
                         ideal seviyede tutmasına yardımcı olur.
                     </li>
                     <li>
-                        <strong>
-                            Risk yönetimi faaliyetlerinin özümsenebilir ve sürdürülebilir olması:
-                        </strong>{" "}
+                        <strong>Risk yönetimi faaliyetlerinin özümsenebilir ve sürdürülebilir olması:</strong>{" "}
                         Kurumsal risk yönetimi çerçevesinin uygulanabilirliği, risk yönetimi
                         faaliyetlerinin benimsenmesi ve sürdürülebilirliği açısından önemli
                         faktörlerden biridir. Bu, şirketin riske karşı dayanıklılığını artırır ve
@@ -57,7 +54,7 @@ const RiskYonetimiPage: React.FC = () => {
                     </li>
                 </ul>
 
-                <p className="text-base md:text-lg text-gray-800">
+                <p className="text-gray-800">
                     Bu unsurların entegrasyonu, kurumların risklere karşı daha dirençli olmasını ve
                     stratejik hedeflerine ulaşmasını destekler. Şirketinizin risklere karşı daha
                     dayanıklı ve sürdürülebilir bir yapıya kavuşması için ekibimizle kapsamlı risk
