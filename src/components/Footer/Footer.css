@@ -61,7 +61,7 @@
   transform: scale(1.2);
 }
 
-/* Mobil (max-width: 767px) için Media Query */
+/* Mobil (max-width: 767px) */
 @media (max-width: 767px) {
   .footer-top {
     flex-direction: column;
@@ -93,7 +93,7 @@
   }
 }
 
-/* iPad (min-width: 768px) ve (max-width: 1023px) için Media Query */
+/* iPad (min-width: 768px) and (max-width: 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .footer-top {
     flex-direction: row;

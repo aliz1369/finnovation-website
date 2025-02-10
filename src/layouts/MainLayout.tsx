@@ -1,19 +1,22 @@
-// src/layouts/MainLayout.tsx
 import React from "react";
 import HeaderMenu from "../components/HeaderMenu";
-import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 
-const MainLayout: React.FC = () => {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <HeaderMenu />
-            <main className="flex-grow bg-gray-100">
-                <Outlet />
-            </main>
-            <Footer />
-        </div>
-    );
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  return (
+    <div className="flex flex-col">
+      <HeaderMenu />
+      {/* Header sabit konumda olduğu için içerik üstten biraz boşluk bırakıyor */}
+      <main className="flex-grow pt-[80px]">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default MainLayout;

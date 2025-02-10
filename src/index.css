@@ -1,16 +1,75 @@
-/* src/index.css */
+/* Tailwind Tabanlı Temel Ayarlar */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
+/* Ek CSS Tanımlamaları */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 50px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Background */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, #3277BC, #4BA6DD);
+}
+/* Header Navigation */
+header nav a {
+  color: #555;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #007bff;
+}
+
+/* Icon Styling */
+img {
+  transition: all 0.2s ease;
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+/* Language Switch */
+.language-switch {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-switch:hover {
+  background-color: #007bff;
+  color: white;
+}
+

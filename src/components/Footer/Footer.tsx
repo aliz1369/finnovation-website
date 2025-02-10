@@ -1,70 +1,39 @@
-// src/components/Footer/Footer.tsx
-
 import React from "react";
+import "../Footer/Footer.css";
+import { Link } from "react-router-dom"; 
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-teal-500 text-white">
-            {/* İçerikleri ortalamak için container ve temel padding değerleri ekliyoruz */}
-            <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center md:items-start justify-between">
+        <footer className="text-white py-10">
+            <div className="container mx-auto">
+                {}
+                <nav className="flex items-center justify-center space-x-6 text-black font-medium">
+                    <Link to="/about" className="hover:text-[#3277BC]">
+                        Biz Kimiz?
+                    </Link>
+                    <span className="font-bold">•</span>
+                    <Link to="/services" className="hover:text-[#3277BC]">
+                        Uzmanlık Alanlarımız
+                    </Link>
+                    <span className="font-bold">•</span>
+                    <Link to="/academy" className="hover:text-[#3277BC]">
+                        FinAcademy
+                    </Link>
+                    <span className="font-bold">•</span>
+                    <Link to="/products" className="hover:text-[#3277BC]">
+                        Ürünler
+                    </Link>
+                    <span className="font-bold">•</span>
+                    <Link to="/projects" className="hover:text-[#3277BC]">
+                        Projeler
+                    </Link>
+                    <span className="font-bold">•</span>
+                    <Link to="/careers" className="hover:text-[#3277BC]">
+                        Kariyer
+                    </Link>
+                </nav>
 
-                {/* Logo Bölümü */}
-                <div className="mb-4 md:mb-0">
-                    <img
-                        src="/finnovation-logo.png"
-                        alt="Finnovation Logo"
-                        className="h-11"
-                    />
-                </div>
 
-                {/* Adres Bloğu (orta kısım) */}
-                <div className="text-center md:text-left mb-4 md:mb-0">
-                    <p>Barış Mahallesi, Koşuyolu Caddesi Kuğuçka Merkezi No:30 Gebze / Kocaeli</p>
-                    <p>info@finnovation.com.tr</p>
-                    <p className="mt-2">
-                        © 2025 Finnovation Website. Tüm hakları saklıdır.
-                    </p>
-                </div>
-
-                {/* Sosyal İkonlar (sağ kısım) */}
-                <div className="flex space-x-4">
-                    <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center"
-                    >
-                        <img src="/linkedin-icon.png" alt="LinkedIn" className="h-6" />
-                        <span className="text-xs">LinkedIn</span>
-                    </a>
-                    <a
-                        href="https://github.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center"
-                    >
-                        <img src="/github-icon.png" alt="GitHub" className="h-6" />
-                        <span className="text-xs">GitHub</span>
-                    </a>
-                    <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center"
-                    >
-                        <img src="/twitter-icon.png" alt="Twitter" className="h-6" />
-                        <span className="text-xs">Twitter</span>
-                    </a>
-                    <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center"
-                    >
-                        <img src="/instagram-icon.png" alt="Instagram" className="h-6" />
-                        <span className="text-xs">Instagram</span>
-                    </a>
-                </div>
 
             </div>
         </footer>
