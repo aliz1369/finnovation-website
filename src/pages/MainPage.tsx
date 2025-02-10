@@ -4,13 +4,13 @@ import MainLayout from "../layouts/MainLayout";
 const MainPage: React.FC = () => {
   // Logoları tutan dizi
   const [logos, setLogos] = useState<string[]>([
-    "/public/img1.png", // enpara
-    "/public/img2.png", // netcad
-    "/public/img3.png", // QNB Finansbank
-    "/public/img4.png", // Workup
-    "/public/img5.png", // Fibabanka
-    "/public/img6.png", // Finberg
-    "/public/img7.png", // Türkiye İş Bankası
+    "/img1.png", // enpara
+    "/img2.png", // netcad
+    "/img3.png", // QNB Finansbank
+    "/img4.png", // Workup
+    "/img5.png", // Fibabanka
+    "/img6.png", // Finberg
+    "/img7.png", // Türkiye İş Bankası
   ]);
 
   // 2 saniyede bir dizinin son elemanını başa alacak şekilde döngü
@@ -84,7 +84,7 @@ const MainPage: React.FC = () => {
                 >
                   Book a Demo
                   <img
-                    src="/public/bd.png"
+                    src="/bd.png"
                     alt="Calendar"
                     className="h-5 w-5 ml-2"
                   />
