@@ -33,7 +33,7 @@ const MainPage: React.FC = () => {
         relative sayesinde içindeki absolute konumlandırmaları referans alır.
         overflow-hidden ile taşmalar gizlenir.
       */}
-      <div className="h-screen pt-[80px] relative bg-white overflow-hidden top-1 left-0 right-0 ">
+      <div className="h-[80vh] pt-[80px] relative bg-white overflow-hidden top-1 left-0 right-0 ">
         {/* Hero Bölümü */}
         {/*
           pb-20 (veya ihtiyaca göre uygun bir padding) ekleyerek logoların
