@@ -9,7 +9,6 @@ const AppRoutes: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          {/* Diğer sayfaları buraya ekleyeceğiz */}
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/hakkimizda" element={<HakkimizdaPage />} />
         </Routes>

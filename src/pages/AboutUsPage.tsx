@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/swiper-bundle.css";
 
-import { Navigation, Autoplay} from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
-
+import finlambLogo from "../../public/finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
     const values = [
@@ -71,9 +71,8 @@ const AboutPage: React.FC = () => {
                 Vizyonumuz
               </h2>
             </div>
-           </div> 
+          </div>
         </section>
-      
 
         <section className="max-w-6xl mx-auto px-10 py-4 bg-white">
           <div className="grid grid-cols-1 gap-4 items-center md:pt-[5px]">
@@ -93,9 +92,8 @@ const AboutPage: React.FC = () => {
                 Misyonumuz
               </h2>
             </div>
-           </div> 
+          </div>
         </section>
-      
 
         <section className="max-w-6xl mx-auto px-10 py-4 bg-white">
           <div className="grid grid-cols-1 gap-4 items-center md:pt-[5px]">
@@ -142,7 +140,7 @@ const AboutPage: React.FC = () => {
             {/* Mobile View - Swiper */}
             <div className="md:hidden">
               <Swiper
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation]}
                 navigation={{
                   nextEl: ".custom-swiper-next",
                   prevEl: ".custom-swiper-prev",
@@ -192,16 +190,12 @@ const AboutPage: React.FC = () => {
         </section>
 
         <section className="px-1 py-16 flex justify-center items-center">
-          {/* Parent Container */}
           <div className="relative w-full max-w-6xl px-8 py-24 rounded-2xl shadow-xl overflow-hidden">
-            {}
             <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
               <div
                 className="w-[600px] h-[300px] rounded-full"
                 style={{
-                  // Radial gradient for an elliptical shape
                   background: "radial-gradient(ellipse at center, #3277BC, #4BA6DD, #3AAA9A, #58595B)",
-                  // Increase or decrease blur to taste
                   filter: "blur(100px)",
                 }}
               />
