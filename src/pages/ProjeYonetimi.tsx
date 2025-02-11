@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MainLayout from "../layouts/MainLayout";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,7 +33,9 @@ const ProjeYonetimi: React.FC = () => {
     },
     {
       title: "Test Süreci",
-      description: ["Yazılım ve sistemler kapsamlı testlerden geçirilir. Bu adım, hataları en aza indirmek ve çözümlerinizin kesintisiz çalışmasını sağlamak için kritik öneme sahiptir."],
+      description: [
+        "Yazılım ve sistemler kapsamlı testlerden geçirilir. Bu adım, hataları en aza indirmek ve çözümlerinizin kesintisiz çalışmasını sağlamak için kritik öneme sahiptir.",
+      ],
       icon: "/public/process.png",
     },
     {
@@ -66,9 +68,12 @@ const ProjeYonetimi: React.FC = () => {
             </div>
             <div>
               <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-              Proje Yönetimi, kurumların hedeflerine ulaşmalarını sağlamak için stratejik bir yaklaşımla planlama, 
-              yürütme ve kontrol süreçlerini içerir. Uçtan Uca Proje Yönetimi anlayışımızla, proje hayat döngüsünün tüm 
-              aşamalarında yanınızdayız ve projelerinizi başarıyla hayata geçirmeniz için kapsamlı çözümler sunuyoruz.
+                Proje Yönetimi, kurumların hedeflerine ulaşmalarını sağlamak
+                için stratejik bir yaklaşımla planlama, yürütme ve kontrol
+                süreçlerini içerir. Uçtan Uca Proje Yönetimi anlayışımızla,
+                proje hayat döngüsünün tüm aşamalarında yanınızdayız ve
+                projelerinizi başarıyla hayata geçirmeniz için kapsamlı çözümler
+                sunuyoruz.
               </p>
             </div>
           </div>
@@ -88,8 +93,10 @@ const ProjeYonetimi: React.FC = () => {
         {/* Carousel Section */}
         <section className="bg-white py-16">
           {/* Artık container yerine w-full px-4, böylece kenarlardaki boşluk azalacak */}
-          <div style={{ padding: "0px 2px 10px" }} className="relative w-full overflow-visible">
-
+          <div
+            style={{ padding: "0px 2px 10px" }}
+            className="relative w-full overflow-visible"
+          >
             <Swiper
               modules={[Navigation]}
               navigation={{
@@ -120,7 +127,9 @@ const ProjeYonetimi: React.FC = () => {
                       alt={value.title}
                       className="w-12 h-12 mb-4"
                     />
-                    <h3 className="text-lg font-bold font-segouie mb-3">{value.title}</h3>
+                    <h3 className="text-lg font-bold font-segouie mb-3">
+                      {value.title}
+                    </h3>
                     <ul className="text-gray-600 text-sm font-segouie space-y-2">
                       {value.description.map((text, i) => (
                         <li key={i} className="flex items-start space-x-2">
@@ -191,18 +200,16 @@ const ProjeYonetimi: React.FC = () => {
         <section className="container mx-auto px-2 py-2 bg-white">
           <div className="mt-16 items-center md:pt-[200px]">
             <div>
-            <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-            Proje Yönetimi yaklaşımımız, sadece teknik çözümleri değil, aynı zamanda stratejik hedeflerinizi de göz 
-            önünde bulundurarak süreçleri optimize etmeyi amaçlar. Her adımda sağladığımız profesyonel destek, 
-            projelerinizin zamanında ve bütçe dahilinde tamamlanmasını sağlar.
-             </p>
+              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
+                Proje Yönetimi yaklaşımımız, sadece teknik çözümleri değil, aynı
+                zamanda stratejik hedeflerinizi de göz önünde bulundurarak
+                süreçleri optimize etmeyi amaçlar. Her adımda sağladığımız
+                profesyonel destek, projelerinizin zamanında ve bütçe dahilinde
+                tamamlanmasını sağlar.
+              </p>
             </div>
           </div>
         </section>
-
-
-
-
 
         {/* Ready to start your AI journey? */}
         <section className="px-1 py-16 flex justify-center items-center">
