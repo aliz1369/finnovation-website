@@ -391,7 +391,7 @@ const JobsPage: React.FC = () => {
         >
           <img
             src="/public/myCustomButtonIcon.png" 
-            alt="Button Icon"
+            alt="Button Ion"
             className="w-6 h-6 sm:w-16 sm:h-16
                        transition-transform group-hover:scale-105
                        group-hover:opacity-80"

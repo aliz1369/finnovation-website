@@ -89,7 +89,7 @@ const ContactUsPage: React.FC = () => {
                 id="message"
                 rows={4}
                 className="mt-2 block w-full h-[150px] border border-gray-600 rounded-[10px] px-4 shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Size daha iyi yardımcı olabilmemiz için lütfen nasıl yardımcı olabileceğimizi açıklayın..."
+                placeholder="Size daha iyi yardımcı olabilmemiz için lütfen nasıl yardımcı olabileceğimizi açıklayın.."
               />
             </div>
 
