@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/swiper-bundle.css";
 
-import finlambLogo from "../../finlamb.jpg"; //bu finlamb.png ile değişecek
+import finlambLogo from "/finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
   const values = [
@@ -193,7 +193,7 @@ const AboutPage: React.FC = () => {
                 olmayı hedefliyor, her adımda sürdürülebilir ve yenilikçi
                 çözümlerle yanlarında olmayı taahhüt ediyoruz. 2030 yılında,
                 teknoloji geliştirme, danışmanlık ve eğitim alanlarında
-                inovasyon lideri olarak, Türkiye’den dünyaya yayılan
+                inovasyon lideri olarak,Türkiye’den dünyaya yayılan
                 sürdürülebilir ve etkili çözümler sunarak sektörde tanınan bir
                 lider olmak.
               </p>
