@@ -65,16 +65,36 @@ const HeaderMenu: React.FC = () => {
 
           {/* Sosyal Medya İkonları */}
           <div className="hidden sm:flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/public/in.png" alt="LinkedIn" className="h-5 w-5" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/public/git.png" alt="GitHub" className="h-5 w-5" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="/public/insta.png" alt="Instagram" className="h-5 w-5" />
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/public/insta.png"
+                alt="Instagram"
+                className="h-5 w-5"
+              />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/public/x.png" alt="X/Twitter" className="h-5 w-5" />
             </a>
           </div>
