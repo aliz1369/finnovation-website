@@ -15,7 +15,7 @@ const AboutPage: React.FC = () => {
           title: "Yoldaşız",
           description: [
             "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız ve tüm ekosisteme bu gözle bakarız."],
-          icon: "/friends.png",
+          icon: "/public/friends.png",
         },
         {
           title: "Ortağız",
@@ -23,7 +23,7 @@ const AboutPage: React.FC = () => {
             "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz.",
             "Kıymet biliriz, alma-verme dengesini önemseriz.",
             "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",],
-          icon: "/collab.png",
+          icon: "/public/collab.png",
         },
         {
           title: "Samimiyiz",
@@ -31,14 +31,14 @@ const AboutPage: React.FC = () => {
             "İyi niyet esaslı açık iletişim kurarız, net konuşuruz.",
             "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
           ],
-          icon: "/activeuser.png",
+          icon: "/public/activeuser.png",
         },
         {
           title: "Dürüstüz",
           description: [
             "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
           ],
-          icon: "/trust.png",
+          icon: "/public/trust.png",
         },
         {
           title: "Müşteri Odaklıyız",
@@ -46,7 +46,7 @@ const AboutPage: React.FC = () => {
             "Müşterilerimizin başarısını kendi başarımız olarak görürüz.",
             "Müşterilerimizle uzun vadeli ilişkiler kurarız.",
           ],
-          icon: "/customer.png",
+          icon: "/public/customer.png",
         },
         {
           title: "Müşteri Deneyimini Önemseriz",
@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
             "Tek iletişim noktasından hareket etmez, mümkünse yüz yüze konuşuruz.",
             "Gerçek ihtiyacı anlamaya özen gösteririz.",
           ],
-          icon: "/customer2.png",
+          icon: "/public/customer2.png",
         },
       ];
   
@@ -116,7 +116,7 @@ const AboutPage: React.FC = () => {
                 >
                   Book a Demo
                   <img
-                    src="/bd.png"
+                    src="/public/bd.png"
                     alt="Calendar"
                     className="h-5 w-5 ml-2"
                   />
@@ -260,7 +260,7 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
               {value.description.map((text, i) => (
                 <li key={i} className="flex items-start space-x-2">
                   <img
-                    src="/checkmark.png"
+                    src="/public/checkmark.png"
                     alt="Checkmark"
                     className="w-4 h-4 mt-1"
                   />
@@ -344,7 +344,7 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
                      transform hover:scale-105"
         >
           <img
-            src="/bd.png"
+            src="/public/bd.png"
             alt="Demo Icon"
             className="h-5 w-5 mr-2"
           />
@@ -395,7 +395,7 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
     {/* Logo and Tagline */}
     <div className="flex flex-col items-center mb-6">
       <img
-        src="/finnovation-white.png"
+        src="/public/finnovation-white.png"
         alt="Finnovation Logo"
         className="h-24 mb-1"
       />
@@ -420,7 +420,7 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
                      transition-all hover:bg-white group"
         >
           <img
-            src="/myCustomButtonIcon.png" 
+            src="/public/myCustomButtonIcon.png" 
             alt="Button Icon"
             className="w-6 h-6 sm:w-16 sm:h-16
                        transition-transform group-hover:scale-105
