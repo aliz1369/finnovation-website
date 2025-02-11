@@ -121,18 +121,18 @@ const SurecIzleme: React.FC = () => {
       </section>
 
       {/* Diğer İçerik */}
-<section className="py-16 max-w-5xl mx-auto px-6 md:px-12">
-  {data?.sections?.map((section, index) => (
-    <div key={index} className="mb-12">
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-        {section.title}
-      </h2>
-      {section.components?.map((component, idx) => (
-        <StyledText key={idx} content={component.content_value} />
-      ))}
-    </div>
-  ))}
-</section>
+      <section className="py-16 max-w-5xl mx-auto px-6 md:px-12">
+        {data?.sections?.map((section, index) => (
+          <div key={index} className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              {section.title}
+            </h2>
+            {section.components?.map((component, idx) => (
+              <StyledText key={idx} content={component.content_value} />
+            ))}
+          </div>
+        ))}
+      </section>
 
       {/* Süreç İzleme ve Geliştirmenin Avantajları */}
       <section className="py-20 bg-gray-100">
@@ -145,18 +145,53 @@ const SurecIzleme: React.FC = () => {
           {/* Avantaj Kartları */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center items-stretch">
             {[
-              { title: "Operasyonel Verim", icon: "/icon2.png", text: "Zamandan ve maliyetten tasarruf sağlanır." },
-              { title: "Memnuniyetiniz", icon: "/icon2.png", text: "Daha hızlı ve kaliteli hizmet sunarak müşteri deneyimini iyileştirir." },
-              { title: "Stratejik Esneklik", icon: "/icon3.png", text: "Rekabet avantajı yaratır." },
-              { title: "Hataları Azaltma", icon: "/icon3.png", text: "Hataların erken tespit edilerek önlenmesini sağlar." },
-              { title: "Şeffaflık ve Kontrol", icon: "/icon3.png", text: "Daha iyi kararlar alınmasını sağlar." },
+              {
+                title: "Operasyonel Verim",
+                icon: "/icon2.png",
+                text: "Zamandan ve maliyetten tasarruf sağlanır.",
+              },
+              {
+                title: "Memnuniyetiniz",
+                icon: "/icon2.png",
+                text: "Daha hızlı ve kaliteli hizmet sunarak müşteri deneyimini iyileştirir.",
+              },
+              {
+                title: "Stratejik Esneklik",
+                icon: "/icon3.png",
+                text: "Rekabet avantajı yaratır.",
+              },
+              {
+                title: "Hataları Azaltma",
+                icon: "/icon3.png",
+                text: "Hataların erken tespit edilerek önlenmesini sağlar.",
+              },
+              {
+                title: "Şeffaflık ve Kontrol",
+                icon: "/icon3.png",
+                text: "Daha iyi kararlar alınmasını sağlar.",
+              },
             ].map((advantage, index) => (
-              <div key={index} className="bg-white p-8 shadow-md rounded-xl flex flex-col items-center text-center transition duration-300 hover:shadow-lg">
-                <img src={advantage.icon} alt={advantage.title} className="w-14 h-14 mb-4" />
-                <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mb-2">{advantage.title}</h3>
+              <div
+                key={index}
+                className="bg-white p-8 shadow-md rounded-xl flex flex-col items-center text-center transition duration-300 hover:shadow-lg"
+              >
+                <img
+                  src={advantage.icon}
+                  alt={advantage.title}
+                  className="w-14 h-14 mb-4"
+                />
+                <h3 className="text-[20px] md:text-[24px] font-bold text-gray-900 mb-2">
+                  {advantage.title}
+                </h3>
                 <div className="flex items-center gap-2">
-                  <img src="/checkmark.png" alt="checkmark" className="w-5 h-5" />
-                  <p className="text-gray-700 text-[16px] md:text-[18px] leading-relaxed text-left">{advantage.text}</p>
+                  <img
+                    src="/checkmark.png"
+                    alt="checkmark"
+                    className="w-5 h-5"
+                  />
+                  <p className="text-gray-700 text-[16px] md:text-[18px] leading-relaxed text-left">
+                    {advantage.text}
+                  </p>
                 </div>
               </div>
             ))}
