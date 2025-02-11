@@ -12,53 +12,6 @@ import "swiper/swiper-bundle.css";
 // import finlambLogo from "../assets/finlamb.jpg";  // veya .png
 
 const HakkimizdaPage: React.FC = () => {
-  const values = [
-    {
-      title: "Yoldaşız",
-      description: [
-        "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız ve tüm ekosisteme bu gözle bakarız."],
-      icon: "/friends.png",
-    },
-    {
-      title: "Ortağız",
-      description: [
-        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz.",
-        "Kıymet biliriz, alma-verme dengesini önemseriz.",
-        "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",],
-      icon: "/collab.png",
-    },
-    {
-      title: "Samimiyiz",
-      description: [
-        "İyi niyet esaslı açık iletişim kurarız, net konuşuruz.",
-        "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
-      ],
-      icon: "/activeuser.png",
-    },
-    {
-      title: "Dürüstüz",
-      description: [
-        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-      ],
-      icon: "/trust.png",
-    },
-    {
-      title: "Müşteri Odaklıyız",
-      description: [
-        "Müşterilerimizin başarısını kendi başarımız olarak görürüz.",
-        "Müşterilerimizle uzun vadeli ilişkiler kurarız.",
-      ],
-      icon: "/customer.png",
-    },
-    {
-      title: "Müşteri Deneyimini Önemseriz",
-      description: [
-        "Tek iletişim noktasından hareket etmez, mümkünse yüz yüze konuşuruz.",
-        "Gerçek ihtiyacı anlamaya özen gösteririz.",
-      ],
-      icon: "/customer2.png",
-    },
-  ];
 
 
 
