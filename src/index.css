@@ -73,3 +73,9 @@ img:hover {
   color: white;
 }
 
+@font-face {
+  font-family: 'SegoeUI';
+  src: url('/fonts/SegoeUIVF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
