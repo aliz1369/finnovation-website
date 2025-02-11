@@ -5,9 +5,9 @@ import AboutUsPage from "../pages/AboutUsPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import JobsPage from "../pages/JobsPage";
 import ProjeYonetimi from "../pages/ProjeYonetimi";
-import SurecIzleme from "../pages/SurecIzleme";
 import FinAcademyPage from "../pages/FinAcademyPage";
 import HakkimizdaPage from "../pages/HakkimizdaPage";
+import SurecIzleme from "../pages/Surecizleme";
 
 const AppRoutes: React.FC = () => {
   return (
