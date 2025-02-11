@@ -28,8 +28,9 @@ const AboutPage: React.FC = () => {
         {
           title: "Samimiyiz",
           description: [
-            "İyi niyet esaslı açık iletişim kurarız, net konuşuruz.",
-            "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
+            "İyi niyet esaslı açık iletişim kurarız.",
+            "Net konuşuruz.",
+            "Tek iletişim noktasından hareket etmez, birebir mümkünse yüzyüze konuşuruz.",
           ],
           icon: "/activeuser.png",
         },
@@ -43,16 +44,14 @@ const AboutPage: React.FC = () => {
         {
           title: "Müşteri Odaklıyız",
           description: [
-            "Müşterilerimizin başarısını kendi başarımız olarak görürüz.",
-            "Müşterilerimizle uzun vadeli ilişkiler kurarız.",
+            "Kendi kullanmayacağımız hiçbir ürünü önermeyiz, sunmayız.",  
           ],
           icon: "/customer.png",
         },
         {
           title: "Müşteri Deneyimini Önemseriz",
           description: [
-            "Tek iletişim noktasından hareket etmez, mümkünse yüz yüze konuşuruz.",
-            "Gerçek ihtiyacı anlamaya özen gösteririz.",
+            "Basit, kullanışlı, uygun fiyatlı ürünler sunarız.",
           ],
           icon: "/customer2.png",
         },
@@ -62,74 +61,11 @@ const AboutPage: React.FC = () => {
   
     return (
     <MainLayout>
-      {}
-      <div className="pt-5">
-        {/* SECTION: Biz Kimiz? */}
-        <section className="container mx-auto px-6 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* LEFT COLUMN */}
-            <div>
-              {/* "Biz" on one line, "Kimiz?" on another, as you requested */}
-              <h1 className="text-8xl font-extrabold text-gray-900 leading-tight">
-                Biz <br />
-                Kimiz?
-              </h1>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-
-            {/* RIGHT COLUMN */}
-            <div>
-                
-             <p className="mt-4 text-2xl text-gray-700 font-bold ">
-                Yenilikçi BT çözümleri ile <br />
-                iş sürekliliğinizi sağlıyoruz.
-              </p> 
-             </div>
-
-             <div>
-              <p className="text-lg text-gray-700 leading-relaxed ">
-              2019 yılında kurulan firmamız, yüksek kalitede, sürdürülebilir
-                ve kurumlara özel nitelikli hizmetler sunma misyonuyla yola çıktı.
-                Amacımız, yalnızca bir hizmet sağlayıcı değil, müşterilerimizin
-                yanında bir yol arkadaşı olarak inovatif, yaratıcı ve sürdürülebilir
-                çözümler sunmaktır.
-              </p>
-               {/* Buttons */}
-               <div className="flex space-x-4 ">
-                <button
-                  className="px-6 py-3 bg-[#3277BC] text-white font-bold
-                             rounded-full shadow-lg hover:bg-[#2b66a2]
-                             flex items-center transition-colors"
-                >
-                  Explore Our Solutions
-                  <span className="ml-2 text-xl">→</span>
-                </button>
-                <button
-                  className="px-6 py-3 bg-white border-2 border-[#3277BC]
-                             text-[#3277BC] font-bold rounded-full shadow-lg
-                             hover:bg-[#3277BC] hover:text-white flex items-center
-                             transition-colors"
-                >
-                  Book a Demo
-                  <img
-                    src="/bd.png"
-                    alt="Calendar"
-                    className="h-5 w-5 ml-2"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        
+      <div className="pt-5">   
 
         {/* SECTION: Vizyonumuz */}
         <section className="container mx-auto px-2 py-2 bg-white">
-          <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+          <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[50px]">
             {/* LEFT COLUMN */}
             <div>
               <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
@@ -140,31 +76,19 @@ const AboutPage: React.FC = () => {
         </section>
       
 
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-
-            {/* RIGHT COLUMN */}
+        <section className="max-w-6xl mx-auto px-10 py-4 bg-white">
+          <div className="grid grid-cols-1 gap-4 items-center md:pt-[5px]">
             <div>
-                
-            <p className="mt-4 text-2xl text-gray-700 font-bold ">
-                Yenilikçi BT çözümleri ile <br />
-                iş sürekliliğinizi sağlıyoruz.
+              <p className="mt-4 text-2xl text-gray-700 font-bold">
+                2030 yılında, teknoloji geliştirme, danışmanlık ve eğitim alanlarında inovasyon lideri olarak, Türkiye'den dünyaya yayılan sürdürülebilir ve etkili çözümler sunarak sektörde tanınan bir lider olmak.
               </p> 
-             </div>
-
-             <div>
-              <p className="text-lg text-gray-700 leading-relaxed ">
-              Biz, farkı insan faktörünün yarattığına ve sunduğumuz hizmetlerin mükemmelliğinin temelinde çalışanlarımızın özverisi, uzmanlığı ve tutkusunun olduğuna inanıyoruz.
-Kuruluşumuzdan bu yana inovatif, esnek, uzman, tutkulu ve girişimci bir yaklaşımla kültürümüzü inşa ediyoruz. Bu kültür etrafında, birbirine zincir gibi bağlı, samimi, dürüst ve iş etiğine sahip bir ekip olarak geleceği şekillendirme vizyonuyla hareket ediyoruz. 
-Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı hedefliyor, her adımda sürdürülebilir ve yenilikçi çözümlerle yanlarında olmayı taahhüt ediyoruz. 2030 yılında, teknoloji geliştirme, danışmanlık ve eğitim alanlarında inovasyon lideri olarak, Türkiye’den dünyaya yayılan sürdürülebilir ve etkili çözümler sunarak sektörde tanınan bir lider olmak.
-              </p>
             </div>
           </div>
         </section>
 
         {/* SECTION: Misyonumuz */}
         <section className="container mx-auto px-2 py-2 bg-white">
-          <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+          <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[50px]">
             {/* LEFT COLUMN */}
             <div>
               <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
@@ -175,29 +99,19 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
         </section>
       
 
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-
-            {/* RIGHT COLUMN */}
+        <section className="max-w-6xl mx-auto px-10 py-4 bg-white">
+          <div className="grid grid-cols-1 gap-4 items-center md:pt-[5px]">
             <div>
-                
-            <p className="mt-4 text-2xl text-gray-700 font-bold ">
-                Yenilikçi BT çözümleri ile <br />
-                iş sürekliliğinizi sağlıyoruz.
+              <p className="mt-4 text-2xl text-gray-700 font-bold">
+                Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı, sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler sunmaktır.
               </p> 
-             </div>
-
-             <div>
-              <p className="text-lg text-gray-700 leading-relaxed ">
-              Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı, sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler sunmaktır.
-              </p>
             </div>
           </div>
         </section>
 
-        {/* SECTION: Misyonumuz */}
+        {/* SECTION: Değerlerimiz */}
         <section className="container mx-auto px-2 py-2 bg-white">
-          <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+          <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[50px]">
             {/* LEFT COLUMN */}
             <div>
               <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
@@ -208,62 +122,68 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
         </section>
       
 
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-
-            {/* RIGHT COLUMN */}
-            <div>
-                
-            <p className="mt-4 text-2xl text-gray-700 font-bold ">
-                Yenilikçi BT çözümleri ile <br />
-                iş sürekliliğinizi sağlıyoruz.
-              </p> 
-             </div>
-
-             <div>
-              <p className="text-lg text-gray-700 leading-relaxed ">
-              Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı, sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler sunmaktır.
-              </p>
-            </div>
-          </div>
-        </section>
-
+       
         
-        <section className="bg-white py-16">
-  <div className="container mx-auto relative pb-10">
+        <section className="bg-white py-8">
+  <div className="container mx-auto relative pb-5">
     <Swiper
       modules={[Navigation, Autoplay]}
       navigation={{
         nextEl: ".custom-swiper-next",
         prevEl: ".custom-swiper-prev",
       }}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      pagination={{ clickable: true }}
-      spaceBetween={20}
-      centeredSlides={true}
-      centeredSlidesBounds={true}
-      slidesPerView={1}
-      breakpoints={{
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+      autoplay={{ 
+        delay: 3000, 
+        disableOnInteraction: false
       }}
-      grabCursor={true}
+      loop={true}
+      slidesPerView={3}
+      spaceBetween={30}
+      speed={800}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      }}
+      className="mySwiper"
+      wrapperClass="swiper-wrapper"
     >
+      {/* İlk set */}
       {values.map((value, index) => (
-        <SwiperSlide key={index}>
-          {/* Card */}
+        <SwiperSlide key={`first-${index}`} className="swiper-slide">
           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-start justify-start h-[350px] w-[270px] border border-gray-200 mx-auto">
             <img src={value.icon} alt={value.title} className="w-12 h-12 mb-4" />
             <h3 className="text-lg font-bold mb-3">{value.title}</h3>
             <ul className="text-gray-600 text-sm space-y-2">
               {value.description.map((text, i) => (
                 <li key={i} className="flex items-start space-x-2">
-                  <img
-                    src="/checkmark.png"
-                    alt="Checkmark"
-                    className="w-4 h-4 mt-1"
-                  />
+                  <img src="/checkmark.png" alt="Checkmark" className="w-4 h-4 mt-1" />
+                  <p className="italic">{text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </SwiperSlide>
+      ))}
+      {/* İkinci set */}
+      {values.map((value, index) => (
+        <SwiperSlide key={`second-${index}`} className="swiper-slide">
+          <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-start justify-start h-[350px] w-[270px] border border-gray-200 mx-auto">
+            <img src={value.icon} alt={value.title} className="w-12 h-12 mb-4" />
+            <h3 className="text-lg font-bold mb-3">{value.title}</h3>
+            <ul className="text-gray-600 text-sm space-y-2">
+              {value.description.map((text, i) => (
+                <li key={i} className="flex items-start space-x-2">
+                  <img src="/checkmark.png" alt="Checkmark" className="w-4 h-4 mt-1" />
                   <p className="italic">{text}</p>
                 </li>
               ))}
@@ -355,82 +275,7 @@ Müşterilerimizin başarı yolculuğunda güvenilir bir iş ortağı olmayı he
   </div>
 </section>
 
-<footer className="bg-[#3277BC] text-white py-8">
-  <div className="container mx-auto px-6">
-    {/* Navigation Links */}
-    <nav className="mb-6">
-      <ul className="flex flex-wrap justify-center space-x-4 text-lg font-medium">
-        <li>
-          <a href="#about" className="hover:underline">
-            Biz Kimiz?
-          </a>
-        </li>
-        <li>•</li>
-        <li>
-          <a href="#expertise" className="hover:underline">
-            Uzmanlık Alanlarımız
-          </a>
-        </li>
-        <li>•</li>
-        <li>
-          <a href="#finacademy" className="hover:underline">
-            FinAcademy
-          </a>
-        </li>
-        <li>•</li>
-        <li>
-          <a href="#resources" className="hover:underline">
-            Resources
-          </a>
-        </li>
-        <li>•</li>
-        <li>
-          <a href="#contact" className="hover:underline">
-            Contact Us
-          </a>
-        </li>
-      </ul>
-    </nav>
 
-    {/* Logo and Tagline */}
-    <div className="flex flex-col items-center mb-6">
-      <img
-        src="/finnovation-white.png"
-        alt="Finnovation Logo"
-        className="h-24 mb-1"
-      />
-      <p className="text-center text-lg max-w-xl leading-relaxed">
-        Our AI models learn and improve over time,<br />
-        delivering increasingly accurate results<br />
-        and adapting to changing trends.
-      </p>
-    </div>
-
-    {/* Email + Button Row with a Single Underline */}
-    <div className="flex justify-center">
-      <div className="flex items-center space-x-32 border-b-2 border-white pb-4 px-2">
-        {/* Underlined Email Text */}
-        <h2 className="text-6xl font-medium">Email Address</h2>
-
-        {/* Button with PNG Icon */}
-        <button
-          className="flex items-center justify-center
-                     w-12 h-12 sm:w-16 sm:h-16
-                     rounded-full border-2 border-white
-                     transition-all hover:bg-white group"
-        >
-          <img
-            src="/myCustomButtonIcon.png" 
-            alt="Button Icon"
-            className="w-6 h-6 sm:w-16 sm:h-16
-                       transition-transform group-hover:scale-105
-                       group-hover:opacity-80"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</footer>
 
 
 
