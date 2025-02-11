@@ -7,6 +7,7 @@ import JobsPage from "../pages/JobsPage";
 import ProjeYonetimi from "../pages/ProjeYonetimi";
 import SurecIzleme from "../pages/SurecIzleme";
 import FinAcademyPage from "../pages/FinAcademyPage";
+import HakkimizdaPage from "../pages/HakkimizdaPage";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -20,6 +21,8 @@ const AppRoutes: React.FC = () => {
         <Route path="/proje-yonetimi" element={<ProjeYonetimi />} />
         <Route path="/surec-izleme" element={<SurecIzleme />} />
         <Route path="/academy" element={<FinAcademyPage />} />
+        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/hakkimizda" element={<HakkimizdaPage />} />
       </Routes>
     </Router>
   );
