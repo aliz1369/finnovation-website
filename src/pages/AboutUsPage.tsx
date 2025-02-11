@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/swiper-bundle.css";
 
-import finlambLogo from "../../public/finlamb.jpg"; //bu finlamb.png ile değişecek
+import finlambLogo from "../../finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
   const values = [
@@ -151,11 +151,7 @@ const AboutPage: React.FC = () => {
                 </button>
                 <button className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center transition-colors">
                   Book a Demo
-                  <img
-                    src="/public/bd.png"
-                    alt="Calendar"
-                    className="h-5 w-5 ml-2"
-                  />
+                  <img src="/bd.png" alt="Calendar" className="h-5 w-5 ml-2" />
                 </button>
               </div>
             </div>
@@ -304,7 +300,7 @@ const AboutPage: React.FC = () => {
                       {value.description.map((text, i) => (
                         <li key={i} className="flex items-start space-x-2">
                           <img
-                            src="/public/checkmark.png"
+                            src="/checkmark.png"
                             alt="Checkmark"
                             className="w-4 h-4 mt-1"
                           />
@@ -404,11 +400,7 @@ const AboutPage: React.FC = () => {
                      hover:border-gray-400 flex items-center transition-transform
                      transform hover:scale-105"
                 >
-                  <img
-                    src="/public/bd.png"
-                    alt="Demo Icon"
-                    className="h-5 w-5 mr-2"
-                  />
+                  <img src="/bd.png" alt="Demo Icon" className="h-5 w-5 mr-2" />
                   Book a Demo
                 </button>
               </div>
@@ -456,7 +448,7 @@ const AboutPage: React.FC = () => {
             {/* Logo and Tagline */}
             <div className="flex flex-col items-center mb-6">
               <img
-                src="/public/finnovation-white.png"
+                src="/finnovation-white.png"
                 alt="Finnovation Logo"
                 className="h-24 mb-1"
               />
@@ -483,7 +475,7 @@ const AboutPage: React.FC = () => {
                      transition-all hover:bg-white group"
                 >
                   <img
-                    src="/public/myCustomButtonIcon.png"
+                    src="/myCustomButtonIcon.png"
                     alt="Button Icon"
                     className="w-6 h-6 sm:w-16 sm:h-16
                        transition-transform group-hover:scale-105

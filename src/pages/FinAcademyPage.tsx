@@ -66,9 +66,7 @@ const FinAcademyPage: React.FC = () => {
   return (
     <MainLayout>
       <div style={{ fontFamily: "Light Small" }}>
-        <section
-          className="bg-white h-auto md:h-[calc(100vh-4rem)]"
-        >
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
           <div className="w-full h-full md:grid md:grid-rows-2">
             <div className="flex items-center justify-start text-center px-10 py-8 md:py-0">
               <h1
@@ -87,18 +85,16 @@ const FinAcademyPage: React.FC = () => {
                            text-base sm:text-lg md:text-3xl text-gray-700 
                            leading-relaxed text-right max-w-2xl"
               >
-                <span className="font-bold">FinAcademy</span>, finansal teknolojiler ve inovasyon alanında bilgi
-                ve becerilerinizi geliştirmeniz için tasarlanmış bir eğitim
-                platformudur. Amacımız, katılımcılarımıza en güncel bilgilere
-                odaklanarak, geleceğin finans dünyasında başarılı olmalarını
-                sağlamaktır.
+                <span className="font-bold">FinAcademy</span>, finansal
+                teknolojiler ve inovasyon alanında bilgi ve becerilerinizi
+                geliştirmeniz için tasarlanmış bir eğitim platformudur.
+                Amacımız, katılımcılarımıza en güncel bilgilere odaklanarak,
+                geleceğin finans dünyasında başarılı olmalarını sağlamaktır.
               </p>
             </div>
           </div>
         </section>
-        <section
-          className="bg-white h-auto md:h-[calc(100vh-4rem)]"
-        >
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
           <div
             className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
                        flex flex-col justify-center"
@@ -113,14 +109,14 @@ const FinAcademyPage: React.FC = () => {
                            min-h-[450px]"
               >
                 <img
-                  src="/public/activeuser.png"
+                  src="/activeuser.png"
                   alt="Uzman Eğitmenler"
                   className="w-16 h-16 mb-4"
                 />
                 <h3 className="text-2xl font-light mb-4">Uzman Eğitmenler</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   <img
-                    src="/public/checkmark.png"
+                    src="/checkmark.png"
                     alt="Check"
                     className="inline-block w-4 h-4 mr-1"
                   />
@@ -134,14 +130,14 @@ const FinAcademyPage: React.FC = () => {
                            min-h-[450px]"
               >
                 <img
-                  src="/public/practical.png"
+                  src="/practical.png"
                   alt="Pratik Eğitim"
                   className="w-16 h-16 mb-4"
                 />
                 <h3 className="text-2xl font-light mb-4">Pratik Eğitim</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   <img
-                    src="/public/checkmark.png"
+                    src="/checkmark.png"
                     alt="Check"
                     className="inline-block w-4 h-4 mr-1"
                   />
@@ -155,14 +151,14 @@ const FinAcademyPage: React.FC = () => {
                            min-h-[450px]"
               >
                 <img
-                  src="/public/update.png"
+                  src="/update.png"
                   alt="Güncel Müfredat"
                   className="w-16 h-16 mb-4"
                 />
                 <h3 className="text-2xl font-light mb-4">Güncel Müfredat</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   <img
-                    src="/public/checkmark.png"
+                    src="/checkmark.png"
                     alt="Check"
                     className="inline-block w-4 h-4 mr-1"
                   />
@@ -200,7 +196,7 @@ const FinAcademyPage: React.FC = () => {
                       {program.content.map((item, i) => (
                         <li key={i} className="flex items-start space-x-2">
                           <img
-                            src="/public/checkmark.png"
+                            src="/checkmark.png"
                             alt="Checkmark"
                             className="w-4 h-4 mt-1"
                           />
@@ -214,9 +210,7 @@ const FinAcademyPage: React.FC = () => {
             </div>
           </div>
         </section>
-        <section
-          className="bg-white h-auto md:h-[calc(100vh-4rem)]"
-        >
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
           <div
             className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
                        flex flex-col justify-center"
@@ -227,7 +221,7 @@ const FinAcademyPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white shadow rounded-xl p-8 flex flex-col items-center text-center min-h-[500px]">
                 <img
-                  src="/public/activeuser.png"
+                  src="/activeuser.png"
                   alt="Çevrimiçi Kurslar"
                   className="w-16 h-16 mb-4"
                 />
@@ -240,7 +234,7 @@ const FinAcademyPage: React.FC = () => {
               </div>
               <div className="bg-white shadow rounded-xl p-8 flex flex-col items-center text-center min-h-[400px]">
                 <img
-                  src="/public/update.png"
+                  src="/update.png"
                   alt="Yüz yüze Seminer"
                   className="w-16 h-16 mb-4"
                 />
@@ -251,7 +245,7 @@ const FinAcademyPage: React.FC = () => {
               </div>
               <div className="bg-white shadow rounded-xl p-8 flex flex-col items-center text-center min-h-[400px]">
                 <img
-                  src="/public/update.png"
+                  src="/update.png"
                   alt="Atölye Çalışmaları"
                   className="w-16 h-16 mb-4"
                 />
@@ -263,9 +257,7 @@ const FinAcademyPage: React.FC = () => {
             </div>
           </div>
         </section>
-        <section
-          className="relative overflow-hidden h-auto md:h-[calc(100vh-4rem)]"
-        >
+        <section className="relative overflow-hidden h-auto md:h-[calc(100vh-4rem)]">
           <div
             className="absolute inset-0 z-0"
             style={{
@@ -281,8 +273,8 @@ const FinAcademyPage: React.FC = () => {
               Ready to start your AI journey with us?
             </h2>
             <p className="text-base sm:text-lg md:text-xl font-light text-gray-400 max-w-2xl mb-8">
-              Simple, transparent pricing. No setup fees or contracts.
-              Try without a credit card, cancel anytime.
+              Simple, transparent pricing. No setup fees or contracts. Try
+              without a credit card, cancel anytime.
             </p>
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
               <button
@@ -298,11 +290,7 @@ const FinAcademyPage: React.FC = () => {
                            font-light flex items-center space-x-2"
               >
                 <span>Book a Demo</span>
-                <img
-                  src="/public/bd.png"
-                  alt="Calendar"
-                  className="h-5 w-5 ml-2"
-                />
+                <img src="/bd.png" alt="Calendar" className="h-5 w-5 ml-2" />
               </button>
             </div>
           </div>

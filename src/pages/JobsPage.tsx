@@ -12,33 +12,33 @@ const JobsPage: React.FC = () => {
       description: [
         "Deneyimli ekip üyelerimiz tarafından birebir rehberlik sağlanır.",
       ],
-      icon: "/public/customer-service.png",
+      icon: "/customer-service.png",
     },
     {
       title: "Proje Deneyimi",
       description: [
         "Aktif projelerde sorumluluk alarak sektörün dinamiklerini öğrenme imkânı.",
       ],
-      icon: "/public/project.png",
+      icon: "/project.png",
     },
     {
       title: "Eğitim Programları",
       description: [
         "Teknik ve kişisel gelişim alanlarında özel eğitim fırsatları sunulur",
       ],
-      icon: "/public/education.png",
+      icon: "/education.png",
     },
     {
       title: "Çalışma Düzeni",
       description: ["Hem uzaktan hem de ofis ortamında çalışma seçenekleri."],
-      icon: "/public/work-case.png",
+      icon: "/work-case.png",
     },
     {
       title: "Kariyer Fırsatları",
       description: [
         "Staj sürecini başarıyla tamamlayan adaylarımıza tam zamanlı pozisyon fırsatları sunulur.",
       ],
-      icon: "/public/career.png",
+      icon: "/career.png",
     },
   ];
 
@@ -47,25 +47,25 @@ const JobsPage: React.FC = () => {
       question: "Finnovation hangi alanlarda hizmet vermektedir?",
       answer:
         "• Finans, Enerji, Tarım, Sağlık, Turizm, Sürdürülebilirlik, Perakende ve Eğitim Teknolojileri başta olmak üzere yazılımın olduğu her alanda son teknoloji ve yapay zeka destekli kurumsal yazılım ürünleri sunar.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
     {
       question: "Ofislerimiz nerede?",
       answer:
         "• İstanbul Avrupa merkez olmak üzere Anadolu Yakası, Ankara ve İzmir’de ofislerimiz olacak.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
     {
       question: "Uzaktan çalışma imkanı sunuyor musunuz?",
       answer:
         "• Temel kabul olarak hibrit çalışma modelini destekliyoruz. Ancak tüm pozisyonlarımız uzaktan çalışmaya uyumludur.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
     {
       question: "Yeni mezunlar için uygun pozisyonlarınız var mı?",
       answer:
         "• Evet, yeni mezunlara yönelik özel programlarımız bulunmaktadır.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
   ];
 
@@ -102,12 +102,12 @@ const JobsPage: React.FC = () => {
             </div>
             <div>
               <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-                <span className="font-bold underline">Finnovation</span> ailesine
-                katılarak teknolojinin geleceğini birlikte şekillendirme
-                fırsatına sahip olun. Müşterilerimize yenilikçi ve etkili
-                yazılım çözümleri sunarken, ekip olarak profesyonel bir aile
-                anlayışı içerisinde çalışıyoruz. Siz de bu vizyonun bir parçası
-                olun.
+                <span className="font-bold underline">Finnovation</span>{" "}
+                ailesine katılarak teknolojinin geleceğini birlikte
+                şekillendirme fırsatına sahip olun. Müşterilerimize yenilikçi ve
+                etkili yazılım çözümleri sunarken, ekip olarak profesyonel bir
+                aile anlayışı içerisinde çalışıyoruz. Siz de bu vizyonun bir
+                parçası olun.
               </p>
             </div>
           </div>
@@ -127,8 +127,10 @@ const JobsPage: React.FC = () => {
         {/* Carousel Section */}
         <section className="bg-white py-16">
           {/* Artık container yerine w-full px-4, böylece kenarlardaki boşluk azalacak */}
-          <div style={{ padding: "0px 2px 10px" }} className="relative w-full overflow-visible">
-
+          <div
+            style={{ padding: "0px 2px 10px" }}
+            className="relative w-full overflow-visible"
+          >
             <Swiper
               modules={[Navigation]}
               navigation={{
@@ -159,12 +161,14 @@ const JobsPage: React.FC = () => {
                       alt={value.title}
                       className="w-12 h-12 mb-4"
                     />
-                    <h3 className="text-lg font-bold font-segouie mb-3">{value.title}</h3>
+                    <h3 className="text-lg font-bold font-segouie mb-3">
+                      {value.title}
+                    </h3>
                     <ul className="text-gray-600 text-sm font-segouie space-y-2">
                       {value.description.map((text, i) => (
                         <li key={i} className="flex items-start space-x-2">
                           <img
-                            src="/public/checkmark.png"
+                            src="/checkmark.png"
                             alt="Checkmark"
                             className="w-4 h-4 mt-1"
                           />
@@ -240,7 +244,9 @@ const JobsPage: React.FC = () => {
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h3 className="text-xl font-bold font-segouie">{item.question}</h3>
+                  <h3 className="text-xl font-bold font-segouie">
+                    {item.question}
+                  </h3>
                   {/* + ve - butonları için çember stilleri */}
                   <button
                     className="w-10 h-10 flex items-center justify-center border-2
@@ -307,11 +313,7 @@ const JobsPage: React.FC = () => {
                              hover:border-gray-400 flex items-center transition-transform
                              transform hover:scale-105"
                 >
-                  <img
-                    src="/public/bd.png"
-                    alt="Demo Icon"
-                    className="h-5 w-5 mr-2"
-                  />
+                  <img src="/bd.png" alt="Demo Icon" className="h-5 w-5 mr-2" />
                   Book a Demo
                 </button>
               </div>

@@ -9,7 +9,7 @@ const HeaderMenu: React.FC = () => {
         <div className="flex items-center">
           <Link to="/">
             <img
-              src="/public/finnovation-logo.png"
+              src="/finnovation-logo.png"
               alt="Finnovation"
               className="h-8 sm:h-9 md:h-19 object-contain"
             />
@@ -59,7 +59,7 @@ const HeaderMenu: React.FC = () => {
             to="/contact"
             className="flex items-center space-x-2 bg-[#3277BC] text-white px-4 py-2 rounded-full font-medium hover:bg-[#2b66a2] transition-colors"
           >
-            <img src="/public/phone.png" alt="Phone" className="h-4 w-4" />
+            <img src="/phone.png" alt="Phone" className="h-4 w-4" />
             <span>Bize Ulaşın</span>
           </Link>
 
@@ -70,38 +70,34 @@ const HeaderMenu: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/public/in.png" alt="LinkedIn" className="h-5 w-5" />
+              <img src="/in.png" alt="LinkedIn" className="h-5 w-5" />
             </a>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/public/git.png" alt="GitHub" className="h-5 w-5" />
+              <img src="/git.png" alt="GitHub" className="h-5 w-5" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/public/insta.png"
-                alt="Instagram"
-                className="h-5 w-5"
-              />
+              <img src="/insta.png" alt="Instagram" className="h-5 w-5" />
             </a>
             <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/public/x.png" alt="X/Twitter" className="h-5 w-5" />
+              <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
             </a>
           </div>
 
           {/* Dil Değiştir Butonu */}
           <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors">
-            <img src="/public/world.png" alt="Globe" className="h-5 w-5 mr-2" />
+            <img src="/world.png" alt="Globe" className="h-5 w-5 mr-2" />
             <span>TR</span>
           </div>
         </div>
