@@ -4,13 +4,13 @@ import MainLayout from "../layouts/MainLayout";
 const MainPage: React.FC = () => {
   // Logoları tutan dizi
   const [logos, setLogos] = useState<string[]>([
-    "/public/img1.png", // enpara
-    "/public/img2.png", // netcad
-    "/public/img3.png", // QNB Finansbank
-    "/public/img4.png", // Workup
-    "/public/img5.png", // Fibabanka
-    "/public/img6.png", // Finberg
-    "/public/img7.png", // Türkiye İş Bankası
+    "/img1.png", // enpara
+    "/img2.png", // netcad
+    "/img3.png", // QNB Finansbank
+    "/img4.png", // Workup
+    "/img5.png", // Fibabanka
+    "/img6.png", // Finberg
+    "/img7.png", // Türkiye İş Bankası
   ]);
 
   // 2 saniyede bir dizinin son elemanını başa alacak şekilde döngü
@@ -66,25 +66,21 @@ const MainPage: React.FC = () => {
             <div className="flex flex-col items-start lg:items-end">
               {/* İngilizce açıklama */}
               <p className="text-lg text-gray-700 max-w-md mb-8 leading-relaxed">
-                Empowering businesses through data-driven insights and automation
-                to achieve unparalleled growth. We built to revolutionize industries
-                and improve productivity.
+                Empowering businesses through data-driven insights and
+                automation to achieve unparalleled growth. We built to
+                revolutionize industries and improve productivity.
               </p>
 
               {/* Butonlar */}
               <div className="flex space-x-4">
-                <button
-                  className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center transition-colors"
-                >
+                <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center transition-colors">
                   Explore Our Solutions
                   <span className="ml-2 text-xl">→</span>
                 </button>
-                <button
-                  className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center transition-colors"
-                >
+                <button className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center transition-colors">
                   Book a Demo
                   <img
-                    src="/public/bd.png"
+                    src="/bd.png"
                     alt="Calendar"
                     className="h-5 w-5 ml-2"
                   />

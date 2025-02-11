@@ -13,7 +13,7 @@ const ProjeYonetimi: React.FC = () => {
         "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. ",
         "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
       ],
-      icon: "/public/square.png",
+      icon: "/square.png",
     },
     {
       title: "Analizin Yapılması",
@@ -21,7 +21,7 @@ const ProjeYonetimi: React.FC = () => {
         "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. ",
         "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
       ],
-      icon: "/public/analyze.png",
+      icon: "/analyze.png",
     },
 
     {
@@ -29,21 +29,21 @@ const ProjeYonetimi: React.FC = () => {
       description: [
         "Özel yazılım çözümleri geliştirerek veya mevcut sistemlerle entegrasyon sağlayarak, projenin teknolojik altyapısını inşa ediyoruz. Bu süreç, iş süreçlerinizin verimliliğini artırmayı hedefler.",
       ],
-      icon: "/public/software.png",
+      icon: "/software.png",
     },
     {
       title: "Test Süreci",
       description: [
         "Yazılım ve sistemler kapsamlı testlerden geçirilir. Bu adım, hataları en aza indirmek ve çözümlerinizin kesintisiz çalışmasını sağlamak için kritik öneme sahiptir.",
       ],
-      icon: "/public/process.png",
+      icon: "/process.png",
     },
     {
       title: "Çözüm Geçişleri",
       description: [
         "Geliştirilen çözümler, canlı ortama geçiş sırasında uzman ekibimiz tarafından desteklenir. Ayrıca, geçiş sonrası süreçlerde de yanınızda olarak, çözümün sorunsuz bir şekilde çalışmasını garanti altına alırız.",
       ],
-      icon: "/public/lightbulb.png",
+      icon: "/lightbulb.png",
     },
   ];
 
@@ -134,7 +134,7 @@ const ProjeYonetimi: React.FC = () => {
                       {value.description.map((text, i) => (
                         <li key={i} className="flex items-start space-x-2">
                           <img
-                            src="/public/checkmark.png"
+                            src="/checkmark.png"
                             alt="Checkmark"
                             className="w-4 h-4 mt-1"
                           />
@@ -256,11 +256,7 @@ const ProjeYonetimi: React.FC = () => {
                              hover:border-gray-400 flex items-center transition-transform
                              transform hover:scale-105"
                 >
-                  <img
-                    src="/public/bd.png"
-                    alt="Demo Icon"
-                    className="h-5 w-5 mr-2"
-                  />
+                  <img src="/bd.png" alt="Demo Icon" className="h-5 w-5 mr-2" />
                   Book a Demo
                 </button>
               </div>
