@@ -1,6 +1,12 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/swiper-bundle.css";
+
+import { Navigation } from "swiper/modules";
+
 import finlambLogo from "../../public/finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
