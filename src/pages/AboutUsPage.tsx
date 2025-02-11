@@ -7,7 +7,6 @@ import "swiper/swiper-bundle.css";
 
 import { Navigation } from "swiper/modules";
 
-import finlambLogo from "../../public/finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
     const values = [
