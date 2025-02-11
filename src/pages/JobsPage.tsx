@@ -5,45 +5,81 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Navigation } from "swiper/modules";
 
-const ProjeYonetimi: React.FC = () => {
+const JobsPage: React.FC = () => {
   const values = [
     {
-      title: "Kapsam Oluşturma",
+      title: "Mentorluk Desteği",
       description: [
-        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. ",
-        "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
+        "Deneyimli ekip üyelerimiz tarafından birebir rehberlik sağlanır.",
       ],
-      icon: "/public/square.png",
+      icon: "/public/customer-service.png",
     },
     {
-      title: "Analizin Yapılması",
+      title: "Proje Deneyimi",
       description: [
-        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. ",
-        "Herbirimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir.",
+        "Aktif projelerde sorumluluk alarak sektörün dinamiklerini öğrenme imkânı.",
       ],
-      icon: "/public/analyze.png",
-    },
-
-    {
-      title: "Yazılım Geliştirme",
-      description: [
-        "Özel yazılım çözümleri geliştirerek veya mevcut sistemlerle entegrasyon sağlayarak, projenin teknolojik altyapısını inşa ediyoruz. Bu süreç, iş süreçlerinizin verimliliğini artırmayı hedefler.",
-      ],
-      icon: "/public/software.png",
+      icon: "/public/project.png",
     },
     {
-      title: "Test Süreci",
-      description: ["Yazılım ve sistemler kapsamlı testlerden geçirilir. Bu adım, hataları en aza indirmek ve çözümlerinizin kesintisiz çalışmasını sağlamak için kritik öneme sahiptir."],
-      icon: "/public/process.png",
+      title: "Eğitim Programları",
+      description: [
+        "Teknik ve kişisel gelişim alanlarında özel eğitim fırsatları sunulur",
+      ],
+      icon: "/public/education.png",
     },
     {
-      title: "Çözüm Geçişleri",
+      title: "Çalışma Düzeni",
+      description: ["Hem uzaktan hem de ofis ortamında çalışma seçenekleri."],
+      icon: "/public/work-case.png",
+    },
+    {
+      title: "Kariyer Fırsatları",
       description: [
-        "Geliştirilen çözümler, canlı ortama geçiş sırasında uzman ekibimiz tarafından desteklenir. Ayrıca, geçiş sonrası süreçlerde de yanınızda olarak, çözümün sorunsuz bir şekilde çalışmasını garanti altına alırız.",
+        "Staj sürecini başarıyla tamamlayan adaylarımıza tam zamanlı pozisyon fırsatları sunulur.",
       ],
-      icon: "/public/lightbulb.png",
+      icon: "/public/career.png",
     },
   ];
+
+  const faqData = [
+    {
+      question: "Finnovation hangi alanlarda hizmet vermektedir?",
+      answer:
+        "• Finans, Enerji, Tarım, Sağlık, Turizm, Sürdürülebilirlik, Perakende ve Eğitim Teknolojileri başta olmak üzere yazılımın olduğu her alanda son teknoloji ve yapay zeka destekli kurumsal yazılım ürünleri sunar.",
+      icon: "/public/checkmark.png",
+    },
+    {
+      question: "Ofislerimiz nerede?",
+      answer:
+        "• İstanbul Avrupa merkez olmak üzere Anadolu Yakası, Ankara ve İzmir’de ofislerimiz olacak.",
+      icon: "/public/checkmark.png",
+    },
+    {
+      question: "Uzaktan çalışma imkanı sunuyor musunuz?",
+      answer:
+        "• Temel kabul olarak hibrit çalışma modelini destekliyoruz. Ancak tüm pozisyonlarımız uzaktan çalışmaya uyumludur.",
+      icon: "/public/checkmark.png",
+    },
+    {
+      question: "Yeni mezunlar için uygun pozisyonlarınız var mı?",
+      answer:
+        "• Evet, yeni mezunlara yönelik özel programlarımız bulunmaktadır.",
+      icon: "/public/checkmark.png",
+    },
+  ];
+
+  const [openFAQs, setOpenFAQs] = useState<boolean[]>(
+    new Array(faqData.length).fill(false)
+  );
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQs((prev) => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
 
   return (
     <MainLayout>
@@ -53,7 +89,7 @@ const ProjeYonetimi: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-8xl font-extrabold text-gray-900 font-segouie">
-                Proje Yönetimi
+                Kariyer
               </h1>
             </div>
           </div>
@@ -66,9 +102,12 @@ const ProjeYonetimi: React.FC = () => {
             </div>
             <div>
               <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-              Proje Yönetimi, kurumların hedeflerine ulaşmalarını sağlamak için stratejik bir yaklaşımla planlama, 
-              yürütme ve kontrol süreçlerini içerir. Uçtan Uca Proje Yönetimi anlayışımızla, proje hayat döngüsünün tüm 
-              aşamalarında yanınızdayız ve projelerinizi başarıyla hayata geçirmeniz için kapsamlı çözümler sunuyoruz.
+                <span className="font-bold underline">Finnovation</span> ailesine
+                katılarak teknolojinin geleceğini birlikte şekillendirme
+                fırsatına sahip olun. Müşterilerimize yenilikçi ve etkili
+                yazılım çözümleri sunarken, ekip olarak profesyonel bir aile
+                anlayışı içerisinde çalışıyoruz. Siz de bu vizyonun bir parçası
+                olun.
               </p>
             </div>
           </div>
@@ -79,7 +118,7 @@ const ProjeYonetimi: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
             <div>
               <h2 className="text-4xl font-extrabold text-gray-900 leading-tight font-segouie">
-                Proje Yönetimi Süreçlerimiz:
+                Stajyer ve Yeni Mezun Programları
               </h2>
             </div>
           </div>
@@ -188,21 +227,40 @@ const ProjeYonetimi: React.FC = () => {
           </div>
         </section>
 
-        <section className="container mx-auto px-2 py-2 bg-white">
-          <div className="mt-16 items-center md:pt-[200px]">
-            <div>
-            <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-            Proje Yönetimi yaklaşımımız, sadece teknik çözümleri değil, aynı zamanda stratejik hedeflerinizi de göz 
-            önünde bulundurarak süreçleri optimize etmeyi amaçlar. Her adımda sağladığımız profesyonel destek, 
-            projelerinizin zamanında ve bütçe dahilinde tamamlanmasını sağlar.
-             </p>
-            </div>
+        {/* Sıkça Sorulan Sorular Bölümü (Accordion) */}
+        <section className="container mx-auto px-6 py-16 bg-white">
+          <h2 className="text-4xl font-medium text-gray-900 leading-tight font-segouie mt-24">
+            Sıkça Sorulan Sorular:
+          </h2>
+          <div className="mt-16 max-w-6xl mx-auto">
+            {faqData.map((item, index) => (
+              <div key={index} className="border-b border-gray-300 py-6">
+                {/* Soru Başlığı */}
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <h3 className="text-xl font-bold font-segouie">{item.question}</h3>
+                  {/* + ve - butonları için çember stilleri */}
+                  <button
+                    className="w-10 h-10 flex items-center justify-center border-2
+                               border-gray-900 rounded-full text-xl font-bold"
+                  >
+                    {openFAQs[index] ? "−" : "+"}
+                  </button>
+                </div>
+
+                {/* Cevap */}
+                {openFAQs[index] && (
+                  <div className="mt-6 mb-12 ml-10 flex items-start space-x-4 max-w-3xl">
+                    <img src={item.icon} alt="icon" className="w-6 h-6 mt-1" />{" "}
+                    <p className="text-gray-700 font-segouie">{item.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
-
-
-
-
 
         {/* Ready to start your AI journey? */}
         <section className="px-1 py-16 flex justify-center items-center">
@@ -265,4 +323,4 @@ const ProjeYonetimi: React.FC = () => {
   );
 };
 
-export default ProjeYonetimi;
+export default JobsPage;
