@@ -4,6 +4,7 @@ import MainPage from "../pages/MainPage";
 import AboutUsPage from "../pages/AboutUsPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import JobsPage from "../pages/JobsPage";
+import ProjeYonetimi from "../pages/ProjeYonetimi";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/careers" element={<JobsPage />} />
+          <Route path="/proje-yonetimi" element={<ProjeYonetimi />} />
 
         </Routes>
       </Router>
