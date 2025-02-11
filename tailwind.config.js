@@ -15,6 +15,9 @@ export default {
         '29': '7.25rem',  // Yaklaşık 116px
         '30': '7.5rem',   // Yaklaşık 120px
       },
+      fontFamily: {
+        segouie: ['SegoeUI', 'sans-serif'],
+      },
     },
   },
   plugins: [],
