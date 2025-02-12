@@ -77,24 +77,23 @@ const HeaderMenu: React.FC = () => {
           className="hidden md:flex flex-nowrap items-center text-gray-700 font-medium space-x-3 sm:space-x-3 lg:space-x-4"
           style={{ fontSize: "clamp(0.875rem, 1vw + 0.5rem, 1.125rem)" }}
         >
-          {/* Her bir ana menü itemi için */}
+          {/* Biz Kimiz? Menüsü */}
           <div className="relative group">
-            <Link to="/about" className="hover:text-[#3277BC] py-4">
+            <Link to="/about" className="hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full">
               Biz Kimiz?
             </Link>
             
-            {/* Hover menü */}
-            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-full left-0 bg-white shadow-lg rounded-lg min-w-[200px] p-4">
-              <div className="flex gap-8">
+            <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-20 left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-lg p-8 w-screen max-w-6xl">
+              <div className="grid grid-cols-2 gap-12">
                 {/* Genel Bölümü */}
                 <div>
-                  <h3 className="font-bold text-[#3277BC] mb-2">Genel</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Genel</h3>
+                  <ul className="space-y-3">
                     {menuItems["Biz Kimiz?"].Genel.map((item) => (
                       <li key={item.title}>
                         <Link
                           to={item.link}
-                          className="hover:text-[#3277BC] block"
+                          className="text-[#1E5E81] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
                         >
                           {item.title}
                         </Link>
@@ -105,13 +104,13 @@ const HeaderMenu: React.FC = () => {
 
                 {/* Kariyer Bölümü */}
                 <div>
-                  <h3 className="font-bold text-[#3277BC] mb-2">Kariyer</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Kariyer</h3>
+                  <ul className="space-y-3">
                     {menuItems["Biz Kimiz?"].Kariyer.map((item) => (
                       <li key={item.title}>
                         <Link
                           to={item.link}
-                          className="hover:text-[#3277BC] block"
+                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
                         >
                           {item.title}
                         </Link>
@@ -127,19 +126,22 @@ const HeaderMenu: React.FC = () => {
 
           {/* Ürünler ve Hizmetler Menüsü */}
           <div className="relative group">
-            <Link to="/services" className="hover:text-[#3277BC] py-4">
+            <Link to="/services" className="hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full">
               Ürünler ve Hizmetler
             </Link>
             
-            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-full left-0 bg-white shadow-lg rounded-lg p-4">
-              <div className="flex gap-8">
+            <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-20 left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-lg p-8 w-screen max-w-[90rem]">
+              <div className="grid grid-cols-4 gap-12">
                 {/* FinTech Bölümü */}
                 <div>
-                  <h3 className="font-bold text-[#3277BC] mb-2">FinTech</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">FinTech</h3>
+                  <ul className="space-y-3">
                     {menuItems["Ürünler ve Hizmetler"].FinTech.map((item) => (
                       <li key={item.title}>
-                        <Link to={item.link} className="hover:text-[#3277BC] block whitespace-nowrap">
+                        <Link
+                          to={item.link}
+                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                        >
                           {item.title}
                         </Link>
                       </li>
@@ -149,11 +151,14 @@ const HeaderMenu: React.FC = () => {
 
                 {/* Tech Bölümü */}
                 <div>
-                  <h3 className="font-bold text-[#3277BC] mb-2">Tech</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Tech</h3>
+                  <ul className="space-y-3">
                     {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
                       <li key={item.title}>
-                        <Link to={item.link} className="hover:text-[#3277BC] block whitespace-nowrap">
+                        <Link
+                          to={item.link}
+                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                        >
                           {item.title}
                         </Link>
                       </li>
@@ -163,11 +168,14 @@ const HeaderMenu: React.FC = () => {
 
                 {/* Veri Bölümü */}
                 <div>
-                  <h3 className="font-bold text-[#3277BC] mb-2">Veri Yönetimi</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Veri Yönetimi</h3>
+                  <ul className="space-y-3">
                     {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
                       <li key={item.title}>
-                        <Link to={item.link} className="hover:text-[#3277BC] block whitespace-nowrap">
+                        <Link
+                          to={item.link}
+                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                        >
                           {item.title}
                         </Link>
                       </li>
@@ -177,11 +185,14 @@ const HeaderMenu: React.FC = () => {
 
                 {/* Dijital Bölümü */}
                 <div>
-                  <h3 className="font-bold text-[#3277BC] mb-2">Dijital Dönüşüm</h3>
-                  <ul className="space-y-2">
+                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Dijital Dönüşüm</h3>
+                  <ul className="space-y-3">
                     {menuItems["Ürünler ve Hizmetler"].Dijital.map((item) => (
                       <li key={item.title}>
-                        <Link to={item.link} className="hover:text-[#3277BC] block whitespace-nowrap">
+                        <Link
+                          to={item.link}
+                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                        >
                           {item.title}
                         </Link>
                       </li>
@@ -196,7 +207,7 @@ const HeaderMenu: React.FC = () => {
 
           {/* FinAcademy Menüsü */}
           <div className="relative group">
-            <Link to="/academy" className="hover:text-[#3277BC] py-4">
+            <Link to="/academy" className="hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full">
               FinAcademy
             </Link>
           </div>
