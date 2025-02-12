@@ -224,6 +224,20 @@ const HeaderMenu: React.FC = () => {
               <img src="/git.png" alt="GitHub" className="h-5 w-5" />
             </a>
             <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
+            </a>
+            <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -231,12 +245,20 @@ const HeaderMenu: React.FC = () => {
               <img src="/insta.png" alt="Instagram" className="h-5 w-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://wa.me/905555555555"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
+              <img src="/whatsapp.png" alt="Whatsapp" className="h-5 w-5" />
             </a>
+            <a
+              href="mailto:yusuf@finnovation.com.tr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/mail.png" alt="Mail" className="h-5 w-5" />
+            </a>
+            
           </div>
 
           {/* Dil Değiştir Butonu */}
