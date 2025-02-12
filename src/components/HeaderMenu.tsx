@@ -54,7 +54,7 @@ const HeaderMenu: React.FC = () => {
 
   return (
     <header className="fixed top-3 left-0 w-full z-50 bg-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center h-16">
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/">
@@ -67,19 +67,13 @@ const HeaderMenu: React.FC = () => {
         </div>
 
         {/* Orta Kısım - Menü */}
-        {/* 
-            Aşağıdaki örnekte iki yöntemden birini tercih edebilirsiniz:
-            1) Yalnızca Tailwind responsive sınıfları:
-               className="hidden md:flex ... text-sm md:text-base lg:text-lg ..."
-            2) CSS clamp() ile dinamik yazı boyutu (aşağıda aktif):
-        */}
         <nav
-          className="hidden md:flex flex-nowrap items-center text-gray-700 font-medium space-x-3 sm:space-x-3 lg:space-x-4"
+          className="hidden md:flex flex-nowrap items-center text-[#1E5E81] font-medium space-x-8 ml-12"
           style={{ fontSize: "clamp(0.875rem, 1vw + 0.5rem, 1.125rem)" }}
         >
           {/* Biz Kimiz? Menüsü */}
           <div className="relative group">
-            <Link to="/about" className="hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full">
+            <Link to="/about" className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold">
               Biz Kimiz?
             </Link>
             
@@ -123,12 +117,9 @@ const HeaderMenu: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <span className="font-bold">•</span>
-
           {/* Ürünler ve Hizmetler Menüsü */}
           <div className="relative group">
-            <Link to="/services" className="hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full">
+            <Link to="/services" className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold">
               Ürünler ve Hizmetler
             </Link>
             
@@ -206,19 +197,16 @@ const HeaderMenu: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <span className="font-bold">•</span>
-
           {/* FinAcademy Menüsü */}
           <div className="relative group">
-            <Link to="/academy" className="hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full">
+            <Link to="/academy" className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold">
               FinAcademy
             </Link>
           </div>
         </nav>
 
         {/* Sağ Kısım */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ml-auto">
           {/* Sosyal Medya İkonları */}
           <div className="hidden sm:flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
             <a
