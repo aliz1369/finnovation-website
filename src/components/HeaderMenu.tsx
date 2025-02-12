@@ -219,15 +219,6 @@ const HeaderMenu: React.FC = () => {
 
         {/* Sağ Kısım */}
         <div className="flex items-center space-x-4">
-          {/* Bize Ulaşın Butonu */}
-          <Link
-            to="/contact"
-            className="flex items-center space-x-2 bg-[#3277BC] text-white px-4 py-2 rounded-full font-medium hover:bg-[#2b66a2] transition-colors"
-          >
-            <img src="/phone.png" alt="Phone" className="h-4 w-4" />
-            <span>Bize Ulaşın</span>
-          </Link>
-
           {/* Sosyal Medya İkonları */}
           <div className="hidden sm:flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
             <a
