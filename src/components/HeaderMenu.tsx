@@ -210,14 +210,14 @@ const HeaderMenu: React.FC = () => {
           {/* Sosyal Medya İkonları */}
           <div className="hidden sm:flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
             <a
-              href="https://linkedin.com"
+              href="https://tr.linkedin.com/company/finnovation-consultancy"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img src="/in.png" alt="LinkedIn" className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/hayyam23"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -238,7 +238,7 @@ const HeaderMenu: React.FC = () => {
               <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/finacademy_tr"
               target="_blank"
               rel="noopener noreferrer"
             >
