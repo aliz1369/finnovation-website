@@ -1,0 +1,19 @@
+.menu-dropdown {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  min-width: 220px;
+  z-index: 1000;
+}
+
+.menu-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 24px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+} 
