@@ -245,7 +245,7 @@ const HeaderMenu: React.FC = () => {
               <img src="/insta.png" alt="Instagram" className="h-5 w-5" />
             </a>
             <a
-              href="https://wa.me/905555555555"
+              href="https://wa.me/905325428443"
               target="_blank"
               rel="noopener noreferrer"
             >
