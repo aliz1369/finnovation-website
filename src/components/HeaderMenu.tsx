@@ -83,40 +83,42 @@ const HeaderMenu: React.FC = () => {
               Biz Kimiz?
             </Link>
             
-            <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-20 left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-lg p-8 w-screen max-w-6xl">
-              <div className="grid grid-cols-2 gap-12">
-                {/* Genel Bölümü */}
-                <div>
-                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Genel</h3>
-                  <ul className="space-y-3">
-                    {menuItems["Biz Kimiz?"].Genel.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="text-[#1E5E81] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-20 left-0 right-0 bg-white shadow-lg p-12 w-full border-t">
+              <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-2 gap-12">
+                  {/* Genel Bölümü */}
+                  <div>
+                    <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Genel</h3>
+                    <ul className="space-y-3">
+                      {menuItems["Biz Kimiz?"].Genel.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Kariyer Bölümü */}
-                <div>
-                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Kariyer</h3>
-                  <ul className="space-y-3">
-                    {menuItems["Biz Kimiz?"].Kariyer.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Kariyer Bölümü */}
+                  <div>
+                    <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Kariyer</h3>
+                    <ul className="space-y-3">
+                      {menuItems["Biz Kimiz?"].Kariyer.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -130,74 +132,76 @@ const HeaderMenu: React.FC = () => {
               Ürünler ve Hizmetler
             </Link>
             
-            <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-20 left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-lg p-8 w-screen max-w-[90rem]">
-              <div className="grid grid-cols-4 gap-12">
-                {/* FinTech Bölümü */}
-                <div>
-                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">FinTech</h3>
-                  <ul className="space-y-3">
-                    {menuItems["Ürünler ve Hizmetler"].FinTech.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-20 left-0 right-0 bg-white shadow-lg p-12 w-full border-t">
+              <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-4 gap-12">
+                  {/* FinTech Bölümü */}
+                  <div>
+                    <h3 className="font-bold text-[#1E5E81] text-xl mb-4">FinTech</h3>
+                    <ul className="space-y-3">
+                      {menuItems["Ürünler ve Hizmetler"].FinTech.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Tech Bölümü */}
-                <div>
-                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Tech</h3>
-                  <ul className="space-y-3">
-                    {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  {/* Tech Bölümü */}
+                  <div>
+                    <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Tech</h3>
+                    <ul className="space-y-3">
+                      {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Veri Bölümü */}
-                <div>
-                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Veri Yönetimi</h3>
-                  <ul className="space-y-3">
-                    {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  {/* Veri Bölümü */}
+                  <div>
+                    <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Veri Yönetimi</h3>
+                    <ul className="space-y-3">
+                      {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Dijital Bölümü */}
-                <div>
-                  <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Dijital Dönüşüm</h3>
-                  <ul className="space-y-3">
-                    {menuItems["Ürünler ve Hizmetler"].Dijital.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Dijital Bölümü */}
+                  <div>
+                    <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Dijital Dönüşüm</h3>
+                    <ul className="space-y-3">
+                      {menuItems["Ürünler ve Hizmetler"].Dijital.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
