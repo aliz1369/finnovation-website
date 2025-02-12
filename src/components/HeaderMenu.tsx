@@ -94,7 +94,7 @@ const HeaderMenu: React.FC = () => {
                         <li key={item.title}>
                           <Link
                             to={item.link}
-                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
+                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200"
                           >
                             {item.title}
                           </Link>
@@ -111,7 +111,7 @@ const HeaderMenu: React.FC = () => {
                         <li key={item.title}>
                           <Link
                             to={item.link}
-                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200"
+                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200"
                           >
                             {item.title}
                           </Link>
@@ -143,7 +143,7 @@ const HeaderMenu: React.FC = () => {
                         <li key={item.title}>
                           <Link
                             to={item.link}
-                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                           >
                             {item.title}
                           </Link>
@@ -160,7 +160,7 @@ const HeaderMenu: React.FC = () => {
                         <li key={item.title}>
                           <Link
                             to={item.link}
-                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                           >
                             {item.title}
                           </Link>
@@ -177,7 +177,7 @@ const HeaderMenu: React.FC = () => {
                         <li key={item.title}>
                           <Link
                             to={item.link}
-                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                           >
                             {item.title}
                           </Link>
@@ -194,7 +194,7 @@ const HeaderMenu: React.FC = () => {
                         <li key={item.title}>
                           <Link
                             to={item.link}
-                            className="text-[#1E5E81] hover:bg-[#3377BC] hover:text-white px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                           >
                             {item.title}
                           </Link>
