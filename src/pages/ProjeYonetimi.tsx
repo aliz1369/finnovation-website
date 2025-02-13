@@ -1,9 +1,7 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Navigation } from "swiper/modules";
+import CardSlider from "../components/CardSlider";
 
 const ProjeYonetimi: React.FC = () => {
   const values = [
@@ -92,109 +90,11 @@ const ProjeYonetimi: React.FC = () => {
 
         {/* Carousel Section */}
         <section className="bg-white py-16">
-          {/* Artık container yerine w-full px-4, böylece kenarlardaki boşluk azalacak */}
-          <div
-            style={{ padding: "0px 2px 10px" }}
-            className="relative w-full overflow-visible"
-          >
-            <Swiper
-              modules={[Navigation]}
-              navigation={{
-                nextEl: ".custom-swiper-next",
-                prevEl: ".custom-swiper-prev",
-              }}
-              // Mobilde kısmi görünüm için 1.2
-              slidesPerView={1.2}
-              spaceBetween={5}
-              breakpoints={{
-                // 640px (sm) üstü için 2
-                640: { slidesPerView: 3 },
-                // 1024px (lg) üstü için 4
-                1024: { slidesPerView: 4 },
-              }}
-              pagination={{ clickable: true }}
-              grabCursor={false}
-            >
-              {values.map((value, index) => (
-                <SwiperSlide key={index}>
-                  {/* Card */}
-                  <div
-                    className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-start
-                          justify-start h-[350px] w-[270px] border border-gray-200 mx-auto"
-                  >
-                    <img
-                      src={value.icon}
-                      alt={value.title}
-                      className="w-12 h-12 mb-4"
-                    />
-                    <h3 className="text-lg font-bold font-segouie mb-3">
-                      {value.title}
-                    </h3>
-                    <ul className="text-gray-600 text-sm font-segouie space-y-2">
-                      {value.description.map((text, i) => (
-                        <li key={i} className="flex items-start space-x-2">
-                          <img
-                            src="/checkmark.png"
-                            alt="Checkmark"
-                            className="w-4 h-4 mt-1"
-                          />
-                          <p className="italic font-segouie">{text}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            {/* Custom Navigation Buttons */}
-            {/* right-4 yaparak okları biraz daha sağa çektik */}
-            <div className="absolute bottom-[-60px] right-4 flex space-x-4 z-10">
-              <button
-                className="custom-swiper-prev w-10 h-10 bg-gray-100
-                  rounded-full flex items-center justify-center
-                  shadow hover:shadow-lg hover:bg-gray-200
-                  transform hover:scale-110 transition-all"
-              >
-                <svg
-                  className="w-6 h-6 text-gray-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-
-              <button
-                className="custom-swiper-next w-10 h-10 bg-gray-100
-                  rounded-full flex items-center justify-center
-                  shadow hover:shadow-lg hover:bg-gray-200
-                  transform hover:scale-110 transition-all"
-              >
-                <svg
-                  className="w-6 h-6 text-gray-700"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 19l7-7-7-7"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+          <CardSlider
+            isScrollable={true}
+            cardPerView={3}
+            sliderDatas={values}
+          />
         </section>
 
         <section className="container mx-auto px-2 py-2 bg-white">

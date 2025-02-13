@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
+import CardSlider from "../components/CardSlider";
 
 interface Program {
   title: string;
@@ -55,6 +56,35 @@ const FinAcademyPage: React.FC = () => {
     },
   ]);
 
+  const benefits = [
+    {
+      title: "Esnek Çalışma",
+      description: ["Hibrit çalışma modeli ile iş-yaşam dengenizi koruyun"],
+      icon: "/public/collab.png",
+    },
+    {
+      title: "Sürekli Gelişim",
+      description: [
+        "Düzenli eğitimler ve workshop'lar ile kendinizi geliştirin",
+      ],
+      icon: "/public/collab.png",
+    },
+    {
+      title: "Sağlık Sigortası",
+      description: ["Özel sağlık sigortası ile siz ve aileniz güvende"],
+      icon: "/public/activeuser.png",
+    },
+    {
+      title: "Sosyal Aktiviteler",
+      description: ["Düzenli ekip aktiviteleri ve sosyal etkinlikler"],
+      icon: "/public/activeuser.png",
+    },
+    {
+      title: "Teknoloji Desteği",
+      description: ["İhtiyacınız olan tüm teknolojik ekipman desteği"],
+      icon: "/public/activeuser.png",
+    },
+  ];
   const handleToggle = (index: number) => {
     setPrograms((prev) =>
       prev.map((prog, i) =>
@@ -102,72 +132,11 @@ const FinAcademyPage: React.FC = () => {
             <h2 className="text-4xl md:text-6xl font-light text-gray-900 mb-10">
               Neden FinAcademy?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div
-                className="bg-white shadow-md rounded-xl p-8
-                           flex flex-col items-center text-center
-                           min-h-[450px]"
-              >
-                <img
-                  src="/activeuser.png"
-                  alt="Uzman Eğitmenler"
-                  className="w-16 h-16 mb-4"
-                />
-                <h3 className="text-2xl font-light mb-4">Uzman Eğitmenler</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  <img
-                    src="/checkmark.png"
-                    alt="Check"
-                    className="inline-block w-4 h-4 mr-1"
-                  />
-                  Alanında deneyimli eğitmenlerimiz size en iyi öğrenme
-                  deneyimini sunmak için çalışmaktadır.
-                </p>
-              </div>
-              <div
-                className="bg-white shadow-md rounded-xl p-8
-                           flex flex-col items-center text-center
-                           min-h-[450px]"
-              >
-                <img
-                  src="/practical.png"
-                  alt="Pratik Eğitim"
-                  className="w-16 h-16 mb-4"
-                />
-                <h3 className="text-2xl font-light mb-4">Pratik Eğitim</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  <img
-                    src="/checkmark.png"
-                    alt="Check"
-                    className="inline-block w-4 h-4 mr-1"
-                  />
-                  Teorik bilginin yanı sıra gerçek dünya uygulamalarıyla pratik
-                  deneyim kazanmanızı sağlıyoruz.
-                </p>
-              </div>
-              <div
-                className="bg-white shadow-md rounded-xl p-8
-                           flex flex-col items-center text-center
-                           min-h-[450px]"
-              >
-                <img
-                  src="/update.png"
-                  alt="Güncel Müfredat"
-                  className="w-16 h-16 mb-4"
-                />
-                <h3 className="text-2xl font-light mb-4">Güncel Müfredat</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  <img
-                    src="/checkmark.png"
-                    alt="Check"
-                    className="inline-block w-4 h-4 mr-1"
-                  />
-                  Finans teknolojileri hızla değişiyor; biz de müfredatımızı
-                  sürekli güncelleyerek sektör trendlerine uygun eğitimler
-                  sunuyoruz.
-                </p>
-              </div>
-            </div>
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={benefits}
+            />
           </div>
         </section>
         <section className="bg-white">
@@ -218,43 +187,11 @@ const FinAcademyPage: React.FC = () => {
             <h2 className="text-5xl md:text-6xl font-light text-gray-900 mb-12">
               Eğitim Formatları
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white shadow rounded-xl p-8 flex flex-col items-center text-center min-h-[500px]">
-                <img
-                  src="/activeuser.png"
-                  alt="Çevrimiçi Kurslar"
-                  className="w-16 h-16 mb-4"
-                />
-                <h3 className="text-2xl font-light mb-4">Çevrimiçi Kurslar</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  Finans teknolojileri hızla değişiyor; bu dinamik ortamda
-                  müfredatımızı sürekli güncelleyerek sektör trendlerine uygun
-                  eğitimler sunuyoruz.
-                </p>
-              </div>
-              <div className="bg-white shadow rounded-xl p-8 flex flex-col items-center text-center min-h-[400px]">
-                <img
-                  src="/update.png"
-                  alt="Yüz yüze Seminer"
-                  className="w-16 h-16 mb-4"
-                />
-                <h3 className="text-2xl font-light mb-4">Yüz yüze Seminer</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  Canlı etkileşim ile derslerinizi anında öğrenme fırsatı.
-                </p>
-              </div>
-              <div className="bg-white shadow rounded-xl p-8 flex flex-col items-center text-center min-h-[400px]">
-                <img
-                  src="/update.png"
-                  alt="Atölye Çalışmaları"
-                  className="w-16 h-16 mb-4"
-                />
-                <h3 className="text-2xl font-light mb-4">Atölye Çalışmaları</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  Uygulamalı deneyim kazanmak için pratik yapma imkanı.
-                </p>
-              </div>
-            </div>
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={benefits}
+            />
           </div>
         </section>
         <section className="relative overflow-hidden h-auto md:h-[calc(100vh-4rem)]">
