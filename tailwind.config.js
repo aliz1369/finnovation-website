@@ -18,6 +18,25 @@ export default {
       fontFamily: {
         segouie: ['SegoeUI', 'sans-serif'],
       },
+      animation: {
+        'scroll': 'scroll 15s linear infinite',
+        'scroll-right': 'scrollRight 40s linear infinite',
+        'scroll-left': 'scrollLeft 40s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
+        },
+        scrollRight: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
+        },
+        scrollLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' }
+        }
+      }
     },
   },
   plugins: [],
