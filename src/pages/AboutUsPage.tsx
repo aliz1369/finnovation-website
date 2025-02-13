@@ -1,49 +1,49 @@
-import React, { useState } from "react";
+import React from "react";
 import MainLayout from "../layouts/MainLayout";
 
 import "swiper/swiper-bundle.css";
 
-import finlambLogo from "/public/finlamb.jpg"; //bu finlamb.png ile değişecek
+// import finlambLogo from "/public/finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
-  const faqData = [
-    {
-      question: "Finnovation'ın temel değerleri nelerdir?",
-      answer:
-        "• İnovasyon, takım ruhu, şeffaflık ve sürdürülebilirlik temel değerlerimizi oluşturur.",
-      icon: "/public/checkmark.png",
-    },
-    {
-      question: "Şirket kültürünüzü nasıl tanımlarsınız?",
-      answer:
-        "• Yenilikçi, dinamik ve işbirlikçi bir kültür. Herkesin fikirlerini özgürce paylaşabildiği açık bir iletişim ortamı.",
-      icon: "/public/checkmark.png",
-    },
-    {
-      question: "Ekip içi iletişimi nasıl sağlıyorsunuz?",
-      answer:
-        "• Düzenli toplantılar, sosyal etkinlikler ve açık iletişim kanalları ile ekip içi bağları güçlendiriyoruz.",
-      icon: "/public/checkmark.png",
-    },
-    {
-      question: "Sosyal sorumluluk projeleriniz var mı?",
-      answer:
-        "• Evet, sürdürülebilirlik ve toplumsal fayda odaklı çeşitli projelerde yer alıyoruz.",
-      icon: "/public/checkmark.png",
-    },
-  ];
+  // const faqData = [
+  //   {
+  //     question: "Finnovation'ın temel değerleri nelerdir?",
+  //     answer:
+  //       "• İnovasyon, takım ruhu, şeffaflık ve sürdürülebilirlik temel değerlerimizi oluşturur.",
+  //     icon: "/public/checkmark.png",
+  //   },
+  //   {
+  //     question: "Şirket kültürünüzü nasıl tanımlarsınız?",
+  //     answer:
+  //       "• Yenilikçi, dinamik ve işbirlikçi bir kültür. Herkesin fikirlerini özgürce paylaşabildiği açık bir iletişim ortamı.",
+  //     icon: "/public/checkmark.png",
+  //   },
+  //   {
+  //     question: "Ekip içi iletişimi nasıl sağlıyorsunuz?",
+  //     answer:
+  //       "• Düzenli toplantılar, sosyal etkinlikler ve açık iletişim kanalları ile ekip içi bağları güçlendiriyoruz.",
+  //     icon: "/public/checkmark.png",
+  //   },
+  //   {
+  //     question: "Sosyal sorumluluk projeleriniz var mı?",
+  //     answer:
+  //       "• Evet, sürdürülebilirlik ve toplumsal fayda odaklı çeşitli projelerde yer alıyoruz.",
+  //     icon: "/public/checkmark.png",
+  //   },
+  // ];
 
-  const [openFAQs, setOpenFAQs] = useState<boolean[]>(
-    new Array(faqData.length).fill(false)
-  );
+  // const [openFAQs, setOpenFAQs] = useState<boolean[]>(
+  //   new Array(faqData.length).fill(false)
+  // );
 
-  const toggleFAQ = (index: number) => {
-    setOpenFAQs((prev) => {
-      const newState = [...prev];
-      newState[index] = !newState[index];
-      return newState;
-    });
-  };
+  // const toggleFAQ = (index: number) => {
+  //   setOpenFAQs((prev) => {
+  //     const newState = [...prev];
+  //     newState[index] = !newState[index];
+  //     return newState;
+  //   });
+  // };
   return (
     <MainLayout>
       {}
@@ -66,7 +66,7 @@ const AboutPage: React.FC = () => {
             {/* RIGHT COLUMN */}
             <div>
               <img
-                src={finlambLogo}
+                src={"/finlamb.jpg"}
                 alt="finlambLogo"
                 className="h-500 w-500 ml-2"
               />

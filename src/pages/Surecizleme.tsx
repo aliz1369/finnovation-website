@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Page } from "../types/globalTypes";
-import { fetchSurecIzlemePage } from "../api/pageApi";
+import React from "react";
+// import { fetchSurecIzlemePage } from "../api/pageApi";
 import CardSlider from "../components/CardSlider";
 import MainLayout from "../layouts/MainLayout";
 
@@ -35,20 +34,20 @@ const SurecIzleme: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetchSurecIzlemePage();
-        setData(response);
-      } catch (err) {
-        console.error("API Hatası:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetchSurecIzlemePage();
+  //       setData(response);
+  //     } catch (err) {
+  //       console.error("API Hatası:", err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <MainLayout>
