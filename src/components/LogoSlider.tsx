@@ -10,14 +10,13 @@ const LogoSlider: React.FC<LogoSliderInfo> = ({ logos }) => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    const scrollAmount = 2; // Speed of scrolling
-    const maxScroll = scrollContainer.scrollWidth / 2; // Half of duplicated content
+    const scrollAmount = 2;
+    const maxScroll = scrollContainer.scrollWidth / 2;
 
     const scroll = () => {
       if (scrollContainer) {
         if (scrollContainer.scrollLeft >= maxScroll) {
-          scrollContainer.scrollLeft = 0; // Reset when reaching midpoint
-        } else {
+          scrollContainer.scrollLeft = 0;
           scrollContainer.scrollLeft += scrollAmount;
         }
       }
