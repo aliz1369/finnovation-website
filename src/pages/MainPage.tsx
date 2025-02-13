@@ -24,7 +24,7 @@ const MainPage: React.FC = () => {
         <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-[100px]">
           <div className="max-w-[1440px] mx-auto">
             {/* Ana Başlık ve İçerik */}
-            <div className="flex flex-col -ml-20">
+            <div className="flex flex-col text-center md:text-left md:-ml-20">
               {/* Başlık Kısmı */}
               <div className="mb-8 translate-y-30">
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
@@ -36,7 +36,7 @@ const MainPage: React.FC = () => {
               </div>
 
               {/* Alt Başlık ve Butonlar */}
-              <div className="flex flex-col lg:flex-row justify-between items-start gap-12 translate-y-30">
+              <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 translate-y-30">
                 {/* Türkçe Başlık */}
                 <div className="lg:max-w-2xl">
                   <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
@@ -45,14 +45,14 @@ const MainPage: React.FC = () => {
                 </div>
 
                 {/* İngilizce Metin ve Butonlar */}
-                <div className="lg:max-w-xl flex flex-col gap-8">
+                <div className="lg:max-w-xl flex flex-col items-center lg:items-start gap-8">
                   <p className="text-[16px] sm:text-[18px] text-gray-700">
                     Empowering businesses through data-driven insights and
                     automation to achieve unparalleled growth. We built to
                     revolutionize industries and improve productivity.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center sm:justify-start">
                     <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center justify-center transition-colors">
                       Explore Our Solutions
                       <span className="ml-2 text-xl">→</span>
