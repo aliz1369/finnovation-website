@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const HeaderMenu: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Menü verilerini tanımlıyoruz
   const menuItems = {
     "Biz Kimiz?": {
@@ -54,7 +56,7 @@ const HeaderMenu: React.FC = () => {
 
   return (
     <header className="fixed top-3 left-0 w-full z-50 bg-white">
-      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center h-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/">
@@ -64,6 +66,189 @@ const HeaderMenu: React.FC = () => {
               className="h-8 sm:h-9 md:h-19 object-contain"
             />
           </Link>
+        </div>
+
+        {/* Mobil Menü Butonu */}
+        <button
+          className="md:hidden text-[#1E5E81]"
+          onClick={() => setIsMobileMenuOpen(true)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        {/* Mobil Menü */}
+        <div
+          className={`fixed inset-0 bg-white z-50 md:hidden transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Mobil Menü Header */}
+          <div className="flex items-center justify-between p-4 border-b">
+            <Link to="/">
+              <img
+                src="/finnovation-logo.png"
+                alt="Finnovation"
+                className="h-8"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+            </Link>
+            <button
+              className="text-[#1E5E81]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobil Menü İçeriği */}
+          <div className="p-4 overflow-y-auto h-full">
+            <nav className="space-y-6">
+              {/* Dil Seçimi - En üste taşındı */}
+              <div className="pb-4 border-b">
+                <div className="flex items-center space-x-2 text-[#3277BC]">
+                  <img src="/world.png" alt="Globe" className="h-5 w-5" />
+                  <span>TR</span>
+                </div>
+              </div>
+              {/* Biz Kimiz? */}
+              <div>
+                <div className="text-lg font-semibold text-[#1E5E81] mb-3">
+                  Biz Kimiz?
+                </div>
+                <div className="pl-4 space-y-4">
+                  <div>
+                    <div className="font-medium text-[#3377BC] mb-2">Genel</div>
+                    <ul className="space-y-2 pl-2">
+                      {menuItems["Biz Kimiz?"].Genel.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] block py-1"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="font-medium text-[#3377BC] mb-2">Kariyer</div>
+                    <ul className="space-y-2 pl-2">
+                      {menuItems["Biz Kimiz?"].Kariyer.map((item) => (
+                        <li key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="text-[#1E5E81] block py-1"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ürünler ve Hizmetler */}
+              <div>
+                <div className="text-lg font-semibold text-[#1E5E81] mb-3">
+                  Ürünler ve Hizmetler
+                </div>
+                <div className="pl-4 space-y-4">
+                  {Object.entries(menuItems["Ürünler ve Hizmetler"]).map(([category, items]) => (
+                    <div key={category}>
+                      <div className="font-medium text-[#3377BC] mb-2">{category}</div>
+                      <ul className="space-y-2 pl-2">
+                        {items.map((item) => (
+                          <li key={item.title}>
+                            <Link
+                              to={item.link}
+                              className="text-[#1E5E81] block py-1"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {item.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* FinAcademy */}
+              <div>
+                <Link
+                  to="/academy"
+                  className="text-lg font-semibold text-[#1E5E81] block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  FinAcademy
+                </Link>
+              </div>
+
+              {/* Sosyal Medya */}
+              <div className="pt-4 border-t">
+                <div className="flex flex-wrap gap-4">
+                  <a href="https://tr.linkedin.com/company/finnovation-consultancy" target="_blank" rel="noopener noreferrer">
+                    <img src="/in.png" alt="LinkedIn" className="h-6 w-6" />
+                  </a>
+                  <a href="https://github.com/hayyam23" target="_blank" rel="noopener noreferrer">
+                    <img src="/git.png" alt="GitHub" className="h-6 w-6" />
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
+                  </a>
+                  <a href="https://instagram.com/finacademy_tr" target="_blank" rel="noopener noreferrer">
+                    <img src="/insta.png" alt="Instagram" className="h-6 w-6" />
+                  </a>
+                  <a href="https://wa.me/905325428443" target="_blank" rel="noopener noreferrer">
+                    <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
+                  </a>
+                  <a href="mailto:yusuf@finnovation.com.tr" target="_blank" rel="noopener noreferrer">
+                    <img src="/mail.png" alt="Mail" className="h-6 w-6" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Dil Seçimi - En alta taşındı */}
+              <div className="pt-4 border-t">
+                <div className="flex items-center space-x-2 text-[#3277BC]">
+                  <img src="/world.png" alt="Globe" className="h-5 w-5" />
+                  <span>TR</span>
+                </div>
+              </div>
+            </nav>
+          </div>
         </div>
 
         {/* Orta Kısım - Menü */}
@@ -205,10 +390,10 @@ const HeaderMenu: React.FC = () => {
           </div>
         </nav>
 
-        {/* Sağ Kısım */}
-        <div className="flex items-center space-x-4 ml-auto">
+        {/* Sağ Kısım - Desktop */}
+        <div className="hidden md:flex items-center space-x-4">
           {/* Sosyal Medya İkonları */}
-          <div className="hidden sm:flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
+          <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
             <a
               href="https://tr.linkedin.com/company/finnovation-consultancy"
               target="_blank"
@@ -258,10 +443,9 @@ const HeaderMenu: React.FC = () => {
             >
               <img src="/mail.png" alt="Mail" className="h-5 w-5" />
             </a>
-            
           </div>
 
-          {/* Dil Değiştir Butonu */}
+          {/* Dil Değiştir Butonu - Sadece Desktop */}
           <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors">
             <img src="/world.png" alt="Globe" className="h-5 w-5 mr-2" />
             <span>TR</span>
