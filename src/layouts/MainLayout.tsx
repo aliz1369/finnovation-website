@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderMenu from "../components/HeaderMenu";
-import Footer from "../components/Footer/Footer";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -8,13 +7,11 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <div className="h-screen w-full overflow-hidden">
       <HeaderMenu />
-      {/* Header sabit konumda olduğu için içerik üstten biraz boşluk bırakıyor */}
-      <main className="flex-grow pt-[80px]">
+      <main className="h-full">
         {children}
       </main>
-      <Footer />
     </div>
   );
 };

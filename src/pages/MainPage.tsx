@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import MainLayout from "../layouts/MainLayout";
 
 const MainPage: React.FC = () => {
@@ -12,101 +12,98 @@ const MainPage: React.FC = () => {
     "/img7.png", // Türkiye İş Bankası
   ];
 
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    // Logoları iki kere kopyalayarak sürekli kayma efekti oluşturuyoruz
-    slider.innerHTML = slider.innerHTML + slider.innerHTML;
-
-    const scroll = () => {
-      if (slider.scrollLeft >= slider.scrollWidth / 2) {
-        slider.scrollLeft = 0;
-      } else {
-        slider.scrollLeft += 1;
-      }
-    };
-
-    const intervalId = setInterval(scroll, 30);
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
     <MainLayout>
-      <div className="h-[80vh] pt-[80px] relative bg-white overflow-hidden top-1 left-0 right-0 ">
+      <div className="h-full relative bg-white">
         {/* Hero Bölümü */}
-        <section className="h-full flex items-center pb-20">
-          {/* Arka Plan Şekli (isteğe bağlı) */}
-          <img
-            src="/images/shape.png"
-            alt="Shape"
-            className="absolute right-0 top-0 w-[600px] h-[600px] object-contain opacity-20 pointer-events-none -z-10"
-          />
+        <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-[100px]">
+          <div className="max-w-[1440px] mx-auto">
+            {/* Ana Başlık ve İçerik */}
+            <div className="flex flex-col -ml-20">
+              {/* Başlık Kısmı */}
+              <div className="mb-8 translate-y-30">
+                <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
+                  Stratejinizi gerçeğe
+                </h1>
+                <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight mt-0">
+                  Dönüştürüyoruz
+                </h1>
+              </div>
 
-          <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Sol Kısım */}
-            <div>
-              {/* Büyük Başlık */}
-              <h1 className="text-2xl xl:text-7xl font-extrabold text-gray-900 leading-tight">
-                Stratejinizi Gerçeğe
-                <br />
-                Dönüştürüyoruz
-              </h1>
-              {/* Türkçe Alt Başlık */}
-              <p className="mt-6 text-2xl text-gray-700 font-medium">
-                Yenilikçi BT çözümleri ile iş sürekliliğinizi sağlıyoruz.
-              </p>
-            </div>
+              {/* Alt Başlık ve Butonlar */}
+              <div className="flex flex-col lg:flex-row justify-between items-start gap-12 translate-y-30">
+                {/* Türkçe Başlık */}
+                <div className="lg:max-w-2xl">
+                  <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
+                    Yenilikçi BT çözümleri ile iş sürekliliğinizi sağlıyoruz.
+                  </h2>
+                </div>
 
-            {/* Sağ Kısım */}
-            <div className="flex flex-col items-start lg:items-end">
-              {/* İngilizce açıklama */}
-              <p className="text-lg text-gray-700 max-w-md mb-8 leading-relaxed">
-                Empowering businesses through data-driven insights and
-                automation to achieve unparalleled growth. We built to
-                revolutionize industries and improve productivity.
-              </p>
-
-              {/* Butonlar */}
-              <div className="flex space-x-4">
-                <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center transition-colors">
-                  Explore Our Solutions
-                  <span className="ml-2 text-xl">→</span>
-                </button>
-                <button className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center transition-colors">
-                  Book a Demo
-                  <img
-                    src="/bd.png"
-                    alt="Calendar"
-                    className="h-5 w-5 ml-2"
-                  />
-                </button>
+                {/* İngilizce Metin ve Butonlar */}
+                <div className="lg:max-w-xl flex flex-col gap-8">
+                  <p className="text-[16px] sm:text-[18px] text-gray-700">
+                    Empowering businesses through data-driven insights and automation to achieve unparalleled growth. We built to revolutionize industries and improve productivity.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center justify-center transition-colors">
+                      Explore Our Solutions
+                      <span className="ml-2 text-xl">→</span>
+                    </button>
+                    <button className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center justify-center transition-colors">
+                      Book a Demo
+                      <img src="/bd.png" alt="Calendar" className="h-5 w-5 ml-2" />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Logolar Section */}
-        <section className="absolute bottom-6 left-0 right-0 py-4">
-          <div className="container mx-auto px-6">
-            <div 
-              ref={sliderRef}
-              className="flex items-center space-x-8 md:space-x-16 whitespace-nowrap overflow-hidden"
-              style={{ scrollBehavior: 'smooth' }}
-            >
-              {logos.map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo}
-                  alt={`Partner Logo ${index + 1}`}
-                  className="h-8 md:h-12 lg:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity inline-block"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Logo Section'ları */}
+        <div className="absolute bottom-[60px] left-0 right-0">
+          {/* Üst ve Alt Logo Section için farklı animasyonlar */}
+          {[...Array(2)].map((_, sectionIndex) => (
+            <section key={`section-${sectionIndex}`} className="w-screen overflow-hidden py-2">
+              <div className={`flex ${sectionIndex === 0 ? 'animate-scroll-right' : 'animate-scroll-left'}`}>
+                {[...Array(2)].map((_, index) => (
+                  <div key={`${sectionIndex}-${index}`} className="flex min-w-full justify-between items-center px-8">
+                    {logos.map((logo, logoIndex) => (
+                      <img
+                        key={logoIndex}
+                        src={logo}
+                        alt={`Partner Logo ${logoIndex + 1}`}
+                        className={`${
+                          // img7.png için daha da büyük boyut
+                          logoIndex === 6 
+                            ? "h-24 md:h-32 lg:h-40" // Boyutları artırdık
+                          // img3, img4, img6 için orta büyüklük
+                          : [2, 3, 5].includes(logoIndex)
+                            ? "h-16 md:h-24 lg:h-28"
+                            // Diğer logolar için standart boyut
+                            : "h-12 md:h-20 lg:h-24"
+                        } w-auto object-contain opacity-80 hover:opacity-100 transition-opacity`}
+                        style={{ 
+                          minWidth: logoIndex === 6 
+                            ? '280px' // Minimum genişliği artırdık
+                            : [2, 3, 5].includes(logoIndex) 
+                              ? '200px' 
+                              : '160px',
+                          maxWidth: logoIndex === 6 
+                            ? '320px' // Maximum genişliği artırdık
+                            : [2, 3, 5].includes(logoIndex) 
+                              ? '240px' 
+                              : '200px'
+                        }}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
     </MainLayout>
   );
