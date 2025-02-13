@@ -7,11 +7,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #ffffff;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: bold;
 }
@@ -40,7 +42,7 @@ button:hover {
 
 /* Background */
 .bg-gradient-to-r {
-  background-image: linear-gradient(to right, #3277BC, #4BA6DD);
+  background-image: linear-gradient(to right, #3277bc, #4ba6dd);
 }
 /* Header Navigation */
 header nav a {
@@ -74,8 +76,17 @@ img:hover {
 }
 
 @font-face {
-  font-family: 'SegoeUI';
-  src: url('/fonts/SegoeUIVF.ttf') format('truetype');
+  font-family: "SegoeUI";
+  src: url("/fonts/SegoeUIVF.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
