@@ -1,171 +1,200 @@
-// src/pages/ValuesPage.tsx
-import React, { useEffect, useState } from "react";
-import { Page } from "../types/globalTypes";
-import { fetchdegerlerimizPage } from "../api/pageApi";
-import LoadingSpinner from "../components/LoadSpinner";
-import StyledText from "../components/StyledText";
+import "swiper/swiper-bundle.css";
+import CardSlider from "../components/CardSlider";
+import MainLayout from "../layouts/MainLayout";
 
 const ValuesPage: React.FC = () => {
-  const [data, setData] = useState<Page | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const data = async () => {
-      try {
-        setLoading(true);
-        const response = await fetchdegerlerimizPage();
-        setData(response);
-      } catch (err) {
-        setLoading(false);
-        console.log(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    data();
-  }, []);
-
-  // const values = [
-  //   {
-  //     title: "Yoldaşız",
-  //     description:
-  //       "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız ve tüm ekosisteme bu gözle bakarız.",
-  //     icon: "icon1.png",
-  //   },
-  //   {
-  //     title: "Dürüstüz",
-  //     description:
-  //       "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız. Projelerimizin ve çalışmalarımızın takibiyle ilgili sizi anında ve net bir şekilde bilgilendiririz.",
-  //     icon: "icon4.png",
-  //   },
-  //   {
-  //     title: "Ortağız",
-  //     description:
-  //       "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. Her birimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir. Herkes şirkette farklı oran ve tiplerde ortaktır. Kendi işimiz olduğu bilinci ile kişisel değil ailesel düşünürüz.",
-  //     icon: "icon2.png",
-  //   },
-  //   {
-  //     title: "Müşteri Odaklıyız",
-  //     description:
-  //       "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-  //     icon: "icon5.png",
-  //   },
-  //   {
-  //     title: "Samimiyiz",
-  //     description:
-  //       "İyi niyet esaslı açık iletişim kurarız, net konuşuruz. Tek iletişim noktasından hareket etmez, birebir mümkünse yüzyüze konuşuruz.",
-  //     icon: "icon3.png",
-  //   },
-  //   {
-  //     title: "Müşteri Deneyimini Önemseriz",
-  //     description: "Basit, kullanışlı, uygun fiyatlı ürünler sunarız.",
-  //     icon: "icon6.png",
-  //   },
-  // ];
+  const values = [
+    {
+      title: "Yoldaşız",
+      description: [
+        "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız ve tüm ekosisteme bu gözle bakarız.",
+      ],
+      icon: "icon1.png",
+    },
+    {
+      title: "Dürüstüz",
+      description: [
+        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız. Projelerimizin ve çalışmalarımızın takibiyle ilgili sizi anında ve net bir şekilde bilgilendiririz.",
+      ],
+      icon: "icon4.png",
+    },
+    {
+      title: "Ortağız",
+      description: [
+        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. Her birimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir. Herkes şirkette farklı oran ve tiplerde ortaktır. Kendi işimiz olduğu bilinci ile kişisel değil ailesel düşünürüz.",
+      ],
+      icon: "icon2.png",
+    },
+    {
+      title: "Müşteri Odaklıyız",
+      description: [
+        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
+      ],
+      icon: "icon5.png",
+    },
+    {
+      title: "Samimiyiz",
+      description: [
+        "İyi niyet esaslı açık iletişim kurarız, net konuşuruz. Tek iletişim noktasından hareket etmez, birebir mümkünse yüzyüze konuşuruz.",
+      ],
+      icon: "icon3.png",
+    },
+    {
+      title: "Müşteri Deneyimini Önemseriz",
+      description: ["Basit, kullanışlı, uygun fiyatlı ürünler sunarız."],
+      icon: "icon6.png",
+    },
+  ];
 
   return (
-    <>
-      <LoadingSpinner visible={loading} />
-      <div className="flex flex-col min-h-screen relative bg-white">
-        <main className="flex-grow relative py-8 md:py-16 px-4 md:px-8">
-          {/* Arka plan */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(to right, #3b82f6, #14b8a6)",
-              clipPath: "polygon(0 0, 100% 0, 100% 20%, 0 100%)",
-            }}
-          />
-
-          {/* İçerik */}
-          <div className="relative z-10 max-w-6xl mx-auto">
-            <h1 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8 md:mb-12">
-              Değerlerimiz
-            </h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {data?.sections.map((section) => {
-                const textComponents = section.components.filter(
-                  (component) =>
-                    component.component_type === "title" ||
-                    component.component_type === "text"
-                );
-                const imageComponents = section.components.filter(
-                  (component) => component.component_type === "image"
-                );
-                return (
-                  <div
-                    key={section.id}
-                    className="flex items-start space-x-4 md:space-x-6 text-gray-800"
-                  >
-                    <>
-                      {imageComponents.length > 0 && (
-                        <div>
-                          {imageComponents.map((component) => (
-                            <div
-                              key={component.id}
-                              className="w-10 h-20 md:w-12 md:h-12"
-                            >
-                              <img
-                                src={component.image_large ?? undefined}
-                                alt="Component Image"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {textComponents.length > 0 && (
-                        <div>
-                          {textComponents.map((component) => (
-                            <div key={component.id}>
-                              {component.component_type === "title" && (
-                                <StyledText
-                                  content={component.content_value}
-                                  className="text-base md:text-xl font-bold mb-1 md:mb-2"
-                                />
-                              )}
-                              {component.component_type === "text" && (
-                                <StyledText
-                                  content={component.content_value}
-                                  className="text-sm md:text-base leading-relaxed"
-                                />
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="flex items-start space-x-4 md:space-x-6 text-gray-800"
-                >
-                  <img
-                    src={value.icon}
-                    alt={value.title}
-                    className="w-10 h-10 md:w-12 md:h-12"
-                  />
-                  <div>
-                    <h2 className="text-base md:text-xl font-bold mb-1 md:mb-2">
-                      {value.title}
-                    </h2>
-                    <p className="text-sm md:text-base leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div> */}
+    <MainLayout>
+      {}
+      {/* SECTION: Vizyonumuz */}
+      <section className="container mx-auto px-2 py-2 bg-white">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+          {/* LEFT COLUMN */}
+          <div>
+            <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
+              Vizyonumuz
+            </h2>
           </div>
-        </main>
-      </div>
-    </>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
+          {/* RIGHT COLUMN */}
+          <div>
+            <p className="mt-4 text-2xl text-gray-700 font-bold ">
+              Yenilikçi BT çözümleri ile <br />
+              iş sürekliliğinizi sağlıyoruz.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-lg text-gray-700 leading-relaxed ">
+              Biz, farkı insan faktörünün yarattığına ve sunduğumuz hizmetlerin
+              mükemmelliğinin temelinde çalışanlarımızın özverisi, uzmanlığı ve
+              tutkusunun olduğuna inanıyoruz. Kuruluşumuzdan bu yana inovatif,
+              esnek, uzman, tutkulu ve girişimci bir yaklaşımla kültürümüzü inşa
+              ediyoruz. Bu kültür etrafında, birbirine zincir gibi bağlı,
+              samimi, dürüst ve iş etiğine sahip bir ekip olarak geleceği
+              şekillendirme vizyonuyla hareket ediyoruz. Müşterilerimizin başarı
+              yolculuğunda güvenilir bir iş ortağı olmayı hedefliyor, her adımda
+              sürdürülebilir ve yenilikçi çözümlerle yanlarında olmayı taahhüt
+              ediyoruz. 2030 yılında, teknoloji geliştirme, danışmanlık ve
+              eğitim alanlarında inovasyon lideri olarak,Türkiye’den dünyaya
+              yayılan sürdürülebilir ve etkili çözümler sunarak sektörde tanınan
+              bir lider olmak.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: Misyonumuz */}
+      <section className="container mx-auto px-2 py-2 bg-white">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+          {/* LEFT COLUMN */}
+          <div>
+            <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
+              Misyonumuz
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
+          {/* RIGHT COLUMN */}
+          <div>
+            <p className="mt-4 text-2xl text-gray-700 font-bold ">
+              Yenilikçi BT çözümleri ile <br />
+              iş sürekliliğinizi sağlıyoruz.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-lg text-gray-700 leading-relaxed ">
+              Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı,
+              sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler
+              sunmaktır.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION: Misyonumuz */}
+      <section className="container mx-auto px-2 py-2 bg-white">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+          {/* LEFT COLUMN */}
+          <div>
+            <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
+              Değerlerimiz
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
+          {/* RIGHT COLUMN */}
+          <div>
+            <p className="mt-4 text-2xl text-gray-700 font-bold ">
+              Yenilikçi BT çözümleri ile <br />
+              iş sürekliliğinizi sağlıyoruz.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-lg text-gray-700 leading-relaxed ">
+              Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı,
+              sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler
+              sunmaktır.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <CardSlider isScrollable={true} cardPerView={3} sliderDatas={values} />
+
+        {/* Custom Navigation Buttons */}
+        <div className="absolute bottom-[-60px] right-16 flex space-x-4 z-10">
+          <button className="custom-swiper-prev w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shadow hover:shadow-lg hover:bg-gray-200 transform hover:scale-110 transition-all">
+            <svg
+              className="w-6 h-6 text-gray-700"
+              xmlns="http:www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button className="custom-swiper-next w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shadow hover:shadow-lg hover:bg-gray-200 transform hover:scale-110 transition-all">
+            <svg
+              className="w-6 h-6 text-gray-700"
+              xmlns="http:www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 19l7-7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+    </MainLayout>
   );
 };
 
