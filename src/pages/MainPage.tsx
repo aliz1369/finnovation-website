@@ -35,7 +35,7 @@ const MainPage: React.FC = () => {
 
   return (
     <MainLayout>
-      <div className="min-h-screen pt-[80px] bg-white">
+      <div className="h-[80vh] pt-[80px] relative bg-white overflow-hidden top-1 left-0 right-0 ">
         {/* Hero Bölümü */}
         <section className="h-full flex items-center pb-20">
           {/* Arka Plan Şekli (isteğe bağlı) */}
@@ -89,7 +89,7 @@ const MainPage: React.FC = () => {
         </section>
 
         {/* Logolar Section */}
-        <section className="w-full overflow-hidden">
+        <section className="absolute bottom-6 left-0 right-0 py-4">
           <div className="container mx-auto px-6">
             <div 
               ref={sliderRef}
