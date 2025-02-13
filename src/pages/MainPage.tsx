@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import MainLayout from "../layouts/MainLayout";
 
 const MainPage: React.FC = () => {
-  // Logoları tutan dizi
-  const [logos, setLogos] = useState<string[]>([
+  const logos = [
     "/img1.png", // enpara
     "/img2.png", // netcad
     "/img3.png", // QNB Finansbank
@@ -11,34 +10,33 @@ const MainPage: React.FC = () => {
     "/img5.png", // Fibabanka
     "/img6.png", // Finberg
     "/img7.png", // Türkiye İş Bankası
-  ]);
+  ];
 
-  // 2 saniyede bir dizinin son elemanını başa alacak şekilde döngü
+  const sliderRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setLogos((prev) => {
-        const last = prev[prev.length - 1];
-        const rest = prev.slice(0, -1);
-        return [last, ...rest];
-      });
-    }, 2000);
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-    return () => clearInterval(interval);
+    // Logoları iki kere kopyalayarak sürekli kayma efekti oluşturuyoruz
+    slider.innerHTML = slider.innerHTML + slider.innerHTML;
+
+    const scroll = () => {
+      if (slider.scrollLeft >= slider.scrollWidth / 2) {
+        slider.scrollLeft = 0;
+      } else {
+        slider.scrollLeft += 1;
+      }
+    };
+
+    const intervalId = setInterval(scroll, 30);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <MainLayout>
-      {/*
-        Dış kapsayıcıya h-screen ekleyerek ekran yüksekliğini sabitliyoruz.
-        relative sayesinde içindeki absolute konumlandırmaları referans alır.
-        overflow-hidden ile taşmalar gizlenir.
-      */}
-      <div className="h-[80vh] pt-[80px] relative bg-white overflow-hidden top-1 left-0 right-0 ">
+      <div className="min-h-screen pt-[80px] bg-white">
         {/* Hero Bölümü */}
-        {/*
-          pb-20 (veya ihtiyaca göre uygun bir padding) ekleyerek logoların
-          hero içerikle çakışmamasını sağlıyoruz.
-        */}
         <section className="h-full flex items-center pb-20">
           {/* Arka Plan Şekli (isteğe bağlı) */}
           <img
@@ -90,20 +88,20 @@ const MainPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Logolar Bölümü */}
-        {/*
-          Bu bölümü absolute olarak konumlandırıyoruz.
-          left-0, right-0 ve bottom-0 ile dış kapsayıcının en altında yer alır.
-        */}
-        <section className="absolute bottom-6 left-0 right-0 py-4">
+        {/* Logolar Section */}
+        <section className="w-full overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="flex flex-wrap items-center justify-between gap-1">
+            <div 
+              ref={sliderRef}
+              className="flex items-center space-x-16 whitespace-nowrap overflow-hidden"
+              style={{ scrollBehavior: 'smooth' }}
+            >
               {logos.map((logo, index) => (
                 <img
                   key={index}
                   src={logo}
-                  alt={`logo-${index}`}
-                  className="h-24 object-contain"
+                  alt={`Partner Logo ${index + 1}`}
+                  className="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity inline-block"
                 />
               ))}
             </div>
