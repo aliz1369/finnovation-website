@@ -3,6 +3,43 @@ import { Link } from "react-router-dom";
 
 const HeaderMenu: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Açılır/kapanır menüler için state'ler
+  const [openSections, setOpenSections] = useState<{[key: string]: boolean}>({
+    bizKimiz: false,
+    urunlerHizmetler: false,
+    fintech: false,
+    temelBankacilik: false,
+    vedubox: false,
+    veri: false,
+    dijitalDonusum: false
+  });
+
+  // Scroll'u engellemek için useEffect ekliyoruz
+  React.useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Dışarı tıklamayı handle eden fonksiyon
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  // Bölüm açma/kapama fonksiyonu
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
 
   // Menü verilerini tanımlıyoruz
   const menuItems = {
@@ -22,21 +59,27 @@ const HeaderMenu: React.FC = () => {
       ],
     },
     "Ürünler ve Hizmetler": {
-      FinTech: [
-        { title: "Kredi", link: "/services/fintech/credit" },
-        { title: "Hazine", link: "/services/fintech/treasury" },
-        { title: "Nakit Yönetimi", link: "/services/fintech/cash-management" },
-        { title: "Risk Yönetimi & ALM", link: "/services/fintech/risk-management" },
-      ],
-      Tech: [
-        { title: "EnerjiTech", link: "/services/tech/energy" },
-        { title: "AgroTech", link: "/services/tech/agro" },
-        { title: "HealthTech", link: "/services/tech/health" },
-        { title: "TourismTech", link: "/services/tech/tourism" },
-        { title: "EduTech", link: "/services/tech/edu" },
+      FinTech: {
+        title: "FinTech",
+        items: [
+          { title: "Temel Bankacılık Ürünleri", items: [
+            { title: "Kredi", link: "/services/fintech/credit" },
+            { title: "Hazine", link: "/services/fintech/treasury" },
+            { title: "Nakit Yönetimi", link: "/services/fintech/cash-management" },
+            { title: "Risk Yönetimi & ALM", link: "/services/fintech/risk-management" },
+          ]},
+          { title: "RisCode", link: "/services/tech/riscode" },
+          { title: "EnerjiTech", link: "/services/tech/energy" },
+          { title: "AgroTech", link: "/services/tech/agro" },
+          { title: "HealthTech", link: "/services/tech/health" },
+          { title: "TourismTech", link: "/services/tech/tourism" },
+        ]
+      },
+      Vedubox: [
         { title: "RetailTech", link: "/services/tech/retail" },
         { title: "AviationTech", link: "/services/tech/aviation" },
         { title: "MedTech", link: "/services/tech/med" },
+        { title: "Veri Yönetimi", link: "/services/tech/data-management" },
       ],
       Veri: [
         { title: "Veri Mimarisi", link: "/services/data/architecture" },
@@ -44,7 +87,7 @@ const HeaderMenu: React.FC = () => {
         { title: "İş Zekası", link: "/services/data/bi" },
         { title: "Yasal Raporlama", link: "/services/data/reporting" },
       ],
-      Dijital: [
+      "Dijital Dönüşüm": [
         { title: "Süreç İzleme ve Geliştirme", link: "/services/digital/process" },
         { title: "Proje Bazlı Teknoloji ve Sistem Yönetimi", link: "/services/digital/project-tech" },
         { title: "Proje Yönetimi", link: "/services/digital/management" },
@@ -55,10 +98,31 @@ const HeaderMenu: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-3 left-0 w-full z-50 bg-white">
+    <header className="fixed top-3 left-0 right-0 z-50 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo */}
-        <div className="flex items-center">
+        {/* Logo ve Mobil Menü Butonu kısmını güncelliyoruz */}
+        <div className="flex items-center space-x-5">
+          {/* Mobil Menü Butonu */}
+          <button
+            className="md:hidden text-[#1E5E81]"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          {/* Logo */}
           <Link to="/">
             <img
               src="/finnovation-logo.png"
@@ -68,30 +132,17 @@ const HeaderMenu: React.FC = () => {
           </Link>
         </div>
 
-        {/* Mobil Menü Butonu */}
-        <button
-          className="md:hidden text-[#1E5E81]"
-          onClick={() => setIsMobileMenuOpen(true)}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-
-        {/* Mobil Menü */}
+        {/* Overlay ve Mobil Menü */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+            onClick={handleOverlayClick}
+          />
+        )}
+        
         <div
-          className={`fixed inset-0 bg-white z-50 md:hidden transition-transform duration-300 ease-in-out ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed inset-y-0 left-0 w-[70%] max-w-[300px] bg-white z-50 md:hidden transform transition-transform duration-300 ease-in-out shadow-xl flex flex-col ${
+            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
           {/* Mobil Menü Header */}
@@ -124,130 +175,292 @@ const HeaderMenu: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobil Menü İçeriği */}
-          <div className="p-4 overflow-y-auto h-full">
-            <nav className="space-y-6">
-              {/* Dil Seçimi - En üste taşındı */}
-              <div className="pb-4 border-b">
-                <div className="flex items-center space-x-2 text-[#3277BC]">
-                  <img src="/world.png" alt="Globe" className="h-5 w-5" />
-                  <span>TR</span>
-                </div>
-              </div>
-              {/* Biz Kimiz? */}
-              <div>
-                <div className="text-lg font-semibold text-[#1E5E81] mb-3">
-                  Biz Kimiz?
-                </div>
-                <div className="pl-4 space-y-4">
-                  <div>
-                    <div className="font-medium text-[#3377BC] mb-2">Genel</div>
-                    <ul className="space-y-2 pl-2">
-                      {menuItems["Biz Kimiz?"].Genel.map((item) => (
-                        <li key={item.title}>
-                          <Link
-                            to={item.link}
-                            className="text-[#1E5E81] block py-1"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <div className="font-medium text-[#3377BC] mb-2">Kariyer</div>
-                    <ul className="space-y-2 pl-2">
-                      {menuItems["Biz Kimiz?"].Kariyer.map((item) => (
-                        <li key={item.title}>
-                          <Link
-                            to={item.link}
-                            className="text-[#1E5E81] block py-1"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {item.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ürünler ve Hizmetler */}
-              <div>
-                <div className="text-lg font-semibold text-[#1E5E81] mb-3">
-                  Ürünler ve Hizmetler
-                </div>
-                <div className="pl-4 space-y-4">
-                  {Object.entries(menuItems["Ürünler ve Hizmetler"]).map(([category, items]) => (
-                    <div key={category}>
-                      <div className="font-medium text-[#3377BC] mb-2">{category}</div>
-                      <ul className="space-y-2 pl-2">
-                        {items.map((item) => (
-                          <li key={item.title}>
-                            <Link
-                              to={item.link}
-                              className="text-[#1E5E81] block py-1"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+          {/* Mobil Menü İçeriği - Scroll edilebilir alan */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="p-4">
+              <nav className="space-y-6">
+                {/* Biz Kimiz? Bölümü */}
+                <div>
+                  <button
+                    onClick={() => toggleSection('bizKimiz')}
+                    className="w-full flex items-center justify-between text-lg font-semibold text-[#1E5E81] mb-3"
+                  >
+                    <span>Biz Kimiz?</span>
+                    <svg
+                      className={`w-5 h-5 transform transition-transform ${openSections.bizKimiz ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openSections.bizKimiz && (
+                    <div className="pl-4 space-y-4">
+                      <div>
+                        <div className="font-medium text-[#3377BC] mb-2">Genel</div>
+                        <ul className="space-y-2 pl-2">
+                          {menuItems["Biz Kimiz?"].Genel.map((item) => (
+                            <li key={item.title}>
+                              <Link
+                                to={item.link}
+                                className="text-[#1E5E81] block py-1"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {item.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <div className="font-medium text-[#3377BC] mb-2">Kariyer</div>
+                        <ul className="space-y-2 pl-2">
+                          {menuItems["Biz Kimiz?"].Kariyer.map((item) => (
+                            <li key={item.title}>
+                              <Link
+                                to={item.link}
+                                className="text-[#1E5E81] block py-1"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {item.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
 
-              {/* FinAcademy */}
-              <div>
-                <Link
-                  to="/academy"
-                  className="text-lg font-semibold text-[#1E5E81] block"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  FinAcademy
-                </Link>
-              </div>
+                {/* Ürünler ve Hizmetler Bölümü */}
+                <div>
+                  <button
+                    onClick={() => toggleSection('urunlerHizmetler')}
+                    className="w-full flex items-center justify-between text-lg font-semibold text-[#1E5E81] mb-3"
+                  >
+                    <span>Ürünler ve Hizmetler</span>
+                    <svg
+                      className={`w-5 h-5 transform transition-transform ${openSections.urunlerHizmetler ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openSections.urunlerHizmetler && (
+                    <div className="pl-4 space-y-4">
+                      {/* FinTech */}
+                      <div>
+                        <button
+                          onClick={() => toggleSection('fintech')}
+                          className="w-full flex items-center justify-between font-medium text-[#3377BC] mb-2"
+                        >
+                          <span>FinTech</span>
+                          <svg
+                            className={`w-4 h-4 transform transition-transform ${openSections.fintech ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {openSections.fintech && (
+                          <div className="pl-4 space-y-4">
+                            {menuItems["Ürünler ve Hizmetler"].FinTech.items.map((item) => (
+                              <div key={item.title}>
+                                {item.items ? (
+                                  // Temel Bankacılık Ürünleri için
+                                  <>
+                                    <button
+                                      onClick={() => toggleSection('temelBankacilik')}
+                                      className="w-full flex items-center justify-between font-medium text-[#1E5E81] mb-2"
+                                    >
+                                      <span>{item.title}</span>
+                                      <svg
+                                        className={`w-4 h-4 transform transition-transform ${openSections.temelBankacilik ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                      >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                      </svg>
+                                    </button>
+                                    {openSections.temelBankacilik && (
+                                      <ul className="space-y-2 pl-4">
+                                        {item.items.map((subItem) => (
+                                          <li key={subItem.title}>
+                                            <Link
+                                              to={subItem.link}
+                                              className="text-[#1E5E81] block py-1"
+                                              onClick={() => setIsMobileMenuOpen(false)}
+                                            >
+                                              {subItem.title}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </>
+                                ) : (
+                                  // Diğer linkler için
+                                  <Link
+                                    to={item.link}
+                                    className="text-[#1E5E81] block py-1"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                  >
+                                    {item.title}
+                                  </Link>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
 
-              {/* Sosyal Medya */}
-              <div className="pt-4 border-t">
-                <div className="flex flex-wrap gap-4">
-                  <a href="https://tr.linkedin.com/company/finnovation-consultancy" target="_blank" rel="noopener noreferrer">
-                    <img src="/in.png" alt="LinkedIn" className="h-6 w-6" />
-                  </a>
-                  <a href="https://github.com/hayyam23" target="_blank" rel="noopener noreferrer">
-                    <img src="/git.png" alt="GitHub" className="h-6 w-6" />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
-                  </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
-                  </a>
-                  <a href="https://instagram.com/finacademy_tr" target="_blank" rel="noopener noreferrer">
-                    <img src="/insta.png" alt="Instagram" className="h-6 w-6" />
-                  </a>
-                  <a href="https://wa.me/905325428443" target="_blank" rel="noopener noreferrer">
-                    <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
-                  </a>
-                  <a href="mailto:yusuf@finnovation.com.tr" target="_blank" rel="noopener noreferrer">
-                    <img src="/mail.png" alt="Mail" className="h-6 w-6" />
-                  </a>
+                      {/* Vedubox */}
+                      <div>
+                        <button
+                          onClick={() => toggleSection('vedubox')}
+                          className="w-full flex items-center justify-between font-medium text-[#3377BC] mb-2"
+                        >
+                          <span>Vedubox</span>
+                          <svg
+                            className={`w-4 h-4 transform transition-transform ${openSections.vedubox ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {openSections.vedubox && (
+                          <ul className="space-y-2 pl-4">
+                            {menuItems["Ürünler ve Hizmetler"].Vedubox.map((item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+
+                      {/* Veri */}
+                      <div>
+                        <button
+                          onClick={() => toggleSection('veri')}
+                          className="w-full flex items-center justify-between font-medium text-[#3377BC] mb-2"
+                        >
+                          <span>Veri</span>
+                          <svg
+                            className={`w-4 h-4 transform transition-transform ${openSections.veri ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {openSections.veri && (
+                          <ul className="space-y-2 pl-4">
+                            {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+
+                      {/* Dijital Dönüşüm */}
+                      <div>
+                        <button
+                          onClick={() => toggleSection('dijitalDonusum')}
+                          className="w-full flex items-center justify-between font-medium text-[#3377BC] mb-2"
+                        >
+                          <span>Dijital Dönüşüm</span>
+                          <svg
+                            className={`w-4 h-4 transform transition-transform ${openSections.dijitalDonusum ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {openSections.dijitalDonusum && (
+                          <ul className="space-y-2 pl-4">
+                            {menuItems["Ürünler ve Hizmetler"]["Dijital Dönüşüm"].map((item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
 
-              {/* Dil Seçimi - En alta taşındı */}
-              <div className="pt-4 border-t">
-                <div className="flex items-center space-x-2 text-[#3277BC]">
-                  <img src="/world.png" alt="Globe" className="h-5 w-5" />
-                  <span>TR</span>
+                {/* FinAcademy */}
+                <div>
+                  <Link
+                    to="/academy"
+                    className="text-lg font-semibold text-[#1E5E81] block"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    FinAcademy
+                  </Link>
                 </div>
-              </div>
-            </nav>
+              </nav>
+            </div>
+          </div>
+
+          {/* Sabit Alt Kısım - Sosyal Medya İkonları */}
+          <div className="border-t bg-white p-4">
+            <div className="flex flex-wrap justify-center gap-6">
+              <a href="https://tr.linkedin.com/company/finnovation-consultancy" target="_blank" rel="noopener noreferrer">
+                <img src="/in.png" alt="LinkedIn" className="h-6 w-6" />
+              </a>
+              <a href="https://github.com/hayyam23" target="_blank" rel="noopener noreferrer">
+                <img src="/git.png" alt="GitHub" className="h-6 w-6" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
+              </a>
+              <a href="https://instagram.com/finacademy_tr" target="_blank" rel="noopener noreferrer">
+                <img src="/insta.png" alt="Instagram" className="h-6 w-6" />
+              </a>
+              <a href="https://wa.me/905325428443" target="_blank" rel="noopener noreferrer">
+                <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
+              </a>
+              <a href="mailto:yusuf@finnovation.com.tr" target="_blank" rel="noopener noreferrer">
+                <img src="/mail.png" alt="Mail" className="h-6 w-6" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -315,14 +528,51 @@ const HeaderMenu: React.FC = () => {
                   <div>
                     <h3 className="font-bold text-[#1E5E81] text-xl mb-4">FinTech</h3>
                     <ul className="space-y-3">
-                      {menuItems["Ürünler ve Hizmetler"].FinTech.map((item) => (
+                      {menuItems["Ürünler ve Hizmetler"].FinTech.items.map((item) => (
                         <li key={item.title}>
-                          <Link
-                            to={item.link}
-                            className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                          >
-                            {item.title}
-                          </Link>
+                          {item.items ? (
+                            // Temel Bankacılık Ürünleri için
+                            <>
+                              <button
+                                onClick={() => toggleSection('temelBankacilik')}
+                                className="w-full flex items-center justify-between font-medium text-[#1E5E81] mb-2"
+                              >
+                                <span>{item.title}</span>
+                                <svg
+                                  className={`w-4 h-4 transform transition-transform ${openSections.temelBankacilik ? 'rotate-180' : ''}`}
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              {openSections.temelBankacilik && (
+                                <ul className="space-y-2 pl-4">
+                                  {item.items.map((subItem) => (
+                                    <li key={subItem.title}>
+                                      <Link
+                                        to={subItem.link}
+                                        className="text-[#1E5E81] block py-1"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                      >
+                                        {subItem.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </>
+                          ) : (
+                            // Diğer linkler için
+                            <Link
+                              to={item.link}
+                              className="text-[#1E5E81] block py-1"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {item.title}
+                            </Link>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -332,10 +582,10 @@ const HeaderMenu: React.FC = () => {
                   <div>
                     <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Tech</h3>
                     <ul className="space-y-3">
-                      {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
+                      {menuItems["Ürünler ve Hizmetler"].FinTech.items.map((item) => (
                         <li key={item.title}>
                           <Link
-                            to={item.link}
+                            to={item.link || '#'}
                             className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                           >
                             {item.title}
@@ -349,7 +599,7 @@ const HeaderMenu: React.FC = () => {
                   <div>
                     <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Veri Yönetimi</h3>
                     <ul className="space-y-3">
-                      {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
+                      {menuItems["Ürünler ve Hizmetler"].Vedubox.map((item) => (
                         <li key={item.title}>
                           <Link
                             to={item.link}
@@ -366,7 +616,7 @@ const HeaderMenu: React.FC = () => {
                   <div>
                     <h3 className="font-bold text-[#1E5E81] text-xl mb-4">Dijital Dönüşüm</h3>
                     <ul className="space-y-3">
-                      {menuItems["Ürünler ve Hizmetler"].Dijital.map((item) => (
+                      {menuItems["Ürünler ve Hizmetler"]["Dijital Dönüşüm"].map((item) => (
                         <li key={item.title}>
                           <Link
                             to={item.link}

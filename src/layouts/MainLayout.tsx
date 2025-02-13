@@ -8,7 +8,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col">
+    <div className="min-h-screen w-full overflow-x-hidden">
       <HeaderMenu />
       {/* Header sabit konumda olduğu için içerik üstten biraz boşluk bırakıyor */}
       <main className="flex-grow pt-[80px]">
