@@ -93,7 +93,7 @@ const MainPage: React.FC = () => {
           <div className="container mx-auto px-6">
             <div 
               ref={sliderRef}
-              className="flex items-center space-x-16 whitespace-nowrap overflow-hidden"
+              className="flex items-center space-x-8 md:space-x-16 whitespace-nowrap overflow-hidden"
               style={{ scrollBehavior: 'smooth' }}
             >
               {logos.map((logo, index) => (
@@ -101,7 +101,7 @@ const MainPage: React.FC = () => {
                   key={index}
                   src={logo}
                   alt={`Partner Logo ${index + 1}`}
-                  className="h-16 object-contain opacity-80 hover:opacity-100 transition-opacity inline-block"
+                  className="h-8 md:h-12 lg:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity inline-block"
                 />
               ))}
             </div>
