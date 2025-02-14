@@ -24,7 +24,7 @@ const MainPage: React.FC = () => {
         <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-[100px]">
           <div className="max-w-[1440px] mx-auto">
             {/* Ana Başlık ve İçerik */}
-            <div className="flex flex-col text-center md:text-left md:-ml-20">
+            <div className="flex flex-col text-center md:text-left md:ml-0">
               {/* Başlık Kısmı */}
               <div className="mb-8 translate-y-30">
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
