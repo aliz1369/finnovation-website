@@ -6,30 +6,30 @@ import CardSlider from "../components/CardSlider";
 const WorkingInFinnovation: React.FC = () => {
   const benefits = [
     {
-      title: "Esnek Çalışma",
-      description: ["Hibrit çalışma modeli ile iş-yaşam dengenizi koruyun"],
+      title: "Dijital Dünyanın Öncüsü",
+      description: ["Finnovation, yenilikçi ve dinamik yapısıyla hızla ilerliyor."],
       icon: "/public/collab.png",
     },
     {
-      title: "Sürekli Gelişim",
+      title: "Kariyeriniz İçin Büyük Bir Fırsat",
       description: [
-        "Düzenli eğitimler ve workshop'lar ile kendinizi geliştirin",
+        "Yaratıcı ve çözüm odaklı bir ekiple çalışma imkânı.",
       ],
       icon: "/public/collab.png",
     },
     {
-      title: "Sağlık Sigortası",
-      description: ["Özel sağlık sigortası ile siz ve aileniz güvende"],
+      title: "AI Destekli SaaS Projeleri",
+      description: ["Dijital dönüşüm süreçlerine katkı sağlama şansı."],
       icon: "/public/activeuser.png",
     },
     {
-      title: "Sosyal Aktiviteler",
-      description: ["Düzenli ekip aktiviteleri ve sosyal etkinlikler"],
+      title: "Sürekli Öğrenme ve Gelişim",
+      description: ["İşbirliği ve gelişim fırsatlarıyla dolu bir ortam."],
       icon: "/public/activeuser.png",
     },
     {
-      title: "Teknoloji Desteği",
-      description: ["İhtiyacınız olan tüm teknolojik ekipman desteği"],
+      title: "Geleceğe Yön Verin",
+      description: ["Finnovation ailesine katılın, teknolojinin sınırlarını birlikte genişletelim!"],
       icon: "/public/activeuser.png",
     },
   ];
@@ -79,21 +79,31 @@ const WorkingInFinnovation: React.FC = () => {
         {/* Hero Section - Updated padding and responsive classes */}
         <section className="container mx-auto px-6 py-16 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-8xl font-extrabold text-gray-900 font-segouie">
-                Finnovation'da Çalışmak
+            <div className="flex flex-col md:-ml-8">
+              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
+                Finnovation'da
+              </h1>
+              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight mt-0">
+                Çalışmak
               </h1>
             </div>
           </div>
         </section>
+        
 
-        {/* Description Section - Updated max-width and padding */}
+        {/* Description Section */}
         <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
             <div>
-              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
+              <p className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium -ml-20">
                 <span className="font-bold underline">Finnovation</span>'da
-                yenilikçi fikirlere ve sürekli gelişime değer veriyoruz...
+                Sınır Tanımayan Bir Gelecek!
+              </p>
+            </div>
+            <div>
+              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
+                Finnovation'da çalışarak yenilikçi projelerde yer alabilir, 
+                kariyerinizi teknoloji ve yaratıcılıkla şekillendirebilirsiniz!
               </p>
             </div>
           </div>

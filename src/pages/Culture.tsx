@@ -7,28 +7,33 @@ import { Navigation } from "swiper/modules";
 const Culture: React.FC = () => {
   const values = [
     {
-      title: "İnovasyon",
-      description: ["Sürekli yenilik ve gelişim odaklı çalışma kültürü"],
+      title: "Yenilikçilik, İşbirliği ve Sürekli Öğrenme",
+      description: ["Her birey bu kültürü benimser."],
       icon: "/public/collab.png",
     },
     {
-      title: "Takım Ruhu",
-      description: ["Birlikte başarma ve dayanışma kültürü"],
+      title: "Başarı Anlayışımız",
+      description: ["Teknik becerilerin yanı sıra takım çalışması, yaratıcı düşünme ve sürekli gelişimle ölçülür."],
       icon: "/public/collab.png",
     },
     {
-      title: "Şeffaflık",
-      description: ["Açık iletişim ve karşılıklı güven"],
+      title: "Farklı Bakış Açılarına Değer Veririz",
+      description: ["Her görüş bizim için önemlidir."],
       icon: "/public/activeuser.png",
     },
     {
-      title: "Sürdürülebilirlik",
-      description: ["Çevreye ve topluma karşı sorumlu yaklaşım"],
+      title: "Müşterilerimiz İçin En İyisi",
+      description: ["Hedeflerimize ulaşırken birlikte çalışır, birbirimizi destekleriz."],
       icon: "/public/activeuser.png",
     },
     {
-      title: "Çeşitlilik",
-      description: ["Farklı fikirlere ve bakış açılarına değer veren kültür"],
+      title: "Kariyer Gelişimi",
+      description: ["Esnek çalışma ortamı ve güçlü destek ağı sunuyoruz."],
+      icon: "/public/activeuser.png",
+    },
+    {
+      title: "Geleceği Şekillendiren Kültür",
+      description: ["İlham verici ve etkileşimli bir iş ortamı yaratıyoruz."],
       icon: "/public/activeuser.png",
     },
   ];
@@ -78,8 +83,8 @@ const Culture: React.FC = () => {
         {/* Hero Section - Updated structure */}
         <section className="container mx-auto px-6 py-16 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-8xl font-extrabold text-gray-900 font-segouie">
+            <div className="flex flex-col md:-ml-8">
+              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
                 Kültürümüz
               </h1>
             </div>
@@ -90,17 +95,15 @@ const Culture: React.FC = () => {
         <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
             <div>
-              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
+              <p className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium -ml-20">
                 <span className="font-bold underline">Finnovation</span>'da
-                kültürümüzün temeli, yenilikçi fikirlere açık olmak ve sürekli
-                öğrenmeyi desteklemektir. Ekip olarak birbirimizi dinler,
-                destekler ve birlikte büyürüz.
+                Çeşitlilikten Güç Alır, Başarıyı Birlikte Yaratırız
               </p>
             </div>
             <div>
               <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-                Her bir ekip üyemizin benzersiz yeteneklerini ve bakış açılarını
-                değerli buluyor, çeşitliliğin gücüne inanıyoruz.
+              Finnovation kültürü, yenilikçi düşünceyi, 
+              işbirliğini ve çeşitliliği bir araya getirerek her bireyin potansiyelini en üst seviyeye çıkarmayı hedefler.
               </p>
             </div>
           </div>
