@@ -157,42 +157,6 @@ const ValuesPage: React.FC = () => {
 
       <section className="bg-white py-16">
         <CardSlider isScrollable={true} cardPerView={3} sliderDatas={values} />
-
-        {/* Custom Navigation Buttons */}
-        <div className="absolute bottom-[-60px] right-16 flex space-x-4 z-10">
-          <button className="custom-swiper-prev w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shadow hover:shadow-lg hover:bg-gray-200 transform hover:scale-110 transition-all">
-            <svg
-              className="w-6 h-6 text-gray-700"
-              xmlns="http:www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button className="custom-swiper-next w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center shadow hover:shadow-lg hover:bg-gray-200 transform hover:scale-110 transition-all">
-            <svg
-              className="w-6 h-6 text-gray-700"
-              xmlns="http:www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 19l7-7-7-7"
-              />
-            </svg>
-          </button>
-        </div>
       </section>
     </MainLayout>
   );
