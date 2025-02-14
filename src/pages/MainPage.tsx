@@ -3,30 +3,57 @@ import MainLayout from "../layouts/MainLayout";
 import LogoSlider from "../components/LogoSlider";
 
 const MainPage: React.FC = () => {
-  const logos = [
-    "/img1.png", // enpara
-    "/img2.png", // netcad
-    "/img3.png", // QNB Finansbank
-    "/img4.png", // Workup
-    "/img5.png", // Fibabanka
-    "/img6.png", // Finberg
-    "/img7.png", // Türkiye İş Bankası
-    "/img4.png", // Workup
-    "/img5.png", // Fibabanka
-    "/img6.png", // Finberg
-    "/img7.png", // Türkiye İş Bankası
+  const logosRefrence = [
+    "/img1.png", // enpara.
+    "/img2.png", // netcad.
+    "/img3.png", // QNB Finansbank.
+    "/img4.png", // Workup.
+    "/img5.png", // Fibabanka.
+    "/img7.png", // Türkiye İş Bankası.
+    "/img1.png", // enpara.
+    "/img2.png", // netcad.
+    "/img3.png", // QNB Finansbank.
+    "/img4.png", // Workup.
+    "/img5.png", // Fibabanka.
+    "/img7.png", // Türkiye İş Bankası.
+    "/img1.png", // enpara.
+    "/img2.png", // netcad.
+    "/img3.png", // QNB Finansbank.
+    "/img4.png", // Workup.
+    "/img5.png", // Fibabanka.
+    "/img7.png", // Türkiye İş Bankası.
   ];
-
+  const logosProje = [
+    "/pr1.png",
+    "/pr2.png",
+    "/pr3.png",
+    "/pr4.png",
+    "/pr1.png",
+    "/pr2.png",
+    "/pr3.png",
+    "/pr4.png",
+    "/pr1.png",
+    "/pr2.png",
+    "/pr3.png",
+    "/pr4.png",
+    "/pr2.png",
+    "/pr3.png",
+    "/pr4.png",
+    "/pr1.png",
+    "/pr2.png",
+    "/pr3.png",
+    "/pr4.png",
+  ];
   return (
     <MainLayout>
       <div className="h-full relative bg-white">
         {/* Hero Bölümü */}
-        <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-[100px]">
+        <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-10">
           <div className="max-w-[1440px] mx-auto">
             {/* Ana Başlık ve İçerik */}
             <div className="flex flex-col text-center md:text-left md:ml-0">
               {/* Başlık Kısmı */}
-              <div className="mb-8 translate-y-30">
+              <div className="mb-8 translate-y-10">
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
                   404: Sıradan Yazılım
                 </h1>
@@ -78,8 +105,8 @@ const MainPage: React.FC = () => {
 
         {/* Logo Section'ları */}
         <div className="mt-28">
-          <LogoSlider logos={logos} direction={-1} />
-          <LogoSlider logos={logos} />
+          <LogoSlider logos={logosRefrence} direction={1} />
+          <LogoSlider logos={logosProje} direction={-1} />
         </div>
       </div>
     </MainLayout>
