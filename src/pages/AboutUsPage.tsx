@@ -105,7 +105,7 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto py-16 bg-white">
+        <section className="max-w-6xl mx-auto py-16 bg-white px-6 md:px-0">
           <div className="flex flex-col items-center md:items-start">
             {/* RIGHT COLUMN */}
             <div className="max-w-4xl mx-auto md:mx-0">
