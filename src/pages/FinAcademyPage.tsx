@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import CardSlider from "../components/CardSlider";
 import AccordionList from "../components/AccordionList";
