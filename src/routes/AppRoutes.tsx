@@ -12,10 +12,11 @@ import ValuesPage from "../pages/ValuesPage";
 import HazinePage from "../pages/HazinePage";
 import SustainabilityPage from "../pages/SustainabilityPage";
 import Culture from "../pages/Culture";
-import WorkingInFinnovation from "../pages/WorkingInFinnovation";
+import WorkingInFinnovation from "../pages/WorkingInFinnovationPage";
 import ProjelerPage from "../pages/ProjelerPage";
 import BasvuruPage from "../pages/BasvuruPage";
-
+import YetenekProgramlariPage from "../pages/YetenekProgramlaripage"; 
+import CesitlilikAndKapsayicilikPage from "../pages/CesitlilikAndKapsayicilikPage";
 const AppRoutes: FC = () => {
   return (
     <Router>
@@ -39,6 +40,8 @@ const AppRoutes: FC = () => {
         <Route path="/surec-izleme" element={<SurecIzleme />} />
         <Route path="/career/culture" element={<Culture />} />
         <Route path="/career/work-with-us" element={<WorkingInFinnovation />} />
+        <Route path="/career/talent-programs" element={<YetenekProgramlariPage />} />
+        <Route path="/career/diversity" element={<CesitlilikAndKapsayicilikPage />} />  
         <Route path="/project" element={<ProjelerPage />} />
         <Route path="/career/apply" element={<BasvuruPage />} />
       </Routes>
@@ -47,3 +50,9 @@ const AppRoutes: FC = () => {
 };
 
 export default AppRoutes;
+
+
+
+
+
+

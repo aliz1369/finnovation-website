@@ -51,15 +51,15 @@ const BasvuruPage: React.FC = () => {
           <div className="flex flex-col md:-ml-12">
             <div className="mb-8">
               <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
-                Başvuru Formu
+                Bize Katıl!
               </h1>
               
               <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-4">
                 <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
-                  Kariyerinize Finnovation ile yön verin.
+                  Geleceği Beraber Tasarlayalım!
                 </h2>
 
-                <p className="text-[16px] sm:text-[18px] text-gray-700 lg:max-w-xl">
+                <p className="text-[16px] sm:text-[18px] text-gray-700 lg:max-w-xl -ml-20">
                   Büyük fırsatlar seni bekliyor, başvurunu hemen yap ve<br />
                   yolculuğuna Finnovation'la başla!
                 </p>

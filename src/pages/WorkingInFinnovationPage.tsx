@@ -3,34 +3,34 @@ import MainLayout from "../layouts/MainLayout";
 import "swiper/swiper-bundle.css";
 import CardSlider from "../components/CardSlider";
 
-const WorkingInFinnovation: React.FC = () => {
+const WorkingInFinnovationPage: React.FC = () => {
   const benefits = [
     {
       title: "Dijital Dünyanın Öncüsü",
       description: ["Finnovation, yenilikçi ve dinamik yapısıyla hızla ilerliyor."],
-      icon: "/public/collab.png",
+      icon: "/collab.png",
     },
     {
       title: "Kariyeriniz İçin Büyük Bir Fırsat",
       description: [
         "Yaratıcı ve çözüm odaklı bir ekiple çalışma imkânı.",
       ],
-      icon: "/public/collab.png",
+      icon: "/collab.png",
     },
     {
       title: "AI Destekli SaaS Projeleri",
       description: ["Dijital dönüşüm süreçlerine katkı sağlama şansı."],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
     {
       title: "Sürekli Öğrenme ve Gelişim",
       description: ["İşbirliği ve gelişim fırsatlarıyla dolu bir ortam."],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
     {
       title: "Geleceğe Yön Verin",
       description: ["Finnovation ailesine katılın, teknolojinin sınırlarını birlikte genişletelim!"],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
   ];
 
@@ -39,25 +39,25 @@ const WorkingInFinnovation: React.FC = () => {
       question: "Finnovation'da çalışma kültürü nasıl?",
       answer:
         "• Yenilikçi, dinamik ve işbirlikçi bir çalışma ortamı sunuyoruz. Ekip ruhu ve sürekli öğrenme kültürümüzün temelini oluşturur.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
     {
       question: "Kariyer gelişimi için ne gibi fırsatlar sunuyorsunuz?",
       answer:
         "• Sürekli eğitim programları, mentorluk desteği ve yurt içi/yurt dışı konferanslara katılım imkanları sağlıyoruz.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
     {
       question: "Yan haklar ve sosyal imkanlar nelerdir?",
       answer:
         "• Özel sağlık sigortası, yemek kartı, ulaşım desteği ve yıllık izin gibi standart hakların yanında, esnek çalışma saatleri ve uzaktan çalışma imkanı sunuyoruz.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
     {
       question: "İş başvuru süreci nasıl işliyor?",
       answer:
         "• Başvurunuzun ardından, teknik değerlendirme ve kültür uyumu görüşmeleri yapılır. Süreç ortalama 2-3 hafta içinde tamamlanır.",
-      icon: "/public/checkmark.png",
+      icon: "/checkmark.png",
     },
   ];
 
@@ -191,7 +191,7 @@ const WorkingInFinnovation: React.FC = () => {
                                  transform hover:scale-105"
                 >
                   <img
-                    src="/public/bd.png"
+                    src="/bd.png"
                     alt="Demo Icon"
                     className="h-5 w-5 mr-2"
                   />
@@ -206,4 +206,4 @@ const WorkingInFinnovation: React.FC = () => {
   );
 };
 
-export default WorkingInFinnovation;
+export default WorkingInFinnovationPage;
