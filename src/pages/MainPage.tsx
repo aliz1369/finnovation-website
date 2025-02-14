@@ -73,8 +73,8 @@ const MainPage: React.FC = () => {
         </section>
 
         {/* Logo Section'ları */}
-        <div className="absolute bottom-[60px] left-0 right-0">
-          <LogoSlider logos={logos} />
+        <div className="mt-28">
+          <LogoSlider logos={logos} direction={-1} />
           <LogoSlider logos={logos} />
         </div>
       </div>

@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 
 const HeaderMenu: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>('Kurumsal');
+  const [selectedCategory, setSelectedCategory] = useState<string>("Kurumsal");
   const [openSections, setOpenSections] = useState({
     genel: false,
     kariyer: false,
     fintech: false,
     tech: false,
     veri: false,
-    dijital: false
+    dijital: false,
   });
   const [showMobileLang, setShowMobileLang] = useState(false);
 
   // Scroll'u engellemek için useEffect ekliyoruz
   React.useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -35,12 +35,18 @@ const HeaderMenu: React.FC = () => {
 
   // Toggle fonksiyonu
   const toggleSection = (section: string) => {
-    setOpenSections(prev => {
-      if (section === 'genel' || section === 'kariyer' || section === 'fintech' || 
-          section === 'tech' || section === 'veri' || section === 'dijital') {
+    setOpenSections((prev) => {
+      if (
+        section === "genel" ||
+        section === "kariyer" ||
+        section === "fintech" ||
+        section === "tech" ||
+        section === "veri" ||
+        section === "dijital"
+      ) {
         return {
           ...prev,
-          [section]: !prev[section]
+          [section]: !prev[section],
         };
       }
       return prev;
@@ -49,7 +55,7 @@ const HeaderMenu: React.FC = () => {
 
   // Menü verilerini tanımlıyoruz
   const menuItems = {
-    "Kurumsal": {
+    Kurumsal: {
       Genel: [
         { title: "Hakkımızda", link: "/about/about-us" },
         { title: "Değerlerimiz", link: "/about/values" },
@@ -69,7 +75,10 @@ const HeaderMenu: React.FC = () => {
         { title: "Kredi", link: "/services/fintech/credit" },
         { title: "Hazine", link: "/services/fintech/treasury" },
         { title: "Nakit Yönetimi", link: "/services/fintech/cash-management" },
-        { title: "Risk Yönetimi & ALM", link: "/services/fintech/risk-management" },
+        {
+          title: "Risk Yönetimi & ALM",
+          link: "/services/fintech/risk-management",
+        },
       ],
       Tech: [
         { title: "EnerjiTech", link: "/services/tech/energy" },
@@ -88,18 +97,30 @@ const HeaderMenu: React.FC = () => {
         { title: "Yasal Raporlama", link: "/services/data/reporting" },
       ],
       Dijital: [
-        { title: "Süreç İzleme ve Geliştirme", link: "/services/digital/process" },
-        { title: "Proje Bazlı Teknoloji ve Sistem Yönetimi", link: "/services/digital/project-tech" },
+        {
+          title: "Süreç İzleme ve Geliştirme",
+          link: "/services/digital/process",
+        },
+        {
+          title: "Proje Bazlı Teknoloji ve Sistem Yönetimi",
+          link: "/services/digital/project-tech",
+        },
         { title: "Proje Yönetimi", link: "/services/digital/management" },
-        { title: "İnovasyon ve Değişim Yönetimi", link: "/services/digital/innovation" },
-        { title: "Müşteri Memnuniyeti", link: "/services/digital/customer-satisfaction" },
+        {
+          title: "İnovasyon ve Değişim Yönetimi",
+          link: "/services/digital/innovation",
+        },
+        {
+          title: "Müşteri Memnuniyeti",
+          link: "/services/digital/customer-satisfaction",
+        },
       ],
     },
   };
 
   return (
     <>
-      <header className="fixed top-3 left-0 right-0 z-50 bg-white">
+      <header className="fixed top-0 left-0 right-0 z-50 py-3 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           {/* Logo ve Mobil Menü Butonu kısmını güncelliyoruz */}
           <div className="flex items-center justify-between w-full md:w-auto">
@@ -111,7 +132,7 @@ const HeaderMenu: React.FC = () => {
                 className="h-8 sm:h-10 md:h-16 object-contain"
               />
             </Link>
-            
+
             {/* Mobil Menü Butonu */}
             <button
               className="md:hidden text-[#1E5E81] ml-auto"
@@ -135,12 +156,12 @@ const HeaderMenu: React.FC = () => {
 
           {/* Overlay ve Mobil Menü */}
           {isMobileMenuOpen && (
-            <div 
+            <div
               className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
               onClick={handleOverlayClick}
             />
           )}
-          
+
           <div
             className={`fixed inset-0 bg-white z-50 md:hidden transition-transform duration-200 ease-in-out flex flex-col ${
               isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
@@ -160,11 +181,15 @@ const HeaderMenu: React.FC = () => {
               <div className="flex items-center gap-4">
                 {/* Dil Değiştir Butonu - Mobil */}
                 <div className="relative">
-                  <button 
+                  <button
                     className="flex items-center text-[#3277BC]"
                     onClick={() => setShowMobileLang(!showMobileLang)}
                   >
-                    <img src="/world.png" alt="Globe" className="h-5 w-5 mr-2" />
+                    <img
+                      src="/world.png"
+                      alt="Globe"
+                      className="h-5 w-5 mr-2"
+                    />
                     <span>TR</span>
                   </button>
                   {showMobileLang && (
@@ -200,40 +225,49 @@ const HeaderMenu: React.FC = () => {
 
             {/* Kategori Baloncukları */}
             <div className="flex gap-2 p-4 border-b overflow-x-auto">
-              {["Kurumsal", "Ürünler ve Hizmetler", "FinAcademy"].map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-colors ${
-                    selectedCategory === category
-                      ? 'bg-[#3377BC] text-white'
-                      : 'bg-[#F5F5F5] text-[#1E5E81] hover:bg-[#E5E5E5]'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+              {["Kurumsal", "Ürünler ve Hizmetler", "FinAcademy"].map(
+                (category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-colors ${
+                      selectedCategory === category
+                        ? "bg-[#3377BC] text-white"
+                        : "bg-[#F5F5F5] text-[#1E5E81] hover:bg-[#E5E5E5]"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                )
+              )}
             </div>
 
             {/* Menü İçeriği - Scroll edilebilir alan */}
             <div className="flex-1 overflow-y-auto">
               <div className="p-6 pb-24">
-                {selectedCategory === 'Kurumsal' && (
+                {selectedCategory === "Kurumsal" && (
                   <div className="space-y-6">
                     {/* Genel Kategorisi */}
                     <div>
                       <button
-                        onClick={() => toggleSection('genel')}
+                        onClick={() => toggleSection("genel")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
                         <span>Genel</span>
                         <svg
-                          className={`w-5 h-5 transition-transform ${openSections.genel ? 'rotate-180' : ''}`}
+                          className={`w-5 h-5 transition-transform ${
+                            openSections.genel ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                       {openSections.genel && (
@@ -256,17 +290,24 @@ const HeaderMenu: React.FC = () => {
                     {/* Kariyer Kategorisi */}
                     <div>
                       <button
-                        onClick={() => toggleSection('kariyer')}
+                        onClick={() => toggleSection("kariyer")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
                         <span>Kariyer</span>
                         <svg
-                          className={`w-5 h-5 transition-transform ${openSections.kariyer ? 'rotate-180' : ''}`}
+                          className={`w-5 h-5 transition-transform ${
+                            openSections.kariyer ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                       {openSections.kariyer && (
@@ -288,37 +329,46 @@ const HeaderMenu: React.FC = () => {
                   </div>
                 )}
 
-                {selectedCategory === 'Ürünler ve Hizmetler' && (
+                {selectedCategory === "Ürünler ve Hizmetler" && (
                   <div className="space-y-6">
                     {/* FinTech Kategorisi */}
                     <div>
                       <button
-                        onClick={() => toggleSection('fintech')}
+                        onClick={() => toggleSection("fintech")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
                         <span>FinTech</span>
                         <svg
-                          className={`w-5 h-5 transition-transform ${openSections.fintech ? 'rotate-180' : ''}`}
+                          className={`w-5 h-5 transition-transform ${
+                            openSections.fintech ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                       {openSections.fintech && (
                         <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].FinTech.map((item) => (
-                            <li key={item.title}>
-                              <Link
-                                to={item.link}
-                                className="text-[#1E5E81] block py-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                {item.title}
-                              </Link>
-                            </li>
-                          ))}
+                          {menuItems["Ürünler ve Hizmetler"].FinTech.map(
+                            (item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            )
+                          )}
                         </ul>
                       )}
                     </div>
@@ -326,32 +376,41 @@ const HeaderMenu: React.FC = () => {
                     {/* Tech Kategorisi */}
                     <div>
                       <button
-                        onClick={() => toggleSection('tech')}
+                        onClick={() => toggleSection("tech")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
                         <span>Tech</span>
                         <svg
-                          className={`w-5 h-5 transition-transform ${openSections.tech ? 'rotate-180' : ''}`}
+                          className={`w-5 h-5 transition-transform ${
+                            openSections.tech ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                       {openSections.tech && (
                         <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
-                            <li key={item.title}>
-                              <Link
-                                to={item.link}
-                                className="text-[#1E5E81] block py-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                {item.title}
-                              </Link>
-                            </li>
-                          ))}
+                          {menuItems["Ürünler ve Hizmetler"].Tech.map(
+                            (item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            )
+                          )}
                         </ul>
                       )}
                     </div>
@@ -359,32 +418,41 @@ const HeaderMenu: React.FC = () => {
                     {/* Veri Kategorisi */}
                     <div>
                       <button
-                        onClick={() => toggleSection('veri')}
+                        onClick={() => toggleSection("veri")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
                         <span>Veri</span>
                         <svg
-                          className={`w-5 h-5 transition-transform ${openSections.veri ? 'rotate-180' : ''}`}
+                          className={`w-5 h-5 transition-transform ${
+                            openSections.veri ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                       {openSections.veri && (
                         <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
-                            <li key={item.title}>
-                              <Link
-                                to={item.link}
-                                className="text-[#1E5E81] block py-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                {item.title}
-                              </Link>
-                            </li>
-                          ))}
+                          {menuItems["Ürünler ve Hizmetler"].Veri.map(
+                            (item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            )
+                          )}
                         </ul>
                       )}
                     </div>
@@ -392,39 +460,48 @@ const HeaderMenu: React.FC = () => {
                     {/* Dijital Kategorisi */}
                     <div>
                       <button
-                        onClick={() => toggleSection('dijital')}
+                        onClick={() => toggleSection("dijital")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
                         <span>Dijital</span>
                         <svg
-                          className={`w-5 h-5 transition-transform ${openSections.dijital ? 'rotate-180' : ''}`}
+                          className={`w-5 h-5 transition-transform ${
+                            openSections.dijital ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </button>
                       {openSections.dijital && (
                         <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].Dijital.map((item) => (
-                            <li key={item.title}>
-                              <Link
-                                to={item.link}
-                                className="text-[#1E5E81] block py-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                {item.title}
-                              </Link>
-                            </li>
-                          ))}
+                          {menuItems["Ürünler ve Hizmetler"].Dijital.map(
+                            (item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              </li>
+                            )
+                          )}
                         </ul>
                       )}
                     </div>
                   </div>
                 )}
 
-                {selectedCategory === 'FinAcademy' && (
+                {selectedCategory === "FinAcademy" && (
                   <div>
                     <Link
                       to="/academy"
@@ -441,25 +518,53 @@ const HeaderMenu: React.FC = () => {
             {/* Sosyal Medya İkonları - Sabit Alt Kısım */}
             <div className="absolute bottom-0 left-0 right-0 border-t bg-white p-4">
               <div className="flex flex-wrap justify-center gap-6">
-                <a href="https://tr.linkedin.com/company/finnovation-consultancy" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://tr.linkedin.com/company/finnovation-consultancy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/in.png" alt="LinkedIn" className="h-6 w-6" />
                 </a>
-                <a href="https://github.com/hayyam23" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/hayyam23"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/git.png" alt="GitHub" className="h-6 w-6" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
                 </a>
-                <a href="https://instagram.com/finacademy_tr" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://instagram.com/finacademy_tr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/insta.png" alt="Instagram" className="h-6 w-6" />
                 </a>
-                <a href="https://wa.me/905325428443" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/905325428443"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
                 </a>
-                <a href="mailto:yusuf@finnovation.com.tr" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="mailto:yusuf@finnovation.com.tr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src="/mail.png" alt="Mail" className="h-6 w-6" />
                 </a>
               </div>
@@ -473,16 +578,21 @@ const HeaderMenu: React.FC = () => {
           >
             {/* Kurumsal Menüsü */}
             <div className="relative group">
-              <Link to="/about" className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold">
+              <Link
+                to="/about"
+                className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold"
+              >
                 Kurumsal
               </Link>
-              
+
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-24 left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
                   <div className="grid grid-cols-2 gap-8">
                     {/* Genel Bölümü */}
                     <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">Genel</h3>
+                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
+                        Genel
+                      </h3>
                       <ul className="space-y-2">
                         {menuItems["Kurumsal"].Genel.map((item) => (
                           <li key={item.title}>
@@ -499,7 +609,9 @@ const HeaderMenu: React.FC = () => {
 
                     {/* Kariyer Bölümü */}
                     <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">Kariyer</h3>
+                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
+                        Kariyer
+                      </h3>
                       <ul className="space-y-2">
                         {menuItems["Kurumsal"].Kariyer.map((item) => (
                           <li key={item.title}>
@@ -520,36 +632,42 @@ const HeaderMenu: React.FC = () => {
 
             {/* Ürünler ve Hizmetler Menüsü - Desktop */}
             <div className="relative group">
-              <Link 
-                to="/services" 
+              <Link
+                to="/services"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold whitespace-nowrap"
               >
                 Ürünler ve Hizmetler
               </Link>
-              
+
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-24 left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
                   <div className="grid grid-cols-4 gap-6">
                     {/* FinTech Bölümü */}
                     <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">FinTech</h3>
+                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
+                        FinTech
+                      </h3>
                       <ul className="space-y-2">
-                        {menuItems["Ürünler ve Hizmetler"].FinTech.map((item) => (
-                          <li key={item.title}>
-                            <Link
-                              to={item.link}
-                              className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                            >
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
+                        {menuItems["Ürünler ve Hizmetler"].FinTech.map(
+                          (item) => (
+                            <li key={item.title}>
+                              <Link
+                                to={item.link}
+                                className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                              >
+                                {item.title}
+                              </Link>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
 
                     {/* Tech Bölümü */}
                     <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">Tech</h3>
+                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
+                        Tech
+                      </h3>
                       <ul className="space-y-2">
                         {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
                           <li key={item.title}>
@@ -566,7 +684,9 @@ const HeaderMenu: React.FC = () => {
 
                     {/* Veri Bölümü */}
                     <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">Veri</h3>
+                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
+                        Veri
+                      </h3>
                       <ul className="space-y-2">
                         {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
                           <li key={item.title}>
@@ -583,18 +703,22 @@ const HeaderMenu: React.FC = () => {
 
                     {/* Dijital Bölümü */}
                     <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">Dijital</h3>
+                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
+                        Dijital
+                      </h3>
                       <ul className="space-y-2">
-                        {menuItems["Ürünler ve Hizmetler"].Dijital.map((item) => (
-                          <li key={item.title}>
-                            <Link
-                              to={item.link}
-                              className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                            >
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
+                        {menuItems["Ürünler ve Hizmetler"].Dijital.map(
+                          (item) => (
+                            <li key={item.title}>
+                              <Link
+                                to={item.link}
+                                className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                              >
+                                {item.title}
+                              </Link>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -604,7 +728,10 @@ const HeaderMenu: React.FC = () => {
 
             {/* FinAcademy Menüsü */}
             <div className="relative group">
-              <Link to="/academy" className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold">
+              <Link
+                to="/academy"
+                className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold"
+              >
                 FinAcademy
               </Link>
             </div>
@@ -614,25 +741,53 @@ const HeaderMenu: React.FC = () => {
           <div className="hidden md:flex items-center space-x-4">
             {/* Sosyal Medya İkonları */}
             <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
-              <a href="https://tr.linkedin.com/company/finnovation-consultancy" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://tr.linkedin.com/company/finnovation-consultancy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/in.png" alt="LinkedIn" className="h-5 w-5" />
               </a>
-              <a href="https://github.com/hayyam23" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/hayyam23"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/git.png" alt="GitHub" className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/finacademy_tr" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://instagram.com/finacademy_tr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/insta.png" alt="Instagram" className="h-5 w-5" />
               </a>
-              <a href="https://wa.me/905325428443" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/905325428443"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/whatsapp.png" alt="Whatsapp" className="h-5 w-5" />
               </a>
-              <a href="mailto:yusuf@finnovation.com.tr" target="_blank" rel="noopener noreferrer">
+              <a
+                href="mailto:yusuf@finnovation.com.tr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src="/mail.png" alt="Mail" className="h-5 w-5" />
               </a>
             </div>
@@ -640,15 +795,17 @@ const HeaderMenu: React.FC = () => {
             {/* Dil Değiştir Butonu - Desktop */}
             <div className="group relative">
               <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors group-hover:bg-[#3277BC] group-hover:text-white">
-                <img 
-                  src="/world.png" 
-                  alt="Globe" 
-                  className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert" 
+                <img
+                  src="/world.png"
+                  alt="Globe"
+                  className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert"
                 />
                 <span>TR</span>
               </div>
               <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2">
-                <button className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white">EN</button>
+                <button className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white">
+                  EN
+                </button>
               </div>
             </div>
           </div>

@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         <section className="max-w-6xl mx-auto px-6 md:px-8 py-16 bg-white text-center md:text-left">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center md:pt">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:pt">
             {/* RIGHT COLUMN */}
             <div>
               <img
@@ -72,8 +72,8 @@ const AboutPage: React.FC = () => {
               />
             </div>
 
-            <div className="px-5 md:px-[20%] max-w-4xl ml-auto">
-              <p className="text-lg text-gray-700 leading-7 md:leading-8 text-justify md:text-right">
+            <div className="max-w-4xl ml-auto">
+              <p className="text-lg text-gray-700 leading-7 md:leading-8 text-justify md:text-left">
                 2019 yılında kurulan firmamız, yüksek kalitede ve sürdürülebilir
                 hizmetler sunarak müşterilerine özel çözümler geliştirmektedir.
                 Amacımız, yalnızca bir hizmet sağlayıcı değil, aynı zamanda
@@ -105,10 +105,10 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto px-6 md:px-10 py-16 bg-white">
+        <section className="max-w-6xl mx-auto py-16 bg-white">
           <div className="flex flex-col items-center md:items-start">
             {/* RIGHT COLUMN */}
-            <div className="pl-10 max-w-4xl mx-auto md:mx-0">
+            <div className="max-w-4xl mx-auto md:mx-0">
               <p className="text-lg text-gray-700 leading-7 md:leading-8 text-justify">
                 Bizi farklı kılan özelliklerimiz, sunduğumuz hizmetlerde kalite
                 ve güvenin teminatıdır. <br />
