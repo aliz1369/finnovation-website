@@ -26,13 +26,6 @@ const HeaderMenu: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
-  // Dışarı tıklamayı handle eden fonksiyon
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      setIsMobileMenuOpen(false);
-    }
-  };
-
   // Toggle fonksiyonu
   const toggleSection = (section: string) => {
     setOpenSections((prev) => {
@@ -132,39 +125,12 @@ const HeaderMenu: React.FC = () => {
                 className="h-8 sm:h-10 md:h-16 object-contain"
               />
             </Link>
-
-            {/* Mobil Menü Butonu */}
-            <button
-              className="md:hidden text-[#1E5E81] ml-auto"
-              onClick={() => setIsMobileMenuOpen(true)}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
           </div>
 
           {/* Overlay ve Mobil Menü */}
-          {isMobileMenuOpen && (
-            <div
-              className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
-              onClick={handleOverlayClick}
-            />
-          )}
-
           <div
-            className={`fixed inset-0 bg-white z-50 md:hidden transition-transform duration-200 ease-in-out flex flex-col ${
-              isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+            className={`fixed inset-0 bg-white z-50 transition-transform duration-200 ease-in-out ${
+              isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
             {/* Mobil Menü Header */}
@@ -572,10 +538,7 @@ const HeaderMenu: React.FC = () => {
           </div>
 
           {/* Desktop Menü */}
-          <nav
-            className="hidden md:flex flex-nowrap items-center text-[#1E5E81] font-medium space-x-8 ml-12"
-            style={{ fontSize: "clamp(0.875rem, 1vw + 0.5rem, 1.125rem)" }}
-          >
+          <nav className="hidden xl:flex flex-nowrap items-center text-[#1E5E81] font-medium space-x-8 ml-12">
             {/* Kurumsal Menüsü */}
             <div className="relative group">
               <Link
@@ -738,9 +701,9 @@ const HeaderMenu: React.FC = () => {
           </nav>
 
           {/* Sağ Kısım - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4" style={{ minWidth: '500px' }}>
             {/* Sosyal Medya İkonları */}
-            <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3">
+            <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3 min-w-max">
               <a
                 href="https://tr.linkedin.com/company/finnovation-consultancy"
                 target="_blank"
@@ -792,23 +755,41 @@ const HeaderMenu: React.FC = () => {
               </a>
             </div>
 
-            {/* Dil Değiştir Butonu - Desktop */}
-            <div className="group relative">
-              <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors group-hover:bg-[#3277BC] group-hover:text-white">
-                <img
-                  src="/world.png"
-                  alt="Globe"
-                  className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert"
-                />
-                <span>TR</span>
-              </div>
-              <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2">
+            {/* Dil Değiştir Butonu */}
+            <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors min-w-max">
+              <img
+                src="/world.png"
+                alt="Globe"
+                className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert"
+              />
+              <span>TR</span>
+            </div>
+            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2">
                 <button className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white">
                   EN
                 </button>
               </div>
-            </div>
           </div>
+
+          {/* Mobil Menü Butonu */}
+          <button
+            className="xl:hidden text-[#1E5E81] ml-4"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </header>
     </>
