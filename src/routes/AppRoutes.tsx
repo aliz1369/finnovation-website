@@ -11,14 +11,10 @@ import SurecIzleme from "../pages/Surecizleme";
 import ValuesPage from "../pages/ValuesPage";
 import SustainabilityPage from "../pages/SustainabilityPage";
 import Culture from "../pages/Culture";
-<<<<<<< HEAD
 import WorkingInFinnovation from "../pages/WorkingInFinnovationPage";
-import ProjelerPage from "../pages/ProjelerPage";
 import BasvuruPage from "../pages/BasvuruPage";
-import YetenekProgramlariPage from "../pages/YetenekProgramlariPage"; 
+import YetenekProgramlariPage from "../pages/YetenekProgramlariPage";
 import CesitlilikAndKapsayicilikPage from "../pages/CesitlilikAndKapsayicilikPage";
-=======
-import WorkingInFinnovation from "../pages/WorkingInFinnovation";
 import OrganizasyonPage from "../pages/OrganizasyonPage";
 import ProjelerPage from "../pages/PageTemplate";
 import CreditsPage from "../pages/CreditsPage";
@@ -43,7 +39,6 @@ import ProjectManagementPage from "../pages/ProjectManagementPage";
 import InnovationManagementPage from "../pages/InnovationManagementPage";
 import CustomerSatisfactionPage from "../pages/CustomerSatisfactionPage";
 
->>>>>>> 6dcfdea8823f93e83da8825c9913d176cd5bf1b9
 const AppRoutes: FC = () => {
   return (
     <Router>
@@ -67,12 +62,16 @@ const AppRoutes: FC = () => {
         <Route path="/surec-izleme" element={<SurecIzleme />} />
         <Route path="/career/culture" element={<Culture />} />
         <Route path="/career/work-with-us" element={<WorkingInFinnovation />} />
-        <Route path="/career/talent-programs" element={<YetenekProgramlariPage />} />
-        <Route path="/career/diversity" element={<CesitlilikAndKapsayicilikPage />} />  
+        <Route
+          path="/career/talent-programs"
+          element={<YetenekProgramlariPage />}
+        />
+        <Route
+          path="/career/diversity"
+          element={<CesitlilikAndKapsayicilikPage />}
+        />
         <Route path="/project" element={<ProjelerPage />} />
-<<<<<<< HEAD
         <Route path="/career/apply" element={<BasvuruPage />} />
-=======
         <Route path="/about/sustainability" element={<SustainabilityPage />} />
         {/* Services */}
         <Route path="/services/fintech/credit" element={<CreditsPage />} />
@@ -129,16 +128,9 @@ const AppRoutes: FC = () => {
           path="/services/digital/customer-satisfaction"
           element={<CustomerSatisfactionPage />}
         />
->>>>>>> 6dcfdea8823f93e83da8825c9913d176cd5bf1b9
       </Routes>
     </Router>
   );
 };
 
 export default AppRoutes;
-
-
-
-
-
-
