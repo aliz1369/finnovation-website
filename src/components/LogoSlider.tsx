@@ -10,7 +10,7 @@ const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    const scrollAmount = 2;
+    const scrollAmount = 1;
     const maxScroll = scrollContainer.scrollWidth / 2;
     scrollContainer.scrollLeft = 1;
     const scroll = () => {
