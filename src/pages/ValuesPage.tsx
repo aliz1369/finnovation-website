@@ -5,45 +5,52 @@ import CardGrid from "../components/CardGrid";
 const ValuesPage: React.FC = () => {
   const cardData = [
     {
-      icon: "/icons/team.svg", // Replace with actual icon paths
+      icon: "/icon1-new.png",
       title: "Yoldaşız",
-      description: "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız...",
-      points: [],
-    },
-    {
-      icon: "/icons/honesty.svg",
-      title: "Dürüstüz",
-      description:
-        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-      points: [],
-    },
-    {
-      icon: "/icons/customer-focus.svg",
-      title: "Müşteri Odaklıyız",
-      description: "Kendi kullanmayacağımız hiçbir ürünü önermeyiz.",
-      points: [],
-    },
-    {
-      icon: "/icons/handshake.svg",
-      title: "Ortağız",
-      description:
-        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz.",
+      description: "",
       points: [
+        "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız ve tüm ekosisteme bu gözle bakarız.",
+      ],
+    },
+    {
+      icon: "/icon2-new.png",
+      title: "Dürüstüz",
+      description: "",
+      points: [
+        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
+      ],
+    },
+    {
+      icon: "/icon3-new.png",
+      title: "Müşteri Odaklıyız",
+      description: "",
+      points: ["Kendi kullanmayacağımız hiçbir ürünü önermeyiz, sunmayız."],
+    },
+    {
+      icon: "/icon4-new.png",
+      title: "Ortağız",
+      description: "",
+      points: [
+        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz.",
         "Kıymet biliriz, alma-verme dengesini önemseriz.",
         "Her birimiz şirketin temsilcisiyiz.",
       ],
     },
     {
-      icon: "/icons/communication.svg",
+      icon: "/icon2-new.png",
       title: "Samimiyiz",
-      description: "İyi niyet esaslı açık iletişim kurarız.",
-      points: ["Net konuşuruz.", "Yüz yüze iletişimi tercih ederiz."],
+      description: "",
+      points: [
+        "İyi niyet esaslı açık iletişim kurarız.",
+        "Net konuşuruz.",
+        "Yüz yüze iletişimi tercih ederiz.",
+      ],
     },
     {
-      icon: "/icons/customer-experience.svg",
+      icon: "/icon3-new.png",
       title: "Müşteri Deneyimini Önemseriz",
-      description: "Basit, kullanışlı, uygun fiyatlı ürünler sunarız.",
-      points: [],
+      description: "",
+      points: ["Basit, kullanışlı, uygun fiyatlı ürünler sunarız."],
     },
   ];
 
@@ -106,8 +113,6 @@ const ValuesPage: React.FC = () => {
       </section>
 
       <section className="bg-white py-16">
-        {/* <CardSlider isScrollable={true} cardPerView={3} sliderDatas={values} /> */}
-
         <CardGrid cardData={cardData} />
       </section>
       <section className="px-1  flex justify-center items-center">
