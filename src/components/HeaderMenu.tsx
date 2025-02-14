@@ -114,7 +114,7 @@ const HeaderMenu: React.FC = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-3 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 ">
           {/* Logo ve Mobil Menü Butonu kısmını güncelliyoruz */}
           <div className="flex items-center justify-between w-full md:w-auto">
             {/* Logo */}
@@ -538,7 +538,7 @@ const HeaderMenu: React.FC = () => {
           </div>
 
           {/* Desktop Menü */}
-          <nav className="hidden xl:flex flex-nowrap items-center text-[#1E5E81] font-medium space-x-8 ml-12">
+          <nav className="hidden lg:flex flex-nowrap items-center text-[#1E5E81] font-medium space-x-8 ml-12">
             {/* Kurumsal Menüsü */}
             <div className="relative group">
               <Link
@@ -701,7 +701,10 @@ const HeaderMenu: React.FC = () => {
           </nav>
 
           {/* Sağ Kısım - Desktop */}
-          <div className="hidden xl:flex items-center space-x-4" style={{ minWidth: '500px' }}>
+          <div
+            className="hidden xl:flex items-center space-x-4 justify-end"
+            style={{ minWidth: "500px" }}
+          >
             {/* Sosyal Medya İkonları */}
             <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3 min-w-max">
               <a

@@ -11,17 +11,19 @@ const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
     if (!scrollContainer) return;
 
     const scrollAmount = 1;
-    const maxScroll = scrollContainer.scrollWidth / 2;
-    scrollContainer.scrollLeft = 1;
+    const scrollWidth = scrollContainer.scrollWidth / 2;
+
+    scrollContainer.scrollLeft = scrollWidth / 2;
+
     const scroll = () => {
-      if (scrollContainer) {
-        if (direction === 1 && scrollContainer.scrollLeft >= maxScroll) {
-          scrollContainer.scrollLeft = 0;
-        } else if (direction === -1 && scrollContainer.scrollLeft <= 0) {
-          scrollContainer.scrollLeft = maxScroll;
-        } else {
-          scrollContainer.scrollLeft += scrollAmount * direction;
-        }
+      if (!scrollContainer) return;
+
+      scrollContainer.scrollLeft += scrollAmount * direction;
+
+      if (direction === 1 && scrollContainer.scrollLeft >= scrollWidth) {
+        scrollContainer.scrollLeft = scrollWidth / 2;
+      } else if (direction === -1 && scrollContainer.scrollLeft <= 0) {
+        scrollContainer.scrollLeft = scrollWidth / 2;
       }
     };
 
