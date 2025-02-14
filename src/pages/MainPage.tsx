@@ -28,10 +28,10 @@ const MainPage: React.FC = () => {
               {/* Başlık Kısmı */}
               <div className="mb-8 translate-y-30">
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
-                  Stratejinizi gerçeğe
+                  404: Sıradan Yazılım
                 </h1>
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight mt-0">
-                  Dönüştürüyoruz
+                  Bulunamadı
                 </h1>
               </div>
 
@@ -40,16 +40,20 @@ const MainPage: React.FC = () => {
                 {/* Türkçe Başlık */}
                 <div className="lg:max-w-2xl">
                   <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
-                    Yenilikçi BT çözümleri ile iş sürekliliğinizi sağlıyoruz.
+                    Dijital dönüşümün kodunu çözüyoruz, işletmeleri geleceğe
+                    taşıyoruz!
                   </h2>
                 </div>
 
                 {/* İngilizce Metin ve Butonlar */}
                 <div className="lg:max-w-xl flex flex-col items-center lg:items-start gap-8">
                   <p className="text-[16px] sm:text-[18px] text-gray-700">
-                    Empowering businesses through data-driven insights and
-                    automation to achieve unparalleled growth. We built to
-                    revolutionize industries and improve productivity.
+                    Veri odaklı içgörüler ve otomasyonla iş dünyasını
+                    güçlendirerek benzersiz büyüme sağlıyoruz. Endüstrileri
+                    dönüştürmek ve verimliliği artırmak için inşa edildik.
+                    Finnovation olarak, geliştirdiğimiz yenilikçi çözümlerle
+                    sektörlere yön veriyor ve sürdürülebilir başarıyı mümkün
+                    kılıyoruz.
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center sm:justify-start">
