@@ -755,20 +755,22 @@ const HeaderMenu: React.FC = () => {
               </a>
             </div>
 
-            {/* Dil Değiştir Butonu */}
-            <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors min-w-max">
-              <img
-                src="/world.png"
-                alt="Globe"
-                className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert"
-              />
-              <span>TR</span>
-            </div>
-            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2">
+            {/* Dil Değiştir Butonu - Desktop */}
+            <div className="group relative">
+              <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors group-hover:bg-[#3277BC] group-hover:text-white">
+                <img
+                  src="/world.png"
+                  alt="Globe"
+                  className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert"
+                />
+                <span>TR</span>
+              </div>
+              <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2">
                 <button className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white">
                   EN
                 </button>
               </div>
+            </div>
           </div>
 
           {/* Mobil Menü Butonu */}
