@@ -15,7 +15,7 @@ import Culture from "../pages/Culture";
 import WorkingInFinnovation from "../pages/WorkingInFinnovationPage";
 import ProjelerPage from "../pages/ProjelerPage";
 import BasvuruPage from "../pages/BasvuruPage";
-import YetenekProgramlariPage from "../pages/YetenekProgramlaripage"; 
+import YetenekProgramlariPage from "../pages/YetenekProgramlariPage"; 
 import CesitlilikAndKapsayicilikPage from "../pages/CesitlilikAndKapsayicilikPage";
 const AppRoutes: FC = () => {
   return (
