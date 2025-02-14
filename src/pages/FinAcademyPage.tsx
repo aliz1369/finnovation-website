@@ -3,14 +3,8 @@ import MainLayout from "../layouts/MainLayout";
 import CardSlider from "../components/CardSlider";
 import AccordionList from "../components/AccordionList";
 
-interface Program {
-  title: string;
-  content: string[];
-  isOpen?: boolean;
-}
-
 const FinAcademyPage: React.FC = () => {
-  const [programs, setPrograms] = useState<Program[]>([
+  const programs = [
     {
       title: "FinTech Giriş Seviyesi",
       content: [
@@ -55,7 +49,7 @@ const FinAcademyPage: React.FC = () => {
       ],
       isOpen: false,
     },
-  ]);
+  ];
 
   const benefits = [
     {
