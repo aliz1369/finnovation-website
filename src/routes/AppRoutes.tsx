@@ -14,6 +14,7 @@ import SustainabilityPage from "../pages/SustainabilityPage";
 import Culture from "../pages/Culture";
 import WorkingInFinnovation from "../pages/WorkingInFinnovation";
 import ProjelerPage from "../pages/ProjelerPage";
+import BasvuruPage from "../pages/BasvuruPage";
 
 const AppRoutes: FC = () => {
   return (
@@ -39,6 +40,7 @@ const AppRoutes: FC = () => {
         <Route path="/career/culture" element={<Culture />} />
         <Route path="/career/work-with-us" element={<WorkingInFinnovation />} />
         <Route path="/project" element={<ProjelerPage />} />
+        <Route path="/career/apply" element={<BasvuruPage />} />
       </Routes>
     </Router>
   );
