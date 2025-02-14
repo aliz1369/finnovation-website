@@ -51,7 +51,7 @@ const ValuesPage: React.FC = () => {
       {}
       {/* SECTION: Vizyonumuz */}
       <section className="container mx-auto px-2 py-2 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center">
           {/* LEFT COLUMN */}
           <div>
             <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
