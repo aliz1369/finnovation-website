@@ -86,13 +86,6 @@ const FinAcademyPage: React.FC = () => {
       icon: "/public/activeuser.png",
     },
   ];
-  const handleToggle = (index: number) => {
-    setPrograms((prev) =>
-      prev.map((prog, i) =>
-        i === index ? { ...prog, isOpen: !prog.isOpen } : prog
-      )
-    );
-  };
 
   return (
     <MainLayout>
