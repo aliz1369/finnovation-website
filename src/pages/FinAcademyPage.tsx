@@ -2,6 +2,7 @@ import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import CardSlider from "../components/CardSlider";
 import AccordionList from "../components/AccordionList";
+import HeroTitle from "../components/HeroTitle";
 
 const FinAcademyPage: React.FC = () => {
   const programs = [
@@ -83,34 +84,13 @@ const FinAcademyPage: React.FC = () => {
 
   return (
     <MainLayout>
-      <div style={{ fontFamily: "Light Small" }}>
+      <div>
         <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
-          <div className="w-full h-full md:grid md:grid-rows-2">
-            <div className="flex items-center justify-start text-center px-10 py-8 md:py-0">
-              <h1
-                className="text-black font-light
-                           text-4xl sm:text-7xl md:text-8xl lg:text-9xl
-                           leading-tight tracking-tight"
-              >
-                Geleceğin Finansal
-                <br />
-                Liderlerini Yetiştiriyoruz
-              </h1>
-            </div>
-            <div className="relative px-9 pb-16 md:pb-0">
-              <p
-                className="md:absolute md:top-[12%] md:right-[8%]
-                           text-base sm:text-lg md:text-3xl text-gray-700 
-                           leading-relaxed text-right max-w-2xl"
-              >
-                <span className="font-bold">FinAcademy</span>, finansal
-                teknolojiler ve inovasyon alanında bilgi ve becerilerinizi
-                geliştirmeniz için tasarlanmış bir eğitim platformudur.
-                Amacımız, katılımcılarımıza en güncel bilgilere odaklanarak,
-                geleceğin finans dünyasında başarılı olmalarını sağlamaktır.
-              </p>
-            </div>
-          </div>
+          <HeroTitle
+            title="Geleceğin Finansal\nLiderlerini Yetiştiriyoruz"
+            description=", finansal teknolojiler ve inovasyon alanında bilgi ve becerilerinizi geliştirmeniz için tasarlanmış bir eğitim platformudur. Amacımız, katılımcılarımıza en güncel bilgilere odaklanarak, geleceğin finans dünyasında başarılı olmalarını sağlamaktır."
+            highlightedWord="FinAcademy"
+          />
         </section>
         <section className="bg-white h-auto]">
           <div
