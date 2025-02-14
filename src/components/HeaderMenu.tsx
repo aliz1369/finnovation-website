@@ -131,7 +131,7 @@ const HeaderMenu: React.FC = () => {
           <div
             className={`fixed inset-0 bg-white z-50 transition-transform duration-200 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
+            } flex flex-col h-screen`}
           >
             {/* Mobil Menü Header */}
             <div className="flex items-center justify-between p-4 border-b">
@@ -209,7 +209,7 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Menü İçeriği - Scroll edilebilir alan */}
-            <div className="flex-1 overflow-y-auto">
+            <div className="flex-1 overflow-y-auto ">
               <div className="p-6 pb-24">
                 {selectedCategory === "Kurumsal" && (
                   <div className="space-y-6">
