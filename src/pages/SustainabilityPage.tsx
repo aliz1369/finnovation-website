@@ -6,60 +6,73 @@ import CardGrid from "../components/CardGrid";
 const SustainabilityPage: React.FC = () => {
   const cardData = [
     {
-      icon: "/icons/team.svg", // Replace with actual icon paths
-      title: "Yoldaşız",
-      description: "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız...",
-      points: [],
+      icon: "/icon10.png",
+      title: "Dijital Dönüşüm",
+      description: "",
+      points: [
+        "Yazılım çözümlerimiz, işletmelerin daha verimli çalışmasını sağlayarak kağıt ve enerji kullanımını en aza indirir.",
+      ],
     },
     {
-      icon: "/icons/honesty.svg",
-      title: "Dürüstüz",
-      description:
-        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-      points: [],
+      icon: "/icon11.png",
+      title: "Yeşil Enerji",
+      description: "",
+      points: [
+        "Sunucularımız ve veri merkezlerimizde yenilenebilir enerji kaynaklarını tercih ediyoruz.",
+      ],
     },
     {
-      icon: "/icons/customer-focus.svg",
-      title: "Müşteri Odaklıyız",
-      description: "Kendi kullanmayacağımız hiçbir ürünü önermeyiz.",
-      points: [],
+      icon: "/icon12.png",
+      title: "Atık Yönetimi",
+      description: "",
+      points: [
+        "Elektronik atıkların geri dönüşümüne katkıda  bulunuyor ve teknoloji ekipmanlarının ömrünü uzatacak çözümler sunuyoruz.",
+      ],
     },
   ];
   const cardData1 = [
     {
-      icon: "/icons/team.svg", // Replace with actual icon paths
-      title: "Yoldaşız",
-      description: "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız...",
-      points: [],
+      icon: "/icon13.png",
+      title: "Vadeli Çözümler",
+      description: "",
+      points: [
+        "Müşterilerimize sağladığımız yazılım çözümleri, onların işlerini sürdürülebilir bir şekilde büyütmelerine yardımcı olur.",
+      ],
     },
     {
-      icon: "/icons/honesty.svg",
-      title: "Dürüstüz",
-      description:
-        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-      points: [],
+      icon: "/icon14.png",
+      title: "Ekonomiye Katkı",
+      description: "",
+      points: [
+        " Yerel istihdamı destekliyor ve teknoloji ekosisteminin gelişmesine katkı sağlıyoruz.",
+      ],
     },
   ];
 
   const cardData2 = [
     {
-      icon: "/icons/team.svg", // Replace with actual icon paths
-      title: "Yoldaşız",
-      description: "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız...",
-      points: [],
+      icon: "/icon15.png",
+      title: "Eğitim ve Gelişim",
+      description: "",
+      points: [
+        "Çalışanlarımızın sürekli gelişimini destekliyor, teknoloji alanında yeni yetenekleri sektöre kazandırıyoruz.",
+      ],
     },
     {
-      icon: "/icons/honesty.svg",
-      title: "Dürüstüz",
-      description:
-        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-      points: [],
+      icon: "/icon16.png",
+      title: "Dijital Erişilebilirlik",
+      description: "",
+      points: [
+        "Herkes için erişilebilir çözümler tasarlıyor, dijital dünyada kimseyi geride bırakmıyoruz.",
+      ],
     },
     {
-      icon: "/icons/customer-focus.svg",
-      title: "Müşteri Odaklıyız",
-      description: "Kendi kullanmayacağımız hiçbir ürünü önermeyiz.",
-      points: [],
+      icon: "/icon17.png",
+      title: "Katkı Projeleri",
+      description: "",
+      points: [
+        "Teknolojiyi kullanarak sosyal sorunlara çözüm bulmayı hedefleyen projelere destek veriyoruz.",
+      ],
     },
   ];
 
