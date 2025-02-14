@@ -8,7 +8,7 @@ interface CardData {
 }
 const Card: React.FC<CardData> = ({ icon, title, description, points }) => {
   return (
-    <div className="bg-white shadow-xl shadow-gray-400 rounded-2xl p-6 flex flex-col items-start text-left w-full h-[420px]">
+    <div className="bg-white shadow-2xl rounded-2xl p-6 flex flex-col items-start text-left w-full h-[420px]">
       <img src={icon} alt={title} className="w-16 h-16 object-contain mt-4" />
       <h3 className="text-2xl font-bold mt-6">{title}</h3>
       <p className="text-gray-700 mt-4 leading-relaxed">{description}</p>
