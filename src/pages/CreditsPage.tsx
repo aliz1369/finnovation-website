@@ -1,55 +1,133 @@
 import React from "react";
-import CardSlider from "../components/CardSlider";
 import MainLayout from "../layouts/MainLayout";
+import CardSlider from "../components/CardSlider";
+import AccordionList from "../components/AccordionList";
+import HeroTitle from "../components/HeroTitle";
+import CallToAction from "../components/CallToAction";
 
 const CreditsPage: React.FC = () => {
+  const programs = [
+    {
+      title: "FinTech Giriş Seviyesi",
+      content: [
+        "Fintech nedir?",
+        "Temel kavramlar ve uygulamalar.",
+        "Sektördeki yenilikçi girişimler.",
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Dijital Ödemeler",
+      content: [
+        "Dijital ödeme sistemleri nasıl çalışır?",
+        "Blockchain ve kripto para teknolojileri.",
+        "Mobil cüzdanların yükselişi.",
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Veri Analitiği ve Yapay Zeka",
+      content: [
+        "Veri analizi yöntemleri.",
+        "Müşteri davranışlarını anlamak için AI kullanımı.",
+        "Risk yönetimi ve fraud önleme teknikleri.",
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Regülasyonlar ve Uyum Süreçleri",
+      content: [
+        "Fintech regülasyonları nelerdir?",
+        "Uyum süreçlerinin önemi.",
+        "Global standartlar hakkında bilgilendirme.",
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Girişimcilik Atölyesi",
+      content: [
+        "Başarılı bir fintech girişimi nasıl kurulur?",
+        "Yatırımcılarla etkili iletişim.",
+      ],
+      isOpen: false,
+    },
+  ];
+
   const benefits = [
     {
-      title: "Expert Analysis",
-      description: ["Comprehensive credit analysis and strategy development"],
-      icon: "/public/analysis.png",
+      title: "Esnek Çalışma",
+      description: ["Hibrit çalışma modeli ile iş-yaşam dengenizi koruyun"],
+      icon: "/public/collab.png",
     },
     {
-      title: "Risk Management",
-      description: ["Advanced risk assessment and monitoring systems"],
-      icon: "/public/risk.png",
+      title: "Sürekli Gelişim",
+      description: [
+        "Düzenli eğitimler ve workshop'lar ile kendinizi geliştirin",
+      ],
+      icon: "/public/collab.png",
     },
     {
-      title: "Process Optimization",
-      description: ["Streamlined credit application and approval processes"],
-      icon: "/public/process.png",
+      title: "Sağlık Sigortası",
+      description: ["Özel sağlık sigortası ile siz ve aileniz güvende"],
+      icon: "/public/activeuser.png",
     },
     {
-      title: "Portfolio Management",
-      description: ["Effective credit portfolio management solutions"],
-      icon: "/public/portfolio.png",
+      title: "Sosyal Aktiviteler",
+      description: ["Düzenli ekip aktiviteleri ve sosyal etkinlikler"],
+      icon: "/public/activeuser.png",
     },
     {
-      title: "Digital Integration",
-      description: ["Modern digital credit management tools"],
-      icon: "/public/digital.png",
+      title: "Teknoloji Desteği",
+      description: ["İhtiyacınız olan tüm teknolojik ekipman desteği"],
+      icon: "/public/activeuser.png",
     },
   ];
 
   return (
     <MainLayout>
-      <div className="pt-5">
-        <section className="container mx-auto px-6 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-8xl font-extrabold text-gray-900 font-segouie">
-                Credits
-              </h1>
-            </div>
+      <div>
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+          <HeroTitle
+            title="Geleceğin Finansal\nLiderlerini Yetiştiriyoruz"
+            description=", finansal teknolojiler ve inovasyon alanında bilgi ve becerilerinizi geliştirmeniz için tasarlanmış bir eğitim platformudur. Amacımız, katılımcılarımıza en güncel bilgilere odaklanarak, geleceğin finans dünyasında başarılı olmalarını sağlamaktır."
+            highlightedWord="FinAcademy"
+          />
+        </section>
+        <section className="bg-white h-auto]">
+          <div
+            className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 h-full
+                       flex flex-col justify-center"
+          >
+            <h2 className="text-4xl md:text-6xl font-light text-gray-900 mb-10">
+              Neden FinAcademy?
+            </h2>
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={benefits}
+            />
           </div>
         </section>
-
-        <section className="bg-white py-16">
-          <CardSlider
-            isScrollable={true}
-            cardPerView={3}
-            sliderDatas={benefits}
-          />
+        <section className="bg-white">
+          <AccordionList title="Eğitim Programlarımız" items={programs} />
+        </section>
+        <section className="bg-white h-auto">
+          <div
+            className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 h-full
+                       flex flex-col justify-center"
+          >
+            <h2 className="text-5xl md:text-6xl font-light text-gray-900 mb-12">
+              Eğitim Formatları
+            </h2>
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={benefits}
+            />
+          </div>
+        </section>
+        <section className="relative overflow-hidden h-auto md:h-[calc(100vh-4rem)]">
+          <CallToAction />
         </section>
       </div>
     </MainLayout>
