@@ -1,48 +1,49 @@
 import "swiper/swiper-bundle.css";
-import CardSlider from "../components/CardSlider";
 import MainLayout from "../layouts/MainLayout";
+import CardGrid from "../components/CardGrid";
 
 const ValuesPage: React.FC = () => {
-  const values = [
+  const cardData = [
     {
+      icon: "/icons/team.svg", // Replace with actual icon paths
       title: "Yoldaşız",
-      description: [
-        "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız ve tüm ekosisteme bu gözle bakarız.",
-      ],
-      icon: "icon1.png",
+      description: "Gerek ekip içinde, gerekse paydaşlarımıza bağlıyız...",
+      points: [],
     },
     {
+      icon: "/icons/honesty.svg",
       title: "Dürüstüz",
-      description: [
-        "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız. Projelerimizin ve çalışmalarımızın takibiyle ilgili sizi anında ve net bir şekilde bilgilendiririz.",
-      ],
-      icon: "icon4.png",
-    },
-    {
-      title: "Ortağız",
-      description: [
-        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz. Kıymet biliriz, alma-verme dengesini önemseriz. Her birimiz üzerinde çalıştığımız her konuda şirketin temsilcisi ve iş geliştiricisidir. Herkes şirkette farklı oran ve tiplerde ortaktır. Kendi işimiz olduğu bilinci ile kişisel değil ailesel düşünürüz.",
-      ],
-      icon: "icon2.png",
-    },
-    {
-      title: "Müşteri Odaklıyız",
-      description: [
+      description:
         "Ülkemizin, ailemizin, kendimizin inanmadığı hiçbir işi yapmayız.",
-      ],
-      icon: "icon5.png",
+      points: [],
     },
     {
+      icon: "/icons/customer-focus.svg",
+      title: "Müşteri Odaklıyız",
+      description: "Kendi kullanmayacağımız hiçbir ürünü önermeyiz.",
+      points: [],
+    },
+    {
+      icon: "/icons/handshake.svg",
+      title: "Ortağız",
+      description:
+        "Sadece iş ortamında değil, istersek hayatın içinde de beraberiz.",
+      points: [
+        "Kıymet biliriz, alma-verme dengesini önemseriz.",
+        "Her birimiz şirketin temsilcisiyiz.",
+      ],
+    },
+    {
+      icon: "/icons/communication.svg",
       title: "Samimiyiz",
-      description: [
-        "İyi niyet esaslı açık iletişim kurarız, net konuşuruz. Tek iletişim noktasından hareket etmez, birebir mümkünse yüzyüze konuşuruz.",
-      ],
-      icon: "icon3.png",
+      description: "İyi niyet esaslı açık iletişim kurarız.",
+      points: ["Net konuşuruz.", "Yüz yüze iletişimi tercih ederiz."],
     },
     {
+      icon: "/icons/customer-experience.svg",
       title: "Müşteri Deneyimini Önemseriz",
-      description: ["Basit, kullanışlı, uygun fiyatlı ürünler sunarız."],
-      icon: "icon6.png",
+      description: "Basit, kullanışlı, uygun fiyatlı ürünler sunarız.",
+      points: [],
     },
   ];
 
@@ -50,53 +51,34 @@ const ValuesPage: React.FC = () => {
     <MainLayout>
       {}
       {/* SECTION: Vizyonumuz */}
-      <section className="container mx-auto px-2 py-2 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-1 items-center">
+      <section className="container mx-auto px-2 py-2 bg-white ">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center pt-10">
           {/* LEFT COLUMN */}
           <div>
-            <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="md:text-8xl text-5xl font-extrabold text-gray-900 leading-tight">
               Vizyonumuz
             </h2>
           </div>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-          {/* RIGHT COLUMN */}
-          <div>
-            <p className="mt-4 text-2xl text-gray-700 font-bold ">
-              Yenilikçi BT çözümleri ile <br />
-              iş sürekliliğinizi sağlıyoruz.
-            </p>
-          </div>
-
-          <div>
-            <p className="text-lg text-gray-700 leading-relaxed ">
-              Biz, farkı insan faktörünün yarattığına ve sunduğumuz hizmetlerin
-              mükemmelliğinin temelinde çalışanlarımızın özverisi, uzmanlığı ve
-              tutkusunun olduğuna inanıyoruz. Kuruluşumuzdan bu yana inovatif,
-              esnek, uzman, tutkulu ve girişimci bir yaklaşımla kültürümüzü inşa
-              ediyoruz. Bu kültür etrafında, birbirine zincir gibi bağlı,
-              samimi, dürüst ve iş etiğine sahip bir ekip olarak geleceği
-              şekillendirme vizyonuyla hareket ediyoruz. Müşterilerimizin başarı
-              yolculuğunda güvenilir bir iş ortağı olmayı hedefliyor, her adımda
-              sürdürülebilir ve yenilikçi çözümlerle yanlarında olmayı taahhüt
-              ediyoruz. 2030 yılında, teknoloji geliştirme, danışmanlık ve
-              eğitim alanlarında inovasyon lideri olarak,Türkiye’den dünyaya
-              yayılan sürdürülebilir ve etkili çözümler sunarak sektörde tanınan
-              bir lider olmak.
-            </p>
-          </div>
+      <section className="max-w-6xl mx-auto px-10 py-10 bg-white">
+        <div>
+          <p className="text-lg text-gray-700 leading-relaxed ">
+            2030 yılında, teknoloji geliştirme, danışmanlık ve eğitim
+            alanlarında inovasyon lideri olarak,Türkiye’den dünyaya yayılan
+            sürdürülebilir ve etkili çözümler sunarak sektörde tanınan bir lider
+            olmak.
+          </p>
         </div>
       </section>
 
       {/* SECTION: Misyonumuz */}
       <section className="container mx-auto px-2 py-2 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-10">
           {/* LEFT COLUMN */}
           <div>
-            <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="md:text-8xl text-5xl font-extrabold text-gray-900 leading-tight">
               Misyonumuz
             </h2>
           </div>
@@ -104,59 +86,85 @@ const ValuesPage: React.FC = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-          {/* RIGHT COLUMN */}
-          <div>
-            <p className="mt-4 text-2xl text-gray-700 font-bold ">
-              Yenilikçi BT çözümleri ile <br />
-              iş sürekliliğinizi sağlıyoruz.
-            </p>
-          </div>
-
-          <div>
-            <p className="text-lg text-gray-700 leading-relaxed ">
-              Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı,
-              sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler
-              sunmaktır.
-            </p>
-          </div>
+        <div>
+          <p className="text-lg text-gray-700 leading-relaxed ">
+            Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı,
+            sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler sunmaktır.
+          </p>
         </div>
       </section>
 
       {/* SECTION: Misyonumuz */}
       <section className="container mx-auto px-2 py-2 bg-white">
-        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-[200px]">
-          {/* LEFT COLUMN */}
+        <div className="grid grid-cols-2 md:grid-cols-1 items-center md:pt-10">
           <div>
-            <h2 className="text-8xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="md:text-8xl text-5xl font-extrabold text-gray-900 leading-tight">
               Değerlerimiz
             </h2>
           </div>
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-          {/* RIGHT COLUMN */}
-          <div>
-            <p className="mt-4 text-2xl text-gray-700 font-bold ">
-              Yenilikçi BT çözümleri ile <br />
-              iş sürekliliğinizi sağlıyoruz.
-            </p>
+      <section className="bg-white py-16">
+        {/* <CardSlider isScrollable={true} cardPerView={3} sliderDatas={values} /> */}
+
+        <CardGrid cardData={cardData} />
+      </section>
+      <section className="px-1  flex justify-center items-center">
+        {/* Parent Container */}
+        <div className="relative w-full max-w-6xl px-8 py-24 rounded-2xl shadow-xl overflow-hidden">
+          {}
+          <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+            <div
+              className="w-[600px] h-[300px] rounded-full"
+              style={{
+                // Radial gradient for an elliptical shape
+                background:
+                  "radial-gradient(ellipse at center, #3277BC, #4BA6DD, #3AAA9A, #58595B)",
+                // Increase or decrease blur to taste
+                filter: "blur(100px)",
+              }}
+            />
           </div>
 
-          <div>
-            <p className="text-lg text-gray-700 leading-relaxed ">
-              Yoldaşımız olan iş ortaklarımıza yüksek kalitede, uygun fiyatlı,
-              sürdürülebilir ve değer yaratan ürün, hizmet ve çözümler
-              sunmaktır.
+          {/* Text Content on top (z-10) */}
+          <div className="text-center relative z-10">
+            {/* Main Heading */}
+            <h2 className="text-5xl font-extrabold text-gray-900 leading-tight">
+              Ready to start your AI <br /> journey with us?
+            </h2>
+
+            {/* Subtitle */}
+            <p className="mt-4 text-lg text-gray-700">
+              Simple, transparent pricing. No setup fees or contracts. <br />
+              Try without a credit card, cancel anytime.
             </p>
+
+            {/* Buttons */}
+            <div className="mt-8 flex justify-center space-x-6">
+              {/* Explore Our Solutions Button */}
+              <button
+                className="px-8 py-4 bg-[#3277BC] text-white font-bold rounded-full
+                     shadow-lg hover:bg-[#285b8f] flex items-center transition-transform
+                     transform hover:scale-105"
+              >
+                Explore Our Solutions
+                <span className="ml-2 text-xl">→</span>
+              </button>
+
+              {/* Book a Demo Button */}
+              <button
+                className="px-8 py-4 bg-white border-2 border-gray-300 text-gray-800
+                     font-bold rounded-full shadow-md hover:bg-gray-100
+                     hover:border-gray-400 flex items-center transition-transform
+                     transform hover:scale-105"
+              >
+                <img src="/bd.png" alt="Demo Icon" className="h-5 w-5 mr-2" />
+                Book a Demo
+              </button>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className="bg-white py-16">
-        <CardSlider isScrollable={true} cardPerView={3} sliderDatas={values} />
       </section>
     </MainLayout>
   );
