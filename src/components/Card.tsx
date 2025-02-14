@@ -15,7 +15,6 @@ const Card: React.FC<CardData> = ({ icon, title, description, points }) => {
       <ul className="mt-4 space-y-2">
         {points.map((point, index) => (
           <li key={index} className="flex items-start">
-            {/* <span className="text-green-500 text-xl mr-2">✅</span> */}
             <img
               src={"/check-icon.png"}
               alt={title}
