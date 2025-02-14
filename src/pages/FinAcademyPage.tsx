@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import CardSlider from "../components/CardSlider";
-
-interface Program {
-  title: string;
-  content: string[];
-  isOpen?: boolean;
-}
+import AccordionList from "../components/AccordionList";
 
 const FinAcademyPage: React.FC = () => {
-  const [programs, setPrograms] = useState<Program[]>([
+  const programs = [
     {
       title: "FinTech Giriş Seviyesi",
       content: [
@@ -17,7 +12,7 @@ const FinAcademyPage: React.FC = () => {
         "Temel kavramlar ve uygulamalar.",
         "Sektördeki yenilikçi girişimler.",
       ],
-      isOpen: true,
+      isOpen: false,
     },
     {
       title: "Dijital Ödemeler",
@@ -26,7 +21,7 @@ const FinAcademyPage: React.FC = () => {
         "Blockchain ve kripto para teknolojileri.",
         "Mobil cüzdanların yükselişi.",
       ],
-      isOpen: true,
+      isOpen: false,
     },
     {
       title: "Veri Analitiği ve Yapay Zeka",
@@ -35,7 +30,7 @@ const FinAcademyPage: React.FC = () => {
         "Müşteri davranışlarını anlamak için AI kullanımı.",
         "Risk yönetimi ve fraud önleme teknikleri.",
       ],
-      isOpen: true,
+      isOpen: false,
     },
     {
       title: "Regülasyonlar ve Uyum Süreçleri",
@@ -44,7 +39,7 @@ const FinAcademyPage: React.FC = () => {
         "Uyum süreçlerinin önemi.",
         "Global standartlar hakkında bilgilendirme.",
       ],
-      isOpen: true,
+      isOpen: false,
     },
     {
       title: "Girişimcilik Atölyesi",
@@ -52,9 +47,9 @@ const FinAcademyPage: React.FC = () => {
         "Başarılı bir fintech girişimi nasıl kurulur?",
         "Yatırımcılarla etkili iletişim.",
       ],
-      isOpen: true,
+      isOpen: false,
     },
-  ]);
+  ];
 
   const benefits = [
     {
@@ -85,13 +80,6 @@ const FinAcademyPage: React.FC = () => {
       icon: "/public/activeuser.png",
     },
   ];
-  const handleToggle = (index: number) => {
-    setPrograms((prev) =>
-      prev.map((prog, i) =>
-        i === index ? { ...prog, isOpen: !prog.isOpen } : prog
-      )
-    );
-  };
 
   return (
     <MainLayout>
@@ -124,9 +112,9 @@ const FinAcademyPage: React.FC = () => {
             </div>
           </div>
         </section>
-        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+        <section className="bg-white h-auto]">
           <div
-            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
+            className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 h-full
                        flex flex-col justify-center"
           >
             <h2 className="text-4xl md:text-6xl font-light text-gray-900 mb-10">
@@ -140,48 +128,11 @@ const FinAcademyPage: React.FC = () => {
           </div>
         </section>
         <section className="bg-white">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 py-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-10">
-              Eğitim Programlarımız
-            </h2>
-            <div className="space-y-6">
-              {programs.map((program, index) => (
-                <div key={index} className="border-b border-gray-300 pb-3">
-                  <div
-                    className="flex items-center justify-between cursor-pointer py-4"
-                    onClick={() => handleToggle(index)}
-                  >
-                    <h3 className="text-xl font-light">{program.title}</h3>
-                    <div className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center">
-                      {program.isOpen ? (
-                        <span className="text-xl font-light">-</span>
-                      ) : (
-                        <span className="text-xl font-light">+</span>
-                      )}
-                    </div>
-                  </div>
-                  {program.isOpen && (
-                    <ul className="pl-4 space-y-2 text-gray-700">
-                      {program.content.map((item, i) => (
-                        <li key={i} className="flex items-start space-x-2">
-                          <img
-                            src="/checkmark.png"
-                            alt="Checkmark"
-                            className="w-4 h-4 mt-1"
-                          />
-                          <p className="font-light">{item}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          <AccordionList title="Eğitim Programlarımız" items={programs} />
         </section>
-        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+        <section className="bg-white h-auto">
           <div
-            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
+            className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 h-full
                        flex flex-col justify-center"
           >
             <h2 className="text-5xl md:text-6xl font-light text-gray-900 mb-12">

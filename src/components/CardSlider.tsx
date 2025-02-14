@@ -56,10 +56,7 @@ const CardSlider: React.FC<SliderProps> = ({
   });
 
   return (
-    <div
-      {...handlers}
-      className="relative max-w-6xl mx-auto px-4 py-8 overflow-hidden"
-    >
+    <div {...handlers} className="w-full h-full px-4 py-8 overflow-hidden">
       <div
         className="flex transition-transform ease-in-out duration-500"
         style={{
