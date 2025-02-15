@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const HeaderMenu: React.FC = () => {
@@ -13,7 +14,13 @@ const HeaderMenu: React.FC = () => {
     dijital: false,
   });
   const [showMobileLang, setShowMobileLang] = useState(false);
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const availableLang = currentLang === "tr" ? "en" : "tr";
 
+  const handleLanguageChange = () => {
+    i18n.changeLanguage(availableLang);
+  };
   // Scroll'u engellemek için useEffect ekliyoruz
   React.useEffect(() => {
     if (isMobileMenuOpen) {
@@ -50,61 +57,61 @@ const HeaderMenu: React.FC = () => {
   const menuItems = {
     Kurumsal: {
       Genel: [
-        { title: "Hakkımızda", link: "/about/about-us" },
-        { title: "Değerlerimiz", link: "/about/values" },
-        { title: "Organizasyon Şeması", link: "/about/organization" },
-        { title: "Sürdürülebilirlik", link: "/about/sustainability" },
+        { title: "hakkimizda", link: "/about/about-us" },
+        { title: "degerlerimiz", link: "/about/values" },
+        { title: "organizasyonsemasi", link: "/about/organization" },
+        { title: "surdurulebilirlik", link: "/about/sustainability" },
       ],
       Kariyer: [
-        { title: "Başvuru", link: "/career/apply" },
-        { title: "Finnovation'da Çalışmak", link: "/career/work-with-us" },
-        { title: "Kültürümüz", link: "/career/culture" },
-        { title: "Yetenek Programları", link: "/career/talent-programs" },
-        { title: "Çeşitlilik & Kapsayıcılık", link: "/career/diversity" },
+        { title: "basvuru", link: "/career/apply" },
+        { title: "finnovationdacalismak", link: "/career/work-with-us" },
+        { title: "kulturmuz", link: "/career/culture" },
+        { title: "yetenekprogramlari", link: "/career/talent-programs" },
+        { title: "cesitlilik&kapsayicilik", link: "/career/diversity" },
       ],
     },
     "Ürünler ve Hizmetler": {
       FinTech: [
-        { title: "Kredi", link: "/services/fintech/credit" },
-        { title: "Hazine", link: "/services/fintech/treasury" },
-        { title: "Nakit Yönetimi", link: "/services/fintech/cash-management" },
+        { title: "kredi", link: "/services/fintech/credit" },
+        { title: "hazine", link: "/services/fintech/treasury" },
+        { title: "nakityonetimi", link: "/services/fintech/cash-management" },
         {
-          title: "Risk Yönetimi & ALM",
+          title: "riskyonetimivealm",
           link: "/services/fintech/risk-management",
         },
       ],
       Tech: [
-        { title: "EnerjiTech", link: "/services/tech/energy" },
-        { title: "AgroTech", link: "/services/tech/agro" },
-        { title: "HealthTech", link: "/services/tech/health" },
-        { title: "TourismTech", link: "/services/tech/tourism" },
-        { title: "EduTech", link: "/services/tech/edu" },
-        { title: "RetailTech", link: "/services/tech/retail" },
-        { title: "AviationTech", link: "/services/tech/aviation" },
-        { title: "MedTech", link: "/services/tech/med" },
+        { title: "enerjitech", link: "/services/tech/energy" },
+        { title: "agrotech", link: "/services/tech/agro" },
+        { title: "healthtech", link: "/services/tech/health" },
+        { title: "tourismtech", link: "/services/tech/tourism" },
+        { title: "edutech", link: "/services/tech/edu" },
+        { title: "retailtech", link: "/services/tech/retail" },
+        { title: "aviationtech", link: "/services/tech/aviation" },
+        { title: "medtech", link: "/services/tech/med" },
       ],
       Veri: [
-        { title: "Veri Mimarisi", link: "/services/data/architecture" },
-        { title: "Veri Analitiği", link: "/services/data/analytics" },
-        { title: "İş Zekası", link: "/services/data/bi" },
-        { title: "Yasal Raporlama", link: "/services/data/reporting" },
+        { title: "verimimarsi", link: "/services/data/architecture" },
+        { title: "verianalitigi", link: "/services/data/analytics" },
+        { title: "iszekasi", link: "/services/data/bi" },
+        { title: "yasalreporlama", link: "/services/data/reporting" },
       ],
       Dijital: [
         {
-          title: "Süreç İzleme ve Geliştirme",
+          title: "surecizlemevegelistirme",
           link: "/services/digital/process",
         },
         {
-          title: "Proje Bazlı Teknoloji ve Sistem Yönetimi",
+          title: "projebazliteknolojivesistemyonetimi",
           link: "/services/digital/project-tech",
         },
-        { title: "Proje Yönetimi", link: "/services/digital/management" },
+        { title: "projeyonetimi", link: "/services/digital/management" },
         {
-          title: "İnovasyon ve Değişim Yönetimi",
+          title: "inovasyonvedegisimyonetimi",
           link: "/services/digital/innovation",
         },
         {
-          title: "Müşteri Memnuniyeti",
+          title: "musterimemnuniyeti",
           link: "/services/digital/customer-satisfaction",
         },
       ],
@@ -545,7 +552,7 @@ const HeaderMenu: React.FC = () => {
                 to="/about"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold"
               >
-                Kurumsal
+                {t("kurumsal")}
               </Link>
 
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
@@ -554,7 +561,7 @@ const HeaderMenu: React.FC = () => {
                     {/* Genel Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        Genel
+                        {t("genel")}
                       </h3>
                       <ul className="space-y-2">
                         {menuItems["Kurumsal"].Genel.map((item) => (
@@ -563,7 +570,7 @@ const HeaderMenu: React.FC = () => {
                               to={item.link}
                               className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200"
                             >
-                              {item.title}
+                              {t(item.title)}
                             </Link>
                           </li>
                         ))}
@@ -573,7 +580,7 @@ const HeaderMenu: React.FC = () => {
                     {/* Kariyer Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        Kariyer
+                        {t("kariyer")}
                       </h3>
                       <ul className="space-y-2">
                         {menuItems["Kurumsal"].Kariyer.map((item) => (
@@ -582,7 +589,7 @@ const HeaderMenu: React.FC = () => {
                               to={item.link}
                               className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200"
                             >
-                              {item.title}
+                              {t(item.title)}
                             </Link>
                           </li>
                         ))}
@@ -599,7 +606,7 @@ const HeaderMenu: React.FC = () => {
                 to="/services"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold whitespace-nowrap"
               >
-                Ürünler ve Hizmetler
+                {t("urunlervehizmetler")}
               </Link>
 
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
@@ -618,7 +625,7 @@ const HeaderMenu: React.FC = () => {
                                 to={item.link}
                                 className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                               >
-                                {item.title}
+                                {t(item.title)}
                               </Link>
                             </li>
                           )
@@ -638,7 +645,7 @@ const HeaderMenu: React.FC = () => {
                               to={item.link}
                               className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                             >
-                              {item.title}
+                              {t(item.title)}
                             </Link>
                           </li>
                         ))}
@@ -648,7 +655,7 @@ const HeaderMenu: React.FC = () => {
                     {/* Veri Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        Veri
+                        {t("veri")}
                       </h3>
                       <ul className="space-y-2">
                         {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
@@ -657,7 +664,7 @@ const HeaderMenu: React.FC = () => {
                               to={item.link}
                               className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                             >
-                              {item.title}
+                              {t(item.title)}
                             </Link>
                           </li>
                         ))}
@@ -667,7 +674,7 @@ const HeaderMenu: React.FC = () => {
                     {/* Dijital Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        Dijital
+                        {t("dijital")}
                       </h3>
                       <ul className="space-y-2">
                         {menuItems["Ürünler ve Hizmetler"].Dijital.map(
@@ -677,7 +684,7 @@ const HeaderMenu: React.FC = () => {
                                 to={item.link}
                                 className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
                               >
-                                {item.title}
+                                {t(item.title)}
                               </Link>
                             </li>
                           )
@@ -766,11 +773,14 @@ const HeaderMenu: React.FC = () => {
                   alt="Globe"
                   className="h-5 w-5 mr-2 group-hover:brightness-0 group-hover:invert"
                 />
-                <span>TR</span>
+                <span>{currentLang.toUpperCase()}</span>
               </div>
               <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2">
-                <button className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white">
-                  EN
+                <button
+                  onClick={handleLanguageChange}
+                  className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white"
+                >
+                  {availableLang.toUpperCase()}
                 </button>
               </div>
             </div>

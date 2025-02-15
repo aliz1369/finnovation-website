@@ -1,8 +1,10 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import LogoSlider from "../components/LogoSlider";
+import { useTranslation } from "react-i18next";
 
 const MainPage: React.FC = () => {
+  const { t } = useTranslation();
   const logosRefrence = [
     "/img1.png", // enpara.
     "/img2.png", // netcad.
@@ -55,10 +57,10 @@ const MainPage: React.FC = () => {
               {/* Başlık Kısmı */}
               <div className="mb-8 translate-y-10">
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
-                  404: Sıradan Yazılım
+                  {t("404")}
                 </h1>
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight mt-0">
-                  Bulunamadı
+                  {t("bulunamadi")}
                 </h1>
               </div>
 
@@ -67,29 +69,23 @@ const MainPage: React.FC = () => {
                 {/* Türkçe Başlık */}
                 <div className="lg:max-w-2xl">
                   <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
-                    Dijital dönüşümün kodunu çözüyoruz, işletmeleri geleceğe
-                    taşıyoruz!
+                    {t("dijitaldonusumun")}
                   </h2>
                 </div>
 
                 {/* İngilizce Metin ve Butonlar */}
                 <div className="lg:max-w-xl flex flex-col items-center lg:items-start gap-8">
                   <p className="text-[16px] sm:text-[18px] text-gray-700">
-                    Veri odaklı içgörüler ve otomasyonla iş dünyasını
-                    güçlendirerek benzersiz büyüme sağlıyoruz. Endüstrileri
-                    dönüştürmek ve verimliliği artırmak için inşa edildik.
-                    Finnovation olarak, geliştirdiğimiz yenilikçi çözümlerle
-                    sektörlere yön veriyor ve sürdürülebilir başarıyı mümkün
-                    kılıyoruz.
+                    {t("veriodakli")}
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center sm:justify-start">
                     <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center justify-center transition-colors">
-                      Explore Our Solutions
+                      {t("exploreoursolution")}
                       <span className="ml-2 text-xl">→</span>
                     </button>
                     <button className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center justify-center transition-colors">
-                      Book a Demo
+                      {t("bookademo")}
                       <img
                         src="/bd.png"
                         alt="Calendar"
