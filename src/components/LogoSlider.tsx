@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
 
+interface LogoContainer {
+  logo: string;
+  link: string;
+}
 interface LogoSliderInfo {
-  logos: string[];
+  logos: LogoContainer[];
   direction?: number;
 }
 const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
@@ -31,6 +35,10 @@ const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
 
     return () => clearInterval(interval);
   }, [direction]);
+
+  const handleLink = (link: string) => {
+    window.open(link, "_blank", "noopener,noreferrer");
+  };
   return (
     <div className="w-full py-4 overflow-hidden">
       <div
@@ -40,12 +48,13 @@ const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
         {[...logos, ...logos].map((logo, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center"
+            className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center hover:cursor-pointer"
           >
             <img
-              src={logo}
+              src={logo.logo}
               alt={`Logo ${index + 1}`}
               className="w-full h-full object-contain"
+              onClick={() => handleLink(logo.link)}
             />
           </div>
         ))}

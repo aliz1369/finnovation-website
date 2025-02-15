@@ -1,50 +1,117 @@
 import React from "react";
-import MainLayout from "../layouts/MainLayout";
-import LogoSlider from "../components/LogoSlider";
 import { useTranslation } from "react-i18next";
+import LogoSlider from "../components/LogoSlider";
+import MainLayout from "../layouts/MainLayout";
 
 const MainPage: React.FC = () => {
   const { t } = useTranslation();
   const logosRefrence = [
-    "/img1.png", // enpara.
-    "/img2.png", // netcad.
-    "/img3.png", // QNB Finansbank.
-    "/img4.png", // Workup.
-    "/img5.png", // Fibabanka.
-    "/img7.png", // Türkiye İş Bankası.
-    "/img1.png", // enpara.
-    "/img2.png", // netcad.
-    "/img3.png", // QNB Finansbank.
-    "/img4.png", // Workup.
-    "/img5.png", // Fibabanka.
-    "/img7.png", // Türkiye İş Bankası.
-    "/img1.png", // enpara.
-    "/img2.png", // netcad.
-    "/img3.png", // QNB Finansbank.
-    "/img4.png", // Workup.
-    "/img5.png", // Fibabanka.
-    "/img7.png", // Türkiye İş Bankası.
+    {
+      logo: "/img1.png",
+      link: "https://www.enpara.com/",
+    },
+    {
+      logo: "/img2.png",
+      link: "https://www.netcad.com/",
+    },
+    {
+      logo: "/img3.png",
+      link: "https://www.qnb.com.tr/",
+    },
+    {
+      logo: "/img4.png",
+      link: "https://www.workup.ist/",
+    },
+    {
+      logo: "/img5.png",
+      link: "https://www.fibabanka.com.tr/",
+    },
+    {
+      logo: "/img7.png",
+      link: "https://www.isbank.com.tr/",
+    },
+    {
+      logo: "/img1.png",
+      link: "https://www.enpara.com/",
+    },
+    {
+      logo: "/img2.png",
+      link: "https://www.netcad.com/",
+    },
+    {
+      logo: "/img3.png",
+      link: "https://www.qnb.com.tr/",
+    },
+    {
+      logo: "/img4.png",
+      link: "https://www.workup.ist/",
+    },
+    {
+      logo: "/img5.png",
+      link: "https://www.fibabanka.com.tr/",
+    },
+    {
+      logo: "/img7.png",
+      link: "https://www.isbank.com.tr/",
+    },
+    {
+      logo: "/img1.png",
+      link: "https://www.enpara.com/",
+    },
+    {
+      logo: "/img2.png",
+      link: "https://www.netcad.com/",
+    },
+    {
+      logo: "/img3.png",
+      link: "https://www.qnb.com.tr/",
+    },
+    {
+      logo: "/img4.png",
+      link: "https://www.workup.ist/",
+    },
+    {
+      logo: "/img5.png",
+      link: "https://www.fibabanka.com.tr/",
+    },
+    {
+      logo: "/img7.png",
+      link: "https://www.isbank.com.tr/",
+    },
   ];
   const logosProje = [
-    "/pr1.png",
-    "/pr2.png",
-    "/pr3.png",
-    "/pr4.png",
-    "/pr1.png",
-    "/pr2.png",
-    "/pr3.png",
-    "/pr4.png",
-    "/pr1.png",
-    "/pr2.png",
-    "/pr3.png",
-    "/pr4.png",
-    "/pr2.png",
-    "/pr3.png",
-    "/pr4.png",
-    "/pr1.png",
-    "/pr2.png",
-    "/pr3.png",
-    "/pr4.png",
+    {
+      logo: "/pr1.png",
+      link: "https://hp.com/",
+    },
+    {
+      logo: "/pr2.png",
+      link: "https://www.nbg.gr/en/individuals",
+    },
+    {
+      logo: "/pr3.png",
+      link: "https://www.kamakuraco.com/",
+    },
+    {
+      logo: "/pr4.png",
+      link: "https://borsaistanbul.com/tr/",
+    },
+    {
+      logo: "/pr1.png",
+      link: "https://hp.com/",
+    },
+    {
+      logo: "/pr2.png",
+      link: "https://www.nbg.gr/en/individuals",
+    },
+    {
+      logo: "/pr3.png",
+      link: "https://www.kamakuraco.com/",
+    },
+    {
+      logo: "/pr4.png",
+      link: "https://borsaistanbul.com/tr/",
+    },
   ];
   return (
     <MainLayout>
