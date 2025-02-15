@@ -8,14 +8,14 @@ const WorkingInFinnovationPage: React.FC = () => {
   const benefits = [
     {
       title: "Dijital Dünyanın Öncüsü",
-      description: ["Finnovation, yenilikçi ve dinamik yapısıyla hızla ilerliyor."],
+      description: [
+        "Finnovation, yenilikçi ve dinamik yapısıyla hızla ilerliyor.",
+      ],
       icon: "/collab.png",
     },
     {
       title: "Kariyeriniz İçin Büyük Bir Fırsat",
-      description: [
-        "Yaratıcı ve çözüm odaklı bir ekiple çalışma imkânı.",
-      ],
+      description: ["Yaratıcı ve çözüm odaklı bir ekiple çalışma imkânı."],
       icon: "/collab.png",
     },
     {
@@ -30,7 +30,9 @@ const WorkingInFinnovationPage: React.FC = () => {
     },
     {
       title: "Geleceğe Yön Verin",
-      description: ["Finnovation ailesine katılın, teknolojinin sınırlarını birlikte genişletelim!"],
+      description: [
+        "Finnovation ailesine katılın, teknolojinin sınırlarını birlikte genişletelim!",
+      ],
       icon: "/activeuser.png",
     },
   ];
@@ -77,7 +79,6 @@ const WorkingInFinnovationPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="pt-5">
-        {/* Hero Section */}
         <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
           <HeroTitle
             title="Finnovation’da Sınır Tanımayan Bir Gelecek!"
@@ -97,7 +98,7 @@ const WorkingInFinnovationPage: React.FC = () => {
 
         {/* FAQ Section - Updated accordion structure */}
         <section className="container mx-auto px-6 py-16 bg-white">
-          <h2 className="text-4xl font-medium text-gray-900 leading-tight font-segouie mt-24">
+          <h2 className="text-4xl font-medium text-gray-900 leading-tight font-segouie">
             Sıkça Sorulan Sorular:
           </h2>
           <div className="mt-16 max-w-6xl mx-auto">
@@ -167,11 +168,7 @@ const WorkingInFinnovationPage: React.FC = () => {
                                  hover:border-gray-400 flex items-center transition-transform
                                  transform hover:scale-105"
                 >
-                  <img
-                    src="/bd.png"
-                    alt="Demo Icon"
-                    className="h-5 w-5 mr-2"
-                  />
+                  <img src="/bd.png" alt="Demo Icon" className="h-5 w-5 mr-2" />
                   Book a Demo
                 </button>
               </div>
