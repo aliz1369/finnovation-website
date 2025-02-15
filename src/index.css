@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply font-segouie;
+}
 /* Ek CSS Tanımlamaları */
 body {
   margin: 0;
