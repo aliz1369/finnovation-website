@@ -4,6 +4,8 @@ import MainLayout from "../layouts/MainLayout";
 import "swiper/swiper-bundle.css";
 
 import CardSlider from "../components/CardSlider";
+import HeroTitle from "../components/HeroTitle";
+
 const Culture: React.FC = () => {
   const values = [
     {
@@ -79,34 +81,13 @@ const Culture: React.FC = () => {
 
   return (
     <MainLayout>
-      <div className="pt-5">
-        {/* Hero Section - Updated structure */}
-        <section className="container mx-auto px-6 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="flex flex-col md:-ml-8">
-              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
-                Kültürümüz
-              </h1>
-            </div>
-          </div>
-        </section>
-
-        {/* Description Section - Updated layout */}
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-            <div>
-              <p className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium -ml-20">
-                <span className="font-bold underline">Finnovation</span>'da
-                Çeşitlilikten Güç Alır, Başarıyı Birlikte Yaratırız
-              </p>
-            </div>
-            <div>
-              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-              Finnovation kültürü, yenilikçi düşünceyi, 
-              işbirliğini ve çeşitliliği bir araya getirerek her bireyin potansiyelini en üst seviyeye çıkarmayı hedefler.
-              </p>
-            </div>
-          </div>
+      <div>
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+          <HeroTitle
+            title="Çeşitlilikten Güç Alır, Başarıyı Birlikte Yaratırız"
+            description=" kültürü, yenilikçi düşünceyi, işbirliğini ve çeşitliliği bir araya getirerek her bireyin potansiyelini en üst seviyeye çıkarmayı hedefler."
+            highlightedWord="Finnovation"
+          />
         </section>
 
         {/* Values Section - Updated carousel */}
