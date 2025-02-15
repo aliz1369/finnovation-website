@@ -1,6 +1,7 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import CardSlider from "../components/CardSlider";  
+import HeroTitle from "../components/HeroTitle";
 
 const YetenekProgramlariPage: React.FC = () => {
 
@@ -38,39 +39,16 @@ const YetenekProgramlariPage: React.FC = () => {
   ];
   return (
     <MainLayout>
-      <div className="pt-5">
-        {/* Hero Section - Updated padding and responsive classes */}
-        <section className="container mx-auto px-6 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="flex flex-col md:-ml-8">
-              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
-                Yetenek
-              </h1>
-              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight mt-0">
-                Programları
-              </h1>
-            </div>
-          </div>
+      <div>
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+          <HeroTitle
+            title="Kariyerinizin Başlangıcı, Bizimle Olsun!"
+            subtitle="Finnovation yetenek programları, genç yeteneklerin potansiyellerini keşfetmelerini ve profesyonel kariyerlerinde güçlü adımlar atmalarını sağlamak için tasarlanmıştır."
+            description=" olarak, genç yetenekleri keşfetmek ve geliştirmek için özel programlar sunuyoruz. Kariyerinizin ilk adımını sağlam atmanız için tasarlanan bu programlar, eğitim, mentorluk ve gerçek iş deneyimini bir araya getirerek sizi profesyonel hayata hazırlıyor.Alanında uzman isimlerle çalışma fırsatı sunan programlarımız, sadece teknik becerilerinizi değil, aynı zamanda liderlik, problem çözme ve stratejik düşünme yeteneklerinizi de geliştirmenize yardımcı olur. Dijital dünyanın hızla değişen dinamiklerine uyum sağlamak ve rekabet avantajı kazanmak isteyen herkes için eşsiz fırsatlar sunuyoruz."
+            highlightedWord="Finnovation"
+          />
         </section>
         
-
-        {/* Description Section */}
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-            <div>
-              <p className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium -ml-20">
-              Kariyerinizin Başlangıcı, Bizimle Olsun!
-              </p>
-            </div>
-            <div>
-              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-              Finnovation yetenek programları, genç yeteneklerin potansiyellerini keşfetmelerini ve profesyonel kariyerlerinde güçlü adımlar atmalarını sağlamak için tasarlanmıştır.
-              </p>
-            </div>
-          </div>
-        </section>
-
-
         <section className="bg-white py-16">
           <CardSlider
             isScrollable={true}

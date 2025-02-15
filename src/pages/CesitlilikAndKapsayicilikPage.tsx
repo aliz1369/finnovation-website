@@ -1,50 +1,20 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
+import HeroTitle from "../components/HeroTitle";
 
 const CesitlilikAndKapsayicilikPage: React.FC = () => {
   return (
     <MainLayout>
-      <div className="pt-5">
-        {/* Hero Section - Updated padding and responsive classes */}
-        <section className="container mx-auto px-6 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="flex flex-col md:-ml-8">
-              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
-                Cesitlilik &
-              </h1>
-              <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight mt-0">
-                Kapsayıcılık
-              </h1>
-            </div>
-          </div>
+      <div>
+        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+          <HeroTitle
+            title="Her Ses, Her Renk, Birlikte Daha Güçlüyüz!"
+            description=", çeşitliliği ve kapsayıcılığı temel değerleri arasında kabul eder. Farklı geçmişlerden, kültürlerden ve deneyimlerden gelen bireylerin bir araya geldiği dinamik bir çalışma ortamı yaratmak, inovasyonun en güçlü kaynağına inanıyoruz. Her bireyin eşit fırsatlara sahip olduğu, fikirlerin özgürce paylaşılabildiği ve tüm çalışanların kendilerini değerli hissettikleri bir ortam sağlamak için sürekli çaba gösteriyoruz. Çeşitli bakış açıları, yeni çözümler geliştirmemize yardımcı olur ve birlikte daha güçlü bir takım olmamızı sağlar. Finnovation'da herkes, kimliği ne olursa olsun, kendisini güvenli ve saygı gören bir ortamda bulur. Bu yaklaşımımız, sadece şirket içindeki ilişkilerimizi değil, aynı zamanda müşterilerimize sunduğumuz hizmetleri de iyileştirir."
+            highlightedWord="Finnovation"
+            subtitle="Finnovation, farklılıkları kucaklayarak her bireyin eşit fırsatlara sahip olduğu, saygı ve anlayış çerçevesiyle şekillenen bir çalışma ortamı yaratmayı hedefler."
+          />
         </section>
         
-
-        {/* Description Section */}
-        <section className="max-w-6xl mx-auto px-10 py-16 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:pt-[20px]">
-            <div>
-              <p className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium -ml-20">
-              Her Ses, Her Renk, Birlikte Daha Güçlüyüz!
-              </p>
-            </div>
-            <div>
-              <p className="text-lg text-gray-700 leading-relaxed font-segouie mb-6">
-              Finnovation, farklılıkları kucaklayarak her bireyin eşit fırsatlara sahip olduğu, saygı ve anlayış çerçevesiyle şekillenen bir çalışma ortamı yaratmayı hedefler.
-              </p>
-            </div>
-          </div>
-        </section>
-       
-
-
-
-
-
-
-
-
-
        {/* CTA Section - Updated responsive design */}
        <section className="px-1 py-16 flex justify-center items-center">
           <div className="relative w-full max-w-6xl px-8 py-24 rounded-2xl shadow-xl overflow-hidden">
