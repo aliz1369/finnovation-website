@@ -56,7 +56,10 @@ const CardSlider: React.FC<SliderProps> = ({
   });
 
   return (
-    <div {...handlers} className="w-full h-full px-4 py-8 overflow-hidden">
+    <div
+      {...handlers}
+      className="relative w-full h-full px-4 py-8 overflow-hidden"
+    >
       <div
         className="flex transition-transform ease-in-out duration-500"
         style={{
@@ -69,7 +72,7 @@ const CardSlider: React.FC<SliderProps> = ({
             className="flex-shrink-0 px-2 h-[500px]"
             style={{ width: `${100 / cardsPerView}%` }}
           >
-            <div className="bg-white shadow-xl rounded-2xl p-6 flex flex-col items-start text-left h-[430px] w-full">
+            <div className="bg-[#f7f7f7] rounded-2xl p-6 flex flex-col items-start text-left h-[430px] w-full">
               <img
                 src={item.icon}
                 alt={item.title}
@@ -77,7 +80,11 @@ const CardSlider: React.FC<SliderProps> = ({
               />
               <h3 className="text-2xl font-bold mt-6">{item.title}</h3>
               <p className="text-gray-700 mt-4 leading-relaxed flex items-start">
-                <span className="text-green-500 text-xl mr-2">✅</span>
+                <img
+                  src={"/check-icon.png"}
+                  alt={item.title}
+                  className="w-5 h-5 object-contain mr-2"
+                />
                 {item.description}
               </p>
             </div>
