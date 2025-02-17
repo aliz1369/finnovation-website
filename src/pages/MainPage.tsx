@@ -81,36 +81,52 @@ const MainPage: React.FC = () => {
   ];
   const logosProje = [
     {
-      logo: "/pr1.png",
-      link: "https://hp.com/",
+      logo: "/makers-logo.png",
+      link: "https://makersconsulting.co/",
     },
     {
-      logo: "/pr2.png",
-      link: "https://www.nbg.gr/en/individuals",
+      logo: "/azor-logo.png",
+      link: "https://www.azor-solutions.com/",
     },
     {
-      logo: "/pr3.png",
-      link: "https://www.kamakuraco.com/",
+      logo: "/inspire-it-logo.png",
+      link: "https://www.inspirit.com.tr/",
     },
     {
-      logo: "/pr4.png",
-      link: "https://borsaistanbul.com/tr/",
+      logo: "/techbros-logo.png",
+      link: "https://techbros.com.tr/",
     },
     {
-      logo: "/pr1.png",
-      link: "https://hp.com/",
+      logo: "/makers-logo.png",
+      link: "https://makersconsulting.co/",
     },
     {
-      logo: "/pr2.png",
-      link: "https://www.nbg.gr/en/individuals",
+      logo: "/azor-logo.png",
+      link: "https://www.azor-solutions.com/",
     },
     {
-      logo: "/pr3.png",
-      link: "https://www.kamakuraco.com/",
+      logo: "/inspire-it-logo.png",
+      link: "https://www.inspirit.com.tr/",
     },
     {
-      logo: "/pr4.png",
-      link: "https://borsaistanbul.com/tr/",
+      logo: "/techbros-logo.png",
+      link: "https://techbros.com.tr/",
+    },
+    {
+      logo: "/makers-logo.png",
+      link: "https://makersconsulting.co/",
+    },
+    {
+      logo: "/azor-logo.png",
+      link: "https://www.azor-solutions.com/",
+    },
+    {
+      logo: "/inspire-it-logo.png",
+      link: "https://www.inspirit.com.tr/",
+    },
+    {
+      logo: "/techbros-logo.png",
+      link: "https://techbros.com.tr/",
     },
   ];
   return (
@@ -146,7 +162,7 @@ const MainPage: React.FC = () => {
                     {t("veriodakli")}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center sm:justify-start">
+                  {/* <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center sm:justify-start">
                     <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center justify-center transition-colors">
                       {t("exploreoursolution")}
                       <span className="ml-2 text-xl">→</span>
@@ -159,7 +175,7 @@ const MainPage: React.FC = () => {
                         className="h-5 w-5 ml-2"
                       />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -168,8 +184,8 @@ const MainPage: React.FC = () => {
 
         {/* Logo Section'ları */}
         <div className="mt-28">
-          <LogoSlider logos={logosRefrence} direction={1} />
-          <LogoSlider logos={logosProje} direction={-1} />
+          <LogoSlider logos={logosProje} direction={1} />
+          <LogoSlider logos={logosRefrence} direction={-1} />
         </div>
       </div>
     </MainLayout>
