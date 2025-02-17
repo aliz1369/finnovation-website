@@ -163,14 +163,14 @@ const MainPage: React.FC = () => {
   ];
   return (
     <MainLayout>
-      <div className="h-full relative bg-white">
+      <div className="h-full relative bg-white overflow-hidden">
         {/* Hero Bölümü */}
         <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-10">
           <div className="max-w-[1440px] mx-auto">
             {/* Ana Başlık ve İçerik */}
             <div className="flex flex-col text-center md:text-left md:ml-0">
               {/* Başlık Kısmı */}
-              <div className="mb-8 translate-y-10">
+              <div className="mb-8 translate-y-5 md:translate-y-9">
                 <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
                   {t("404")}
                 </h1>
@@ -180,7 +180,7 @@ const MainPage: React.FC = () => {
               </div>
 
               {/* Alt Başlık ve Butonlar */}
-              <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 translate-y-30">
+              <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 translate-y-10 md:translate-y-16">
                 {/* Türkçe Başlık */}
                 <div className="lg:max-w-2xl">
                   <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
@@ -215,7 +215,7 @@ const MainPage: React.FC = () => {
         </section>
 
         {/* Logo Section'ları */}
-        <div className="mt-28">
+        <div className="md:mt-24 mt-10">
           <LogoSlider logos={logosProje} direction={1} />
           <LogoSlider logos={logosRefrence} direction={-1} />
         </div>
