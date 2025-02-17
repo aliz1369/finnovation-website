@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LogoSlider from "../components/LogoSlider";
 import MainLayout from "../layouts/MainLayout";
 
 const MainPage: React.FC = () => {
   const { t } = useTranslation();
+
+  const [shouldDisableScroll, setShouldDisableScroll] = useState(true);
   const logosRefrence = [
     {
       logo: "/img1.png",
@@ -161,9 +163,32 @@ const MainPage: React.FC = () => {
       link: "https://techbros.com.tr/",
     },
   ];
+
+  useEffect(() => {
+    const checkOverflow = () => {
+      const isOverflowing =
+        document.documentElement.scrollHeight > window.innerHeight;
+      setShouldDisableScroll(!isOverflowing);
+    };
+
+    checkOverflow();
+    window.addEventListener("resize", checkOverflow);
+
+    return () => {
+      window.removeEventListener("resize", checkOverflow);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = shouldDisableScroll ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [shouldDisableScroll]);
+
   return (
     <MainLayout>
-      <div className="h-full relative bg-white overflow-hidden">
+      <div className="relative bg-white overflow-hidden">
         {/* Hero Bölümü */}
         <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-10">
           <div className="max-w-[1440px] mx-auto">
