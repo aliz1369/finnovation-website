@@ -551,13 +551,13 @@ const HeaderMenu: React.FC = () => {
           {/* Desktop Menü */}
           <nav className="hidden lg:flex flex-nowrap items-center text-[#1E5E81] font-medium space-x-8 ml-12">
             {/* Kurumsal Menüsü */}
-            <div className="relative group">
-              <Link
+            <div className="relative group text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold hover:cursor-pointer">
+              {/* <Link
                 to="/about"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold"
-              >
-                {t("kurumsal")}
-              </Link>
+              > */}
+              {t("kurumsal")}
+              {/* </Link> */}
 
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
@@ -605,13 +605,13 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Ürünler ve Hizmetler Menüsü - Desktop */}
-            <div className="relative group">
-              <Link
+            <div className="relative group text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold whitespace-nowrap hover:cursor-pointer">
+              {/* <Link
                 to="/services"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold whitespace-nowrap"
-              >
-                {t("urunlervehizmetler")}
-              </Link>
+              > */}
+              {t("urunlervehizmetler")}
+              {/* </Link> */}
 
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
