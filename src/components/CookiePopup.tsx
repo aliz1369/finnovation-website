@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const CookiePopup = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +18,7 @@ const CookiePopup = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-5 left-5 right-5 md:left-10 md:right-10 bg-gray-800 text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+    <div className="fixed bottom-5 left-5 right-5 md:left-10 md:right-10 bg-gray-800 text-white p-4 rounded-lg shadow-lg flex justify-between items-center z-50">
       <p className="text-sm">
         Bu web sitesi çerezleri kullanmaktadır. Daha fazla bilgi için gizlilik
         politikamızı inceleyin.
