@@ -190,7 +190,7 @@ const MainPage: React.FC = () => {
     <MainLayout>
       <div className="relative bg-white overflow-hidden">
         {/* Hero Bölümü */}
-        <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-10">
+        <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-0 md:pt-10">
           <div className="max-w-[1440px] mx-auto">
             {/* Ana Başlık ve İçerik */}
             <div className="flex flex-col text-center md:text-left md:ml-0">
@@ -218,21 +218,6 @@ const MainPage: React.FC = () => {
                   <p className="text-[16px] sm:text-[18px] text-gray-700">
                     {t("veriodakli")}
                   </p>
-
-                  {/* <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center sm:justify-start">
-                    <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center justify-center transition-colors">
-                      {t("exploreoursolution")}
-                      <span className="ml-2 text-xl">→</span>
-                    </button>
-                    <button className="px-6 py-3 bg-white border-2 border-[#3277BC] text-[#3277BC] font-bold rounded-full shadow-lg hover:bg-[#3277BC] hover:text-white flex items-center justify-center transition-colors">
-                      {t("bookademo")}
-                      <img
-                        src="/bd.png"
-                        alt="Calendar"
-                        className="h-5 w-5 ml-2"
-                      />
-                    </button>
-                  </div> */}
                 </div>
               </div>
             </div>
