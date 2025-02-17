@@ -562,7 +562,8 @@ const HeaderMenu: React.FC = () => {
               {t("kurumsal")}
               {/* </Link> */}
 
-              <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
+              <div className="absolute h-8 w-full left-0 bottom-0 translate-y-full"></div>
+              <div className="fixed invisible group-hover:visible group-hover:pointer-events-auto opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
                   <div className="grid grid-cols-2 gap-8">
                     {/* Genel Bölümü */}
@@ -616,6 +617,7 @@ const HeaderMenu: React.FC = () => {
               {t("urunlervehizmetler")}
               {/* </Link> */}
 
+              <div className="absolute h-8 w-full left-0 bottom-0 translate-y-full"></div>
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
                   <div className="grid grid-cols-4 gap-6">
