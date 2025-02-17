@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import CallToAction from "../components/CallToAction";
 import HeroTitle from "../components/HeroTitle";
 import MainLayout from "../layouts/MainLayout";
+import KVKKModal from '../components/KVKKModal';
 
 const BasvuruPage: React.FC = () => {
+  const [showKVKK, setShowKVKK] = useState(false);
+  const [hasReadKVKK, setHasReadKVKK] = useState(false);
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -32,6 +36,12 @@ const BasvuruPage: React.FC = () => {
   ) => {
     const { name, type, value } = e.target;
 
+    if (name === "agreement" && !hasReadKVKK) {
+      e.preventDefault();
+      setShowKVKK(true);
+      return;
+    }
+
     setFormData({
       ...formData,
       [name]:
@@ -53,6 +63,11 @@ const BasvuruPage: React.FC = () => {
     e.preventDefault();
     // Form gönderme işlemi burada yapılacak
     console.log(formData);
+  };
+
+  const handleKVKKAccept = () => {
+    setHasReadKVKK(true);
+    setFormData(prev => ({ ...prev, agreement: true }));
   };
 
   return (
@@ -190,16 +205,22 @@ const BasvuruPage: React.FC = () => {
                 type="checkbox"
                 id="agreement"
                 name="agreement"
-                checked={formData.agreement || false}
+                checked={formData.agreement}
                 onChange={handleInputChange}
-                className="w-5 h-5 text-[#3277BC] border-gray-300 rounded focus:ring-[#3277BC]"
+                className={`w-5 h-5 border-gray-300 rounded focus:ring-[#3277BC] ${
+                  hasReadKVKK ? 'text-[#3277BC]' : 'text-gray-300 cursor-not-allowed'
+                }`}
                 required
+                disabled={!hasReadKVKK}
               />
-              <label
-                htmlFor="agreement"
-                className="ml-3 text-[16px] sm:text-[18px] text-[#1E5E81]"
-              >
-                KVKK kapsamında kişisel bilgilerimin işlenmesine onay veriyorum.
+              <label htmlFor="agreement" className="ml-3 text-[16px] sm:text-[18px] text-[#1E5E81]">
+                <span 
+                  className="cursor-pointer underline"
+                  onClick={() => setShowKVKK(true)}
+                >
+                  KVKK kapsamında
+                </span>{" "}
+                kişisel bilgilerimin işlenmesine onay veriyorum.
               </label>
             </div>
 
@@ -217,6 +238,12 @@ const BasvuruPage: React.FC = () => {
       </div>
 
       <CallToAction />
+
+      <KVKKModal 
+        isOpen={showKVKK}
+        onClose={() => setShowKVKK(false)}
+        onAccept={handleKVKKAccept}
+      />
     </MainLayout>
   );
 };
