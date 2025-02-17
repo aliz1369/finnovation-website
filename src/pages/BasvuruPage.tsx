@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import CallToAction from "../components/CallToAction";
 import HeroTitle from "../components/HeroTitle";
 import MainLayout from "../layouts/MainLayout";
@@ -6,9 +6,7 @@ import KVKKModal from '../components/KVKKModal';
 
 const BasvuruPage: React.FC = () => {
   const [showKVKK, setShowKVKK] = useState(false);
-  const [hasScrolledToBottom, setHasScrolledToBottom] = useState(false);
   const [hasReadKVKK, setHasReadKVKK] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -65,17 +63,6 @@ const BasvuruPage: React.FC = () => {
     e.preventDefault();
     // Form gönderme işlemi burada yapılacak
     console.log(formData);
-  };
-
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const element = e.target as HTMLDivElement;
-    const isAtBottom = Math.abs(
-      element.scrollHeight - element.scrollTop - element.clientHeight
-    ) < 1;
-    
-    if (isAtBottom) {
-      setHasScrolledToBottom(true);
-    }
   };
 
   const handleKVKKAccept = () => {
