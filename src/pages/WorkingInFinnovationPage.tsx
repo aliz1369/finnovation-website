@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "swiper/swiper-bundle.css";
 import CallToAction from "../components/CallToAction";
 import CardSlider from "../components/CardSlider";
 import HeroTitle from "../components/HeroTitle";
 import MainLayout from "../layouts/MainLayout";
+import AccordionList from "../components/AccordionList";
 
 const WorkingInFinnovationPage: React.FC = () => {
   const benefits = [
@@ -65,17 +66,7 @@ const WorkingInFinnovationPage: React.FC = () => {
     },
   ];
 
-  const [openFAQs, setOpenFAQs] = useState<boolean[]>(
-    new Array(faqData.length).fill(false)
-  );
 
-  const toggleFAQ = (index: number) => {
-    setOpenFAQs((prev) => {
-      const newState = [...prev];
-      newState[index] = !newState[index]; // Sadece tıklanan sorunun açık olup olmadığını değiştir
-      return newState;
-    });
-  };
 
   return (
     <MainLayout>
@@ -101,39 +92,14 @@ const WorkingInFinnovationPage: React.FC = () => {
             />
           </div>
         </section>
-
-        {/* FAQ Section - Updated accordion structure */}
-        <section className="container mx-auto px-6 py-16 bg-white">
-          <h2 className="text-4xl font-medium text-gray-900 leading-tight font-segouie">
-            Sıkça Sorulan Sorular:
-          </h2>
-          <div className="mt-16 max-w-6xl mx-auto">
-            {faqData.map((item, index) => (
-              <div key={index} className="border-b border-gray-300 py-6">
-                <div
-                  className="flex justify-between items-center cursor-pointer"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <h3 className="text-xl font-bold font-segouie">
-                    {item.question}
-                  </h3>
-                  <button
-                    className="w-10 h-10 flex items-center justify-center border-2
-                                   border-gray-900 rounded-full text-xl font-bold"
-                  >
-                    {openFAQs[index] ? "−" : "+"}
-                  </button>
-                </div>
-                {openFAQs[index] && (
-                  <div className="mt-6 mb-12 ml-10 flex items-start space-x-4 max-w-3xl">
-                    <img src={item.icon} alt="icon" className="w-6 h-6 mt-1" />
-                    <p className="text-gray-700">{item.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
+        <AccordionList 
+          title="Sıkça Sorulan Sorular" 
+          items={faqData.map(item => ({
+            title: item.question,
+            content: [item.answer],
+            icon: item.icon
+          }))}
+        />
       </div>
       <CallToAction />
     </MainLayout>
