@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MainLayout from "../layouts/MainLayout";
-import HeroTitle from "../components/HeroTitle";
 import CallToAction from "../components/CallToAction";
+import HeroTitle from "../components/HeroTitle";
+import MainLayout from "../layouts/MainLayout";
 
 const BasvuruPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,7 @@ const BasvuruPage: React.FC = () => {
     education: "",
     socialMedia: "",
     position: "",
+    agreement: false,
   });
 
   const positions = [
@@ -24,13 +25,21 @@ const BasvuruPage: React.FC = () => {
     "DevOps Mühendisi",
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, type, value } = e.target;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]:
+        type === "checkbox" && e.target instanceof HTMLInputElement
+          ? e.target.checked
+          : value,
     });
   };
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFormData({
@@ -176,6 +185,23 @@ const BasvuruPage: React.FC = () => {
                 </select>
               </div>
             </div>
+            <div className="flex items-start">
+              <input
+                type="checkbox"
+                id="agreement"
+                name="agreement"
+                checked={formData.agreement || false}
+                onChange={handleInputChange}
+                className="w-5 h-5 text-[#3277BC] border-gray-300 rounded focus:ring-[#3277BC]"
+                required
+              />
+              <label
+                htmlFor="agreement"
+                className="ml-3 text-[16px] sm:text-[18px] text-[#1E5E81]"
+              >
+                KVKK kapsamında kişisel bilgilerimin işlenmesine onay veriyorum.
+              </label>
+            </div>
 
             <div className="flex justify-center mt-8">
               <button
@@ -192,7 +218,7 @@ const BasvuruPage: React.FC = () => {
 
       <CallToAction />
     </MainLayout>
-    );
+  );
 };
 
 export default BasvuruPage;

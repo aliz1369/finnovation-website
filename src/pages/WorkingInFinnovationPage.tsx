@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import MainLayout from "../layouts/MainLayout";
 import "swiper/swiper-bundle.css";
+import CallToAction from "../components/CallToAction";
 import CardSlider from "../components/CardSlider";
 import HeroTitle from "../components/HeroTitle";
-import CallToAction from "../components/CallToAction";
+import MainLayout from "../layouts/MainLayout";
 
 const WorkingInFinnovationPage: React.FC = () => {
   const benefits = [
@@ -80,7 +80,7 @@ const WorkingInFinnovationPage: React.FC = () => {
   return (
     <MainLayout>
       <div className="pt-5">
-        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+        <section className="bg-white h-auto ">
           <HeroTitle
             title="Finnovation’da Sınır Tanımayan Bir Gelecek!"
             description="'da çalışarak yenilikçi projelerde yer alabilir, kariyerinizi teknoloji ve yaratıcılıkla şekillendirebilirsiniz!"
