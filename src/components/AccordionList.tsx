@@ -36,7 +36,7 @@ const AccordionList: React.FC<AccordionListProps> = ({ title, items }) => {
               onClick={() => handleToggle(index)}
             >
               <h3 className="text-xl font-light">{item.title}</h3>
-              <div className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center">
+              <div className="w-8 h-8 flex items-center justify-center">
                 <span className="text-xl font-light">
                   {item.isOpen ? "-" : "+"}
                 </span>
