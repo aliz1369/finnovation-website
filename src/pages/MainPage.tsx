@@ -81,51 +81,83 @@ const MainPage: React.FC = () => {
   ];
   const logosProje = [
     {
-      logo: "/makers-logo.png",
+      logo: "/makers.jpg",
       link: "https://makersconsulting.co/",
     },
     {
-      logo: "/azor-logo.png",
+      logo: "/bilim.jpg",
+      link: "https://www.bilimp.com/",
+    },
+    {
+      logo: "/azor.png",
       link: "https://www.azor-solutions.com/",
     },
     {
-      logo: "/inspire-it-logo.png",
+      logo: "/inspire.jpg",
       link: "https://www.inspirit.com.tr/",
     },
     {
-      logo: "/techbros-logo.png",
+      logo: "/techbros.png",
       link: "https://techbros.com.tr/",
     },
     {
-      logo: "/makers-logo.png",
+      logo: "/makers.jpg",
       link: "https://makersconsulting.co/",
     },
     {
-      logo: "/azor-logo.png",
+      logo: "/bilim.jpg",
+      link: "https://www.bilimp.com/",
+    },
+    {
+      logo: "/azor.png",
       link: "https://www.azor-solutions.com/",
     },
     {
-      logo: "/inspire-it-logo.png",
+      logo: "/inspire.jpg",
       link: "https://www.inspirit.com.tr/",
     },
     {
-      logo: "/techbros-logo.png",
+      logo: "/techbros.png",
       link: "https://techbros.com.tr/",
     },
     {
-      logo: "/makers-logo.png",
+      logo: "/makers.jpg",
       link: "https://makersconsulting.co/",
     },
     {
-      logo: "/azor-logo.png",
+      logo: "/bilim.jpg",
+      link: "https://www.bilimp.com/",
+    },
+    {
+      logo: "/azor.png",
       link: "https://www.azor-solutions.com/",
     },
     {
-      logo: "/inspire-it-logo.png",
+      logo: "/inspire.jpg",
       link: "https://www.inspirit.com.tr/",
     },
     {
-      logo: "/techbros-logo.png",
+      logo: "/techbros.png",
+      link: "https://techbros.com.tr/",
+    },
+    {
+      logo: "/makers.jpg",
+      link: "https://makersconsulting.co/",
+    },
+    {
+      logo: "/bilim.jpg",
+      link: "https://www.bilimp.com/",
+    },
+    {
+      logo: "/azor.png",
+      link: "https://www.azor-solutions.com/",
+    },
+    {
+      logo: "/inspire.jpg",
+      link: "https://www.inspirit.com.tr/",
+    },
+    {
+      logo: "/techbros.png",
       link: "https://techbros.com.tr/",
     },
   ];
