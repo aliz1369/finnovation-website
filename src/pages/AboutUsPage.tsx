@@ -3,7 +3,7 @@ import "swiper/swiper-bundle.css";
 import CallToAction from "../components/CallToAction";
 import MainLayout from "../layouts/MainLayout";
 
-// import finlambLogo from "/public/finlamb.jpg"; //bu finlamb.png ile değişecek
+// import finlambLogo from "/finlamb.jpg"; //bu finlamb.png ile değişecek
 
 const AboutPage: React.FC = () => {
   // const faqData = [
@@ -11,25 +11,25 @@ const AboutPage: React.FC = () => {
   //     question: "Finnovation'ın temel değerleri nelerdir?",
   //     answer:
   //       "• İnovasyon, takım ruhu, şeffaflık ve sürdürülebilirlik temel değerlerimizi oluşturur.",
-  //     icon: "/public/checkmark.png",
+  //     icon: "/checkmark.png",
   //   },
   //   {
   //     question: "Şirket kültürünüzü nasıl tanımlarsınız?",
   //     answer:
   //       "• Yenilikçi, dinamik ve işbirlikçi bir kültür. Herkesin fikirlerini özgürce paylaşabildiği açık bir iletişim ortamı.",
-  //     icon: "/public/checkmark.png",
+  //     icon: "/checkmark.png",
   //   },
   //   {
   //     question: "Ekip içi iletişimi nasıl sağlıyorsunuz?",
   //     answer:
   //       "• Düzenli toplantılar, sosyal etkinlikler ve açık iletişim kanalları ile ekip içi bağları güçlendiriyoruz.",
-  //     icon: "/public/checkmark.png",
+  //     icon: "/checkmark.png",
   //   },
   //   {
   //     question: "Sosyal sorumluluk projeleriniz var mı?",
   //     answer:
   //       "• Evet, sürdürülebilirlik ve toplumsal fayda odaklı çeşitli projelerde yer alıyoruz.",
-  //     icon: "/public/checkmark.png",
+  //     icon: "/checkmark.png",
   //   },
   // ];
 

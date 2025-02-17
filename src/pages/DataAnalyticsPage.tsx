@@ -57,29 +57,29 @@ const DataAnalyticsPage: React.FC = () => {
     {
       title: "Esnek Çalışma",
       description: ["Hibrit çalışma modeli ile iş-yaşam dengenizi koruyun"],
-      icon: "/public/collab.png",
+      icon: "/collab.png",
     },
     {
       title: "Sürekli Gelişim",
       description: [
         "Düzenli eğitimler ve workshop'lar ile kendinizi geliştirin",
       ],
-      icon: "/public/collab.png",
+      icon: "/collab.png",
     },
     {
       title: "Sağlık Sigortası",
       description: ["Özel sağlık sigortası ile siz ve aileniz güvende"],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
     {
       title: "Sosyal Aktiviteler",
       description: ["Düzenli ekip aktiviteleri ve sosyal etkinlikler"],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
     {
       title: "Teknoloji Desteği",
       description: ["İhtiyacınız olan tüm teknolojik ekipman desteği"],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
   ];
 
