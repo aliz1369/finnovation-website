@@ -1,10 +1,9 @@
 import React from "react";
-import MainLayout from "../layouts/MainLayout";
-import CardSlider from "../components/CardSlider";  
+import CardSlider from "../components/CardSlider";
 import HeroTitle from "../components/HeroTitle";
+import MainLayout from "../layouts/MainLayout";
 
 const YetenekProgramlariPage: React.FC = () => {
-
   const benefits = [
     {
       title: "Kariyer Başlangıcı",
@@ -18,7 +17,9 @@ const YetenekProgramlariPage: React.FC = () => {
     },
     {
       title: "Gerçek Projelerde Deneyim",
-      description: ["Teoriyi pratiğe dönüştürerek iş dünyasına hazır hale gelin."],
+      description: [
+        "Teoriyi pratiğe dönüştürerek iş dünyasına hazır hale gelin.",
+      ],
       icon: "/activeuser.png",
     },
     {
@@ -28,19 +29,23 @@ const YetenekProgramlariPage: React.FC = () => {
     },
     {
       title: "Dijital Çağa Uyum",
-      description: ["Teknoloji ve pazarlama gibi farklı alanlarda kendinizi geliştirin."],
+      description: [
+        "Teknoloji ve pazarlama gibi farklı alanlarda kendinizi geliştirin.",
+      ],
       icon: "/activeuser.png",
     },
     {
       title: "Liderlik Becerileri",
-      description: ["Ekip yönetimi ve organizasyon becerilerinizi güçlendirin."],
+      description: [
+        "Ekip yönetimi ve organizasyon becerilerinizi güçlendirin.",
+      ],
       icon: "/activeuser.png",
     },
   ];
   return (
     <MainLayout>
       <div>
-        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+        <section className="bg-white h-auto">
           <HeroTitle
             title="Kariyerinizin Başlangıcı, Bizimle Olsun!"
             subtitle="Finnovation yetenek programları, genç yeteneklerin potansiyellerini keşfetmelerini ve profesyonel kariyerlerinde güçlü adımlar atmalarını sağlamak için tasarlanmıştır."
@@ -48,8 +53,8 @@ const YetenekProgramlariPage: React.FC = () => {
             highlightedWord="Finnovation"
           />
         </section>
-        
-        <section className="bg-white py-16">
+
+        <section className="bg-white">
           <CardSlider
             isScrollable={true}
             cardPerView={3}
@@ -96,21 +101,16 @@ const YetenekProgramlariPage: React.FC = () => {
                                  hover:border-gray-400 flex items-center transition-transform
                                  transform hover:scale-105"
                 >
-                  <img
-                    src="/bd.png"
-                    alt="Demo Icon"
-                    className="h-5 w-5 mr-2"
-                  />
+                  <img src="/bd.png" alt="Demo Icon" className="h-5 w-5 mr-2" />
                   Book a Demo
                 </button>
               </div>
             </div>
           </div>
         </section>
-       
       </div>
     </MainLayout>
   );
 };
 
-export default YetenekProgramlariPage ;
+export default YetenekProgramlariPage;
