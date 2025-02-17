@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 // import Footer from "../components/Footer/Footer";
-import HeaderMenu from "../components/HeaderMenu";
 import { CookiesProvider, useCookies } from "react-cookie";
+import HeaderMenu from "../components/HeaderMenu";
 
 interface MainLayoutProps {
   children: React.ReactNode;

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const HeaderMenu: React.FC = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("Kurumsal");
   const [openSections, setOpenSections] = useState({
@@ -120,10 +122,41 @@ const HeaderMenu: React.FC = () => {
       ],
     },
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 1280 || isMobileMenuOpen) {
+        setVisible(true);
+        return;
+      }
+
+      const currentScrollPos = window.scrollY;
+
+      if (currentScrollPos < 10) {
+        setVisible(true);
+        return;
+      }
+
+      const isVisible = prevScrollPos > currentScrollPos;
+      setVisible(isVisible);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [prevScrollPos, isMobileMenuOpen]);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 py-3 bg-white">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 py-3 bg-white transition-transform duration-300 ${
+          visible ? "translate-y-0" : "xl:translate-y-0 -translate-y-full"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 ">
           {/* Logo ve Mobil Menü Butonu kısmını güncelliyoruz */}
           <div className="flex items-center justify-between w-full md:w-auto">
