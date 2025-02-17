@@ -1,59 +1,45 @@
-import React from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-interface CallToActionProps {
-  title?: string;
-  description?: string;
-  primaryButtonText?: string;
-  secondaryButtonText?: string;
-  onPrimaryClick?: () => void;
-  onSecondaryClick?: () => void;
-}
+const CallToAction: React.FC = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
-const CallToAction: React.FC<CallToActionProps> = ({
-  title = "Ready to start your AI journey with us?",
-  description = "Simple, transparent pricing. No setup fees or contracts. Try without a credit card, cancel anytime.",
-  primaryButtonText = "Explore Our Solutions →",
-  secondaryButtonText = "Book a Demo",
-  onPrimaryClick,
-  onSecondaryClick,
-}) => {
+  const handleClick = () => {
+    navigate('/contact');
+  };
+
   return (
-    <section className="relative overflow-hidden h-auto md:h-[calc(100vh-4rem)]">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, #e9f2fa 0%, #ffffff 100%)",
-        }}
-      />
-      <div
-        className="relative max-w-4xl mx-auto h-full flex flex-col
-                   items-center justify-center px-6 text-center z-10"
-      >
-        <h2 className="text-5xl sm:text-7xl font-light text-gray-900 mb-6">
-          {title}
-        </h2>
-        <p className="text-base sm:text-lg md:text-xl font-light text-gray-400 max-w-2xl mb-8">
-          {description}
-        </p>
-        <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <button
-            onClick={onPrimaryClick}
-            className="bg-[#3277BC] text-white px-6 py-3
-                       rounded-full hover:bg-[#2b66a2] transition-colors
-                       font-light"
-          >
-            {primaryButtonText}
-          </button>
-          <button
-            onClick={onSecondaryClick}
-            className="border border-gray-300 px-6 py-3
-                       rounded-full hover:bg-gray-100 transition-colors
-                       font-light flex items-center space-x-2"
-          >
-            <span>{secondaryButtonText}</span>
-            <img src="/bd.png" alt="Calendar" className="h-5 w-5 ml-2" />
-          </button>
+    <section className="px-1 py-16 flex justify-center items-center">
+      <div className="relative w-full max-w-6xl px-8 py-24 rounded-2xl shadow-xl overflow-hidden">
+        <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
+          <div
+            className="w-[600px] h-[300px] rounded-full"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, #3277BC, #4BA6DD, #3AAA9A, #58595B)",
+              filter: "blur(100px)",
+            }}
+          />
+        </div>
+
+        <div className="text-center relative z-10">
+          <h2 className="text-5xl font-extrabold text-gray-900 leading-tight">
+            {t("ctaTitle")}
+          </h2>
+          <p className="mt-4 text-lg text-gray-700">
+            {t("ctaDescription")}
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <button 
+              onClick={handleClick}
+              className="px-8 py-4 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#285b8f] flex items-center transition-transform transform hover:scale-105"
+            >
+              {t("ctaButton")}
+              <span className="ml-2 text-xl">→</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
