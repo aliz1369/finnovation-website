@@ -11,32 +11,36 @@ const Culture: React.FC = () => {
     {
       title: "Yenilikçilik, İşbirliği ve Sürekli Öğrenme",
       description: ["Her birey bu kültürü benimser."],
-      icon: "/public/collab.png",
+      icon: "/collab.png",
     },
     {
       title: "Başarı Anlayışımız",
-      description: ["Teknik becerilerin yanı sıra takım çalışması, yaratıcı düşünme ve sürekli gelişimle ölçülür."],
-      icon: "/public/collab.png",
+      description: [
+        "Teknik becerilerin yanı sıra takım çalışması, yaratıcı düşünme ve sürekli gelişimle ölçülür.",
+      ],
+      icon: "/collab.png",
     },
     {
       title: "Farklı Bakış Açılarına Değer Veririz",
       description: ["Her görüş bizim için önemlidir."],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
     {
       title: "Müşterilerimiz İçin En İyisi",
-      description: ["Hedeflerimize ulaşırken birlikte çalışır, birbirimizi destekleriz."],
-      icon: "/public/activeuser.png",
+      description: [
+        "Hedeflerimize ulaşırken birlikte çalışır, birbirimizi destekleriz.",
+      ],
+      icon: "/activeuser.png",
     },
     {
       title: "Kariyer Gelişimi",
       description: ["Esnek çalışma ortamı ve güçlü destek ağı sunuyoruz."],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
     {
       title: "Geleceği Şekillendiren Kültür",
       description: ["İlham verici ve etkileşimli bir iş ortamı yaratıyoruz."],
-      icon: "/public/activeuser.png",
+      icon: "/activeuser.png",
     },
   ];
 
@@ -82,7 +86,7 @@ const Culture: React.FC = () => {
   return (
     <MainLayout>
       <div>
-        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+        <section className="bg-white h-auto ">
           <HeroTitle
             title="Çeşitlilikten Güç Alır, Başarıyı Birlikte Yaratırız"
             description=" kültürü, yenilikçi düşünceyi, işbirliğini ve çeşitliliği bir araya getirerek her bireyin potansiyelini en üst seviyeye çıkarmayı hedefler."
@@ -91,7 +95,7 @@ const Culture: React.FC = () => {
         </section>
 
         {/* Values Section - Updated carousel */}
-        <section className="bg-white py-16">
+        <section className="bg-white">
           <CardSlider
             isScrollable={true}
             cardPerView={3}
