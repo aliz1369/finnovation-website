@@ -1,9 +1,9 @@
 import React from "react";
-import MainLayout from "../layouts/MainLayout";
-import CardSlider from "../components/CardSlider";
 import AccordionList from "../components/AccordionList";
-import HeroTitle from "../components/HeroTitle";
 import CallToAction from "../components/CallToAction";
+import CardSlider from "../components/CardSlider";
+import HeroTitle from "../components/HeroTitle";
+import MainLayout from "../layouts/MainLayout";
 
 const CustomerSatisfactionPage: React.FC = () => {
   const programs = [
@@ -86,16 +86,16 @@ const CustomerSatisfactionPage: React.FC = () => {
   return (
     <MainLayout>
       <div>
-        <section className="bg-white h-auto md:h-[calc(100vh-4rem)]">
+        <section className="bg-white h-auto ">
           <HeroTitle
             title="Geleceğin Finansal\nLiderlerini Yetiştiriyoruz"
             description=", finansal teknolojiler ve inovasyon alanında bilgi ve becerilerinizi geliştirmeniz için tasarlanmış bir eğitim platformudur. Amacımız, katılımcılarımıza en güncel bilgilere odaklanarak, geleceğin finans dünyasında başarılı olmalarını sağlamaktır."
             highlightedWord="FinAcademy"
           />
         </section>
-        <section className="bg-white h-auto]">
+        <section className="bg-white h-auto mt-16">
           <div
-            className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 h-full
+            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
                        flex flex-col justify-center"
           >
             <h2 className="text-4xl md:text-6xl font-light text-gray-900 mb-10">
@@ -113,7 +113,7 @@ const CustomerSatisfactionPage: React.FC = () => {
         </section>
         <section className="bg-white h-auto">
           <div
-            className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 h-full
+            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
                        flex flex-col justify-center"
           >
             <h2 className="text-5xl md:text-6xl font-light text-gray-900 mb-12">
@@ -126,7 +126,7 @@ const CustomerSatisfactionPage: React.FC = () => {
             />
           </div>
         </section>
-        <section className="relative overflow-hidden h-auto md:h-[calc(100vh-4rem)]">
+        <section className="relative overflow-hidden h-auto ">
           <CallToAction />
         </section>
       </div>

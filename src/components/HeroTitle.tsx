@@ -14,8 +14,8 @@ const HeroTitle: React.FC<HeroTitleProps> = ({
   highlightedWord,
 }) => {
   return (
-    <div className="container mx-auto px-8 md:px-12 lg:px-16 pt-10">
-      <div className="max-w-[1440px] mx-auto">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div className="w-full">
         {/* Ana Başlık */}
         <div className="flex flex-col text-center md:text-left md:ml-0">
           <div className="mb-8 translate-y-10">

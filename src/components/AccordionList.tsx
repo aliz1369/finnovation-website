@@ -24,7 +24,7 @@ const AccordionList: React.FC<AccordionListProps> = ({ title, items }) => {
   };
 
   return (
-    <div className="w-full h-full mx-auto px-6 md:px-8 lg:px-10 py-16">
+    <div className="max-w-7xl h-full mx-auto px-6 md:px-8 lg:px-10 py-16">
       <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-10">
         {title}
       </h2>
