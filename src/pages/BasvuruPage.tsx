@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import HeroTitle from "../components/HeroTitle";
-import CTASection from "../components/Footer/CTASection";
+import CallToAction from "../components/CallToAction";
 
 const BasvuruPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -189,9 +189,10 @@ const BasvuruPage: React.FC = () => {
           </form>
         </div>
       </div>
-      <CTASection />
+
+      <CallToAction />
     </MainLayout>
-  );
+    );
 };
 
 export default BasvuruPage;

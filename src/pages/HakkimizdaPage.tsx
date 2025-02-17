@@ -4,6 +4,7 @@ import { Page } from "../types/globalTypes";
 import { fetchAboutPage } from "../api/pageApi";
 import LoadingSpinner from "../components/LoadSpinner";
 import StyledText from "../components/StyledText";
+import CallToAction from "../components/CallToAction";
 // import ChatBubble from "../components/ChatBubble";
 
 const HakkimizdaPage: React.FC = () => {
@@ -240,7 +241,7 @@ const HakkimizdaPage: React.FC = () => {
             </h2>
             <p className="text-gray-800 mb-2 text-sm md:text-base">
               2030 yılında, teknoloji geliştirme, danışmanlık ve eğitim
-              alanlarında inovasyon lideri olarak, Türkiye’den dünyaya yayılan
+              alanlarında inovasyon lideri olarak, Türkiye'den dünyaya yayılan
               sürdürülebilir ve etkili çözümler sunarak sektörde tanınan bir
               lider olmak ve yoldaşımız olan iş ortaklarımıza yüksek kalitede,
               uygun fiyatlı, sürdürülebilir ve değer yaratan ürün, hizmet ve
@@ -248,6 +249,8 @@ const HakkimizdaPage: React.FC = () => {
             </p>
           </div> */}
         </div>
+
+        <CallToAction />
 
         {/* <ChatBubble /> */}
       </div>

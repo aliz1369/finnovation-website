@@ -1,7 +1,7 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
-import CTASection from "../components/Footer/CTASection"; 
 import "swiper/swiper-bundle.css";
+import CallToAction from "../components/CallToAction";
 
 // import finlambLogo from "/public/finlamb.jpg"; //bu finlamb.png ile değişecek
 
@@ -46,8 +46,6 @@ const AboutPage: React.FC = () => {
   // };
   return (
     <MainLayout>
-      {}
-
       <div className="pt-5">
         {/* SECTION: Hakkımızda */}
         <section className="container mx-auto px-6 py-16 bg-white text-center md:text-left">
@@ -144,7 +142,7 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
-        <CTASection />
+        <CallToAction />
       </div>
     </MainLayout>
   );
