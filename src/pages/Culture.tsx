@@ -3,9 +3,9 @@ import MainLayout from "../layouts/MainLayout";
 
 import "swiper/swiper-bundle.css";
 
+import CallToAction from "../components/CallToAction";
 import CardSlider from "../components/CardSlider";
 import HeroTitle from "../components/HeroTitle";
-import CallToAction from "../components/CallToAction";
 
 const Culture: React.FC = () => {
   const values = [
@@ -96,12 +96,17 @@ const Culture: React.FC = () => {
         </section>
 
         {/* Values Section - Updated carousel */}
-        <section className="bg-white">
-          <CardSlider
-            isScrollable={true}
-            cardPerView={3}
-            sliderDatas={values}
-          />
+        <section className="bg-white h-auto mt-16">
+          <div
+            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
+                       flex flex-col justify-center"
+          >
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={values}
+            />
+          </div>
         </section>
 
         {/* FAQ Section - Updated accordion */}

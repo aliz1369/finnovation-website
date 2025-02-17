@@ -13,14 +13,17 @@ const HeaderMenu: React.FC = () => {
     veri: false,
     dijital: false,
   });
-  const [showMobileLang, setShowMobileLang] = useState(false);
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language;
-  const availableLang = currentLang === "tr" ? "en" : "tr";
+  // const [showMobileLang, setShowMobileLang] = useState(false);
+  const {
+    t,
+    // i18n
+  } = useTranslation();
+  // const currentLang = i18n.language;
+  // const availableLang = currentLang === "tr" ? "en" : "tr";
 
-  const handleLanguageChange = () => {
-    i18n.changeLanguage(availableLang);
-  };
+  // const handleLanguageChange = () => {
+  //   i18n.changeLanguage(availableLang);
+  // };
   // Scroll'u engellemek için useEffect ekliyoruz
   React.useEffect(() => {
     if (isMobileMenuOpen) {
@@ -152,7 +155,7 @@ const HeaderMenu: React.FC = () => {
               </Link>
               <div className="flex items-center gap-4">
                 {/* Dil Değiştir Butonu - Mobil */}
-                <div className="relative">
+                {/* <div className="relative">
                   <button
                     className="flex items-center text-[#3277BC]"
                     onClick={() => setShowMobileLang(!showMobileLang)}
@@ -174,7 +177,7 @@ const HeaderMenu: React.FC = () => {
                       </button>
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 {/* Kapatma Butonu */}
                 <button
@@ -770,7 +773,7 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Dil Değiştir Butonu - Desktop */}
-            <div className="group relative">
+            {/* <div className="group relative">
               <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-3 py-2 font-medium hover:bg-[#3277BC] hover:text-white cursor-pointer transition-colors group-hover:bg-[#3277BC] group-hover:text-white">
                 <img
                   src="/world.png"
@@ -787,7 +790,7 @@ const HeaderMenu: React.FC = () => {
                   {availableLang.toUpperCase()}
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Mobil Menü Butonu */}

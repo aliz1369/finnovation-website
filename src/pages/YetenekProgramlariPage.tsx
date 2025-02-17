@@ -1,8 +1,8 @@
 import React from "react";
+import CallToAction from "../components/CallToAction";
 import CardSlider from "../components/CardSlider";
 import HeroTitle from "../components/HeroTitle";
 import MainLayout from "../layouts/MainLayout";
-import CallToAction from "../components/CallToAction";
 
 const YetenekProgramlariPage: React.FC = () => {
   const benefits = [
@@ -55,12 +55,17 @@ const YetenekProgramlariPage: React.FC = () => {
           />
         </section>
 
-        <section className="bg-white">
-          <CardSlider
-            isScrollable={true}
-            cardPerView={3}
-            sliderDatas={benefits}
-          />
+        <section className="bg-white h-auto mt-16">
+          <div
+            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
+                       flex flex-col justify-center"
+          >
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={benefits}
+            />
+          </div>
         </section>
         <CallToAction />
       </div>

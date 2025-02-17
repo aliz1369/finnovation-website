@@ -89,12 +89,17 @@ const WorkingInFinnovationPage: React.FC = () => {
         </section>
 
         {/* Benefits Section - Updated carousel structure */}
-        <section className="bg-white py-16">
-          <CardSlider
-            isScrollable={true}
-            cardPerView={3}
-            sliderDatas={benefits}
-          />
+        <section className="bg-white h-auto mt-16">
+          <div
+            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
+                       flex flex-col justify-center"
+          >
+            <CardSlider
+              isScrollable={true}
+              cardPerView={3}
+              sliderDatas={benefits}
+            />
+          </div>
         </section>
 
         {/* FAQ Section - Updated accordion structure */}
