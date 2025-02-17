@@ -150,7 +150,6 @@ const HeaderMenu: React.FC = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
               </Link>
-
               <div className="flex items-center gap-4">
                 {/* Dil Değiştir Butonu - Mobil */}
                 <div className="relative">
@@ -163,12 +162,15 @@ const HeaderMenu: React.FC = () => {
                       alt="Globe"
                       className="h-5 w-5 mr-2"
                     />
-                    <span>TR</span>
+                    <span>{currentLang.toUpperCase()}</span>
                   </button>
                   {showMobileLang && (
                     <div className="absolute top-full right-0 mt-1 bg-white shadow-lg rounded-md py-2 w-20">
-                      <button className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white">
-                        EN
+                      <button
+                        className="w-full text-left px-4 py-2 hover:bg-[#3377BC] hover:text-white"
+                        onClick={handleLanguageChange}
+                      >
+                        {availableLang.toUpperCase()}
                       </button>
                     </div>
                   )}
@@ -198,21 +200,23 @@ const HeaderMenu: React.FC = () => {
 
             {/* Kategori Baloncukları */}
             <div className="flex gap-2 p-4 border-b overflow-x-auto">
-              {["Kurumsal", "Ürünler ve Hizmetler", "FinAcademy"].map(
-                (category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-colors ${
-                      selectedCategory === category
-                        ? "bg-[#3377BC] text-white"
-                        : "bg-[#F5F5F5] text-[#1E5E81] hover:bg-[#E5E5E5]"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                )
-              )}
+              {[
+                { name: "Kurumsal", cat: "kurumsal" },
+                { name: "Ürünler ve Hizmetler", cat: "urunlervehizmetler" },
+                { name: "FinAcademy", cat: "FinAcademy" },
+              ].map((category) => (
+                <button
+                  key={category.name}
+                  onClick={() => setSelectedCategory(category.name)}
+                  className={`px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-colors ${
+                    selectedCategory === category.name
+                      ? "bg-[#3377BC] text-white"
+                      : "bg-[#F5F5F5] text-[#1E5E81] hover:bg-[#E5E5E5]"
+                  }`}
+                >
+                  {t(category.cat)}
+                </button>
+              ))}
             </div>
 
             {/* Menü İçeriği - Scroll edilebilir alan */}
@@ -226,7 +230,7 @@ const HeaderMenu: React.FC = () => {
                         onClick={() => toggleSection("genel")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
-                        <span>Genel</span>
+                        <span>{t("genel")}</span>
                         <svg
                           className={`w-5 h-5 transition-transform ${
                             openSections.genel ? "rotate-180" : ""
@@ -252,7 +256,7 @@ const HeaderMenu: React.FC = () => {
                                 className="text-[#1E5E81] block py-1"
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
-                                {item.title}
+                                {t(item.title)}
                               </Link>
                             </li>
                           ))}
@@ -266,7 +270,7 @@ const HeaderMenu: React.FC = () => {
                         onClick={() => toggleSection("kariyer")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
-                        <span>Kariyer</span>
+                        <span>{t("kariyer")}</span>
                         <svg
                           className={`w-5 h-5 transition-transform ${
                             openSections.kariyer ? "rotate-180" : ""
@@ -292,7 +296,7 @@ const HeaderMenu: React.FC = () => {
                                 className="text-[#1E5E81] block py-1"
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
-                                {item.title}
+                                {t(item.title)}
                               </Link>
                             </li>
                           ))}
@@ -337,7 +341,7 @@ const HeaderMenu: React.FC = () => {
                                   className="text-[#1E5E81] block py-1"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                  {item.title}
+                                  {t(item.title)}
                                 </Link>
                               </li>
                             )
@@ -379,7 +383,7 @@ const HeaderMenu: React.FC = () => {
                                   className="text-[#1E5E81] block py-1"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                  {item.title}
+                                  {t(item.title)}
                                 </Link>
                               </li>
                             )
@@ -394,7 +398,7 @@ const HeaderMenu: React.FC = () => {
                         onClick={() => toggleSection("veri")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
-                        <span>Veri</span>
+                        <span>{t("veri")}</span>
                         <svg
                           className={`w-5 h-5 transition-transform ${
                             openSections.veri ? "rotate-180" : ""
@@ -421,7 +425,7 @@ const HeaderMenu: React.FC = () => {
                                   className="text-[#1E5E81] block py-1"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                  {item.title}
+                                  {t(item.title)}
                                 </Link>
                               </li>
                             )
@@ -436,7 +440,7 @@ const HeaderMenu: React.FC = () => {
                         onClick={() => toggleSection("dijital")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
-                        <span>Dijital</span>
+                        <span>{t("dijital")}</span>
                         <svg
                           className={`w-5 h-5 transition-transform ${
                             openSections.dijital ? "rotate-180" : ""
@@ -463,7 +467,7 @@ const HeaderMenu: React.FC = () => {
                                   className="text-[#1E5E81] block py-1"
                                   onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                  {item.title}
+                                  {t(item.title)}
                                 </Link>
                               </li>
                             )
