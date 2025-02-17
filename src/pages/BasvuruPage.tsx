@@ -3,11 +3,8 @@ import CallToAction from "../components/CallToAction";
 import HeroTitle from "../components/HeroTitle";
 import KVKKModal from "../components/KVKKModal";
 import MainLayout from "../layouts/MainLayout";
-
+  
 const BasvuruPage: React.FC = () => {
-  const [showKVKK, setShowKVKK] = useState(false);
-  const [hasReadKVKK, setHasReadKVKK] = useState(false);
-
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -34,20 +31,14 @@ const BasvuruPage: React.FC = () => {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, type, value } = e.target;
-
-    if (name === "agreement" && !hasReadKVKK) {
-      e.preventDefault();
-      setShowKVKK(true);
-      return;
-    }
+    const { name, type } = e.target;
 
     setFormData({
       ...formData,
       [name]:
         type === "checkbox" && e.target instanceof HTMLInputElement
           ? e.target.checked
-          : value,
+          : e.target.value,
     });
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,9 +56,11 @@ const BasvuruPage: React.FC = () => {
     console.log(formData);
   };
 
-  const handleKVKKAccept = () => {
-    setHasReadKVKK(true);
-    setFormData((prev) => ({ ...prev, agreement: true }));
+  const handleKVKKAccept = (accepted: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      agreement: accepted
+    }));
   };
 
   return (
@@ -200,35 +193,9 @@ const BasvuruPage: React.FC = () => {
                 </select>
               </div>
             </div>
-            <div className="flex items-start">
-              <input
-                type="checkbox"
-                id="agreement"
-                name="agreement"
-                checked={formData.agreement}
-                onChange={handleInputChange}
-                className={`w-5 h-5 border-gray-300 rounded focus:ring-[#3277BC] ${
-                  hasReadKVKK
-                    ? "text-[#3277BC]"
-                    : "text-gray-300 cursor-not-allowed"
-                }`}
-                required
-                disabled={!hasReadKVKK}
-              />
-              <label
-                htmlFor="agreement"
-                className="ml-3 text-[16px] sm:text-[18px] text-[#1E5E81]"
-              >
-                <span
-                  className="cursor-pointer underline"
-                  onClick={() => setShowKVKK(true)}
-                >
-                  KVKK kapsamında
-                </span>{" "}
-                kişisel bilgilerimin işlenmesine onay veriyorum.
-              </label>
-            </div>
-
+           
+            <KVKKModal onAcceptCallback={handleKVKKAccept} />
+            
             <div className="flex justify-center mt-8">
               <button
                 type="submit"
@@ -238,17 +205,14 @@ const BasvuruPage: React.FC = () => {
                 <span className="ml-2 text-xl">→</span>
               </button>
             </div>
+
           </form>
         </div>
       </div>
 
       <CallToAction />
 
-      <KVKKModal
-        isOpen={showKVKK}
-        onClose={() => setShowKVKK(false)}
-        onAccept={handleKVKKAccept}
-      />
+
     </MainLayout>
   );
 };
