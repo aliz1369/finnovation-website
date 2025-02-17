@@ -1,7 +1,7 @@
 import React from "react";
-import MainLayout from "../layouts/MainLayout";
 import "swiper/swiper-bundle.css";
 import CallToAction from "../components/CallToAction";
+import MainLayout from "../layouts/MainLayout";
 
 // import finlambLogo from "/public/finlamb.jpg"; //bu finlamb.png ile değişecek
 
@@ -129,7 +129,7 @@ const AboutPage: React.FC = () => {
               </p>
 
               {/* Buttons */}
-              <div className="flex justify-center md:justify-start space-x-4 w-full mt-6">
+              {/* <div className="flex justify-center md:justify-start space-x-4 w-full mt-6">
                 <button className="px-6 py-3 bg-[#3277BC] text-white font-bold rounded-full shadow-lg hover:bg-[#2b66a2] flex items-center transition-colors">
                   Explore Our Solutions
                   <span className="ml-2 text-xl">→</span>
@@ -138,7 +138,7 @@ const AboutPage: React.FC = () => {
                   Book a Demo
                   <img src="/bd.png" alt="Calendar" className="h-5 w-5 ml-2" />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

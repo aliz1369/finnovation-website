@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import CallToAction from "../components/CallToAction";
 import HeroTitle from "../components/HeroTitle";
+import KVKKModal from "../components/KVKKModal";
 import MainLayout from "../layouts/MainLayout";
-import KVKKModal from '../components/KVKKModal';
 
 const BasvuruPage: React.FC = () => {
   const [showKVKK, setShowKVKK] = useState(false);
@@ -67,7 +67,7 @@ const BasvuruPage: React.FC = () => {
 
   const handleKVKKAccept = () => {
     setHasReadKVKK(true);
-    setFormData(prev => ({ ...prev, agreement: true }));
+    setFormData((prev) => ({ ...prev, agreement: true }));
   };
 
   return (
@@ -208,13 +208,18 @@ const BasvuruPage: React.FC = () => {
                 checked={formData.agreement}
                 onChange={handleInputChange}
                 className={`w-5 h-5 border-gray-300 rounded focus:ring-[#3277BC] ${
-                  hasReadKVKK ? 'text-[#3277BC]' : 'text-gray-300 cursor-not-allowed'
+                  hasReadKVKK
+                    ? "text-[#3277BC]"
+                    : "text-gray-300 cursor-not-allowed"
                 }`}
                 required
                 disabled={!hasReadKVKK}
               />
-              <label htmlFor="agreement" className="ml-3 text-[16px] sm:text-[18px] text-[#1E5E81]">
-                <span 
+              <label
+                htmlFor="agreement"
+                className="ml-3 text-[16px] sm:text-[18px] text-[#1E5E81]"
+              >
+                <span
                   className="cursor-pointer underline"
                   onClick={() => setShowKVKK(true)}
                 >
@@ -239,7 +244,7 @@ const BasvuruPage: React.FC = () => {
 
       <CallToAction />
 
-      <KVKKModal 
+      <KVKKModal
         isOpen={showKVKK}
         onClose={() => setShowKVKK(false)}
         onAccept={handleKVKKAccept}
