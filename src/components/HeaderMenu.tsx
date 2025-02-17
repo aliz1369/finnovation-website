@@ -492,35 +492,35 @@ const HeaderMenu: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 border-t bg-white p-4">
               <div className="flex flex-wrap justify-center gap-6">
                 <a
-                  href="https://tr.linkedin.com/company/finnovation-consultancy"
+                  href="https://www.linkedin.com/company/finnovation-consultancy/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src="/in.png" alt="LinkedIn" className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://github.com/hayyam23"
+                  href="https://github.com/Finnovation0"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src="/git.png" alt="GitHub" className="h-6 w-6" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/FinnovationC"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
                 </a>
-                <a
+                {/* <a
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
-                </a>
+                </a> */}
                 <a
-                  href="https://instagram.com/finacademy_tr"
+                  href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -715,35 +715,35 @@ const HeaderMenu: React.FC = () => {
             {/* Sosyal Medya İkonları */}
             <div className="flex items-center border-2 border-[#3277BC] text-[#3277BC] rounded-full px-4 py-2 space-x-3 min-w-max">
               <a
-                href="https://tr.linkedin.com/company/finnovation-consultancy"
+                href="https://www.linkedin.com/company/finnovation-consultancy/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/in.png" alt="LinkedIn" className="h-5 w-5" />
               </a>
               <a
-                href="https://github.com/hayyam23"
+                href="https://github.com/Finnovation0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/git.png" alt="GitHub" className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/FinnovationC"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
               </a>
-              <a
+              {/* <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
-              </a>
+              </a> */}
               <a
-                href="https://instagram.com/finacademy_tr"
+                href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
               >
