@@ -216,9 +216,12 @@ const MainPage: React.FC = () => {
               {section.position === 1 ? (
                 <section className="container mx-auto px-8 md:px-12 lg:px-16 pt-0 md:pt-10">
                   <div className="max-w-[1440px] mx-auto">
-                    {section.components.map((component) => (
-                      <div className="flex flex-col text-center md:text-left md:ml-0">
-                        {component.component_type === "title" && (
+                    {section.components.map((component) =>
+                      component.component_type === "title" ? (
+                        <div
+                          key={component.id}
+                          className="flex flex-col text-center md:text-left md:ml-0"
+                        >
                           <div className="mb-8 translate-y-5 md:translate-y-9">
                             <h1 className="text-[40px] sm:text-[60px] md:text-[80px] lg:text-[90px] font-bold leading-[1.1] tracking-tight">
                               <StyledText
@@ -226,46 +229,75 @@ const MainPage: React.FC = () => {
                               />
                             </h1>
                           </div>
-                        )}
-                        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-12 translate-y-10 md:translate-y-16">
-                          {component.component_type === "sub-title" && (
-                            <div className="lg:max-w-2xl">
-                              <h2 className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium">
-                                <StyledText
-                                  content={component.content_value_tr}
-                                />
-                              </h2>
-                            </div>
-                          )}
-                          {component.component_type === "text" && (
-                            <div className="lg:max-w-xl flex flex-col items-center lg:items-start gap-8">
-                              <p className="text-[16px] sm:text-[18px] text-gray-700">
-                                <StyledText
-                                  content={component.content_value_tr}
-                                />
-                              </p>
-                            </div>
-                          )}
                         </div>
-                      </div>
-                    ))}
+                      ) : null
+                    )}
+
+                    <div className="flex flex-col lg:flex-row justify-between items-start gap-12 translate-y-10 md:translate-y-16">
+                      {(() => {
+                        const subtitleComponent = section.components.find(
+                          (comp) => comp.component_type === "sub-title"
+                        );
+                        const textComponent = section.components.find(
+                          (comp) => comp.component_type === "text"
+                        );
+
+                        return subtitleComponent || textComponent ? (
+                          <div className="flex flex-col lg:flex-row w-full gap-8">
+                            {subtitleComponent && (
+                              <div className="flex-1 lg:max-w-2xl">
+                                <StyledText
+                                  content={subtitleComponent.content_value_tr}
+                                  className="text-[24px] sm:text-[28px] md:text-[32px] leading-tight font-medium"
+                                />
+                              </div>
+                            )}
+                            {textComponent && (
+                              <div className="flex-1 lg:max-w-xl flex flex-col items-start gap-8">
+                                <StyledText
+                                  content={textComponent.content_value_tr}
+                                  className="text-[16px] sm:text-[18px] text-gray-700"
+                                />
+                              </div>
+                            )}
+                          </div>
+                        ) : null;
+                      })()}
+                    </div>
                   </div>
                 </section>
               ) : null}
-              {section.position === 2 || section.position === 3 ? (
-                <div className="md:mt-24 mt-10">
+            </div>
+          ))}
+
+          <div className="md:mt-24 mt-10">
+            {data?.sections.map((section) =>
+              section.position === 2 ? (
+                <>
                   {section.components.map((component) => (
                     <>
                       {component.images && (
-                        <LogoSlider logos={component.images} direction={1} />
+                        <LogoSlider logos={component.images} direction={-1} />
                       )}
                     </>
                   ))}
-                  {/* <LogoSlider logos={} direction={-1} /> */}
-                </div>
-              ) : null}
-            </div>
-          ))}
+                </>
+              ) : null
+            )}
+            {data?.sections.map((section) =>
+              section.position === 3 ? (
+                <>
+                  {section.components.map((component) => (
+                    <>
+                      {component.images && (
+                        <LogoSlider logos={component.images} direction={-1} />
+                      )}
+                    </>
+                  ))}
+                </>
+              ) : null
+            )}
+          </div>
         </div>
       </MainLayout>
     </>

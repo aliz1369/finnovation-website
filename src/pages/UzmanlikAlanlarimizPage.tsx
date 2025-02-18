@@ -58,13 +58,13 @@ const UzmanlikAlanlarimizPage: React.FC = () => {
                       <div>
                         {component.component_type === "title" && (
                           <StyledText
-                            content={component.content_value}
+                            content={component.content_value_tr}
                             className="text-2xl md:text-4xl text-center font-bold text-gray-800 mb-8 md:mb-12"
                           />
                         )}
                         {component.component_type === "text" && (
                           <StyledText
-                            content={component.content_value}
+                            content={component.content_value_tr}
                             className="text-lg md:text-xl text-gray-700 mb-8"
                           />
                         )}
@@ -75,7 +75,7 @@ const UzmanlikAlanlarimizPage: React.FC = () => {
                   <div className="text-center" key={section.id}>
                     {section.components.map((component) => (
                       <StyledText
-                        content={component.content_value}
+                        content={component.content_value_tr}
                         className={`${
                           component.component_type === "title"
                             ? "text-xl md:text-2xl font-bold text-gray-900 mb-4"

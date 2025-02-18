@@ -1,33 +1,33 @@
 // src/pages/ProjeEntegrasyon.tsx
-import React, { useEffect, useState } from "react";
-import { Page } from "../types/globalTypes";
-import { fetchProjeBazliPage } from "../api/pageApi";
-import LoadingSpinner from "../components/LoadSpinner";
-import StyledText from "../components/StyledText";
+// import React, { useEffect, useState } from "react";
+// import { Page } from "../types/globalTypes";
+// import { fetchProjeBazliPage } from "../api/pageApi";
+// import LoadingSpinner from "../components/LoadSpinner";
+// import StyledText from "../components/StyledText";
 
 const ProjeEntegrasyon: React.FC = () => {
-  const [data, setData] = useState<Page | null>(null);
-  const [loading, setLoading] = useState(false);
+  // const [data, setData] = useState<Page | null>(null);
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const data = async () => {
-      try {
-        setLoading(true);
-        const response = await fetchProjeBazliPage();
-        console.log(response);
-        setData(response);
-      } catch (err) {
-        setLoading(false);
-        console.log(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    data();
-  }, []);
+  // useEffect(() => {
+  //   const data = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetchProjeBazliPage();
+  //       console.log(response);
+  //       setData(response);
+  //     } catch (err) {
+  //       setLoading(false);
+  //       console.log(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   data();
+  // }, []);
   return (
     <>
-      <LoadingSpinner visible={loading} />
+      {/* <LoadingSpinner visible={loading} /> */}
       <div className="relative min-h-screen bg-white p-4 md:p-8">
         {/* Üst Degrade */}
         <div
@@ -96,7 +96,7 @@ const ProjeEntegrasyon: React.FC = () => {
               daha verimli, güvenilir ve uyumlu hale gelmesini sağlıyoruz.
             </p>
           </div> */}
-        <div className="relative z-10 flex flex-col md:flex-row max-w-7xl mx-auto pt-8 md:pt-[20px] space-y-6 md:space-y-0 md:space-x-6">
+        {/* <div className="relative z-10 flex flex-col md:flex-row max-w-7xl mx-auto pt-8 md:pt-[20px] space-y-6 md:space-y-0 md:space-x-6">
           {data?.sections.map((section) => (
             <>
               {section.position === 0 ? (
@@ -116,7 +116,7 @@ const ProjeEntegrasyon: React.FC = () => {
                 <div className="w-full md:w-1/3 flex justify-center items-center">
                   {section.components.map((component) => (
                     <img
-                      src={component.image_large ?? undefined}
+                      src={component.images[0] ?? undefined}
                       alt="Sistem Entegrasyonu"
                       className="w-full h-auto rounded-lg shadow-lg"
                     />
@@ -125,7 +125,7 @@ const ProjeEntegrasyon: React.FC = () => {
               )}
             </>
           ))}
-        </div>
+        </div> */}
         {/* Sağ Kısım */}
         {/* <div className="w-full md:w-1/3 flex justify-center items-center">
             <img
