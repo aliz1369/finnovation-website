@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
+import { SliderImage } from "../types/globalTypes";
 
-interface LogoContainer {
-  logo: string;
-  link: string;
-}
+// interface LogoContainer {
+//   logo: string;
+//   link: string;
+// }
 interface LogoSliderInfo {
-  logos: LogoContainer[];
+  logos: SliderImage[];
   direction?: number;
 }
 const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
@@ -51,10 +52,10 @@ const LogoSlider: React.FC<LogoSliderInfo> = ({ logos, direction = 1 }) => {
             className="flex-shrink-0 w-40 h-24 mx-4 flex items-center justify-center hover:cursor-pointer"
           >
             <img
-              src={logo.logo}
+              src={logo.image}
               alt={`Logo ${index + 1}`}
               className="w-full h-full object-contain"
-              onClick={() => handleLink(logo.link)}
+              onClick={() => handleLink(logo.url)}
             />
           </div>
         ))}

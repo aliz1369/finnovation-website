@@ -1,15 +1,15 @@
 export interface SliderImage {
   id: number;
   image: string;
+  url: string;
 }
 export interface Component {
   id: number;
-  component_type: "title" | "text" | "image" | "slider";
-  content_value: string | null;
-  image_large: string | null;
-  image_medium: string | null;
-  image_small: string | null;
-  slider_images: SliderImage[] | null;
+  component_type: "title" | "text" | "image" | "slider" | "sub-title";
+  content_value_tr: string | null;
+  content_value_en: string | null;
+  component: Component[] | null;
+  images: SliderImage[] | null;
 }
 
 export interface Section {

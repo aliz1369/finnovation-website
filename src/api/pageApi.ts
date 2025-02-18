@@ -1,7 +1,7 @@
 import apiClient from "./apiClient";
 
 export const fetchHomePage = async () => {
-  const response = await apiClient.get("/pages/ana-sayfa/");
+  const response = await apiClient.get("/pages/home/");
   return response.data;
 };
 
