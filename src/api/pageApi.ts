@@ -6,7 +6,7 @@ export const fetchHomePage = async () => {
 };
 
 export const fetchAboutPage = async () => {
-  const response = await apiClient.get("/pages/hakkimizda/");
+  const response = await apiClient.get("/pages/about-us/");
   return response.data;
 };
 
