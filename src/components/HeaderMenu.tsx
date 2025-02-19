@@ -575,7 +575,8 @@ const HeaderMenu: React.FC = () => {
                 </a>
                 <a
                   href="/contact"
-                  className="flex items-center"
+                  target="_blank"
+                 
                 >
                   <img src="/mail.png" alt="Mail" className="h-6 w-6" />
                 </a>
@@ -799,7 +800,8 @@ const HeaderMenu: React.FC = () => {
               </a>
               <a
                 href="/contact"
-                className="flex items-center"
+                target="_blank"
+               
               >
                 <img src="/mail.png" alt="Mail" className="h-5 w-5" />
               </a>
