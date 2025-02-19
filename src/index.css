@@ -92,7 +92,3 @@ img:hover {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-.safe-area-bottom {
-  padding-bottom: env(safe-area-inset-bottom, 16px);
-}
