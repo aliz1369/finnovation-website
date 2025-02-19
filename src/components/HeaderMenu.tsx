@@ -552,13 +552,13 @@ const HeaderMenu: React.FC = () => {
                 >
                   <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
                 </a>
-                {/* <a
-                  href="https://youtube.com"
+                { <a
+                  href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
-                </a> */}
+                </a> }
                 <a
                   href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                   target="_blank"
@@ -777,13 +777,13 @@ const HeaderMenu: React.FC = () => {
               >
                 <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
               </a>
-              {/* <a
-                href="https://youtube.com"
+              { <a
+                href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
-              </a> */}
+              </a> }
               <a
                 href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                 target="_blank"
