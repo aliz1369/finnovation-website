@@ -16,15 +16,7 @@
   "hazine": "Hazine",
   "nakityonetimi": "Nakit Yönetimi",
   "riskyonetimivealm": "Risk Yönetimi & ALM",
-  "enerjitech": "EnerjiTech",
-  "agrotech": "AgroTech",
-  "healthtech": "HealthTech",
   "FinAcademy":"FinAcademy",
-  "tourismtech": "TourismTech",
-  "edutech": "EduTech",
-  "retailtech":"RetailTech",
-  "aviationtech": "AviationTech",
-  "medtech": "MedTech",
   "veri": "Veri",
   "verimimarsi": "Veri Mimarisi",
   "verianalitigi": "Veri Analitiği",
@@ -44,5 +36,10 @@
   "bookademo": "Demo rezervasyonu",
   "ctaTitle": "Yeni Projelere Birlikte İmza Atalım",
   "ctaDescription": "Hemen bize ulaşın projelerinizi hayata geçirelim.",
-  "ctaButton": "İletişime Geç"
+  "ctaButton": "İletişime Geç",
+  "yazilimcozumleri": "Yazılım Çözümleri",
+  "enerjicozumleri": "Enerji Çözümleri",
+  "tarimcozumleri": "Tarım Çözümleri",
+  "saglikcozumleri": "Sağlık Çözümleri",
+  "perakendecozumleri": "Perakende Çözümleri"
 }

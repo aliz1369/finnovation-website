@@ -16,15 +16,7 @@
   "hazine": "Treasury",
   "nakityonetimi": "Cash Management",
   "riskyonetimivealm": "Risk Management & ALM",
-  "enerjitech": "EnergyTech",
-  "agrotech": "AgroTech",
-  "healthtech": "HealthTech",
   "FinAcademy": "FinAcademy",
-  "tourismtech": "TourismTech",
-  "edutech": "EduTech",
-  "retailtech": "RetailTech",
-  "aviationtech": "AviationTech",
-  "medtech": "MedTech",
   "veri": "Data",
   "verimimarsi": "Data Architecture",
   "verianalitigi": "Data Analytics",
@@ -44,5 +36,10 @@
   "bookademo": "Book a Demo",
   "ctaTitle": "Let's Create New Projects Together",
   "ctaDescription": "Contact us now to bring your projects to life.",
-  "ctaButton": "Contact Us"
+  "ctaButton": "Contact Us",
+  "yazilimcozumleri": "Software Solutions",
+  "enerjicozumleri": "Energy Solutions",
+  "tarimcozumleri": "Agriculture Solutions",
+  "saglikcozumleri": "Healthcare Solutions",
+  "perakendecozumleri": "Retail Solutions"
 }
