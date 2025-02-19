@@ -178,10 +178,12 @@ const HeaderMenu: React.FC = () => {
             className={`fixed inset-0 bg-white z-50 transition-transform duration-200 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
             } flex flex-col h-screen`}
-            style={safeBottomStyle}
           >
             {/* Mobil Menü Header */}
-            <div className="flex items-center justify-between p-4 border-b">
+            <div
+              className="flex items-center justify-between p-4 border-b"
+              style={safeBottomStyle}
+            >
               <Link to="/">
                 <img
                   src="/finnovation-logo.png"
