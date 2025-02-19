@@ -237,7 +237,7 @@ const HeaderMenu: React.FC = () => {
             <div className="flex gap-2 p-4 border-b overflow-x-auto">
               {[
                 { name: "Kurumsal", cat: "kurumsal" },
-                { name: "Yazılım Çözümleri", cat: "yazilimcozumleri" },
+                { name: "Ürünler ve Hizmetler", cat: "urunlervehizmetler" },
                 { name: "FinAcademy", cat: "FinAcademy" },
               ].map((category) => (
                 <button
@@ -341,7 +341,7 @@ const HeaderMenu: React.FC = () => {
                   </div>
                 )}
 
-                {selectedCategory === "Yazılım Çözümleri" && (
+                {selectedCategory === "Ürünler ve Hizmetler" && (
                   <div className="space-y-6">
                     {/* Finansal Çözümler Kategorisi */}
                     <div>
@@ -529,7 +529,7 @@ const HeaderMenu: React.FC = () => {
                 to="/services"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold whitespace-nowrap"
               > */}
-              {t("Yazılım Çözümleri")}
+              {t("urunlervehizmetler")}
               {/* </Link> */}
 
               <div className="absolute h-8 w-full left-0 bottom-0 translate-y-full"></div>
@@ -541,13 +541,17 @@ const HeaderMenu: React.FC = () => {
                       {/* Ana başlık - container'ı ortalamak için */}
                       <div className="flex justify-center mb-6">
                         <h3 className="font-bold text-[#1E5E81] text-lg">
-                          {t("Finansal Çözümler")}
+                          {t("Yazılım Çözümleri")}
                         </h3>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-x-8">
                         {/* Sol Kolon - Alt Menüler */}
                         <div>
+                          {/* Finansal Çözümler Ana Başlığı */}
+                          <h4 className="text-[#1E5E81] block py-1 hover:text-[#3377BC] transition-colors text-lg font-bold">
+                            {t("Finansal Çözümler")}
+                          </h4>
                           <ul className="space-y-2">
                             {menuItems.YazilimCozumleri.FinansalCozumler.map((item) => (
                               <li key={item.title}>
