@@ -535,7 +535,7 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Sosyal Medya İkonları - Sabit Alt Kısım */}
-            <div className="fixed bottom-23 left-0 right-0 border-t bg-white p-4">
+            <div className="fixed bottom-0 left-0 right-0 border-t bg-white p-4">
               <div className="flex flex-wrap justify-center gap-6">
                 <a
                   href="https://www.linkedin.com/company/finnovation-consultancy/"
