@@ -111,21 +111,6 @@ const CashManagementPage: React.FC = () => {
         <section className="bg-white">
           <AccordionList title="Eğitim Programlarımız" items={programs} />
         </section>
-        <section className="bg-white h-auto">
-          <div
-            className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 h-full
-                       flex flex-col justify-center"
-          >
-            <h2 className="text-5xl md:text-6xl font-light text-gray-900 mb-12">
-              Eğitim Formatları
-            </h2>
-            <CardSlider
-              isScrollable={true}
-              cardPerView={3}
-              sliderDatas={benefits}
-            />
-          </div>
-        </section>
         <section className="relative overflow-hidden h-auto ">
           <CallToAction />
         </section>

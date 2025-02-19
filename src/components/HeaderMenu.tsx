@@ -20,6 +20,9 @@ const HeaderMenu: React.FC = () => {
     t,
     // i18n
   } = useTranslation();
+  const safeBottomStyle = {
+    paddingBottom: "env(safe-area-inset-bottom, 16px)",
+  };
   // const currentLang = i18n.language;
   // const availableLang = currentLang === "tr" ? "en" : "tr";
 
@@ -170,7 +173,10 @@ const HeaderMenu: React.FC = () => {
             } flex flex-col h-screen`}
           >
             {/* Mobil Menü Header */}
-            <div className="flex items-center justify-between p-4 border-b">
+            <div
+              className="flex items-center justify-between p-4 border-b"
+              style={safeBottomStyle}
+            >
               <Link to="/">
                 <img
                   src="/finnovation-logo.png"
@@ -407,7 +413,7 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Sosyal Medya İkonları - Sabit Alt Kısım */}
-            <div className="absolute bottom-0 left-0 right-0 border-t bg-white p-4">
+            <div className="fixed bottom-0 left-0 right-0 border-t bg-white p-4 ">
               <div className="flex flex-wrap justify-center gap-6">
                 <a
                   href="https://www.linkedin.com/company/finnovation-consultancy/"
@@ -430,13 +436,15 @@ const HeaderMenu: React.FC = () => {
                 >
                   <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
                 </a>
-                { <a
-                  href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
-                </a> }
+                {
+                  <a
+                    href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
+                  </a>
+                }
                 <a
                   href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                   target="_blank"
@@ -451,11 +459,7 @@ const HeaderMenu: React.FC = () => {
                 >
                   <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
                 </a>
-                <a
-                  href="/contact"
-                  rel="noopener noreferrer"
-                 
-                >
+                <a href="/contact" rel="noopener noreferrer">
                   <img src="/mail.png" alt="Mail" className="h-6 w-6" />
                 </a>
               </div>
@@ -658,13 +662,15 @@ const HeaderMenu: React.FC = () => {
               >
                 <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
               </a>
-              { <a
-                href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
-              </a> }
+              {
+                <a
+                  href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
+                </a>
+              }
               <a
                 href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                 target="_blank"
@@ -679,11 +685,7 @@ const HeaderMenu: React.FC = () => {
               >
                 <img src="/whatsapp.png" alt="Whatsapp" className="h-5 w-5" />
               </a>
-              <a
-                href="/contact"
-                
-               
-              >
+              <a href="/contact">
                 <img src="/mail.png" alt="Mail" className="h-5 w-5" />
               </a>
             </div>
