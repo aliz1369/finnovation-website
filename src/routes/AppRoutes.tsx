@@ -25,10 +25,6 @@ import EnergyTechPage from "../pages/EnergyTechPage";
 import AgroTechPage from "../pages/AgroTechPage";
 import HealthTechPage from "../pages/HealthTechPage";
 import TourismTechPage from "../pages/TourismTechPage";
-import EduTechPage from "../pages/EduTechPage";
-import RetailTechPage from "../pages/RetailTechPage";
-import AviationTechPage from "../pages/AviationTechPage";
-import MedTechPage from "../pages/MedTechPage";
 import DataArchitecturePage from "../pages/DataArchitecturePage";
 import DataAnalyticsPage from "../pages/DataAnalyticsPage";
 import BusinessIntelligencePage from "../pages/BusinessIntelligencePage";
@@ -88,10 +84,6 @@ const AppRoutes: FC = () => {
         <Route path="/services/tech/agro" element={<AgroTechPage />} />
         <Route path="/services/tech/health" element={<HealthTechPage />} />
         <Route path="/services/tech/tourism" element={<TourismTechPage />} />
-        <Route path="/services/tech/edu" element={<EduTechPage />} />
-        <Route path="/services/tech/retail" element={<RetailTechPage />} />
-        <Route path="/services/tech/aviation" element={<AviationTechPage />} />
-        <Route path="/services/tech/med" element={<MedTechPage />} />
         <Route
           path="/services/data/architecture"
           element={<DataArchitecturePage />}

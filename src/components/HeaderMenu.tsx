@@ -12,8 +12,8 @@ const HeaderMenu: React.FC = () => {
     kariyer: false,
     fintech: false,
     tech: false,
-    veri: false,
-    dijital: false,
+    VeriCozumleri: false,
+    DijitalCozumler: false,
   });
   // const [showMobileLang, setShowMobileLang] = useState(false);
   const {
@@ -49,8 +49,8 @@ const HeaderMenu: React.FC = () => {
         section === "kariyer" ||
         section === "fintech" ||
         section === "tech" ||
-        section === "veri" ||
-        section === "dijital"
+        section === "VeriCozumleri" ||
+        section === "DijitalCozumler"
       ) {
         return {
           ...prev,
@@ -78,33 +78,26 @@ const HeaderMenu: React.FC = () => {
         { title: "cesitlilik&kapsayicilik", link: "/career/diversity" },
       ],
     },
-    "Ürünler ve Hizmetler": {
-      FinTech: [
+    YazilimCozumleri: {
+      FinansalCozumler: [
         { title: "kredi", link: "/services/fintech/credit" },
         { title: "hazine", link: "/services/fintech/treasury" },
         { title: "nakityonetimi", link: "/services/fintech/cash-management" },
-        {
-          title: "riskyonetimivealm",
-          link: "/services/fintech/risk-management",
-        },
+        { title: "riskyonetimivealm", link: "/services/fintech/risk-management" },
       ],
-      Tech: [
-        { title: "enerjitech", link: "/services/tech/energy" },
-        { title: "agrotech", link: "/services/tech/agro" },
-        { title: "healthtech", link: "/services/tech/health" },
-        { title: "tourismtech", link: "/services/tech/tourism" },
-        { title: "edutech", link: "/services/tech/edu" },
-        { title: "retailtech", link: "/services/tech/retail" },
-        { title: "aviationtech", link: "/services/tech/aviation" },
-        { title: "medtech", link: "/services/tech/med" },
+      EndustriCozumleri: [
+        { title: "enerjicozumleri", link: "/services/tech/energy" },
+        { title: "tarimcozumleri", link: "/services/tech/agro" },
+        { title: "perakendecozumleri", link: "/services/tech/tourism" },
+        { title: "saglikcozumleri", link: "/services/tech/health" },
       ],
-      Veri: [
+      VeriCozumleri: [
         { title: "verimimarsi", link: "/services/data/architecture" },
         { title: "verianalitigi", link: "/services/data/analytics" },
         { title: "iszekasi", link: "/services/data/bi" },
         { title: "yasalreporlama", link: "/services/data/reporting" },
       ],
-      Dijital: [
+      Dijitalcozumler: [
         {
           title: "surecizlemevegelistirme",
           link: "/services/digital/process",
@@ -244,7 +237,7 @@ const HeaderMenu: React.FC = () => {
             <div className="flex gap-2 p-4 border-b overflow-x-auto">
               {[
                 { name: "Kurumsal", cat: "kurumsal" },
-                { name: "Ürünler ve Hizmetler", cat: "urunlervehizmetler" },
+                { name: "Yazılım Çözümleri", cat: "yazilimcozumleri" },
                 { name: "FinAcademy", cat: "FinAcademy" },
               ].map((category) => (
                 <button
@@ -348,15 +341,15 @@ const HeaderMenu: React.FC = () => {
                   </div>
                 )}
 
-                {selectedCategory === "Ürünler ve Hizmetler" && (
+                {selectedCategory === "Yazılım Çözümleri" && (
                   <div className="space-y-6">
-                    {/* FinTech Kategorisi */}
+                    {/* Finansal Çözümler Kategorisi */}
                     <div>
                       <button
                         onClick={() => toggleSection("fintech")}
                         className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
                       >
-                        <span>FinTech</span>
+                        <span>{t("Finansal Çözümler")}</span>
                         <svg
                           className={`w-5 h-5 transition-transform ${
                             openSections.fintech ? "rotate-180" : ""
@@ -375,148 +368,33 @@ const HeaderMenu: React.FC = () => {
                       </button>
                       {openSections.fintech && (
                         <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].FinTech.map(
-                            (item) => (
-                              <li key={item.title}>
-                                <Link
-                                  to={item.link}
-                                  className="text-[#1E5E81] block py-1"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {t(item.title)}
-                                </Link>
-                              </li>
-                            )
-                          )}
+                          {menuItems.YazilimCozumleri.FinansalCozumler.map((item) => (
+                            <li key={item.title}>
+                              <Link
+                                to={item.link}
+                                className="text-[#1E5E81] block py-1"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {t(item.title)}
+                              </Link>
+                            </li>
+                          ))}
                         </ul>
                       )}
                     </div>
 
-                    {/* Tech Kategorisi */}
-                    <div>
-                      <button
-                        onClick={() => toggleSection("tech")}
-                        className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
-                      >
-                        <span>Tech</span>
-                        <svg
-                          className={`w-5 h-5 transition-transform ${
-                            openSections.tech ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                    {/* Endüstri Çözümleri - Ana menü seviyesinde */}
+                    {menuItems.YazilimCozumleri.EndustriCozumleri.map((item) => (
+                      <div key={item.title}>
+                        <Link
+                          to={item.link}
+                          className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
+                          onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-                      {openSections.tech && (
-                        <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].Tech.map(
-                            (item) => (
-                              <li key={item.title}>
-                                <Link
-                                  to={item.link}
-                                  className="text-[#1E5E81] block py-1"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {t(item.title)}
-                                </Link>
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      )}
-                    </div>
-
-                    {/* Veri Kategorisi */}
-                    <div>
-                      <button
-                        onClick={() => toggleSection("veri")}
-                        className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
-                      >
-                        <span>{t("veri")}</span>
-                        <svg
-                          className={`w-5 h-5 transition-transform ${
-                            openSections.veri ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-                      {openSections.veri && (
-                        <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].Veri.map(
-                            (item) => (
-                              <li key={item.title}>
-                                <Link
-                                  to={item.link}
-                                  className="text-[#1E5E81] block py-1"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {t(item.title)}
-                                </Link>
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      )}
-                    </div>
-
-                    {/* Dijital Kategorisi */}
-                    <div>
-                      <button
-                        onClick={() => toggleSection("dijital")}
-                        className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
-                      >
-                        <span>{t("dijital")}</span>
-                        <svg
-                          className={`w-5 h-5 transition-transform ${
-                            openSections.dijital ? "rotate-180" : ""
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </button>
-                      {openSections.dijital && (
-                        <ul className="space-y-2 pl-2">
-                          {menuItems["Ürünler ve Hizmetler"].Dijital.map(
-                            (item) => (
-                              <li key={item.title}>
-                                <Link
-                                  to={item.link}
-                                  className="text-[#1E5E81] block py-1"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {t(item.title)}
-                                </Link>
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      )}
-                    </div>
+                          {t(item.title)}
+                        </Link>
+                      </div>
+                    ))}
                   </div>
                 )}
 
@@ -651,60 +529,63 @@ const HeaderMenu: React.FC = () => {
                 to="/services"
                 className="text-[#1E5E81] hover:text-[#FFFFFF] hover:bg-[#3377BC] py-2 px-4 rounded-full font-semibold whitespace-nowrap"
               > */}
-              {t("urunlervehizmetler")}
+              {t("Yazılım Çözümleri")}
               {/* </Link> */}
 
               <div className="absolute h-8 w-full left-0 bottom-0 translate-y-full"></div>
               <div className="fixed invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 top-[80px] left-0 right-0 bg-white shadow-lg border-t">
                 <div className="max-w-5xl mx-auto p-6">
                   <div className="grid grid-cols-4 gap-6">
-                    {/* FinTech Bölümü */}
-                    <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        FinTech
-                      </h3>
-                      <ul className="space-y-2">
-                        {menuItems["Ürünler ve Hizmetler"].FinTech.map(
-                          (item) => (
-                            <li key={item.title}>
-                              <Link
-                                to={item.link}
-                                className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                              >
-                                {t(item.title)}
-                              </Link>
-                            </li>
-                          )
-                        )}
-                      </ul>
-                    </div>
-
-                    {/* Tech Bölümü */}
-                    <div>
-                      <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        Tech
-                      </h3>
-                      <ul className="space-y-2">
-                        {menuItems["Ürünler ve Hizmetler"].Tech.map((item) => (
-                          <li key={item.title}>
-                            <Link
-                              to={item.link}
-                              className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                            >
-                              {t(item.title)}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                    {/* Finansal Çözümler Bölümü */}
+                    <div className="col-span-2">
+                      {/* Ana başlık - container'ı ortalamak için */}
+                      <div className="flex justify-center mb-6">
+                        <h3 className="font-bold text-[#1E5E81] text-lg">
+                          {t("Finansal Çözümler")}
+                        </h3>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-x-8">
+                        {/* Sol Kolon - Alt Menüler */}
+                        <div>
+                          <ul className="space-y-2">
+                            {menuItems.YazilimCozumleri.FinansalCozumler.map((item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                                >
+                                  {t(item.title)}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        {/* Sağ Kolon - Endüstri Çözümleri */}
+                        <div>
+                          <ul className="space-y-2">
+                            {menuItems.YazilimCozumleri.EndustriCozumleri.map((item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1 hover:text-[#3377BC] transition-colors text-lg font-bold"
+                                >
+                                  {t(item.title)}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Veri Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        {t("veri")}
+                          {t("Veri Çözümleri")}
                       </h3>
                       <ul className="space-y-2">
-                        {menuItems["Ürünler ve Hizmetler"].Veri.map((item) => (
+                        {menuItems.YazilimCozumleri.VeriCozumleri.map((item) => (
                           <li key={item.title}>
                             <Link
                               to={item.link}
@@ -720,10 +601,10 @@ const HeaderMenu: React.FC = () => {
                     {/* Dijital Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                        {t("dijital")}
+                        {t("Dijital Çözümler")}
                       </h3>
                       <ul className="space-y-2">
-                        {menuItems["Ürünler ve Hizmetler"].Dijital.map(
+                        {menuItems.YazilimCozumleri.Dijitalcozumler.map(
                           (item) => (
                             <li key={item.title}>
                               <Link

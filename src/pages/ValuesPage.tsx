@@ -116,7 +116,6 @@ const ValuesPage: React.FC = () => {
       <section className="bg-white py-16">
         <CardGrid cardData={cardData} />
       </section>
-      
       <CallToAction />
     </MainLayout>
   );
