@@ -575,7 +575,7 @@ const HeaderMenu: React.FC = () => {
                 </a>
                 <a
                   href="/contact"
-                  target="_blank"
+                  rel="noopener noreferrer"
                  
                 >
                   <img src="/mail.png" alt="Mail" className="h-6 w-6" />
@@ -800,7 +800,7 @@ const HeaderMenu: React.FC = () => {
               </a>
               <a
                 href="/contact"
-                target="_blank"
+                
                
               >
                 <img src="/mail.png" alt="Mail" className="h-5 w-5" />
