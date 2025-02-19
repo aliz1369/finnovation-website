@@ -1,6 +1,6 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
-
+import KVKKModal from "../components/KVKKModal";
 
 const ContactUsPage: React.FC = () => {
   return (
@@ -79,25 +79,6 @@ const ContactUsPage: React.FC = () => {
               />
             </div>
 
-            {/* Help Dropdown */}
-            <div className="mt-6">
-              <label
-                htmlFor="help"
-                className="block text-base sm:text-lg font-medium text-gray-700 font-segouie"
-              >
-                Size nasıl yardımcı olabiliriz?
-              </label>
-              <select
-                id="help"
-                className="mt-2 block w-full h-[43px] border border-gray-600 rounded-[10px] px-4 shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option>Seç...</option>
-                <option>Teknik Destek</option>
-                <option>Soru</option>
-                <option>Fiyatlandırma</option>
-              </select>
-            </div>
-
             {/* Message */}
             <div className="mt-6">
               <label
@@ -113,22 +94,10 @@ const ContactUsPage: React.FC = () => {
                 placeholder="Size daha iyi yardımcı olabilmemiz için lütfen nasıl yardımcı olabileceğimizi açıklayın.."
               />
             </div>
-
-            {/* Consent Checkbox */}
-            <div className="mt-6 flex items-center">
-              <input
-                id="consent"
-                type="checkbox"
-                className="h-5 w-5 text-blue-600 border-gray-600 rounded"
-              />
-              <label
-                htmlFor="consent"
-                className="ml-2 mt-2 text-sm text-gray-700 font-segouie"
-              >
-                KVKK kapsamında kişisel bilgilerimizin işlenmesine onay
-                veriyorum.
-              </label>
-            </div>
+            
+            <div className="h-5 md:h-5"></div>
+            <KVKKModal />
+            <div className="h-5 md:h-5"></div>
 
             {/* Submit Button */}
             <div className="relative mt-6">
