@@ -88,7 +88,7 @@ const KVKKModal: React.FC<KVKKModalProps> = ({ onAcceptCallback }) => {
                 <div>
                   <h3 className="font-bold mb-2">1. Veri Sorumlusunun Kimliği</h3>
                   <p>
-                    Finnovation Yazılım Çözümleri A.Ş. ("Şirketimiz"), KİŞisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuat kapsamında veri sorumlusu olarak hareket etmektedir.
+                    Finnovation Yazılım Çözümleri A.Ş. ("Şirketimiz"), Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuat kapsamında veri sorumlusu olarak hareket etmektedir.
                   </p>
                 </div>
 
@@ -141,9 +141,9 @@ const KVKKModal: React.FC<KVKKModalProps> = ({ onAcceptCallback }) => {
                   </p>
                   <div className="mt-2">
                     <p>Finnovation Yazılım Çözümleri A.Ş.</p>
-                    <p>Adres: [Şirket Adresi]</p>
-                    <p>E-posta: [KVKK ile ilgili e-posta adresi]</p>
-                    <p>Telefon: [Şirket Telefonu]</p>
+                    <p>Adres: Bahriye Üçok Mah. 1762 Sk. No: 9 Daire: 1 Karşıyaka / İzmir</p>
+                    <p>E-posta: info@finnovation.com.tr</p>
+                    <p>Telefon: +90 532 542 8443</p>
                   </div>
                   <p className="mt-4">
                     Başvurularınız, KVKK ve ilgili mevzuat çerçevesinde en geç 30 gün içerisinde yanıtlanacaktır.
@@ -151,7 +151,7 @@ const KVKKModal: React.FC<KVKKModalProps> = ({ onAcceptCallback }) => {
                 </div>
 
                 <div>
-                  <p className="italic">Güncellenme Tarihi: [Güncelleme tarihi]</p>
+                  <p className="italic">Güncellenme Tarihi: 19.02.2025</p>
                   <p className="mt-2">
                     Bu aydınlatma metni, Şirketimizin KVK politikaları uyarınca güncellenebilir. Değişiklikler web sitemizde yayınlanarak yürürlüğe girecektir.
                   </p>
