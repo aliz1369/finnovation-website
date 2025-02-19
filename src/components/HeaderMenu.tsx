@@ -256,8 +256,8 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Menü İçeriği - Scroll edilebilir alan */}
-            <div className="flex-1 overflow-y-auto ">
-              <div className="p-6 pb-24">
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-6 pb-28">
                 {selectedCategory === "Kurumsal" && (
                   <div className="space-y-6">
                     {/* Genel Kategorisi */}
@@ -529,8 +529,8 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Sosyal Medya İkonları - Sabit Alt Kısım */}
-            <div className="absolute bottom-0 left-0 right-0 border-t bg-white p-4">
-              <div className="flex flex-wrap justify-center gap-6">
+            <div className="fixed bottom-0 left-0 right-0 border-t bg-white p-4 z-50">
+              <div className="flex flex-wrap justify-center gap-6 pb-safe">
                 <a
                   href="https://www.linkedin.com/company/finnovation-consultancy/"
                   target="_blank"
