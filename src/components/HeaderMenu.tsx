@@ -20,6 +20,9 @@ const HeaderMenu: React.FC = () => {
     t,
     // i18n
   } = useTranslation();
+  const safeBottomStyle = {
+    paddingBottom: "env(safe-area-inset-bottom, 16px)",
+  };
   // const currentLang = i18n.language;
   // const availableLang = currentLang === "tr" ? "en" : "tr";
 
@@ -174,7 +177,8 @@ const HeaderMenu: React.FC = () => {
           <div
             className={`fixed inset-0 bg-white z-50 transition-transform duration-200 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } flex flex-col h-screen safe-area-bottom`}
+            } flex flex-col h-screen`}
+            style={safeBottomStyle}
           >
             {/* Mobil Menü Header */}
             <div className="flex items-center justify-between p-4 border-b">
