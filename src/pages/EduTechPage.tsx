@@ -108,6 +108,9 @@ const EduTechPage: React.FC = () => {
             />
           </div>
         </section>
+        <section className="bg-white">
+          <AccordionList title="Eğitim Programlarımız" items={programs} />
+        </section>
         <section className="relative overflow-hidden h-auto ">
           <CallToAction />
         </section>
