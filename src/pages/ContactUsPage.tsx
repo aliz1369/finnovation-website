@@ -1,6 +1,6 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
-import CallToAction from "../components/CallToAction";
+
 
 const ContactUsPage: React.FC = () => {
   return (
@@ -167,7 +167,7 @@ const ContactUsPage: React.FC = () => {
           </p>
         </div>
       </section>
-      <CallToAction />
+      
     </MainLayout>
   );
 };

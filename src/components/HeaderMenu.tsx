@@ -573,13 +573,16 @@ const HeaderMenu: React.FC = () => {
                 >
                   <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
                 </a>
-                <a
-                  href="mailto:yusuf@finnovation.com.tr"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/contact"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/contact') {
+                      e.preventDefault();
+                    }
+                  }}
                 >
                   <img src="/mail.png" alt="Mail" className="h-6 w-6" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -798,13 +801,16 @@ const HeaderMenu: React.FC = () => {
               >
                 <img src="/whatsapp.png" alt="Whatsapp" className="h-5 w-5" />
               </a>
-              <a
-                href="mailto:yusuf@finnovation.com.tr"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/contact"
+                onClick={(e) => {
+                  if (window.location.pathname === '/contact') {
+                    e.preventDefault();                   
+                  }
+                }}
               >
                 <img src="/mail.png" alt="Mail" className="h-5 w-5" />
-              </a>
+              </Link>
             </div>
 
             {/* Dil Değiştir Butonu - Desktop */}
