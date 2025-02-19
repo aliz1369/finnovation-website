@@ -92,3 +92,12 @@ img:hover {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+:root {
+  --vh: 100vh;
+}
+@supports (-webkit-touch-callout: none) {
+  :root {
+    --vh: calc(100vh - env(safe-area-inset-bottom));
+  }
+}
