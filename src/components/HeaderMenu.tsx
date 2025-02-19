@@ -174,7 +174,7 @@ const HeaderMenu: React.FC = () => {
           <div
             className={`fixed inset-0 bg-white z-50 transition-transform duration-200 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } flex flex-col h-screen`}
+            } flex flex-col h-screen safe-area-bottom`}
           >
             {/* Mobil Menü Header */}
             <div className="flex items-center justify-between p-4 border-b">
@@ -552,13 +552,15 @@ const HeaderMenu: React.FC = () => {
                 >
                   <img src="/x.png" alt="X/Twitter" className="h-6 w-6" />
                 </a>
-                { <a
-                  href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
-                </a> }
+                {
+                  <a
+                    href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/youtube.png" alt="Youtube" className="h-6 w-6" />
+                  </a>
+                }
                 <a
                   href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                   target="_blank"
@@ -573,11 +575,7 @@ const HeaderMenu: React.FC = () => {
                 >
                   <img src="/whatsapp.png" alt="Whatsapp" className="h-6 w-6" />
                 </a>
-                <a
-                  href="/contact"
-                  rel="noopener noreferrer"
-                 
-                >
+                <a href="/contact" rel="noopener noreferrer">
                   <img src="/mail.png" alt="Mail" className="h-6 w-6" />
                 </a>
               </div>
@@ -777,13 +775,15 @@ const HeaderMenu: React.FC = () => {
               >
                 <img src="/x.png" alt="X/Twitter" className="h-5 w-5" />
               </a>
-              { <a
-                href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
-              </a> }
+              {
+                <a
+                  href="https://www.youtube.com/@finnovationyazlmcozumleri9346"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="/youtube.png" alt="Youtube" className="h-5 w-5" />
+                </a>
+              }
               <a
                 href="https://www.instagram.com/finnovation_consultancy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                 target="_blank"
@@ -798,11 +798,7 @@ const HeaderMenu: React.FC = () => {
               >
                 <img src="/whatsapp.png" alt="Whatsapp" className="h-5 w-5" />
               </a>
-              <a
-                href="/contact"
-                
-               
-              >
+              <a href="/contact">
                 <img src="/mail.png" alt="Mail" className="h-5 w-5" />
               </a>
             </div>
