@@ -45,7 +45,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         style={{ minHeight: `${viewportHeight}px` }}
       >
         <HeaderMenu />
-        <main className="pt-[80px]">{children}</main>
+        <main className="pt-[80px] pb-[env(safe-area-inset-bottom)]">
+          {children}
+        </main>
         {/* <Footer /> */}
       </div>
     </>
