@@ -15,7 +15,7 @@ const HeaderMenu: React.FC = () => {
     VeriCozumleri: false,
     DijitalCozumler: false,
   });
-  const [safePadding, setSafePadding] = useState("0px");
+  const [safePadding, setSafePadding] = useState("12px");
   // const [showMobileLang, setShowMobileLang] = useState(false);
   const {
     t,
@@ -24,12 +24,23 @@ const HeaderMenu: React.FC = () => {
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-    const isSafari =
-      userAgent.includes("safari") &&
-      !userAgent.includes("chrome") &&
-      !userAgent.includes("android");
+    console.log(userAgent);
+    let isSafari = false;
+    // const isSafari = userAgent.includes("safari");
+    if (userAgent.includes("safari")) {
+      isSafari = true;
+    }
+    if (
+      userAgent.includes("android") ||
+      userAgent.includes("crios") ||
+      userAgent.includes("fxios")
+    ) {
+      isSafari = false;
+    }
     if (isSafari) {
       setSafePadding("98px");
+    } else {
+      setSafePadding("12px");
     }
   }, []);
 
