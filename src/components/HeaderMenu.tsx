@@ -15,14 +15,22 @@ const HeaderMenu: React.FC = () => {
     VeriCozumleri: false,
     DijitalCozumler: false,
   });
+  const [safePadding, setSafePadding] = useState("0px");
   // const [showMobileLang, setShowMobileLang] = useState(false);
   const {
     t,
     // i18n
   } = useTranslation();
-  const safeBottomStyle = {
-    paddingBottom: "env(safe-area-inset-bottom, 16px)",
-  };
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isSafari = /^((?!chrome|android).)*safari/.test(userAgent);
+
+    if (isSafari) {
+      setSafePadding("98px");
+    }
+  }, []);
+
   // const currentLang = i18n.language;
   // const availableLang = currentLang === "tr" ? "en" : "tr";
 
@@ -83,7 +91,10 @@ const HeaderMenu: React.FC = () => {
         { title: "kredi", link: "/services/fintech/credit" },
         { title: "hazine", link: "/services/fintech/treasury" },
         { title: "nakityonetimi", link: "/services/fintech/cash-management" },
-        { title: "riskyonetimivealm", link: "/services/fintech/risk-management" },
+        {
+          title: "riskyonetimivealm",
+          link: "/services/fintech/risk-management",
+        },
       ],
       EndustriCozumleri: [
         { title: "enerjicozumleri", link: "/services/tech/energy" },
@@ -145,7 +156,6 @@ const HeaderMenu: React.FC = () => {
       window.removeEventListener("resize", handleScroll);
     };
   }, [prevScrollPos, isMobileMenuOpen]);
-
   return (
     <>
       <header
@@ -168,15 +178,12 @@ const HeaderMenu: React.FC = () => {
 
           {/* Overlay ve Mobil Menü */}
           <div
-            className={`fixed inset-0 bg-white z-50 transition-transform duration-200 ease-in-out ${
+            className={`fixed inset-0 bg-white z-20 transition-transform duration-200 ease-in-out ${
               isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } flex flex-col h-screen`}
+            } flex flex-col min-h-screen`}
           >
             {/* Mobil Menü Header */}
-            <div
-              className="flex items-center justify-between p-4 border-b"
-              style={safeBottomStyle}
-            >
+            <div className="flex items-center justify-between p-4 border-b">
               <Link to="/">
                 <img
                   src="/finnovation-logo.png"
@@ -368,33 +375,37 @@ const HeaderMenu: React.FC = () => {
                       </button>
                       {openSections.fintech && (
                         <ul className="space-y-2 pl-2">
-                          {menuItems.YazilimCozumleri.FinansalCozumler.map((item) => (
-                            <li key={item.title}>
-                              <Link
-                                to={item.link}
-                                className="text-[#1E5E81] block py-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                {t(item.title)}
-                              </Link>
-                            </li>
-                          ))}
+                          {menuItems.YazilimCozumleri.FinansalCozumler.map(
+                            (item) => (
+                              <li key={item.title}>
+                                <Link
+                                  to={item.link}
+                                  className="text-[#1E5E81] block py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {t(item.title)}
+                                </Link>
+                              </li>
+                            )
+                          )}
                         </ul>
                       )}
                     </div>
 
                     {/* Endüstri Çözümleri - Ana menü seviyesinde */}
-                    {menuItems.YazilimCozumleri.EndustriCozumleri.map((item) => (
-                      <div key={item.title}>
-                        <Link
-                          to={item.link}
-                          className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {t(item.title)}
-                        </Link>
-                      </div>
-                    ))}
+                    {menuItems.YazilimCozumleri.EndustriCozumleri.map(
+                      (item) => (
+                        <div key={item.title}>
+                          <Link
+                            to={item.link}
+                            className="flex items-center justify-between w-full font-bold text-[#3377BC] mb-2"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {t(item.title)}
+                          </Link>
+                        </div>
+                      )
+                    )}
                   </div>
                 )}
 
@@ -413,7 +424,10 @@ const HeaderMenu: React.FC = () => {
             </div>
 
             {/* Sosyal Medya İkonları - Sabit Alt Kısım */}
-            <div className="fixed bottom-0 left-0 right-0 border-t bg-white p-4 ">
+            <div
+              className="mt-auto border-t bg-orange-200 p-4"
+              style={{ paddingBottom: safePadding }}
+            >
               <div className="flex flex-wrap justify-center gap-6">
                 <a
                   href="https://www.linkedin.com/company/finnovation-consultancy/"
@@ -544,7 +558,7 @@ const HeaderMenu: React.FC = () => {
                           {t("Yazılım Çözümleri")}
                         </h3>
                       </div>
-                      
+
                       <div className="grid grid-cols-2 gap-x-8">
                         {/* Sol Kolon - Alt Menüler */}
                         <div>
@@ -553,31 +567,35 @@ const HeaderMenu: React.FC = () => {
                             {t("Finansal Çözümler")}
                           </h4>
                           <ul className="space-y-2">
-                            {menuItems.YazilimCozumleri.FinansalCozumler.map((item) => (
-                              <li key={item.title}>
-                                <Link
-                                  to={item.link}
-                                  className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                                >
-                                  {t(item.title)}
-                                </Link>
-                              </li>
-                            ))}
+                            {menuItems.YazilimCozumleri.FinansalCozumler.map(
+                              (item) => (
+                                <li key={item.title}>
+                                  <Link
+                                    to={item.link}
+                                    className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                                  >
+                                    {t(item.title)}
+                                  </Link>
+                                </li>
+                              )
+                            )}
                           </ul>
                         </div>
                         {/* Sağ Kolon - Endüstri Çözümleri */}
                         <div>
                           <ul className="space-y-2">
-                            {menuItems.YazilimCozumleri.EndustriCozumleri.map((item) => (
-                              <li key={item.title}>
-                                <Link
-                                  to={item.link}
-                                  className="text-[#1E5E81] block py-1 hover:text-[#3377BC] transition-colors text-lg font-bold"
-                                >
-                                  {t(item.title)}
-                                </Link>
-                              </li>
-                            ))}
+                            {menuItems.YazilimCozumleri.EndustriCozumleri.map(
+                              (item) => (
+                                <li key={item.title}>
+                                  <Link
+                                    to={item.link}
+                                    className="text-[#1E5E81] block py-1 hover:text-[#3377BC] transition-colors text-lg font-bold"
+                                  >
+                                    {t(item.title)}
+                                  </Link>
+                                </li>
+                              )
+                            )}
                           </ul>
                         </div>
                       </div>
@@ -586,19 +604,21 @@ const HeaderMenu: React.FC = () => {
                     {/* Veri Bölümü */}
                     <div>
                       <h3 className="font-bold text-[#1E5E81] text-lg mb-3">
-                          {t("Veri Çözümleri")}
+                        {t("Veri Çözümleri")}
                       </h3>
                       <ul className="space-y-2">
-                        {menuItems.YazilimCozumleri.VeriCozumleri.map((item) => (
-                          <li key={item.title}>
-                            <Link
-                              to={item.link}
-                              className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
-                            >
-                              {t(item.title)}
-                            </Link>
-                          </li>
-                        ))}
+                        {menuItems.YazilimCozumleri.VeriCozumleri.map(
+                          (item) => (
+                            <li key={item.title}>
+                              <Link
+                                to={item.link}
+                                className="text-[#1E5E81] px-3 py-2 rounded-md block transition-colors duration-200 whitespace-nowrap"
+                              >
+                                {t(item.title)}
+                              </Link>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
 
