@@ -24,8 +24,10 @@ const HeaderMenu: React.FC = () => {
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-    const isSafari = /^((?!chrome|android).)*safari/.test(userAgent);
-
+    const isSafari =
+      userAgent.includes("safari") &&
+      !userAgent.includes("chrome") &&
+      !userAgent.includes("android");
     if (isSafari) {
       setSafePadding("98px");
     }
@@ -425,7 +427,7 @@ const HeaderMenu: React.FC = () => {
 
             {/* Sosyal Medya İkonları - Sabit Alt Kısım */}
             <div
-              className="mt-auto border-t bg-orange-200 p-4"
+              className="mt-auto border-t bg-white p-4"
               style={{ paddingBottom: safePadding }}
             >
               <div className="flex flex-wrap justify-center gap-6">
